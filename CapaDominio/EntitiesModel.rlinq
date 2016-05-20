@@ -58,9 +58,6 @@
         <orm:field name="apellido" property="Apellido" behavior="readwrite" uniqueId="983b1f6c-ef01-4387-b139-7cdd7eaae340" type="System.String">
           <orm:column name="apellido" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         </orm:field>
-        <orm:field name="dni" property="Dni" behavior="readwrite" uniqueId="a92137ea-c5c2-4f1c-b5ad-e7246d6b324b" type="System.String">
-          <orm:column name="dni" sql-type="varchar" nullable="true" length="20" scale="0" ado-type="StringVariableLength" />
-        </orm:field>
         <orm:field name="cuil" property="Cuil" behavior="readwrite" uniqueId="04e9c9af-ffc5-4092-ba83-3326c9316cf3" type="System.String">
           <orm:column name="cuil" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         </orm:field>
@@ -81,6 +78,15 @@
         </orm:field>
         <orm:field name="empresa" property="Empresa" behavior="readwrite" uniqueId="ffb09e16-0248-4578-8584-e0df9140ecd0" type="System.String">
           <orm:column name="empresa" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="tipoDocumento" property="TipoDocumento" behavior="readwrite" uniqueId="8da3eef9-96cd-4bfc-84d5-9a0987d2457c" type="System.String">
+          <orm:column name="tipoDocumento" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="documento" property="Documento" behavior="readwrite" uniqueId="3a2c2b4c-92ab-46eb-9199-fafab1763b96" type="System.String">
+          <orm:column name="documento" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="activo" property="Activo" behavior="readwrite" uniqueId="6f71b960-7352-44d7-a3e6-fdc49c72783c" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="activo" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
         </orm:field>
         <orm:field name="localidad" property="Localidad" behavior="readwrite" uniqueId="c527da77-4a16-4c97-8450-f2e0db3e2397" type="CapaDominio.Localidad">
           <orm:reference uniqueId="2e607111-84dc-41c3-95ff-9ce7e0e4057e" association-name="PersonaHasLocalidad">
@@ -162,7 +168,6 @@
         <orm:column name="idPersona" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
         <orm:column name="nombre" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         <orm:column name="apellido" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="dni" sql-type="varchar" nullable="true" length="20" scale="0" ado-type="StringVariableLength" />
         <orm:column name="cuil" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         <orm:column name="fechaNacimiento" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
         <orm:column name="direccion" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
@@ -170,6 +175,9 @@
         <orm:column name="isInteresado" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
         <orm:column name="isBeneficiario" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
         <orm:column name="empresa" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="tipoDocumento" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="documento" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="activo" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
         <orm:constraint name="FK_Persona_Localidad" delete-action="dbdefaultrule" destination-table="Localidad">
           <orm:column name="idLocalidad" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:constraint>
@@ -200,7 +208,7 @@
   </orm:orm>
   <ModelSettings xmlns="">
     <AppConfigConnectionPropertyName>Conn</AppConfigConnectionPropertyName>
-    <AppConfigConnectionString>Data Source=MAIKELEKIAM-PC\SQLEXPRESS;Initial Catalog=CyT;Integrated Security=True</AppConfigConnectionString>
+    <AppConfigConnectionString>data source=MAIKELEKIAM-PC\SQLEXPRESS;initial catalog=CyT;integrated security=True</AppConfigConnectionString>
     <InitialCatalog>CyT</InitialCatalog>
     <NamingSettings>
       <ClassRules>
@@ -251,13 +259,15 @@
       <Property Id="983b1f6c-ef01-4387-b139-7cdd7eaae340" name="Apellido" label="Apellido : String" kind="Persistent" fieldName="apellido" />
       <Property Id="04e9c9af-ffc5-4092-ba83-3326c9316cf3" name="Cuil" label="Cuil : String" kind="Persistent" fieldName="cuil" />
       <Property Id="25e39bce-cff4-4410-a3df-dbe40414e513" name="Direccion" label="Direccion : String" kind="Persistent" fieldName="direccion" />
-      <Property Id="a92137ea-c5c2-4f1c-b5ad-e7246d6b324b" name="Dni" label="Dni : String" kind="Persistent" fieldName="dni" />
       <Property Id="ffb09e16-0248-4578-8584-e0df9140ecd0" name="Empresa" label="Empresa : String" kind="Persistent" fieldName="empresa" />
       <Property Id="498e9bdb-5379-4f17-a034-84e4aa545727" name="FechaNacimiento" type="DateTime" label="FechaNacimiento : DateTime" nullable="true" kind="Persistent" fieldName="fechaNacimiento" />
       <Property Id="b909f4c6-c0da-4d44-b12b-4be51c347c25" name="IdLocalidad" type="Int32" label="IdLocalidad : Int32" nullable="true" kind="Persistent" fieldName="idLocalidad" />
       <Property Id="ea5521ed-3b89-48ec-9df0-e027e2c1bdcd" name="IsBeneficiario" type="Boolean" label="IsBeneficiario : Boolean" nullable="true" kind="Persistent" fieldName="isBeneficiario" />
       <Property Id="4394e2a2-82b9-48aa-b3b6-eabbbf4e85c6" name="IsInteresado" type="Boolean" label="IsInteresado : Boolean" nullable="true" kind="Persistent" fieldName="isInteresado" />
       <Property Id="658fea9e-6ac2-45f4-8e59-04e1cf7cb5b9" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
+      <Property Id="8da3eef9-96cd-4bfc-84d5-9a0987d2457c" name="TipoDocumento" label="TipoDocumento : String" kind="Persistent" fieldName="tipoDocumento" />
+      <Property Id="3a2c2b4c-92ab-46eb-9199-fafab1763b96" name="Documento" label="Documento : String" kind="Persistent" fieldName="documento" />
+      <Property Id="6f71b960-7352-44d7-a3e6-fdc49c72783c" name="Activo" type="Boolean" label="Activo : Boolean" nullable="true" kind="Persistent" fieldName="activo" />
       <AssociationTargets>
         <Association Id="2e607111-84dc-41c3-95ff-9ce7e0e4057e" SourceMultiplicity="ZeroOne" name="PersonaHasLocalidad">
           <DomainClassMoniker name="/ModeloDeDominio/Localidad" />

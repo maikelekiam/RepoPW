@@ -17,7 +17,7 @@ namespace CyT
             {
                 if (IsPostBack) return;
 
-                //MostrarListas(); //SIRVE PARA EL DROP DOWN LIST
+                MostrarLocalidad(); //SIRVE PARA EL DROP DOWN LIST
                 MostrarPersona(); //SIRVE PARA LA GRILLA
             }
         }
@@ -34,6 +34,14 @@ namespace CyT
             GuardarPersona();
         }
 
+        //Muestro en el DROPDOWNLIST las LOCALIDADES
+        private void MostrarLocalidad()
+        {
+            ddlLocalidad.DataSource = personaNego.MostrarLocalidad().ToList();
+            ddlLocalidad.DataValueField = "nombre";
+            ddlLocalidad.DataBind();
+        }
+
         private void GuardarPersona()
         {
 
@@ -41,11 +49,22 @@ namespace CyT
 
             persona.Nombre = txtNombre.Text;
             persona.Apellido = txtApellido.Text;
+            persona.TipoDocumento = ddlTipoDocumento.SelectedValue.ToString();
+            persona.Documento = txtDocumento.Text;
+            persona.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+            persona.Cuil = txtCuil.Text;
+            persona.Direccion = txtDireccion.Text;
+            persona.IdLocalidad = Convert.ToInt32(ddlLocalidad.SelectedIndex.ToString());
+
+
+
+
+
 
             personaNego.GuardarPersona(persona);
 
             MostrarPersona();
-        } 
+        }
 
 
 

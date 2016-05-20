@@ -63,19 +63,6 @@ namespace CapaDominio
 			}
 		}
 		
-		private string dni;
-		public virtual string Dni
-		{
-			get
-			{
-				return this.dni;
-			}
-			set
-			{
-				this.dni = value;
-			}
-		}
-		
 		private string cuil;
 		public virtual string Cuil
 		{
@@ -164,6 +151,45 @@ namespace CapaDominio
 			set
 			{
 				this.empresa = value;
+			}
+		}
+		
+		private string tipoDocumento;
+		public virtual string TipoDocumento
+		{
+			get
+			{
+				return this.tipoDocumento;
+			}
+			set
+			{
+				this.tipoDocumento = value;
+			}
+		}
+		
+		private string documento;
+		public virtual string Documento
+		{
+			get
+			{
+				return this.documento;
+			}
+			set
+			{
+				this.documento = value;
+			}
+		}
+		
+		private bool? activo;
+		public virtual bool? Activo
+		{
+			get
+			{
+				return this.activo;
+			}
+			set
+			{
+				this.activo = value;
 			}
 		}
 		
