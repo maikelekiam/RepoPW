@@ -60,20 +60,20 @@
                                 <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">INTERESADOS <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/AltaPersona.aspx">Alta Interesado</a></li>
-                                    <li><a href="#">Modificar Interesado</a></li>
-                                    <li><a href="#">Eliminar Interesado</a></li>
+                                    <li><a runat="server" href="#">Modificar Interesado</a></li>
+                                    <li><a runat="server" href="#">Eliminar Interesado</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Listar Interesados</a></li>
+                                    <li><a runat="server" href="#">Listar Interesados</a></li>
                                 </ul>
                             </div>
                             <div class="btn-group">
                                 <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">ACTUACIONES<span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Alta Actuacion</a></li>
-                                    <li><a href="#">Modificar Actuacion</a></li>
-                                    <li><a href="#">Eliminar Actuacion</a></li>
+                                    <li><a runat="server" href="~/AltaActuacion.aspx">Alta Actuacion</a></li>
+                                    <li><a runat="server" href="#">Modificar Actuacion</a></li>
+                                    <li><a runat="server" href="#">Eliminar Actuacion</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Listar Actuaciones</a></li>
+                                    <li><a runat="server" href="#">Listar Actuaciones</a></li>
                                 </ul>
                             </div>
                             <div class="btn-group">

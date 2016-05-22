@@ -26,6 +26,18 @@ namespace CapaNegocio
         {
             return personaRepo.MostrarLocalidad();
         }
+        public IEnumerable<Telefono> MostrarTelefono()
+        {
+            return personaRepo.MostrarTelefono();
+        }
+        public IEnumerable<CorreoElectronico> MostrarCorreoElectronico()
+        {
+            return personaRepo.MostrarCorreoElectronico();
+        }
+        public void GuardarTelefono(Telefono telefono)
+        {
+            personaRepo.GuardarTelefono(telefono);
+        }
     }
 
 }

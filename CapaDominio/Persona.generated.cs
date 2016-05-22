@@ -206,6 +206,24 @@ namespace CapaDominio
 			}
 		}
 		
+		private IList<CorreoElectronico> correoElectronicos = new List<CorreoElectronico>();
+		public virtual IList<CorreoElectronico> CorreoElectronicos
+		{
+			get
+			{
+				return this.correoElectronicos;
+			}
+		}
+		
+		private IList<Uvt> uvts = new List<Uvt>();
+		public virtual IList<Uvt> Uvts
+		{
+			get
+			{
+				return this.uvts;
+			}
+		}
+		
 	}
 }
 #pragma warning restore 1591

@@ -7,7 +7,7 @@
             <div class="panel-heading">
                 <h2>Formulario ALTA PERSONA</h2>
             </div>
-            <!--NOMBRE + APELLIDO <span class="glyphicon glyphicon-ban-circle"></span>-->
+            <!--NOMBRE + APELLIDO-->
             <br />
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"></asp:Label>
@@ -80,9 +80,33 @@
                     </asp:DropDownList>
                 </div>
             </div>
-
-
-
+            <!--LISTA DE TELEFONOS-->
+            <div class="form-group">
+                <asp:Label ID="lblTelefono" runat="server" Text="TELEFONOS" CssClass="col-md-2 control-label"></asp:Label>
+                <div class="col-md-4">
+                    <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                
+                <div class="col-md-6">
+                    <asp:GridView ID="dgvTelefono" runat="server" AutoGenerateColumns="false"
+                        CssClass="table table-hover table-bordered" BorderWidth="4px">
+                        <Columns>
+                            <asp:BoundField HeaderText="Telefono" DataField="numeroTelefono" ItemStyle-HorizontalAlign="Center" />
+                        </Columns>
+                    </asp:GridView>
+                </div>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="lblCorreoElectronico" runat="server" Text="CORREO ELECTRONICOS" CssClass="col-md-2 control-label"> </asp:Label>
+                <div class="col-md-4">
+                    <asp:GridView ID="dgvCorreoElectronico" runat="server" AutoGenerateColumns="false"
+                        CssClass="table table-hover table-bordered" BorderWidth="4px">
+                        <Columns>
+                            <asp:BoundField HeaderText="Correo Electronico" DataField="nombreCorreoElectronico" ItemStyle-HorizontalAlign="Center" />
+                        </Columns>
+                    </asp:GridView>
+                </div>
+            </div>
             <!--BOTONES GUARDAR       -->
             <div class="form-group">
                 <div class="col-md-2 col-md-offset-2">

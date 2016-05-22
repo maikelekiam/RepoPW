@@ -40,6 +40,32 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
+        public IEnumerable<Telefono> MostrarTelefono()
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<Telefono> result = modeloDeDominio.Telefonos.ToList();
 
+                return modeloDeDominio.CreateDetachedCopy(result);
+            }
+        }
+        public IEnumerable<CorreoElectronico> MostrarCorreoElectronico()
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<CorreoElectronico> result = modeloDeDominio.CorreoElectronicos.ToList();
+
+                return modeloDeDominio.CreateDetachedCopy(result);
+            }
+        }
+        public void GuardarTelefono(Telefono telefono)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                modeloDeDominio.Add(telefono);
+                modeloDeDominio.SaveChanges();
+            }
+
+        }
     }
 }

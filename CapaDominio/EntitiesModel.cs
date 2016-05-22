@@ -90,6 +90,54 @@ namespace CapaDominio
 			}
 		}
 		
+		public IQueryable<Telefono> Telefonos 
+		{
+			get
+			{
+				return this.GetAll<Telefono>();
+			}
+		}
+		
+		public IQueryable<CorreoElectronico> CorreoElectronicos 
+		{
+			get
+			{
+				return this.GetAll<CorreoElectronico>();
+			}
+		}
+		
+		public IQueryable<Uvt> Uvts 
+		{
+			get
+			{
+				return this.GetAll<Uvt>();
+			}
+		}
+		
+		public IQueryable<Proyecto> Proyectos 
+		{
+			get
+			{
+				return this.GetAll<Proyecto>();
+			}
+		}
+		
+		public IQueryable<Estado> Estados 
+		{
+			get
+			{
+				return this.GetAll<Estado>();
+			}
+		}
+		
+		public IQueryable<AreaProductiva> AreaProductivas 
+		{
+			get
+			{
+				return this.GetAll<AreaProductiva>();
+			}
+		}
+		
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
@@ -128,6 +176,30 @@ namespace CapaDominio
 			get;
 		}
 		IQueryable<Actuacion> Actuacions
+		{
+			get;
+		}
+		IQueryable<Telefono> Telefonos
+		{
+			get;
+		}
+		IQueryable<CorreoElectronico> CorreoElectronicos
+		{
+			get;
+		}
+		IQueryable<Uvt> Uvts
+		{
+			get;
+		}
+		IQueryable<Proyecto> Proyectos
+		{
+			get;
+		}
+		IQueryable<Estado> Estados
+		{
+			get;
+		}
+		IQueryable<AreaProductiva> AreaProductivas
 		{
 			get;
 		}
