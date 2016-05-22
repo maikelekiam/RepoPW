@@ -206,6 +206,51 @@ namespace CapaDominio
 			}
 		}
 		
+		private IList<Actuacion> actuacions = new List<Actuacion>();
+		public virtual IList<Actuacion> Actuacions
+		{
+			get
+			{
+				return this.actuacions;
+			}
+		}
+		
+		private IList<Telefono> telefonos = new List<Telefono>();
+		public virtual IList<Telefono> Telefonos
+		{
+			get
+			{
+				return this.telefonos;
+			}
+		}
+		
+		private IList<CorreoElectronico> correoElectronicos = new List<CorreoElectronico>();
+		public virtual IList<CorreoElectronico> CorreoElectronicos
+		{
+			get
+			{
+				return this.correoElectronicos;
+			}
+		}
+		
+		private IList<Uvt> uvts = new List<Uvt>();
+		public virtual IList<Uvt> Uvts
+		{
+			get
+			{
+				return this.uvts;
+			}
+		}
+		
+		private IList<Proyecto> proyectos = new List<Proyecto>();
+		public virtual IList<Proyecto> Proyectos
+		{
+			get
+			{
+				return this.proyectos;
+			}
+		}
+		
 	}
 }
 #pragma warning restore 1591

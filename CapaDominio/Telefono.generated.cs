@@ -22,75 +22,23 @@ using CapaDominio;
 
 namespace CapaDominio	
 {
-	public partial class Actuacion
+	public partial class Telefono
 	{
-		private int idActuacion;
-		public virtual int IdActuacion
+		private int idTelefono;
+		public virtual int IdTelefono
 		{
 			get
 			{
-				return this.idActuacion;
+				return this.idTelefono;
 			}
 			set
 			{
-				this.idActuacion = value;
+				this.idTelefono = value;
 			}
 		}
 		
-		private DateTime? fecha;
-		public virtual DateTime? Fecha
-		{
-			get
-			{
-				return this.fecha;
-			}
-			set
-			{
-				this.fecha = value;
-			}
-		}
-		
-		private string detalle;
-		public virtual string Detalle
-		{
-			get
-			{
-				return this.detalle;
-			}
-			set
-			{
-				this.detalle = value;
-			}
-		}
-		
-		private int? idTematica;
-		public virtual int? IdTematica
-		{
-			get
-			{
-				return this.idTematica;
-			}
-			set
-			{
-				this.idTematica = value;
-			}
-		}
-		
-		private int? idViaComunicacion;
-		public virtual int? IdViaComunicacion
-		{
-			get
-			{
-				return this.idViaComunicacion;
-			}
-			set
-			{
-				this.idViaComunicacion = value;
-			}
-		}
-		
-		private int? idPersona;
-		public virtual int? IdPersona
+		private int idPersona;
+		public virtual int IdPersona
 		{
 			get
 			{
@@ -102,29 +50,16 @@ namespace CapaDominio
 			}
 		}
 		
-		private Tematica tematica;
-		public virtual Tematica Tematica
+		private string telefono1;
+		public virtual string Telefono1
 		{
 			get
 			{
-				return this.tematica;
+				return this.telefono1;
 			}
 			set
 			{
-				this.tematica = value;
-			}
-		}
-		
-		private ViaComunicacion viaComunicacion;
-		public virtual ViaComunicacion ViaComunicacion
-		{
-			get
-			{
-				return this.viaComunicacion;
-			}
-			set
-			{
-				this.viaComunicacion = value;
+				this.telefono1 = value;
 			}
 		}
 		

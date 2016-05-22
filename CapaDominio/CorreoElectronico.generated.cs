@@ -22,75 +22,23 @@ using CapaDominio;
 
 namespace CapaDominio	
 {
-	public partial class Actuacion
+	public partial class CorreoElectronico
 	{
-		private int idActuacion;
-		public virtual int IdActuacion
+		private int idCorreoElectronico;
+		public virtual int IdCorreoElectronico
 		{
 			get
 			{
-				return this.idActuacion;
+				return this.idCorreoElectronico;
 			}
 			set
 			{
-				this.idActuacion = value;
+				this.idCorreoElectronico = value;
 			}
 		}
 		
-		private DateTime? fecha;
-		public virtual DateTime? Fecha
-		{
-			get
-			{
-				return this.fecha;
-			}
-			set
-			{
-				this.fecha = value;
-			}
-		}
-		
-		private string detalle;
-		public virtual string Detalle
-		{
-			get
-			{
-				return this.detalle;
-			}
-			set
-			{
-				this.detalle = value;
-			}
-		}
-		
-		private int? idTematica;
-		public virtual int? IdTematica
-		{
-			get
-			{
-				return this.idTematica;
-			}
-			set
-			{
-				this.idTematica = value;
-			}
-		}
-		
-		private int? idViaComunicacion;
-		public virtual int? IdViaComunicacion
-		{
-			get
-			{
-				return this.idViaComunicacion;
-			}
-			set
-			{
-				this.idViaComunicacion = value;
-			}
-		}
-		
-		private int? idPersona;
-		public virtual int? IdPersona
+		private int idPersona;
+		public virtual int IdPersona
 		{
 			get
 			{
@@ -102,29 +50,16 @@ namespace CapaDominio
 			}
 		}
 		
-		private Tematica tematica;
-		public virtual Tematica Tematica
+		private string correoElectronico1;
+		public virtual string CorreoElectronico1
 		{
 			get
 			{
-				return this.tematica;
+				return this.correoElectronico1;
 			}
 			set
 			{
-				this.tematica = value;
-			}
-		}
-		
-		private ViaComunicacion viaComunicacion;
-		public virtual ViaComunicacion ViaComunicacion
-		{
-			get
-			{
-				return this.viaComunicacion;
-			}
-			set
-			{
-				this.viaComunicacion = value;
+				this.correoElectronico1 = value;
 			}
 		}
 		

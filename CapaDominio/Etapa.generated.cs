@@ -22,62 +22,96 @@ using CapaDominio;
 
 namespace CapaDominio	
 {
-	public partial class Localidad
+	public partial class Etapa
 	{
-		private int idLocalidad;
-		public virtual int IdLocalidad
+		private int idEtapa;
+		public virtual int IdEtapa
 		{
 			get
 			{
-				return this.idLocalidad;
+				return this.idEtapa;
 			}
 			set
 			{
-				this.idLocalidad = value;
+				this.idEtapa = value;
 			}
 		}
 		
-		private string nombre;
-		public virtual string Nombre
+		private int? idProyecto;
+		public virtual int? IdProyecto
 		{
 			get
 			{
-				return this.nombre;
+				return this.idProyecto;
 			}
 			set
 			{
-				this.nombre = value;
+				this.idProyecto = value;
 			}
 		}
 		
-		private int? codigoPostal;
-		public virtual int? CodigoPostal
+		private int? numero;
+		public virtual int? Numero
 		{
 			get
 			{
-				return this.codigoPostal;
+				return this.numero;
 			}
 			set
 			{
-				this.codigoPostal = value;
+				this.numero = value;
 			}
 		}
 		
-		private IList<Persona> personas = new List<Persona>();
-		public virtual IList<Persona> Personas
+		private DateTime? fechaInicio;
+		public virtual DateTime? FechaInicio
 		{
 			get
 			{
-				return this.personas;
+				return this.fechaInicio;
+			}
+			set
+			{
+				this.fechaInicio = value;
 			}
 		}
 		
-		private IList<Proyecto> proyectos = new List<Proyecto>();
-		public virtual IList<Proyecto> Proyectos
+		private DateTime? fechaFin;
+		public virtual DateTime? FechaFin
 		{
 			get
 			{
-				return this.proyectos;
+				return this.fechaFin;
+			}
+			set
+			{
+				this.fechaFin = value;
+			}
+		}
+		
+		private decimal? montoEtapa;
+		public virtual decimal? MontoEtapa
+		{
+			get
+			{
+				return this.montoEtapa;
+			}
+			set
+			{
+				this.montoEtapa = value;
+			}
+		}
+		
+		private Proyecto proyecto;
+		public virtual Proyecto Proyecto
+		{
+			get
+			{
+				return this.proyecto;
+			}
+			set
+			{
+				this.proyecto = value;
 			}
 		}
 		

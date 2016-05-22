@@ -22,18 +22,18 @@ using CapaDominio;
 
 namespace CapaDominio	
 {
-	public partial class Localidad
+	public partial class Estado
 	{
-		private int idLocalidad;
-		public virtual int IdLocalidad
+		private int idEstado;
+		public virtual int IdEstado
 		{
 			get
 			{
-				return this.idLocalidad;
+				return this.idEstado;
 			}
 			set
 			{
-				this.idLocalidad = value;
+				this.idEstado = value;
 			}
 		}
 		
@@ -47,28 +47,6 @@ namespace CapaDominio
 			set
 			{
 				this.nombre = value;
-			}
-		}
-		
-		private int? codigoPostal;
-		public virtual int? CodigoPostal
-		{
-			get
-			{
-				return this.codigoPostal;
-			}
-			set
-			{
-				this.codigoPostal = value;
-			}
-		}
-		
-		private IList<Persona> personas = new List<Persona>();
-		public virtual IList<Persona> Personas
-		{
-			get
-			{
-				return this.personas;
 			}
 		}
 		

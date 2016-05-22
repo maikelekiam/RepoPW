@@ -90,6 +90,110 @@ namespace CapaDominio
 			}
 		}
 		
+		public IQueryable<Uvt> Uvts 
+		{
+			get
+			{
+				return this.GetAll<Uvt>();
+			}
+		}
+		
+		public IQueryable<TipoFinanciamiento> TipoFinanciamientos 
+		{
+			get
+			{
+				return this.GetAll<TipoFinanciamiento>();
+			}
+		}
+		
+		public IQueryable<TipoDestinatario> TipoDestinatarios 
+		{
+			get
+			{
+				return this.GetAll<TipoDestinatario>();
+			}
+		}
+		
+		public IQueryable<Telefono> Telefonos 
+		{
+			get
+			{
+				return this.GetAll<Telefono>();
+			}
+		}
+		
+		public IQueryable<Proyecto> Proyectos 
+		{
+			get
+			{
+				return this.GetAll<Proyecto>();
+			}
+		}
+		
+		public IQueryable<Origen> Origens 
+		{
+			get
+			{
+				return this.GetAll<Origen>();
+			}
+		}
+		
+		public IQueryable<Modalidad> Modalidads 
+		{
+			get
+			{
+				return this.GetAll<Modalidad>();
+			}
+		}
+		
+		public IQueryable<Fondo> Fondos 
+		{
+			get
+			{
+				return this.GetAll<Fondo>();
+			}
+		}
+		
+		public IQueryable<Etapa> Etapas 
+		{
+			get
+			{
+				return this.GetAll<Etapa>();
+			}
+		}
+		
+		public IQueryable<Estado> Estados 
+		{
+			get
+			{
+				return this.GetAll<Estado>();
+			}
+		}
+		
+		public IQueryable<CorreoElectronico> CorreoElectronicos 
+		{
+			get
+			{
+				return this.GetAll<CorreoElectronico>();
+			}
+		}
+		
+		public IQueryable<Convocatorium> Convocatoria 
+		{
+			get
+			{
+				return this.GetAll<Convocatorium>();
+			}
+		}
+		
+		public IQueryable<AreaProductiva> AreaProductivas 
+		{
+			get
+			{
+				return this.GetAll<AreaProductiva>();
+			}
+		}
+		
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
@@ -128,6 +232,58 @@ namespace CapaDominio
 			get;
 		}
 		IQueryable<Actuacion> Actuacions
+		{
+			get;
+		}
+		IQueryable<Uvt> Uvts
+		{
+			get;
+		}
+		IQueryable<TipoFinanciamiento> TipoFinanciamientos
+		{
+			get;
+		}
+		IQueryable<TipoDestinatario> TipoDestinatarios
+		{
+			get;
+		}
+		IQueryable<Telefono> Telefonos
+		{
+			get;
+		}
+		IQueryable<Proyecto> Proyectos
+		{
+			get;
+		}
+		IQueryable<Origen> Origens
+		{
+			get;
+		}
+		IQueryable<Modalidad> Modalidads
+		{
+			get;
+		}
+		IQueryable<Fondo> Fondos
+		{
+			get;
+		}
+		IQueryable<Etapa> Etapas
+		{
+			get;
+		}
+		IQueryable<Estado> Estados
+		{
+			get;
+		}
+		IQueryable<CorreoElectronico> CorreoElectronicos
+		{
+			get;
+		}
+		IQueryable<Convocatorium> Convocatoria
+		{
+			get;
+		}
+		IQueryable<AreaProductiva> AreaProductivas
 		{
 			get;
 		}

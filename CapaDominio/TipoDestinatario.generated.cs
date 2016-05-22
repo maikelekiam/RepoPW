@@ -22,18 +22,18 @@ using CapaDominio;
 
 namespace CapaDominio	
 {
-	public partial class Localidad
+	public partial class TipoDestinatario
 	{
-		private int idLocalidad;
-		public virtual int IdLocalidad
+		private int idTipoDestinatario;
+		public virtual int IdTipoDestinatario
 		{
 			get
 			{
-				return this.idLocalidad;
+				return this.idTipoDestinatario;
 			}
 			set
 			{
-				this.idLocalidad = value;
+				this.idTipoDestinatario = value;
 			}
 		}
 		
@@ -50,34 +50,12 @@ namespace CapaDominio
 			}
 		}
 		
-		private int? codigoPostal;
-		public virtual int? CodigoPostal
+		private IList<Convocatorium> convocatoria = new List<Convocatorium>();
+		public virtual IList<Convocatorium> Convocatoria
 		{
 			get
 			{
-				return this.codigoPostal;
-			}
-			set
-			{
-				this.codigoPostal = value;
-			}
-		}
-		
-		private IList<Persona> personas = new List<Persona>();
-		public virtual IList<Persona> Personas
-		{
-			get
-			{
-				return this.personas;
-			}
-		}
-		
-		private IList<Proyecto> proyectos = new List<Proyecto>();
-		public virtual IList<Proyecto> Proyectos
-		{
-			get
-			{
-				return this.proyectos;
+				return this.convocatoria;
 			}
 		}
 		

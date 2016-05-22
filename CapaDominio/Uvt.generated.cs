@@ -22,44 +22,44 @@ using CapaDominio;
 
 namespace CapaDominio	
 {
-	public partial class Localidad
+	public partial class Uvt
 	{
-		private int idLocalidad;
-		public virtual int IdLocalidad
+		private int idUvt;
+		public virtual int IdUvt
 		{
 			get
 			{
-				return this.idLocalidad;
+				return this.idUvt;
 			}
 			set
 			{
-				this.idLocalidad = value;
+				this.idUvt = value;
 			}
 		}
 		
-		private string nombre;
-		public virtual string Nombre
+		private string nombreUvt;
+		public virtual string NombreUvt
 		{
 			get
 			{
-				return this.nombre;
+				return this.nombreUvt;
 			}
 			set
 			{
-				this.nombre = value;
+				this.nombreUvt = value;
 			}
 		}
 		
-		private int? codigoPostal;
-		public virtual int? CodigoPostal
+		private string direccion;
+		public virtual string Direccion
 		{
 			get
 			{
-				return this.codigoPostal;
+				return this.direccion;
 			}
 			set
 			{
-				this.codigoPostal = value;
+				this.direccion = value;
 			}
 		}
 		
