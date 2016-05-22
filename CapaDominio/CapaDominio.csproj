@@ -64,11 +64,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
-    <Compile Include="EntitiesModel1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntitiesModel1.rlinq</DependentUpon>
-    </Compile>
     <Compile Include="Estado.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
@@ -124,13 +119,6 @@
     <None Include="EntitiesModel.rlinq.diagram">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </None>
-    <None Include="EntitiesModel1.rlinq.diagram">
-      <DependentUpon>EntitiesModel1.rlinq</DependentUpon>
-    </None>
-    <OpenAccessDeploy Include="EntitiesModel1.rlinq">
-      <Generator>MetaModelCodeGenerator</Generator>
-      <LastGenOutput>EntitiesModel1.cs</LastGenOutput>
-    </OpenAccessDeploy>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Conn%282016-05-22 13-13-40%29.rlinq.sql" />
