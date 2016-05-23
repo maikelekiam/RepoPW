@@ -88,19 +88,37 @@
                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary form-control" OnClick="btnGuardar_Click" />
                 </div>
             </div>
-
-
-            <!--GRILLA CON LAS PERSONAS DE LA BASE DE DATOS-->
+            <!--GRILLA CON LAS ACTUACIONES DE LA PERSONA ELEGIDA-->
+            <h3>TABLA DE ACTUACIONES</h3>
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
-                    <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvPersona_SelectedIndexChanged"
+                    <asp:GridView ID="dgvActuacion" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvActuacion_SelectedIndexChanged"
                         CssClass="table table-hover table-bordered" BorderWidth="4px">
                         <Columns>
-                            <asp:CommandField ButtonType="Button" ShowSelectButton="true" />
-                            <asp:BoundField HeaderText="Id" DataField="idPersona" Visible="true" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Apellido" DataField="apellido" ItemStyle-HorizontalAlign="Center" />
+                            <asp:CommandField HeaderText="ACTUACIONES" HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowSelectButton="true" />
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Id" DataField="idActuacion" Visible="true" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Fecha de la Actuacion" DataField="fecha"
+                                DataFormatString="{0:d}" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Detalle" DataField="detalle" ItemStyle-HorizontalAlign="Center" />
                         </Columns>
+                        <SelectedRowStyle BackColor="Azure" />
+                    </asp:GridView>
+                </div>
+            </div>
+
+            <!--GRILLA CON LAS PERSONAS DE LA BASE DE DATOS-->
+            <h3>TABLA DE PERSONAS</h3>
+            <div class="form-group">
+                <div class="col-md-9 col-md-offset-1">
+                    <asp:GridView ID="dgvPersona" HeaderStyle-Font-Bold="true" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvPersona_SelectedIndexChanged"
+                        CssClass="table table-hover table-bordered" BorderWidth="4px">
+                        <Columns>
+                            <asp:CommandField HeaderText="PERSONAS" HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowSelectButton="true" />
+                            <asp:BoundField HeaderText="Id" HeaderStyle-BackColor="#cccccc" DataField="idPersona" Visible="true" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Nombre" HeaderStyle-BackColor="#cccccc" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Apellido" HeaderStyle-BackColor="#cccccc" DataField="apellido" ItemStyle-HorizontalAlign="Center" />
+                        </Columns>
+
                         <SelectedRowStyle BackColor="Azure" />
                     </asp:GridView>
                 </div>

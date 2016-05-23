@@ -15,12 +15,8 @@ namespace CapaRepositorio
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
                 modeloDeDominio.Add(actuacion);
-
-                
-                
                 modeloDeDominio.SaveChanges();
             }
-
         }
 
         // METODO PARA MOSTRAR LAS ACTUACIONES
@@ -57,6 +53,15 @@ namespace CapaRepositorio
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
                 IEnumerable<Persona> result = modeloDeDominio.Personas.ToList();
+
+                return modeloDeDominio.CreateDetachedCopy(result);
+            }
+        }
+        public IEnumerable<Actuacion> MostrarActuacionSegunPersona(Int32 id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<Actuacion> result = modeloDeDominio.Actuacions.Where(c => c.IdPersona == id).ToList();
 
                 return modeloDeDominio.CreateDetachedCopy(result);
             }

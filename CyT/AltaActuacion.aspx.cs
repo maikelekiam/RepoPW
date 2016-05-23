@@ -21,6 +21,7 @@ namespace CyT
                 MostrarViaComunicacion(); //SIRVE PARA CARGAR DATOS EN EL DROPDOWNLIST
                 MostrarTematica(); //SIRVE PARA CARGAR DATOS EN EL DROPDOWNLIST
                 MostrarPersona(); //SIRVE PARA LA GRILLA
+                //MostrarActuacionSegunPersona(); //CARGA LA GRILLA CON LAS ACTUACIONES SEGUN LA PERSONA ELEGIDA 
             }
         }
 
@@ -61,17 +62,25 @@ namespace CyT
 
             actuacionNego.GuardarActuacion(actuacion);
 
-            //MostrarActuacion(); // seria un metodo para mostrar todas las actuaciones de la persona
+
+
         }
 
         protected void dgvPersona_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblPersonaSeleccionada.Text = dgvPersona.SelectedRow.Cells[2].Text + " " + dgvPersona.SelectedRow.Cells[3].Text;
             lblIdSeleccionado.Text = dgvPersona.SelectedRow.Cells[1].Text;
+            MostrarActuacionSegunPersona();
         }
 
+        protected void dgvActuacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
 
-
-
+        private void MostrarActuacionSegunPersona()
+        {
+            dgvActuacion.DataSource = actuacionNego.MostrarActuacionSegunPersona(Convert.ToInt32(dgvPersona.SelectedRow.Cells[1].Text)).ToList();
+            dgvActuacion.DataBind();
+        }
     }
 }
