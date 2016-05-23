@@ -167,6 +167,7 @@
     <Content Include="css\bootstrap-datepicker.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="imagenes\Boton-editar.png" />
     <Content Include="js\bootstrap-datepicker.js" />
     <Content Include="js\bootstrap-hover-dropdown.js" />
     <Content Include="js\bootstrap.js" />

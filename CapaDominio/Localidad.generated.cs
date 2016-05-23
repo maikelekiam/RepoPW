@@ -72,6 +72,15 @@ namespace CapaDominio
 			}
 		}
 		
+		private IList<Proyecto> proyectos = new List<Proyecto>();
+		public virtual IList<Proyecto> Proyectos
+		{
+			get
+			{
+				return this.proyectos;
+			}
+		}
+		
 	}
 }
 #pragma warning restore 1591

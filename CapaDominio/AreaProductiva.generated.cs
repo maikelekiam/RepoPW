@@ -50,29 +50,12 @@ namespace CapaDominio
 			}
 		}
 		
-		private int? idProyecto;
-		public virtual int? IdProyecto
+		private IList<Proyecto> proyectos = new List<Proyecto>();
+		public virtual IList<Proyecto> Proyectos
 		{
 			get
 			{
-				return this.idProyecto;
-			}
-			set
-			{
-				this.idProyecto = value;
-			}
-		}
-		
-		private Proyecto proyecto;
-		public virtual Proyecto Proyecto
-		{
-			get
-			{
-				return this.proyecto;
-			}
-			set
-			{
-				this.proyecto = value;
+				return this.proyectos;
 			}
 		}
 		

@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActuacionNego.cs" />
     <Compile Include="PersonaNego.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

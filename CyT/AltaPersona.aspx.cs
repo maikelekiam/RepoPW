@@ -19,7 +19,7 @@ namespace CyT
 
                 MostrarLocalidad(); //SIRVE PARA EL DROP DOWN LIST
                 MostrarPersona(); //SIRVE PARA LA GRILLA
-                MostrarTelefono(); //SIRVE PARA LA GRILLA
+                //MostrarTelefono(); //SIRVE PARA LA GRILLA
                 //MostrarCorreoElectronico(); //SIRVE PARA LA GRILLA
             }
         }
@@ -49,8 +49,8 @@ namespace CyT
 
             Persona persona = new Persona();
 
-            Telefono telefono = new Telefono();
-            CorreoElectronico correoElectronico = new CorreoElectronico();
+            //Telefono telefono = new Telefono();
+            //CorreoElectronico correoElectronico = new CorreoElectronico();
 
 
             persona.Nombre = txtNombre.Text;
@@ -62,13 +62,13 @@ namespace CyT
             persona.Direccion = txtDireccion.Text;
             persona.IdLocalidad = Convert.ToInt32(ddlLocalidad.SelectedIndex.ToString());
 
-            telefono.NumeroTelefono = txtTelefono.Text;
-            telefono.IdPersona = persona.IdPersona;
+            //telefono.Telefono1 = txtTelefono.Text;
+            //telefono.IdPersona = persona.IdPersona;
 
 
 
 
-            personaNego.GuardarTelefono(telefono);
+            //personaNego.GuardarTelefono(telefono);
 
             personaNego.GuardarPersona(persona);
 

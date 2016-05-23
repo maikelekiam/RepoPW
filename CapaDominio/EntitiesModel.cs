@@ -90,27 +90,35 @@ namespace CapaDominio
 			}
 		}
 		
-		public IQueryable<Telefono> Telefonos 
-		{
-			get
-			{
-				return this.GetAll<Telefono>();
-			}
-		}
-		
-		public IQueryable<CorreoElectronico> CorreoElectronicos 
-		{
-			get
-			{
-				return this.GetAll<CorreoElectronico>();
-			}
-		}
-		
 		public IQueryable<Uvt> Uvts 
 		{
 			get
 			{
 				return this.GetAll<Uvt>();
+			}
+		}
+		
+		public IQueryable<TipoFinanciamiento> TipoFinanciamientos 
+		{
+			get
+			{
+				return this.GetAll<TipoFinanciamiento>();
+			}
+		}
+		
+		public IQueryable<TipoDestinatario> TipoDestinatarios 
+		{
+			get
+			{
+				return this.GetAll<TipoDestinatario>();
+			}
+		}
+		
+		public IQueryable<Telefono> Telefonos 
+		{
+			get
+			{
+				return this.GetAll<Telefono>();
 			}
 		}
 		
@@ -122,11 +130,59 @@ namespace CapaDominio
 			}
 		}
 		
+		public IQueryable<Origen> Origens 
+		{
+			get
+			{
+				return this.GetAll<Origen>();
+			}
+		}
+		
+		public IQueryable<Modalidad> Modalidads 
+		{
+			get
+			{
+				return this.GetAll<Modalidad>();
+			}
+		}
+		
+		public IQueryable<Fondo> Fondos 
+		{
+			get
+			{
+				return this.GetAll<Fondo>();
+			}
+		}
+		
+		public IQueryable<Etapa> Etapas 
+		{
+			get
+			{
+				return this.GetAll<Etapa>();
+			}
+		}
+		
 		public IQueryable<Estado> Estados 
 		{
 			get
 			{
 				return this.GetAll<Estado>();
+			}
+		}
+		
+		public IQueryable<CorreoElectronico> CorreoElectronicos 
+		{
+			get
+			{
+				return this.GetAll<CorreoElectronico>();
+			}
+		}
+		
+		public IQueryable<Convocatorium> Convocatoria 
+		{
+			get
+			{
+				return this.GetAll<Convocatorium>();
 			}
 		}
 		
@@ -179,15 +235,19 @@ namespace CapaDominio
 		{
 			get;
 		}
-		IQueryable<Telefono> Telefonos
-		{
-			get;
-		}
-		IQueryable<CorreoElectronico> CorreoElectronicos
-		{
-			get;
-		}
 		IQueryable<Uvt> Uvts
+		{
+			get;
+		}
+		IQueryable<TipoFinanciamiento> TipoFinanciamientos
+		{
+			get;
+		}
+		IQueryable<TipoDestinatario> TipoDestinatarios
+		{
+			get;
+		}
+		IQueryable<Telefono> Telefonos
 		{
 			get;
 		}
@@ -195,7 +255,31 @@ namespace CapaDominio
 		{
 			get;
 		}
+		IQueryable<Origen> Origens
+		{
+			get;
+		}
+		IQueryable<Modalidad> Modalidads
+		{
+			get;
+		}
+		IQueryable<Fondo> Fondos
+		{
+			get;
+		}
+		IQueryable<Etapa> Etapas
+		{
+			get;
+		}
 		IQueryable<Estado> Estados
+		{
+			get;
+		}
+		IQueryable<CorreoElectronico> CorreoElectronicos
+		{
+			get;
+		}
+		IQueryable<Convocatorium> Convocatoria
 		{
 			get;
 		}

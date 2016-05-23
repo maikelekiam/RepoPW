@@ -22,62 +22,79 @@ using CapaDominio;
 
 namespace CapaDominio	
 {
-	public partial class Uvt
+	public partial class Fondo
 	{
-		private int idUvt;
-		public virtual int IdUvt
+		private int idFondo;
+		public virtual int IdFondo
 		{
 			get
 			{
-				return this.idUvt;
+				return this.idFondo;
 			}
 			set
 			{
-				this.idUvt = value;
+				this.idFondo = value;
 			}
 		}
 		
-		private string nombreUvt;
-		public virtual string NombreUvt
+		private string nombre;
+		public virtual string Nombre
 		{
 			get
 			{
-				return this.nombreUvt;
+				return this.nombre;
 			}
 			set
 			{
-				this.nombreUvt = value;
+				this.nombre = value;
 			}
 		}
 		
-		private string direccion;
-		public virtual string Direccion
+		private string descripcion;
+		public virtual string Descripcion
 		{
 			get
 			{
-				return this.direccion;
+				return this.descripcion;
 			}
 			set
 			{
-				this.direccion = value;
+				this.descripcion = value;
 			}
 		}
 		
-		private IList<Persona> personas = new List<Persona>();
-		public virtual IList<Persona> Personas
+		private int? idOrigen;
+		public virtual int? IdOrigen
 		{
 			get
 			{
-				return this.personas;
+				return this.idOrigen;
+			}
+			set
+			{
+				this.idOrigen = value;
 			}
 		}
 		
-		private IList<Proyecto> proyectos = new List<Proyecto>();
-		public virtual IList<Proyecto> Proyectos
+		private Origen origen;
+		public virtual Origen Origen
 		{
 			get
 			{
-				return this.proyectos;
+				return this.origen;
+			}
+			set
+			{
+				this.origen = value;
+			}
+		}
+		
+		private IList<Convocatorium> convocatoria = new List<Convocatorium>();
+		public virtual IList<Convocatorium> Convocatoria
+		{
+			get
+			{
+				return this.convocatoria;
 			}
 		}
 		

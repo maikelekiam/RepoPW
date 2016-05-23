@@ -91,7 +91,7 @@
                     <asp:GridView ID="dgvTelefono" runat="server" AutoGenerateColumns="false"
                         CssClass="table table-hover table-bordered" BorderWidth="4px">
                         <Columns>
-                            <asp:BoundField HeaderText="Telefono" DataField="numeroTelefono" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Telefono" DataField="telefono" ItemStyle-HorizontalAlign="Center" />
                         </Columns>
                     </asp:GridView>
                 </div>

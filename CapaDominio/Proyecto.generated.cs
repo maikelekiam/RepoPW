@@ -37,16 +37,16 @@ namespace CapaDominio
 			}
 		}
 		
-		private string numeroExpediente;
-		public virtual string NumeroExpediente
+		private string numeroExp;
+		public virtual string NumeroExp
 		{
 			get
 			{
-				return this.numeroExpediente;
+				return this.numeroExp;
 			}
 			set
 			{
-				this.numeroExpediente = value;
+				this.numeroExp = value;
 			}
 		}
 		
@@ -63,29 +63,16 @@ namespace CapaDominio
 			}
 		}
 		
-		private float? montoSolicitado;
-		public virtual float? MontoSolicitado
+		private int? idConvocatoria;
+		public virtual int? IdConvocatoria
 		{
 			get
 			{
-				return this.montoSolicitado;
+				return this.idConvocatoria;
 			}
 			set
 			{
-				this.montoSolicitado = value;
-			}
-		}
-		
-		private float? montoContraparte;
-		public virtual float? MontoContraparte
-		{
-			get
-			{
-				return this.montoContraparte;
-			}
-			set
-			{
-				this.montoContraparte = value;
+				this.idConvocatoria = value;
 			}
 		}
 		
@@ -102,16 +89,16 @@ namespace CapaDominio
 			}
 		}
 		
-		private int? idConvocatoria;
-		public virtual int? IdConvocatoria
+		private int? idAreaProductiva;
+		public virtual int? IdAreaProductiva
 		{
 			get
 			{
-				return this.idConvocatoria;
+				return this.idAreaProductiva;
 			}
 			set
 			{
-				this.idConvocatoria = value;
+				this.idAreaProductiva = value;
 			}
 		}
 		
@@ -125,6 +112,32 @@ namespace CapaDominio
 			set
 			{
 				this.idEstado = value;
+			}
+		}
+		
+		private decimal? montoSolicitado;
+		public virtual decimal? MontoSolicitado
+		{
+			get
+			{
+				return this.montoSolicitado;
+			}
+			set
+			{
+				this.montoSolicitado = value;
+			}
+		}
+		
+		private decimal? montoContraparte;
+		public virtual decimal? MontoContraparte
+		{
+			get
+			{
+				return this.montoContraparte;
+			}
+			set
+			{
+				this.montoContraparte = value;
 			}
 		}
 		
@@ -154,12 +167,56 @@ namespace CapaDominio
 			}
 		}
 		
-		private IList<AreaProductiva> areaProductivas = new List<AreaProductiva>();
-		public virtual IList<AreaProductiva> AreaProductivas
+		private Convocatorium convocatorium;
+		public virtual Convocatorium Convocatorium
 		{
 			get
 			{
-				return this.areaProductivas;
+				return this.convocatorium;
+			}
+			set
+			{
+				this.convocatorium = value;
+			}
+		}
+		
+		private AreaProductiva areaProductiva;
+		public virtual AreaProductiva AreaProductiva
+		{
+			get
+			{
+				return this.areaProductiva;
+			}
+			set
+			{
+				this.areaProductiva = value;
+			}
+		}
+		
+		private IList<Localidad> localidads = new List<Localidad>();
+		public virtual IList<Localidad> Localidads
+		{
+			get
+			{
+				return this.localidads;
+			}
+		}
+		
+		private IList<Persona> personas = new List<Persona>();
+		public virtual IList<Persona> Personas
+		{
+			get
+			{
+				return this.personas;
+			}
+		}
+		
+		private IList<Etapa> etapas = new List<Etapa>();
+		public virtual IList<Etapa> Etapas
+		{
+			get
+			{
+				return this.etapas;
 			}
 		}
 		

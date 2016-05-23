@@ -22,6 +22,42 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
+        /// lblPersona control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPersona;
+        
+        /// <summary>
+        /// lblPersonaSeleccionada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPersonaSeleccionada;
+        
+        /// <summary>
+        /// lblId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblId;
+        
+        /// <summary>
+        /// lblIdSeleccionado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdSeleccionado;
+        
+        /// <summary>
         /// lblFechaActuacion control.
         /// </summary>
         /// <remarks>
@@ -58,6 +94,24 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.DropDownList ddlViaComunicacion;
         
         /// <summary>
+        /// lblNuevaViaComunicacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNuevaViaComunicacion;
+        
+        /// <summary>
+        /// txtNuevaViaComunicacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNuevaViaComunicacion;
+        
+        /// <summary>
         /// lblTematica control.
         /// </summary>
         /// <remarks>
@@ -76,6 +130,24 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.DropDownList ddlTematica;
         
         /// <summary>
+        /// lblNuevaTematica control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNuevaTematica;
+        
+        /// <summary>
+        /// txtNuevaTematica control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNuevaTematica;
+        
+        /// <summary>
         /// lblDetalle control.
         /// </summary>
         /// <remarks>
@@ -92,5 +164,23 @@ namespace CyT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDetalle;
+        
+        /// <summary>
+        /// btnGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
+        
+        /// <summary>
+        /// dgvPersona control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dgvPersona;
     }
 }

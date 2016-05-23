@@ -18,6 +18,7 @@ using Telerik.OpenAccess.Metadata;
 using Telerik.OpenAccess.Data.Common;
 using Telerik.OpenAccess.Metadata.Fluent;
 using Telerik.OpenAccess.Metadata.Fluent.Advanced;
+using CapaDominio;
 
 namespace CapaDominio	
 {
@@ -36,8 +37,8 @@ namespace CapaDominio
 			}
 		}
 		
-		private int? idPersona;
-		public virtual int? IdPersona
+		private int idPersona;
+		public virtual int IdPersona
 		{
 			get
 			{
@@ -49,16 +50,29 @@ namespace CapaDominio
 			}
 		}
 		
-		private string numeroTelefono;
-		public virtual string NumeroTelefono
+		private string telefono1;
+		public virtual string Telefono1
 		{
 			get
 			{
-				return this.numeroTelefono;
+				return this.telefono1;
 			}
 			set
 			{
-				this.numeroTelefono = value;
+				this.telefono1 = value;
+			}
+		}
+		
+		private Persona persona;
+		public virtual Persona Persona
+		{
+			get
+			{
+				return this.persona;
+			}
+			set
+			{
+				this.persona = value;
 			}
 		}
 		

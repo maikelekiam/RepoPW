@@ -22,62 +22,40 @@ using CapaDominio;
 
 namespace CapaDominio	
 {
-	public partial class Uvt
+	public partial class Modalidad
 	{
-		private int idUvt;
-		public virtual int IdUvt
+		private int idModalidad;
+		public virtual int IdModalidad
 		{
 			get
 			{
-				return this.idUvt;
+				return this.idModalidad;
 			}
 			set
 			{
-				this.idUvt = value;
+				this.idModalidad = value;
 			}
 		}
 		
-		private string nombreUvt;
-		public virtual string NombreUvt
+		private string nombre;
+		public virtual string Nombre
 		{
 			get
 			{
-				return this.nombreUvt;
+				return this.nombre;
 			}
 			set
 			{
-				this.nombreUvt = value;
+				this.nombre = value;
 			}
 		}
 		
-		private string direccion;
-		public virtual string Direccion
+		private IList<Convocatorium> convocatoria = new List<Convocatorium>();
+		public virtual IList<Convocatorium> Convocatoria
 		{
 			get
 			{
-				return this.direccion;
-			}
-			set
-			{
-				this.direccion = value;
-			}
-		}
-		
-		private IList<Persona> personas = new List<Persona>();
-		public virtual IList<Persona> Personas
-		{
-			get
-			{
-				return this.personas;
-			}
-		}
-		
-		private IList<Proyecto> proyectos = new List<Proyecto>();
-		public virtual IList<Proyecto> Proyectos
-		{
-			get
-			{
-				return this.proyectos;
+				return this.convocatoria;
 			}
 		}
 		

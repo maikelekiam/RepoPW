@@ -206,6 +206,24 @@ namespace CapaDominio
 			}
 		}
 		
+		private IList<Actuacion> actuacions = new List<Actuacion>();
+		public virtual IList<Actuacion> Actuacions
+		{
+			get
+			{
+				return this.actuacions;
+			}
+		}
+		
+		private IList<Telefono> telefonos = new List<Telefono>();
+		public virtual IList<Telefono> Telefonos
+		{
+			get
+			{
+				return this.telefonos;
+			}
+		}
+		
 		private IList<CorreoElectronico> correoElectronicos = new List<CorreoElectronico>();
 		public virtual IList<CorreoElectronico> CorreoElectronicos
 		{
@@ -221,6 +239,15 @@ namespace CapaDominio
 			get
 			{
 				return this.uvts;
+			}
+		}
+		
+		private IList<Proyecto> proyectos = new List<Proyecto>();
+		public virtual IList<Proyecto> Proyectos
+		{
+			get
+			{
+				return this.proyectos;
 			}
 		}
 		

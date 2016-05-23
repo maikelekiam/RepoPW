@@ -37,8 +37,8 @@ namespace CapaDominio
 			}
 		}
 		
-		private int? idPersona;
-		public virtual int? IdPersona
+		private int idPersona;
+		public virtual int IdPersona
 		{
 			get
 			{
@@ -50,16 +50,16 @@ namespace CapaDominio
 			}
 		}
 		
-		private string nombreCorreoElectronico;
-		public virtual string NombreCorreoElectronico
+		private string correoElectronico1;
+		public virtual string CorreoElectronico1
 		{
 			get
 			{
-				return this.nombreCorreoElectronico;
+				return this.correoElectronico1;
 			}
 			set
 			{
-				this.nombreCorreoElectronico = value;
+				this.correoElectronico1 = value;
 			}
 		}
 		

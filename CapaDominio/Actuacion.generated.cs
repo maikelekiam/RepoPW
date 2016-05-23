@@ -89,6 +89,19 @@ namespace CapaDominio
 			}
 		}
 		
+		private int? idPersona;
+		public virtual int? IdPersona
+		{
+			get
+			{
+				return this.idPersona;
+			}
+			set
+			{
+				this.idPersona = value;
+			}
+		}
+		
 		private Tematica tematica;
 		public virtual Tematica Tematica
 		{
@@ -112,6 +125,19 @@ namespace CapaDominio
 			set
 			{
 				this.viaComunicacion = value;
+			}
+		}
+		
+		private Persona persona;
+		public virtual Persona Persona
+		{
+			get
+			{
+				return this.persona;
+			}
+			set
+			{
+				this.persona = value;
 			}
 		}
 		
