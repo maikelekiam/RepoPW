@@ -21,7 +21,6 @@ namespace CyT
                 MostrarViaComunicacion(); //SIRVE PARA CARGAR DATOS EN EL DROPDOWNLIST
                 MostrarTematica(); //SIRVE PARA CARGAR DATOS EN EL DROPDOWNLIST
                 MostrarPersona(); //SIRVE PARA LA GRILLA
-                //MostrarActuacionSegunPersona(); //CARGA LA GRILLA CON LAS ACTUACIONES SEGUN LA PERSONA ELEGIDA 
             }
         }
 
