@@ -141,42 +141,16 @@ namespace CapaDominio
 			}
 		}
 		
-		private Uvt uvt;
-		public virtual Uvt Uvt
+		private bool? activo;
+		public virtual bool? Activo
 		{
 			get
 			{
-				return this.uvt;
+				return this.activo;
 			}
 			set
 			{
-				this.uvt = value;
-			}
-		}
-		
-		private Estado estado;
-		public virtual Estado Estado
-		{
-			get
-			{
-				return this.estado;
-			}
-			set
-			{
-				this.estado = value;
-			}
-		}
-		
-		private Convocatorium convocatorium;
-		public virtual Convocatorium Convocatorium
-		{
-			get
-			{
-				return this.convocatorium;
-			}
-			set
-			{
-				this.convocatorium = value;
+				this.activo = value;
 			}
 		}
 		
@@ -193,21 +167,60 @@ namespace CapaDominio
 			}
 		}
 		
-		private IList<Localidad> localidads = new List<Localidad>();
-		public virtual IList<Localidad> Localidads
+		private Convocatorium convocatorium;
+		public virtual Convocatorium Convocatorium
 		{
 			get
 			{
-				return this.localidads;
+				return this.convocatorium;
+			}
+			set
+			{
+				this.convocatorium = value;
 			}
 		}
 		
-		private IList<Persona> personas = new List<Persona>();
-		public virtual IList<Persona> Personas
+		private Estado estado;
+		public virtual Estado Estado
 		{
 			get
 			{
-				return this.personas;
+				return this.estado;
+			}
+			set
+			{
+				this.estado = value;
+			}
+		}
+		
+		private Uvt uvt;
+		public virtual Uvt Uvt
+		{
+			get
+			{
+				return this.uvt;
+			}
+			set
+			{
+				this.uvt = value;
+			}
+		}
+		
+		private IList<LocalidadImpacto> localidadImpactos = new List<LocalidadImpacto>();
+		public virtual IList<LocalidadImpacto> LocalidadImpactos
+		{
+			get
+			{
+				return this.localidadImpactos;
+			}
+		}
+		
+		private IList<Integrante> integrantes = new List<Integrante>();
+		public virtual IList<Integrante> Integrantes
+		{
+			get
+			{
+				return this.integrantes;
 			}
 		}
 		

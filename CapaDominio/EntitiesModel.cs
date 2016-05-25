@@ -24,7 +24,7 @@ namespace CapaDominio
 {
 	public partial class ModeloDeDominio : OpenAccessContext, IModeloDeDominioUnitOfWork
 	{
-		private static string connectionStringName = @"Conn";
+		private static string connectionStringName = @"CyTConnection";
 			
 		private static BackendConfiguration backend = GetBackendConfiguration();
 				
@@ -58,35 +58,11 @@ namespace CapaDominio
 			}
 		}
 		
-		public IQueryable<Tematica> Tematicas 
+		public IQueryable<UvtReferente> UvtReferentes 
 		{
 			get
 			{
-				return this.GetAll<Tematica>();
-			}
-		}
-		
-		public IQueryable<Persona> Personas 
-		{
-			get
-			{
-				return this.GetAll<Persona>();
-			}
-		}
-		
-		public IQueryable<Localidad> Localidads 
-		{
-			get
-			{
-				return this.GetAll<Localidad>();
-			}
-		}
-		
-		public IQueryable<Actuacion> Actuacions 
-		{
-			get
-			{
-				return this.GetAll<Actuacion>();
+				return this.GetAll<UvtReferente>();
 			}
 		}
 		
@@ -114,6 +90,14 @@ namespace CapaDominio
 			}
 		}
 		
+		public IQueryable<Tematica> Tematicas 
+		{
+			get
+			{
+				return this.GetAll<Tematica>();
+			}
+		}
+		
 		public IQueryable<Telefono> Telefonos 
 		{
 			get
@@ -130,6 +114,14 @@ namespace CapaDominio
 			}
 		}
 		
+		public IQueryable<Persona> Personas 
+		{
+			get
+			{
+				return this.GetAll<Persona>();
+			}
+		}
+		
 		public IQueryable<Origen> Origens 
 		{
 			get
@@ -143,6 +135,38 @@ namespace CapaDominio
 			get
 			{
 				return this.GetAll<Modalidad>();
+			}
+		}
+		
+		public IQueryable<LocalidadImpacto> LocalidadImpactos 
+		{
+			get
+			{
+				return this.GetAll<LocalidadImpacto>();
+			}
+		}
+		
+		public IQueryable<Localidad> Localidads 
+		{
+			get
+			{
+				return this.GetAll<Localidad>();
+			}
+		}
+		
+		public IQueryable<ListaTipoDestinatario> ListaTipoDestinatarios 
+		{
+			get
+			{
+				return this.GetAll<ListaTipoDestinatario>();
+			}
+		}
+		
+		public IQueryable<Integrante> Integrantes 
+		{
+			get
+			{
+				return this.GetAll<Integrante>();
 			}
 		}
 		
@@ -194,11 +218,20 @@ namespace CapaDominio
 			}
 		}
 		
+		public IQueryable<Actuacion> Actuacions 
+		{
+			get
+			{
+				return this.GetAll<Actuacion>();
+			}
+		}
+		
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
 			backend.Backend = "MsSql";
 			backend.ProviderName = "System.Data.SqlClient";
+			backend.Logging.MetricStoreSnapshotInterval = 0;
 		
 			CustomizeBackendConfiguration(ref backend);
 		
@@ -219,19 +252,7 @@ namespace CapaDominio
 		{
 			get;
 		}
-		IQueryable<Tematica> Tematicas
-		{
-			get;
-		}
-		IQueryable<Persona> Personas
-		{
-			get;
-		}
-		IQueryable<Localidad> Localidads
-		{
-			get;
-		}
-		IQueryable<Actuacion> Actuacions
+		IQueryable<UvtReferente> UvtReferentes
 		{
 			get;
 		}
@@ -247,6 +268,10 @@ namespace CapaDominio
 		{
 			get;
 		}
+		IQueryable<Tematica> Tematicas
+		{
+			get;
+		}
 		IQueryable<Telefono> Telefonos
 		{
 			get;
@@ -255,11 +280,31 @@ namespace CapaDominio
 		{
 			get;
 		}
+		IQueryable<Persona> Personas
+		{
+			get;
+		}
 		IQueryable<Origen> Origens
 		{
 			get;
 		}
 		IQueryable<Modalidad> Modalidads
+		{
+			get;
+		}
+		IQueryable<LocalidadImpacto> LocalidadImpactos
+		{
+			get;
+		}
+		IQueryable<Localidad> Localidads
+		{
+			get;
+		}
+		IQueryable<ListaTipoDestinatario> ListaTipoDestinatarios
+		{
+			get;
+		}
+		IQueryable<Integrante> Integrantes
 		{
 			get;
 		}
@@ -284,6 +329,10 @@ namespace CapaDominio
 			get;
 		}
 		IQueryable<AreaProductiva> AreaProductivas
+		{
+			get;
+		}
+		IQueryable<Actuacion> Actuacions
 		{
 			get;
 		}

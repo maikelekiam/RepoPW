@@ -22,62 +22,70 @@ using CapaDominio;
 
 namespace CapaDominio	
 {
-	public partial class Localidad
+	public partial class UvtReferente
 	{
-		private string nombre;
-		public virtual string Nombre
+		private int idUvt;
+		public virtual int IdUvt
 		{
 			get
 			{
-				return this.nombre;
+				return this.idUvt;
 			}
 			set
 			{
-				this.nombre = value;
+				this.idUvt = value;
 			}
 		}
 		
-		private int idLocalidad;
-		public virtual int IdLocalidad
+		private int idPersona;
+		public virtual int IdPersona
 		{
 			get
 			{
-				return this.idLocalidad;
+				return this.idPersona;
 			}
 			set
 			{
-				this.idLocalidad = value;
+				this.idPersona = value;
 			}
 		}
 		
-		private int? codigoPostal;
-		public virtual int? CodigoPostal
+		private bool? activo;
+		public virtual bool? Activo
 		{
 			get
 			{
-				return this.codigoPostal;
+				return this.activo;
 			}
 			set
 			{
-				this.codigoPostal = value;
+				this.activo = value;
 			}
 		}
 		
-		private IList<Persona> personas = new List<Persona>();
-		public virtual IList<Persona> Personas
+		private Persona persona;
+		public virtual Persona Persona
 		{
 			get
 			{
-				return this.personas;
+				return this.persona;
+			}
+			set
+			{
+				this.persona = value;
 			}
 		}
 		
-		private IList<LocalidadImpacto> localidadImpactos = new List<LocalidadImpacto>();
-		public virtual IList<LocalidadImpacto> LocalidadImpactos
+		private Uvt uvt;
+		public virtual Uvt Uvt
 		{
 			get
 			{
-				return this.localidadImpactos;
+				return this.uvt;
+			}
+			set
+			{
+				this.uvt = value;
 			}
 		}
 		

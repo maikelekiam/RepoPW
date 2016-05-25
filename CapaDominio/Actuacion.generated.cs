@@ -24,6 +24,32 @@ namespace CapaDominio
 {
 	public partial class Actuacion
 	{
+		private int? idViaComunicacion;
+		public virtual int? IdViaComunicacion
+		{
+			get
+			{
+				return this.idViaComunicacion;
+			}
+			set
+			{
+				this.idViaComunicacion = value;
+			}
+		}
+		
+		private int? idTematica;
+		public virtual int? IdTematica
+		{
+			get
+			{
+				return this.idTematica;
+			}
+			set
+			{
+				this.idTematica = value;
+			}
+		}
+		
 		private int idActuacion;
 		public virtual int IdActuacion
 		{
@@ -63,32 +89,6 @@ namespace CapaDominio
 			}
 		}
 		
-		private int? idTematica;
-		public virtual int? IdTematica
-		{
-			get
-			{
-				return this.idTematica;
-			}
-			set
-			{
-				this.idTematica = value;
-			}
-		}
-		
-		private int? idViaComunicacion;
-		public virtual int? IdViaComunicacion
-		{
-			get
-			{
-				return this.idViaComunicacion;
-			}
-			set
-			{
-				this.idViaComunicacion = value;
-			}
-		}
-		
 		private int? idPersona;
 		public virtual int? IdPersona
 		{
@@ -99,6 +99,32 @@ namespace CapaDominio
 			set
 			{
 				this.idPersona = value;
+			}
+		}
+		
+		private bool? activo;
+		public virtual bool? Activo
+		{
+			get
+			{
+				return this.activo;
+			}
+			set
+			{
+				this.activo = value;
+			}
+		}
+		
+		private Persona persona;
+		public virtual Persona Persona
+		{
+			get
+			{
+				return this.persona;
+			}
+			set
+			{
+				this.persona = value;
 			}
 		}
 		
@@ -125,19 +151,6 @@ namespace CapaDominio
 			set
 			{
 				this.viaComunicacion = value;
-			}
-		}
-		
-		private Persona persona;
-		public virtual Persona Persona
-		{
-			get
-			{
-				return this.persona;
-			}
-			set
-			{
-				this.persona = value;
 			}
 		}
 		

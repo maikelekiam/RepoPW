@@ -22,18 +22,18 @@ using CapaDominio;
 
 namespace CapaDominio	
 {
-	public partial class Localidad
+	public partial class LocalidadImpacto
 	{
-		private string nombre;
-		public virtual string Nombre
+		private int idProyecto;
+		public virtual int IdProyecto
 		{
 			get
 			{
-				return this.nombre;
+				return this.idProyecto;
 			}
 			set
 			{
-				this.nombre = value;
+				this.idProyecto = value;
 			}
 		}
 		
@@ -50,34 +50,42 @@ namespace CapaDominio
 			}
 		}
 		
-		private int? codigoPostal;
-		public virtual int? CodigoPostal
+		private bool? activo;
+		public virtual bool? Activo
 		{
 			get
 			{
-				return this.codigoPostal;
+				return this.activo;
 			}
 			set
 			{
-				this.codigoPostal = value;
+				this.activo = value;
 			}
 		}
 		
-		private IList<Persona> personas = new List<Persona>();
-		public virtual IList<Persona> Personas
+		private Localidad localidad;
+		public virtual Localidad Localidad
 		{
 			get
 			{
-				return this.personas;
+				return this.localidad;
+			}
+			set
+			{
+				this.localidad = value;
 			}
 		}
 		
-		private IList<LocalidadImpacto> localidadImpactos = new List<LocalidadImpacto>();
-		public virtual IList<LocalidadImpacto> LocalidadImpactos
+		private Proyecto proyecto;
+		public virtual Proyecto Proyecto
 		{
 			get
 			{
-				return this.localidadImpactos;
+				return this.proyecto;
+			}
+			set
+			{
+				this.proyecto = value;
 			}
 		}
 		

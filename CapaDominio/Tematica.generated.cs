@@ -24,6 +24,19 @@ namespace CapaDominio
 {
 	public partial class Tematica
 	{
+		private string nombre;
+		public virtual string Nombre
+		{
+			get
+			{
+				return this.nombre;
+			}
+			set
+			{
+				this.nombre = value;
+			}
+		}
+		
 		private int idTematica;
 		public virtual int IdTematica
 		{
@@ -37,16 +50,16 @@ namespace CapaDominio
 			}
 		}
 		
-		private string nombre;
-		public virtual string Nombre
+		private bool? activo;
+		public virtual bool? Activo
 		{
 			get
 			{
-				return this.nombre;
+				return this.activo;
 			}
 			set
 			{
-				this.nombre = value;
+				this.activo = value;
 			}
 		}
 		

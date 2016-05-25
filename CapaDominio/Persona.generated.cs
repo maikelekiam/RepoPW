@@ -24,16 +24,16 @@ namespace CapaDominio
 {
 	public partial class Persona
 	{
-		private int idPersona;
-		public virtual int IdPersona
+		private string tipoDocumento;
+		public virtual string TipoDocumento
 		{
 			get
 			{
-				return this.idPersona;
+				return this.tipoDocumento;
 			}
 			set
 			{
-				this.idPersona = value;
+				this.tipoDocumento = value;
 			}
 		}
 		
@@ -47,58 +47,6 @@ namespace CapaDominio
 			set
 			{
 				this.nombre = value;
-			}
-		}
-		
-		private string apellido;
-		public virtual string Apellido
-		{
-			get
-			{
-				return this.apellido;
-			}
-			set
-			{
-				this.apellido = value;
-			}
-		}
-		
-		private string cuil;
-		public virtual string Cuil
-		{
-			get
-			{
-				return this.cuil;
-			}
-			set
-			{
-				this.cuil = value;
-			}
-		}
-		
-		private DateTime? fechaNacimiento;
-		public virtual DateTime? FechaNacimiento
-		{
-			get
-			{
-				return this.fechaNacimiento;
-			}
-			set
-			{
-				this.fechaNacimiento = value;
-			}
-		}
-		
-		private string direccion;
-		public virtual string Direccion
-		{
-			get
-			{
-				return this.direccion;
-			}
-			set
-			{
-				this.direccion = value;
 			}
 		}
 		
@@ -141,6 +89,32 @@ namespace CapaDominio
 			}
 		}
 		
+		private int idPersona;
+		public virtual int IdPersona
+		{
+			get
+			{
+				return this.idPersona;
+			}
+			set
+			{
+				this.idPersona = value;
+			}
+		}
+		
+		private DateTime? fechaNacimiento;
+		public virtual DateTime? FechaNacimiento
+		{
+			get
+			{
+				return this.fechaNacimiento;
+			}
+			set
+			{
+				this.fechaNacimiento = value;
+			}
+		}
+		
 		private string empresa;
 		public virtual string Empresa
 		{
@@ -154,19 +128,6 @@ namespace CapaDominio
 			}
 		}
 		
-		private string tipoDocumento;
-		public virtual string TipoDocumento
-		{
-			get
-			{
-				return this.tipoDocumento;
-			}
-			set
-			{
-				this.tipoDocumento = value;
-			}
-		}
-		
 		private string documento;
 		public virtual string Documento
 		{
@@ -177,6 +138,45 @@ namespace CapaDominio
 			set
 			{
 				this.documento = value;
+			}
+		}
+		
+		private string direccion;
+		public virtual string Direccion
+		{
+			get
+			{
+				return this.direccion;
+			}
+			set
+			{
+				this.direccion = value;
+			}
+		}
+		
+		private string cuil;
+		public virtual string Cuil
+		{
+			get
+			{
+				return this.cuil;
+			}
+			set
+			{
+				this.cuil = value;
+			}
+		}
+		
+		private string apellido;
+		public virtual string Apellido
+		{
+			get
+			{
+				return this.apellido;
+			}
+			set
+			{
+				this.apellido = value;
 			}
 		}
 		
@@ -206,12 +206,12 @@ namespace CapaDominio
 			}
 		}
 		
-		private IList<Actuacion> actuacions = new List<Actuacion>();
-		public virtual IList<Actuacion> Actuacions
+		private IList<UvtReferente> uvtReferentes = new List<UvtReferente>();
+		public virtual IList<UvtReferente> UvtReferentes
 		{
 			get
 			{
-				return this.actuacions;
+				return this.uvtReferentes;
 			}
 		}
 		
@@ -224,6 +224,15 @@ namespace CapaDominio
 			}
 		}
 		
+		private IList<Integrante> integrantes = new List<Integrante>();
+		public virtual IList<Integrante> Integrantes
+		{
+			get
+			{
+				return this.integrantes;
+			}
+		}
+		
 		private IList<CorreoElectronico> correoElectronicos = new List<CorreoElectronico>();
 		public virtual IList<CorreoElectronico> CorreoElectronicos
 		{
@@ -233,21 +242,12 @@ namespace CapaDominio
 			}
 		}
 		
-		private IList<Uvt> uvts = new List<Uvt>();
-		public virtual IList<Uvt> Uvts
+		private IList<Actuacion> actuacions = new List<Actuacion>();
+		public virtual IList<Actuacion> Actuacions
 		{
 			get
 			{
-				return this.uvts;
-			}
-		}
-		
-		private IList<Proyecto> proyectos = new List<Proyecto>();
-		public virtual IList<Proyecto> Proyectos
-		{
-			get
-			{
-				return this.proyectos;
+				return this.actuacions;
 			}
 		}
 		

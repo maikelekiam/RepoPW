@@ -63,12 +63,25 @@ namespace CapaDominio
 			}
 		}
 		
-		private IList<Persona> personas = new List<Persona>();
-		public virtual IList<Persona> Personas
+		private bool? activo;
+		public virtual bool? Activo
 		{
 			get
 			{
-				return this.personas;
+				return this.activo;
+			}
+			set
+			{
+				this.activo = value;
+			}
+		}
+		
+		private IList<UvtReferente> uvtReferentes = new List<UvtReferente>();
+		public virtual IList<UvtReferente> UvtReferentes
+		{
+			get
+			{
+				return this.uvtReferentes;
 			}
 		}
 		

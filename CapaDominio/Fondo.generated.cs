@@ -76,6 +76,19 @@ namespace CapaDominio
 			}
 		}
 		
+		private bool? activo;
+		public virtual bool? Activo
+		{
+			get
+			{
+				return this.activo;
+			}
+			set
+			{
+				this.activo = value;
+			}
+		}
+		
 		private Origen origen;
 		public virtual Origen Origen
 		{

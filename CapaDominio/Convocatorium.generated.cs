@@ -193,29 +193,16 @@ namespace CapaDominio
 			}
 		}
 		
-		private TipoFinanciamiento tipoFinanciamiento;
-		public virtual TipoFinanciamiento TipoFinanciamiento
+		private bool? activa;
+		public virtual bool? Activa
 		{
 			get
 			{
-				return this.tipoFinanciamiento;
+				return this.activa;
 			}
 			set
 			{
-				this.tipoFinanciamiento = value;
-			}
-		}
-		
-		private Modalidad modalidad;
-		public virtual Modalidad Modalidad
-		{
-			get
-			{
-				return this.modalidad;
-			}
-			set
-			{
-				this.modalidad = value;
+				this.activa = value;
 			}
 		}
 		
@@ -232,6 +219,32 @@ namespace CapaDominio
 			}
 		}
 		
+		private Modalidad modalidad;
+		public virtual Modalidad Modalidad
+		{
+			get
+			{
+				return this.modalidad;
+			}
+			set
+			{
+				this.modalidad = value;
+			}
+		}
+		
+		private TipoFinanciamiento tipoFinanciamiento;
+		public virtual TipoFinanciamiento TipoFinanciamiento
+		{
+			get
+			{
+				return this.tipoFinanciamiento;
+			}
+			set
+			{
+				this.tipoFinanciamiento = value;
+			}
+		}
+		
 		private IList<Proyecto> proyectos = new List<Proyecto>();
 		public virtual IList<Proyecto> Proyectos
 		{
@@ -241,12 +254,12 @@ namespace CapaDominio
 			}
 		}
 		
-		private IList<TipoDestinatario> tipoDestinatarios = new List<TipoDestinatario>();
-		public virtual IList<TipoDestinatario> TipoDestinatarios
+		private IList<ListaTipoDestinatario> listaTipoDestinatarios = new List<ListaTipoDestinatario>();
+		public virtual IList<ListaTipoDestinatario> ListaTipoDestinatarios
 		{
 			get
 			{
-				return this.tipoDestinatarios;
+				return this.listaTipoDestinatarios;
 			}
 		}
 		

@@ -102,6 +102,19 @@ namespace CapaDominio
 			}
 		}
 		
+		private bool? activo;
+		public virtual bool? Activo
+		{
+			get
+			{
+				return this.activo;
+			}
+			set
+			{
+				this.activo = value;
+			}
+		}
+		
 		private Proyecto proyecto;
 		public virtual Proyecto Proyecto
 		{

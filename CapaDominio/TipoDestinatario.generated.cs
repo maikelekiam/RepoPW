@@ -50,12 +50,25 @@ namespace CapaDominio
 			}
 		}
 		
-		private IList<Convocatorium> convocatoria = new List<Convocatorium>();
-		public virtual IList<Convocatorium> Convocatoria
+		private bool? activo;
+		public virtual bool? Activo
 		{
 			get
 			{
-				return this.convocatoria;
+				return this.activo;
+			}
+			set
+			{
+				this.activo = value;
+			}
+		}
+		
+		private IList<ListaTipoDestinatario> listaTipoDestinatarios = new List<ListaTipoDestinatario>();
+		public virtual IList<ListaTipoDestinatario> ListaTipoDestinatarios
+		{
+			get
+			{
+				return this.listaTipoDestinatarios;
 			}
 		}
 		
