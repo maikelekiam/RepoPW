@@ -6,12 +6,16 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDominio;
 using CapaNegocio;
+using System.Data;
 
 namespace CyT
 {
     public partial class AltaPersona : System.Web.UI.Page
     {
         PersonaNego personaNego = new PersonaNego();
+        static List<string> listaTelefonosModal = new List<string>();
+        static List<string> listaCorreosModal = new List<string>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             {
@@ -19,8 +23,9 @@ namespace CyT
 
                 MostrarLocalidad(); //SIRVE PARA EL DROP DOWN LIST
                 MostrarPersona(); //SIRVE PARA LA GRILLA
-                //MostrarTelefono(); //SIRVE PARA LA GRILLA
-                //MostrarCorreoElectronico(); //SIRVE PARA LA GRILLA
+                listaTelefonosModal.Clear();
+                listaCorreosModal.Clear();
+                
             }
         }
 
@@ -46,12 +51,7 @@ namespace CyT
 
         private void GuardarPersona()
         {
-
             Persona persona = new Persona();
-
-            //Telefono telefono = new Telefono();
-            //CorreoElectronico correoElectronico = new CorreoElectronico();
-
 
             persona.Nombre = txtNombre.Text;
             persona.Apellido = txtApellido.Text;
@@ -61,36 +61,60 @@ namespace CyT
             persona.Cuil = txtCuil.Text;
             persona.Direccion = txtDireccion.Text;
             persona.IdLocalidad = Convert.ToInt32(ddlLocalidad.SelectedIndex.ToString());
+            persona.Empresa = txtEmpresa.Text;
+            persona.IsBeneficiario = chkIsBeneficiario.Checked;
+            persona.IsInteresado = chkIsInteresado.Checked;
 
-            //telefono.Telefono1 = txtTelefono.Text;
-            //telefono.IdPersona = persona.IdPersona;
+            
+            //FALTA AGREGAR TELEFONOS Y CORREOS
 
-
-
-
-            //personaNego.GuardarTelefono(telefono);
 
             personaNego.GuardarPersona(persona);
-
-
-
-
-
             MostrarPersona();
         }
 
         private void MostrarTelefono()
         {
-            dgvTelefono.DataSource = personaNego.MostrarTelefono().ToList();
-            dgvTelefono.DataBind();
+            dgvTelefonoModal.DataSource = listaTelefonosModal;
+            dgvTelefonoModal.DataBind();
+            dgvTelefonoModal2.DataSource = listaTelefonosModal;
+            dgvTelefonoModal2.DataBind();
         }
+
         private void MostrarCorreoElectronico()
         {
-            dgvCorreoElectronico.DataSource = personaNego.MostrarCorreoElectronico().ToList();
-            dgvCorreoElectronico.DataBind();
+            dgvCorreoModal.DataSource = listaCorreosModal;
+            dgvCorreoModal.DataBind();
+            dgvCorreoModal2.DataSource = listaCorreosModal;
+            dgvCorreoModal2.DataBind();
+        }
+        protected void dgvTelefonoModal2_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = "Lista de Telefonos:";
+            }
         }
 
-
-
+        protected void dgvCorreoModal2_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = "Lista de Correos:";
+            }
+        }
+        
+        protected void btnModalTelefonoGuardar_Click(object sender, EventArgs e)
+        {
+            listaTelefonosModal.Add(txtTelefonoModal.Text);
+            txtTelefonoModal.Text = null;
+            MostrarTelefono();
+        }
+        protected void btnModalCorreoGuardar_Click(object sender, EventArgs e)
+        {
+            listaCorreosModal.Add(txtCorreoModal.Text);
+            txtCorreoModal.Text = null;
+            MostrarCorreoElectronico();
+        }
     }
 }

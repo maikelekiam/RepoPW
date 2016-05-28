@@ -17,7 +17,7 @@
             <!--FECHA DE LA ACTUACION-->
             <div class="form-group">
                 <asp:Label ID="lblFechaActuacion" runat="server" Text="FECHA DE ACTUACION" CssClass="col-md-2 control-label"></asp:Label>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="input-group date"
                         data-provide="datepicker"
                         data-date-format="dd/mm/yyyy"

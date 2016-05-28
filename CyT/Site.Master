@@ -47,14 +47,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/"><h1>SInfoCyT</h1></a>
+                    <a class="navbar-brand" runat="server" href="~/">
+                        <h1>SInfoCyT</h1>
+                    </a>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
                             <div class="btn-group">
-                                <button Class="btn dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Pagina INICIO</button>
+                                <button class="btn dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Pagina INICIO</button>
                             </div>
                             <div class="btn-group">
                                 <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">INTERESADOS <span class="caret"></span></button>
@@ -161,5 +163,6 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/bootstrap-hover-dropdown.js"></script>
+
 </body>
 </html>
