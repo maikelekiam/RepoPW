@@ -57,14 +57,27 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
-        public IEnumerable<Actuacion> MostrarActuacionSegunPersona(Int32 id)
+        public IEnumerable<Actuacion> MostrarActuacionSegunPersona(string doc)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                IEnumerable<Actuacion> result = modeloDeDominio.Actuacions.Where(c => c.IdPersona == id).ToList();
+                IEnumerable<Actuacion> result = modeloDeDominio.Actuacions.Where(c => c.Persona.Documento == doc).ToList();
 
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
+
+        public Int32 MostrarIdPersonaSegunDocumento(string documento)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                Persona result = modeloDeDominio.Personas.FirstOrDefault(t => t.Documento == documento);
+
+                // Int32 devolucion=(Int32) result.IdPersona;
+                //Int32 devolucion = result.IdPersona;
+                return result.IdPersona;
+            }
+        }
+
     }
 }

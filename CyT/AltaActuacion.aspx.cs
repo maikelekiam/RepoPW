@@ -20,7 +20,8 @@ namespace CyT
 
                 MostrarViaComunicacion(); //SIRVE PARA CARGAR DATOS EN EL DROPDOWNLIST
                 MostrarTematica(); //SIRVE PARA CARGAR DATOS EN EL DROPDOWNLIST
-                MostrarPersona(); //SIRVE PARA LA GRILLA
+                MostrarPersona(); //SIRVE PARA CARGAR DATOS EN LA GRILLA
+                LimpiarPantalla();
             }
         }
 
@@ -39,21 +40,21 @@ namespace CyT
             ddlTematica.DataValueField = "nombre";
             ddlTematica.DataBind();
         }
-        private void MostrarPersona()
+        private void MostrarPersona() //SIRVE PARA CARGAR DATOS EN LA GRILLA
         {
             dgvPersona.DataSource = actuacionNego.MostrarPersona().ToList();
             dgvPersona.DataBind();
         }
-        protected void btnGuardar_Click(object sender, EventArgs e)
+        protected void btnGuardarActuacion_Click(object sender, EventArgs e)
         {
             GuardarActuacion();
         }
         private void GuardarActuacion()
         {
-
             Actuacion actuacion = new Actuacion();
 
-            actuacion.IdPersona = Convert.ToInt32(dgvPersona.SelectedRow.Cells[1].Text);
+            actuacion.IdPersona = MostrarIdPersonaSegunDocumento();
+
             actuacion.IdTematica = Convert.ToInt32(ddlTematica.SelectedIndex.ToString());
             actuacion.IdViaComunicacion = Convert.ToInt32(ddlViaComunicacion.SelectedIndex.ToString());
             actuacion.Fecha = Convert.ToDateTime(txtFechaActuacion.Text);
@@ -61,25 +62,43 @@ namespace CyT
 
             actuacionNego.GuardarActuacion(actuacion);
 
-
-
+            MostrarActuacionSegunPersona();
+            LimpiarPantalla();
         }
 
         protected void dgvPersona_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblPersonaSeleccionada.Text = dgvPersona.SelectedRow.Cells[2].Text + " " + dgvPersona.SelectedRow.Cells[3].Text;
-            lblIdSeleccionado.Text = dgvPersona.SelectedRow.Cells[1].Text;
+            lblPersonaSeleccionadaDeLaGrilla.Text = dgvPersona.SelectedRow.Cells[1].Text + " " + dgvPersona.SelectedRow.Cells[2].Text +
+                ", " + dgvPersona.SelectedRow.Cells[3].Text + ": " + dgvPersona.SelectedRow.Cells[4].Text;
             MostrarActuacionSegunPersona();
         }
 
         protected void dgvActuacion_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            //agregar qué hacer cuando se selecciona una actuacion (editar, etc...)
         }
 
+        // busco en la tabla ACTUACION todas las actuaciones segun el DOCUMENTO ingresado
         private void MostrarActuacionSegunPersona()
         {
-            dgvActuacion.DataSource = actuacionNego.MostrarActuacionSegunPersona(Convert.ToInt32(dgvPersona.SelectedRow.Cells[1].Text)).ToList();
+            dgvActuacion.DataSource = actuacionNego.MostrarActuacionSegunPersona(dgvPersona.SelectedRow.Cells[4].Text).ToList();
             dgvActuacion.DataBind();
+        }
+
+
+        // Busco en la table PERSONA el idPersona segun el DOCUMENTO ingresado
+        private Int32 MostrarIdPersonaSegunDocumento()
+        {
+            return actuacionNego.MostrarIdPersonaSegunDocumento(dgvPersona.SelectedRow.Cells[4].Text);
+        }
+
+        private void LimpiarPantalla()
+        {
+            ddlTematica.SelectedIndex = 0;
+            ddlViaComunicacion.SelectedIndex=0;
+            txtFechaActuacion.Text=null;
+            txtDetalle.Text=null;
         }
     }
 }

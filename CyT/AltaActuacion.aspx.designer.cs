@@ -22,15 +22,6 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// lblPersona control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPersona;
-        
-        /// <summary>
         /// lblPersonaSeleccionada control.
         /// </summary>
         /// <remarks>
@@ -40,22 +31,13 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Label lblPersonaSeleccionada;
         
         /// <summary>
-        /// lblId control.
+        /// lblPersonaSeleccionadaDeLaGrilla control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblId;
-        
-        /// <summary>
-        /// lblIdSeleccionado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdSeleccionado;
+        protected global::System.Web.UI.WebControls.Label lblPersonaSeleccionadaDeLaGrilla;
         
         /// <summary>
         /// lblFechaActuacion control.
@@ -103,15 +85,6 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Label lblNuevaViaComunicacion;
         
         /// <summary>
-        /// txtNuevaViaComunicacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNuevaViaComunicacion;
-        
-        /// <summary>
         /// lblTematica control.
         /// </summary>
         /// <remarks>
@@ -139,15 +112,6 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Label lblNuevaTematica;
         
         /// <summary>
-        /// txtNuevaTematica control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNuevaTematica;
-        
-        /// <summary>
         /// lblDetalle control.
         /// </summary>
         /// <remarks>
@@ -166,13 +130,13 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.TextBox txtDetalle;
         
         /// <summary>
-        /// btnGuardar control.
+        /// btnGuardarActuacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
+        protected global::System.Web.UI.WebControls.Button btnGuardarActuacion;
         
         /// <summary>
         /// dgvActuacion control.

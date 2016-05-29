@@ -32,9 +32,13 @@ namespace CapaNegocio
         {
             return actuacionRepo.MostrarPersona();
         }
-        public IEnumerable<Actuacion> MostrarActuacionSegunPersona(Int32 id)
+        public IEnumerable<Actuacion> MostrarActuacionSegunPersona(string doc)
         {
-            return actuacionRepo.MostrarActuacionSegunPersona(id);
+            return actuacionRepo.MostrarActuacionSegunPersona(doc);
+        }
+        public Int32 MostrarIdPersonaSegunDocumento(string documento)
+        {
+            return actuacionRepo.MostrarIdPersonaSegunDocumento(documento);
         }
 
     }

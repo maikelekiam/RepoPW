@@ -9,10 +9,8 @@
             </div>
             <!--PERSONA QUE REALIZA LA ACTUACION-->
             <div class="form-group">
-                <asp:Label ID="lblPersona" runat="server" Text="PERSONA SELECCIONADA" CssClass="col-md-2 control-label"> </asp:Label>
-                <asp:Label ID="lblPersonaSeleccionada" runat="server" Text="SELECCIONE UNA PERSONA DE LA GRILLA" CssClass="col-md-4 control-label table-bordered" BackColor="Azure" Font-Bold="true"> </asp:Label>
-                <asp:Label ID="lblId" runat="server" Text="ID" CssClass="col-md-1 col-md-offset-1 control-label  "></asp:Label>
-                <asp:Label ID="lblIdSeleccionado" runat="server" Text="---" CssClass="col-md-1 control-label table-bordered" BackColor="Azure" Font-Bold="true"></asp:Label>
+                <asp:Label ID="lblPersonaSeleccionada" runat="server" Text="PERSONA SELECCIONADA" CssClass="col-md-2 control-label"> </asp:Label>
+                <asp:Label ID="lblPersonaSeleccionadaDeLaGrilla" runat="server" Text="Seleccione una persona de la grilla" CssClass="col-md-4 control-label table-bordered" BackColor="Azure" Font-Bold="false"> </asp:Label>
             </div>
             <!--FECHA DE LA ACTUACION-->
             <div class="form-group">
@@ -27,7 +25,7 @@
                         data-date-today-highlight="true">
                         <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaActuacion"></asp:TextBox>
                         <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
+                            <span class="glyphicon glyphicon-calendar"></span>
                         </div>
                     </div>
                 </div>
@@ -40,7 +38,7 @@
                         Width="280"
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
-                        Font-Bold="true"
+                        Font-Bold="false"
                         CssClass="form-control"
                         DataTextField="nombre"
                         AutoPostBack="True"
@@ -49,9 +47,8 @@
                     </asp:DropDownList>
                 </div>
                 <asp:Label ID="lblNuevaViaComunicacion" runat="server" Text="AGREGAR NUEVA VIA" CssClass="col-md-2 control-label"></asp:Label>
-                <div class="col-md-4">
-                    <asp:TextBox ID="txtNuevaViaComunicacion" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
+
+                <%--modal para la nueva via de comunicacion--%>
             </div>
             <!--TEMATICA + OPCION PARA AGREGAR NUEVA TEMATICA-->
             <div class="form-group">
@@ -61,7 +58,7 @@
                         Width="280"
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
-                        Font-Bold="true"
+                        Font-Bold="false"
                         CssClass="form-control"
                         DataTextField="nombre"
                         AutoPostBack="True"
@@ -70,9 +67,8 @@
                     </asp:DropDownList>
                 </div>
                 <asp:Label ID="lblNuevaTematica" runat="server" Text="AGREGAR TEMATICA" CssClass="col-md-2 control-label"></asp:Label>
-                <div class="col-md-4">
-                    <asp:TextBox ID="txtNuevaTematica" runat="server" CssClass="form-control"></asp:TextBox>
-                </div>
+
+                <%--modal para la tematica--%>
             </div>
             <!--DETALLE DE LA ACTUACION-->
             <div class="form-group">
@@ -85,21 +81,19 @@
             <div class="form-group">
                 <div class="col-md-2 col-md-offset-2">
                     <br />
-                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary form-control" OnClick="btnGuardar_Click" />
+                    <asp:Button ID="btnGuardarActuacion" runat="server" Text="Guardar Actuacion" CssClass="btn btn-primary form-control" OnClick="btnGuardarActuacion_Click" />
                 </div>
             </div>
             <!--GRILLA CON LAS ACTUACIONES DE LA PERSONA ELEGIDA-->
-            <h3>TABLA DE ACTUACIONES</h3>
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
                     <asp:GridView ID="dgvActuacion" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvActuacion_SelectedIndexChanged"
                         CssClass="table table-hover table-bordered" BorderWidth="4px">
                         <Columns>
-                            <asp:CommandField HeaderText="ACTUACIONES" HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowSelectButton="true" />
-                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Id" DataField="idActuacion" Visible="true" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Fecha de la Actuacion" DataField="fecha"
                                 DataFormatString="{0:d}" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Detalle" DataField="detalle" ItemStyle-HorizontalAlign="Center" />
+                            <asp:CommandField HeaderText="ACTUACIONES" HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowSelectButton="true" />
                         </Columns>
                         <SelectedRowStyle BackColor="Azure" />
                     </asp:GridView>
@@ -107,18 +101,18 @@
             </div>
 
             <!--GRILLA CON LAS PERSONAS DE LA BASE DE DATOS-->
-            <h3>TABLA DE PERSONAS</h3>
+            <h4>TABLA DE PERSONAS</h4>
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
                     <asp:GridView ID="dgvPersona" HeaderStyle-Font-Bold="true" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvPersona_SelectedIndexChanged"
                         CssClass="table table-hover table-bordered" BorderWidth="4px">
                         <Columns>
                             <asp:CommandField HeaderText="PERSONAS" HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowSelectButton="true" />
-                            <asp:BoundField HeaderText="Id" HeaderStyle-BackColor="#cccccc" DataField="idPersona" Visible="true" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Nombre" HeaderStyle-BackColor="#cccccc" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Apellido" HeaderStyle-BackColor="#cccccc" DataField="apellido" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Tipo" HeaderStyle-BackColor="#cccccc" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Documento" HeaderStyle-BackColor="#cccccc" DataField="documento" ItemStyle-HorizontalAlign="Center" />
                         </Columns>
-
                         <SelectedRowStyle BackColor="Azure" />
                     </asp:GridView>
                 </div>
