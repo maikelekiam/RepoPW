@@ -22,6 +22,7 @@
     <form runat="server" class="form-horizontal form-control">
         <asp:ScriptManager runat="server">
             <Scripts>
+                <%--Este comentarioes de Diego %>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
                 <%--<asp:ScriptReference Name="MsAjaxBundle" />

@@ -7,9 +7,11 @@
             <div class="panel-heading">
                 <h2>Fondos</h2>
             </div>
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                Nuevo
-            </button>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Nuevo Fondo
+                </button>
+            </div>
 
             <!-- Modal -->
             <asp:Label ID="Label2" runat="server" Text=""></asp:Label><br />
@@ -44,30 +46,42 @@
                                         ForeColor="#000066"
                                         Font-Bold="false"
                                         CssClass="form-control"
-                                        DataTextField="nombre"
-                                        AutoPostBack="True"
-                                        AppendDataBoundItems="true">
+                                        DataTextField="nombre">
+
+
                                         <asp:ListItem Value="-1">&lt;Seleccione Origen&gt;</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Close</button>
-                            <asp:Button Text="Guardar" runat="server" class="btn btn-default"></asp:Button>
+                            <asp:Button ID="btnGuardar" Text="Guardar" runat="server" class="btn btn-default" OnClick="btnGuardar_Click"></asp:Button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!--Lista de fondos cargados-->
+
             <div class="form-group">
-                <div class="col-md-9 col-md-offset-1">
+                <div class="col-md-12">
                     <asp:GridView ID="dgvFondo" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvFondo_SelectedIndexChanged"
-                        CssClass="table table-hover table-bordered" BorderWidth="4px" EmptyDataText="No existen fondos registrados">
+                        CssClass="table table-hover table-bordered" BorderWidth="4px" EmptyDataText="No existen fondos registrados" ShowHeaderWhenEmpty="true">
                         <Columns>
                             <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Nombre Fondo" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Descripcion" DataField="descripcion" ItemStyle-HorizontalAlign="Center" />
+                            <asp:TemplateField HeaderText="SomeColumn">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label1" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Origen.Nombre") %>' ></asp:Label>
+                                    
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <%--<asp:TemplateField HeaderStyle-BackColor="#cccccc" HeaderText="Origen">
+                                <ItemTemplate>
+                                    <p><%#DataBinder.Eval(Container.DataItem, "origen.Nombre")%></p>                      
+                                    
+                                </ItemTemplate>
+                            </asp:TemplateField>--%>
                         </Columns>
                         <SelectedRowStyle BackColor="Azure" />
                     </asp:GridView>
