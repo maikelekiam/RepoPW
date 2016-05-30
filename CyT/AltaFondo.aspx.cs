@@ -36,8 +36,27 @@ namespace CyT
 
         private void LlenarGrillaFondos()
         {
+            
             dgvFondo.DataSource = fondoNego.MostrarFondos().ToList();
             dgvFondo.DataBind();
+            
+        }
+
+        private void GuardarFondo()
+        {
+            //FondoNego fondoNego2 = new FondoNego();
+            Fondo fondo=new Fondo();
+            fondo.Nombre = txtNombre.Text;
+            fondo.Descripcion = txtDecripcion.Text;
+            fondo.IdOrigen = Int32.Parse(ddlOrigen.SelectedValue);
+            fondo.Activo = true;
+            fondoNego.GuardarFondo(fondo);
+        }
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            GuardarFondo();
+            LlenarGrillaFondos();
         }
     }
 }
