@@ -18,6 +18,15 @@ namespace CapaRepositorio
                 modeloDeDominio.SaveChanges();
             }
         }
+
+        public IEnumerable<Origen> MostrarOrigenes()
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<Origen> result = modeloDeDominio.Origens.ToList();
+                return modeloDeDominio.CreateDetachedCopy(result);
+            }
+        }
     }
 }
 
