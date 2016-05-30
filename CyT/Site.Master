@@ -101,7 +101,7 @@
                             <div class="btn-group">
                                 <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">FONDOS <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Alta Fondo</a></li>
+                                    <li><a runat="server" href="~/AltaFondo.aspx">Alta Fondo</a></li>
                                     <li><a href="#">Modificar Fondo</a></li>
                                     <li><a href="#">Eliminar Fondo</a></li>
                                     <li class="divider"></li>
