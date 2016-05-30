@@ -167,6 +167,7 @@
     <Content Include="AltaConvocatoria.aspx" />
     <Content Include="AltaFondo.aspx" />
     <Content Include="AltaPersona.aspx" />
+    <Content Include="AltaProyecto.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\bootstrap-datepicker.css" />
     <Content Include="css\bootstrap.css" />
@@ -263,6 +264,13 @@
     </Compile>
     <Compile Include="AltaPersona.aspx.designer.cs">
       <DependentUpon>AltaPersona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaProyecto.aspx.cs">
+      <DependentUpon>AltaProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaProyecto.aspx.designer.cs">
+      <DependentUpon>AltaProyecto.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">

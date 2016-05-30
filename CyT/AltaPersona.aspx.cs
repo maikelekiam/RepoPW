@@ -18,16 +18,15 @@ namespace CyT
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            {
-                if (IsPostBack) return;
+            if (IsPostBack) return;
 
-                MostrarLocalidad(); //SIRVE PARA EL DROP DOWN LIST
-                MostrarPersona(); //SIRVE PARA LA GRILLA
-                LimpiarPantalla();
-                listaTelefonosModal.Clear();
-                listaCorreosModal.Clear();
-            }
+            MostrarLocalidad(); //SIRVE PARA EL DROP DOWN LIST
+            MostrarPersona(); //SIRVE PARA LA GRILLA
+            LimpiarPantalla();
+            //listaTelefonosModal.Clear();
+            listaCorreosModal.Clear();
         }
+
 
         //Los muestro en la GRILLA
         private void MostrarPersona()
@@ -64,6 +63,7 @@ namespace CyT
             persona.Empresa = txtEmpresa.Text;
             persona.IsBeneficiario = chkIsBeneficiario.Checked;
             persona.IsInteresado = chkIsInteresado.Checked;
+            persona.Activo = true;
 
             personaNego.GuardarPersona(persona);
 
@@ -79,8 +79,10 @@ namespace CyT
         {
             dgvTelefonoModal.DataSource = listaTelefonosModal;
             dgvTelefonoModal.DataBind();
+            dgvTelefonoModal.HeaderRow.Cells[0].Text = "Telefono";
             dgvTelefonoFormulario.DataSource = listaTelefonosModal;
             dgvTelefonoFormulario.DataBind();
+            dgvTelefonoFormulario.HeaderRow.Cells[0].Text = "Telefono";
         }
 
         private void MostrarCorreoElectronico()

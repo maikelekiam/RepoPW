@@ -89,7 +89,7 @@
                     <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#modalTelefono">Agregar Telefonos</button>
                 </div>
                 <!-- MODAL LISTA DE TELEFONOS -->
-                <div class="modal fade" id="modalTelefono" tabindex="-1" role="dialog" aria-labelledby="modalLabelTelefono" aria-hidden="true">
+                <div class="modal fade" data-backdrop="static" id="modalTelefono" tabindex="-1" role="dialog" aria-labelledby="modalLabelTelefono" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content col-md-pull-12">
                             <div class="modal-header">
@@ -99,9 +99,25 @@
                                 <h4 class="modal-title" id="modalLabelTelefono">Lista de Telefonos</h4>
                             </div>
                             <div class="modal-body">
-                                <asp:GridView ID="dgvTelefonoModal" runat="server" AutoGenerateColumns="true"
-                                    CssClass="table table-hover table-bordered" BorderWidth="3px">
+                                <asp:GridView ID="dgvTelefonoModal" runat="server" AutoGenerateColumns="false"
+                                    CellPadding="3" GridLines="Horizontal" Width="500"
+                                    >
+                                    <HeaderStyle BackColor="black" ForeColor="White" HorizontalAlign="Center" Height="25" />
+                                    <Columns>
+                                        <asp:TemplateField HeaderText="Telefono">
+                                            <ItemTemplate>
+                                                <%#DataBinder.Eval(Container, "DataItem")%>
+                                            </ItemTemplate>
+                                            <EditItemTemplate>
+                                                <asp:TextBox runat="server" ID="txtProductName" Text='<%#DataBinder.Eval(Container, "DataItem")%>' />
+                                            </EditItemTemplate>
+                                            <EditItemTemplate>
+                                                <asp:TextBox runat="server" ID="txtProductName" />
+                                            </EditItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
                                 </asp:GridView>
+                                <br />
                                 <asp:Label ID="lblListaTelefonosModal" runat="server" Text="Nuevo Telefono" CssClass="col-md-4 control-label"> </asp:Label>
                                 <div class="col-md-4">
                                     <asp:TextBox ID="txtTelefonoModal" runat="server" CssClass="form-control"></asp:TextBox><br />
@@ -189,7 +205,7 @@
 
 
 
-            <!--BOTONES GUARDAR       -->
+            <!--BOTON GUARDAR PERSONA      -->
             <div class="form-group">
                 <div class="col-md-2 col-md-offset-2">
                     <br />
@@ -197,7 +213,7 @@
                 </div>
             </div>
 
-            <!--GRILLA-->
+            <!--GRILLA PARA MOSTRAR LAS PERSONAS EN LA BASE DE DATOS-->
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
                     <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="false"
