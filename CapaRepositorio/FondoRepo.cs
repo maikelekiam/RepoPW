@@ -23,7 +23,7 @@ namespace CapaRepositorio
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
                 IEnumerable<Fondo> result = modeloDeDominio.Fondos.ToList();
-                return modeloDeDominio.CreateDetachedCopy(result);
+                return result;
             }
         }
     }

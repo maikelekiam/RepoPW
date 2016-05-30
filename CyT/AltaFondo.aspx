@@ -46,9 +46,9 @@
                                         ForeColor="#000066"
                                         Font-Bold="false"
                                         CssClass="form-control"
-                                        DataTextField="nombre"
-                                        AutoPostBack="True"
-                                        AppendDataBoundItems="true">
+                                        DataTextField="nombre">
+
+
                                         <asp:ListItem Value="-1">&lt;Seleccione Origen&gt;</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
@@ -70,11 +70,18 @@
                         <Columns>
                             <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Nombre Fondo" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Descripcion" DataField="descripcion" ItemStyle-HorizontalAlign="Center" />
-                            <asp:TemplateField HeaderStyle-BackColor="#cccccc" HeaderText="Origen">
+                            <asp:TemplateField HeaderText="SomeColumn">
                                 <ItemTemplate>
-                                    <p><%#DataBinder.Eval(Container.DataItem, "Origen.Nombre")%></p>
+                                    <asp:Label ID="Label1" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Origen.Nombre") %>' ></asp:Label>
+                                    
                                 </ItemTemplate>
                             </asp:TemplateField>
+                            <%--<asp:TemplateField HeaderStyle-BackColor="#cccccc" HeaderText="Origen">
+                                <ItemTemplate>
+                                    <p><%#DataBinder.Eval(Container.DataItem, "origen.Nombre")%></p>                      
+                                    
+                                </ItemTemplate>
+                            </asp:TemplateField>--%>
                         </Columns>
                         <SelectedRowStyle BackColor="Azure" />
                     </asp:GridView>
