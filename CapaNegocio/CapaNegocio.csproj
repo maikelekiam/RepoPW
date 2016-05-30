@@ -52,6 +52,7 @@
     <Compile Include="OrigenNego.cs" />
     <Compile Include="PersonaNego.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProyectoNego.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDominio\CapaDominio.csproj">

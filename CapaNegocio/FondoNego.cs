@@ -15,5 +15,10 @@ namespace CapaNegocio
         {
             fondoRepo.GuardarFondo(fondo);
         }
+
+        public IEnumerable<Fondo> MostrarFondos()
+        {
+            return fondoRepo.MostrarFondos();
+        }
     }
 }

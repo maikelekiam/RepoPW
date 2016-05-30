@@ -17,7 +17,6 @@ namespace CapaRepositorio
                 modeloDeDominio.Add(persona);
                 modeloDeDominio.SaveChanges();
             }
-
         }
 
         // METODO PARA MOSTRAR LAS PERSONAS
@@ -40,32 +39,29 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
-        public IEnumerable<Telefono> MostrarTelefono()
+        public void GuardarTelefonos(List<string> lista, Int32 idTemporal)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                IEnumerable<Telefono> result = modeloDeDominio.Telefonos.ToList();
+                foreach (string elemento in lista)
+                {
+                    Telefono tel = new Telefono();
+                    tel.IdPersona = idTemporal;
+                    tel.Telefono1 = elemento;
+                    tel.Activo = true;
 
-                return modeloDeDominio.CreateDetachedCopy(result);
+                    modeloDeDominio.Add(tel);
+                    modeloDeDominio.SaveChanges();
+                }
             }
         }
-        public IEnumerable<CorreoElectronico> MostrarCorreoElectronico()
-        {
+
+        public Int32 MostrarUltimoIdPersona(){
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                IEnumerable<CorreoElectronico> result = modeloDeDominio.CorreoElectronicos.ToList();
-
-                return modeloDeDominio.CreateDetachedCopy(result);
+                Persona result = modeloDeDominio.Personas.LastOrDefault();
+                return result.IdPersona;
             }
-        }
-        public void GuardarTelefono(Telefono telefono)
-        {
-            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
-            {
-                modeloDeDominio.Add(telefono);
-                modeloDeDominio.SaveChanges();
-            }
-
         }
     }
 }

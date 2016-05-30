@@ -6,23 +6,27 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDominio;
 using CapaNegocio;
+using System.Data;
 
 namespace CyT
 {
     public partial class AltaPersona : System.Web.UI.Page
     {
         PersonaNego personaNego = new PersonaNego();
+        static List<string> listaTelefonosModal = new List<string>();
+        static List<string> listaCorreosModal = new List<string>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            {
-                if (IsPostBack) return;
+            if (IsPostBack) return;
 
-                MostrarLocalidad(); //SIRVE PARA EL DROP DOWN LIST
-                MostrarPersona(); //SIRVE PARA LA GRILLA
-                //MostrarTelefono(); //SIRVE PARA LA GRILLA
-                //MostrarCorreoElectronico(); //SIRVE PARA LA GRILLA
-            }
+            MostrarLocalidad(); //SIRVE PARA EL DROP DOWN LIST
+            MostrarPersona(); //SIRVE PARA LA GRILLA
+            LimpiarPantalla();
+            //listaTelefonosModal.Clear();
+            listaCorreosModal.Clear();
         }
+
 
         //Los muestro en la GRILLA
         private void MostrarPersona()
@@ -31,7 +35,7 @@ namespace CyT
             dgvPersona.DataBind();
         }
 
-        protected void btnGuardar_Click(object sender, EventArgs e)
+        protected void btnGuardarPersona_Click(object sender, EventArgs e)
         {
             GuardarPersona();
         }
@@ -46,12 +50,7 @@ namespace CyT
 
         private void GuardarPersona()
         {
-
             Persona persona = new Persona();
-
-            //Telefono telefono = new Telefono();
-            //CorreoElectronico correoElectronico = new CorreoElectronico();
-
 
             persona.Nombre = txtNombre.Text;
             persona.Apellido = txtApellido.Text;
@@ -61,36 +60,82 @@ namespace CyT
             persona.Cuil = txtCuil.Text;
             persona.Direccion = txtDireccion.Text;
             persona.IdLocalidad = Convert.ToInt32(ddlLocalidad.SelectedIndex.ToString());
-
-            //telefono.Telefono1 = txtTelefono.Text;
-            //telefono.IdPersona = persona.IdPersona;
-
-
-
-
-            //personaNego.GuardarTelefono(telefono);
+            persona.Empresa = txtEmpresa.Text;
+            persona.IsBeneficiario = chkIsBeneficiario.Checked;
+            persona.IsInteresado = chkIsInteresado.Checked;
+            persona.Activo = true;
 
             personaNego.GuardarPersona(persona);
 
+            Int32 idTemporal = personaNego.MostrarUltimoIdPersona();
 
-
-
+            personaNego.GuardarTelefonos(listaTelefonosModal, idTemporal);
 
             MostrarPersona();
+            LimpiarPantalla();
         }
 
         private void MostrarTelefono()
         {
-            dgvTelefono.DataSource = personaNego.MostrarTelefono().ToList();
-            dgvTelefono.DataBind();
+            dgvTelefonoModal.DataSource = listaTelefonosModal;
+            dgvTelefonoModal.DataBind();
+            dgvTelefonoModal.HeaderRow.Cells[0].Text = "Telefono";
+            dgvTelefonoFormulario.DataSource = listaTelefonosModal;
+            dgvTelefonoFormulario.DataBind();
+            dgvTelefonoFormulario.HeaderRow.Cells[0].Text = "Telefono";
         }
+
         private void MostrarCorreoElectronico()
         {
-            dgvCorreoElectronico.DataSource = personaNego.MostrarCorreoElectronico().ToList();
-            dgvCorreoElectronico.DataBind();
+            dgvCorreoModal.DataSource = listaCorreosModal;
+            dgvCorreoModal.DataBind();
+            dgvCorreoFormulario.DataSource = listaCorreosModal;
+            dgvCorreoFormulario.DataBind();
+        }
+        protected void dgvTelefonoFormulario_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = "Lista de Telefonos:";
+            }
         }
 
+        protected void dgvCorreoFormulario_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = "Lista de Correos:";
+            }
+        }
 
+        protected void btnModalTelefonoGuardar_Click(object sender, EventArgs e)
+        {
+            listaTelefonosModal.Add(txtTelefonoModal.Text);
+            txtTelefonoModal.Text = null;
+            MostrarTelefono();
+        }
+        protected void btnModalCorreoGuardar_Click(object sender, EventArgs e)
+        {
+            listaCorreosModal.Add(txtCorreoModal.Text);
+            txtCorreoModal.Text = null;
+            MostrarCorreoElectronico();
+        }
 
+        private void LimpiarPantalla()
+        {
+            txtNombre.Text = null;
+            txtApellido.Text = null;
+            ddlTipoDocumento.SelectedIndex = 0;
+            txtDocumento.Text = null;
+            txtFechaNacimiento.Text = null;
+            txtCuil.Text = null;
+            txtDireccion.Text = null;
+            ddlLocalidad.SelectedIndex = 0;
+            txtEmpresa.Text = null;
+            chkIsBeneficiario.Checked = false;
+            chkIsInteresado.Checked = false;
+            listaTelefonosModal.Clear();
+            listaCorreosModal.Clear();
+        }
     }
 }

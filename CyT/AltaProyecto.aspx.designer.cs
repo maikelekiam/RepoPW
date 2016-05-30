@@ -10,7 +10,7 @@
 namespace CyT {
     
     
-    public partial class AltaActuacion {
+    public partial class AltaProyecto {
         
         /// <summary>
         /// Panel1 control.
@@ -22,174 +22,156 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// lblPersonaSeleccionada control.
+        /// lblNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPersonaSeleccionada;
+        protected global::System.Web.UI.WebControls.Label lblNombre;
         
         /// <summary>
-        /// lblPersonaSeleccionadaDeLaGrilla control.
+        /// txtNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPersonaSeleccionadaDeLaGrilla;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
-        /// lblFechaActuacion control.
+        /// lblNumeroExp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFechaActuacion;
+        protected global::System.Web.UI.WebControls.Label lblNumeroExp;
         
         /// <summary>
-        /// txtFechaActuacion control.
+        /// txtNumeroExp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFechaActuacion;
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroExp;
         
         /// <summary>
-        /// lblViaComunicacion control.
+        /// lblConvocatoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblViaComunicacion;
+        protected global::System.Web.UI.WebControls.Label lblConvocatoria;
         
         /// <summary>
-        /// ddlViaComunicacion control.
+        /// ddlConvocatoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlViaComunicacion;
+        protected global::System.Web.UI.WebControls.DropDownList ddlConvocatoria;
         
         /// <summary>
-        /// txtViaComunicacionModal control.
+        /// lblUvt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtViaComunicacionModal;
+        protected global::System.Web.UI.WebControls.Label lblUvt;
         
         /// <summary>
-        /// btnModalViaComunicacionSalir control.
+        /// ddlUvt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModalViaComunicacionSalir;
+        protected global::System.Web.UI.WebControls.DropDownList ddlUvt;
         
         /// <summary>
-        /// btnModalViaComunicacionGuardar control.
+        /// lblEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModalViaComunicacionGuardar;
+        protected global::System.Web.UI.WebControls.Label lblEstado;
         
         /// <summary>
-        /// lblTematica control.
+        /// ddlEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTematica;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
         
         /// <summary>
-        /// ddlTematica control.
+        /// lblAreaProductiva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTematica;
+        protected global::System.Web.UI.WebControls.Label lblAreaProductiva;
         
         /// <summary>
-        /// txtTematicaModal control.
+        /// ddlAreaProductiva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTematicaModal;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAreaProductiva;
         
         /// <summary>
-        /// btnModalTematicaSalir control.
+        /// lblMontoSolicitado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModalTematicaSalir;
+        protected global::System.Web.UI.WebControls.Label lblMontoSolicitado;
         
         /// <summary>
-        /// btnModalTematicaGuardar control.
+        /// txtMontoSolicitado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModalTematicaGuardar;
+        protected global::System.Web.UI.WebControls.TextBox txtMontoSolicitado;
         
         /// <summary>
-        /// lblDetalle control.
+        /// lblMontoContraparte control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDetalle;
+        protected global::System.Web.UI.WebControls.Label lblMontoContraparte;
         
         /// <summary>
-        /// txtDetalle control.
+        /// txtMontoContraparte control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDetalle;
+        protected global::System.Web.UI.WebControls.TextBox txtMontoContraparte;
         
         /// <summary>
-        /// btnGuardarActuacion control.
+        /// btnGuardarProyecto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarActuacion;
-        
-        /// <summary>
-        /// dgvActuacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvActuacion;
-        
-        /// <summary>
-        /// dgvPersona control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvPersona;
+        protected global::System.Web.UI.WebControls.Button btnGuardarProyecto;
     }
 }

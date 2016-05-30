@@ -175,22 +175,58 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Label lblTelefono;
         
         /// <summary>
-        /// txtTelefono control.
+        /// dgvTelefonoModal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
+        protected global::System.Web.UI.WebControls.GridView dgvTelefonoModal;
         
         /// <summary>
-        /// dgvTelefono control.
+        /// lblListaTelefonosModal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvTelefono;
+        protected global::System.Web.UI.WebControls.Label lblListaTelefonosModal;
+        
+        /// <summary>
+        /// txtTelefonoModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTelefonoModal;
+        
+        /// <summary>
+        /// btnModalTelefonoSalir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalTelefonoSalir;
+        
+        /// <summary>
+        /// btnModalTelefonoGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalTelefonoGuardar;
+        
+        /// <summary>
+        /// dgvTelefonoFormulario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dgvTelefonoFormulario;
         
         /// <summary>
         /// lblCorreoElectronico control.
@@ -202,22 +238,121 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Label lblCorreoElectronico;
         
         /// <summary>
-        /// dgvCorreoElectronico control.
+        /// dgvCorreoModal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvCorreoElectronico;
+        protected global::System.Web.UI.WebControls.GridView dgvCorreoModal;
         
         /// <summary>
-        /// btnGuardar control.
+        /// lblListaCorreoModal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
+        protected global::System.Web.UI.WebControls.Label lblListaCorreoModal;
+        
+        /// <summary>
+        /// txtCorreoModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCorreoModal;
+        
+        /// <summary>
+        /// btnModalCorreoSalir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalCorreoSalir;
+        
+        /// <summary>
+        /// btnModalCorreoGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalCorreoGuardar;
+        
+        /// <summary>
+        /// dgvCorreoFormulario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dgvCorreoFormulario;
+        
+        /// <summary>
+        /// lblIsInteresado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIsInteresado;
+        
+        /// <summary>
+        /// chkIsInteresado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIsInteresado;
+        
+        /// <summary>
+        /// lblEmpresa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEmpresa;
+        
+        /// <summary>
+        /// txtEmpresa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmpresa;
+        
+        /// <summary>
+        /// lblIsBeneficiario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIsBeneficiario;
+        
+        /// <summary>
+        /// chkIsBeneficiario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIsBeneficiario;
+        
+        /// <summary>
+        /// btnGuardarPersona control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardarPersona;
         
         /// <summary>
         /// dgvPersona control.

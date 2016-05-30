@@ -9,6 +9,7 @@
     <title>SInfoCyT - Sistema Informatico de Ciencia y Tecnologia</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
+    <%--comentario--%>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -21,6 +22,7 @@
     <form runat="server" class="form-horizontal form-control">
         <asp:ScriptManager runat="server">
             <Scripts>
+                <%--Este comentarioes de Diego %>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
                 <%--<asp:ScriptReference Name="MsAjaxBundle" />
@@ -47,14 +49,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/"><h1>SInfoCyT</h1></a>
+                    <a class="navbar-brand" runat="server" href="~/">
+                        <h1>SInfoCyT</h1>
+                    </a>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
                             <div class="btn-group">
-                                <button Class="btn dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Pagina INICIO</button>
+                                <button class="btn dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Pagina INICIO</button>
                             </div>
                             <div class="btn-group">
                                 <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">INTERESADOS <span class="caret"></span></button>
@@ -79,7 +83,7 @@
                             <div class="btn-group">
                                 <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">PROYECTOS<span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Alta Proyecto</a></li>
+                                    <li><a runat="server" href="~/AltaProyecto.aspx">Alta Proyecto</a></li>
                                     <li><a href="#">Modificar Proyecto</a></li>
                                     <li><a href="#">Eliminar Proyecto</a></li>
                                     <li class="divider"></li>
@@ -99,7 +103,7 @@
                             <div class="btn-group">
                                 <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">FONDOS <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Alta Fondo</a></li>
+                                    <li><a runat="server" href="~/AltaFondo.aspx">Alta Fondo</a></li>
                                     <li><a href="#">Modificar Fondo</a></li>
                                     <li><a href="#">Eliminar Fondo</a></li>
                                     <li class="divider"></li>
@@ -161,5 +165,6 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/bootstrap-hover-dropdown.js"></script>
+
 </body>
 </html>
