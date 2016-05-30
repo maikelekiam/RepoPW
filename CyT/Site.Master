@@ -9,6 +9,7 @@
     <title>SInfoCyT - Sistema Informatico de Ciencia y Tecnologia</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
+    <%--comentario--%>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
