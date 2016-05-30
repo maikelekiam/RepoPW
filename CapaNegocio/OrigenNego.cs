@@ -15,5 +15,12 @@ namespace CapaNegocio
         {
             origenRepo.GuardarOrigen(origen);
         }
+
+        public IEnumerable<Origen> MostrarOrigenes()
+        {
+            return origenRepo.MostrarOrigenes();
+        }
     }
+
+
 }
