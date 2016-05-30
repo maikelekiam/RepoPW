@@ -23,9 +23,9 @@ namespace CyT
 
                 MostrarLocalidad(); //SIRVE PARA EL DROP DOWN LIST
                 MostrarPersona(); //SIRVE PARA LA GRILLA
+                LimpiarPantalla();
                 listaTelefonosModal.Clear();
                 listaCorreosModal.Clear();
-                
             }
         }
 
@@ -36,7 +36,7 @@ namespace CyT
             dgvPersona.DataBind();
         }
 
-        protected void btnGuardar_Click(object sender, EventArgs e)
+        protected void btnGuardarPersona_Click(object sender, EventArgs e)
         {
             GuardarPersona();
         }
@@ -65,30 +65,32 @@ namespace CyT
             persona.IsBeneficiario = chkIsBeneficiario.Checked;
             persona.IsInteresado = chkIsInteresado.Checked;
 
-            
-            //FALTA AGREGAR TELEFONOS Y CORREOS
-
-
             personaNego.GuardarPersona(persona);
+
+            Int32 idTemporal = personaNego.MostrarUltimoIdPersona();
+
+            personaNego.GuardarTelefonos(listaTelefonosModal, idTemporal);
+
             MostrarPersona();
+            LimpiarPantalla();
         }
 
         private void MostrarTelefono()
         {
             dgvTelefonoModal.DataSource = listaTelefonosModal;
             dgvTelefonoModal.DataBind();
-            dgvTelefonoModal2.DataSource = listaTelefonosModal;
-            dgvTelefonoModal2.DataBind();
+            dgvTelefonoFormulario.DataSource = listaTelefonosModal;
+            dgvTelefonoFormulario.DataBind();
         }
 
         private void MostrarCorreoElectronico()
         {
             dgvCorreoModal.DataSource = listaCorreosModal;
             dgvCorreoModal.DataBind();
-            dgvCorreoModal2.DataSource = listaCorreosModal;
-            dgvCorreoModal2.DataBind();
+            dgvCorreoFormulario.DataSource = listaCorreosModal;
+            dgvCorreoFormulario.DataBind();
         }
-        protected void dgvTelefonoModal2_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void dgvTelefonoFormulario_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
@@ -96,14 +98,14 @@ namespace CyT
             }
         }
 
-        protected void dgvCorreoModal2_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void dgvCorreoFormulario_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
                 e.Row.Cells[0].Text = "Lista de Correos:";
             }
         }
-        
+
         protected void btnModalTelefonoGuardar_Click(object sender, EventArgs e)
         {
             listaTelefonosModal.Add(txtTelefonoModal.Text);
@@ -115,6 +117,23 @@ namespace CyT
             listaCorreosModal.Add(txtCorreoModal.Text);
             txtCorreoModal.Text = null;
             MostrarCorreoElectronico();
+        }
+
+        private void LimpiarPantalla()
+        {
+            txtNombre.Text = null;
+            txtApellido.Text = null;
+            ddlTipoDocumento.SelectedIndex = 0;
+            txtDocumento.Text = null;
+            txtFechaNacimiento.Text = null;
+            txtCuil.Text = null;
+            txtDireccion.Text = null;
+            ddlLocalidad.SelectedIndex = 0;
+            txtEmpresa.Text = null;
+            chkIsBeneficiario.Checked = false;
+            chkIsInteresado.Checked = false;
+            listaTelefonosModal.Clear();
+            listaCorreosModal.Clear();
         }
     }
 }

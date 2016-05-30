@@ -13,7 +13,6 @@ namespace CapaNegocio
     {
         PersonaRepo personaRepo = new PersonaRepo();
 
-
         public IEnumerable<Persona> MostrarPersona()
         {
             return personaRepo.MostrarPersona();
@@ -26,18 +25,14 @@ namespace CapaNegocio
         {
             return personaRepo.MostrarLocalidad();
         }
-        public IEnumerable<Telefono> MostrarTelefono()
+        
+        public void GuardarTelefonos(List<string> lista, Int32 idTemporal)
         {
-            return personaRepo.MostrarTelefono();
+            personaRepo.GuardarTelefonos(lista, idTemporal);
         }
-        public IEnumerable<CorreoElectronico> MostrarCorreoElectronico()
+        public Int32 MostrarUltimoIdPersona()
         {
-            return personaRepo.MostrarCorreoElectronico();
-        }
-        public void GuardarTelefono(Telefono telefono)
-        {
-            personaRepo.GuardarTelefono(telefono);
+            return personaRepo.MostrarUltimoIdPersona();
         }
     }
-
 }

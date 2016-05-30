@@ -115,9 +115,11 @@
                         </div>
                     </div>
                 </div>
+
+                <%-- GRIDVIEW PARA VER LA LISTA DE TELEFONOS EN EL FORMULARIO          --%>
                 <div class="col-md-6">
-                    <asp:GridView ID="dgvTelefonoModal2" runat="server" AutoGenerateColumns="true"
-                        CssClass="table table-hover table-bordered table-striped table-condensed" BorderWidth="3px" Width="480" OnRowDataBound="dgvTelefonoModal2_RowDataBound">
+                    <asp:GridView ID="dgvTelefonoFormulario" runat="server" AutoGenerateColumns="true"
+                        CssClass="table table-hover table-bordered table-striped table-condensed" BorderWidth="3px" Width="480" OnRowDataBound="dgvTelefonoFormulario_RowDataBound">
                     </asp:GridView>
                 </div>
             </div>
@@ -155,9 +157,11 @@
                         </div>
                     </div>
                 </div>
+
+                <%-- GRIDVIEW PARA VER LA LISTA DE CORREOS EN EL FORMULARIO     --%>
                 <div class="col-md-6">
-                    <asp:GridView ID="dgvCorreoModal2" runat="server" AutoGenerateColumns="true"
-                        CssClass="table table-hover table-bordered table-striped table-condensed" BorderWidth="3px" Width="480" OnRowDataBound="dgvCorreoModal2_RowDataBound">
+                    <asp:GridView ID="dgvCorreoFormulario" runat="server" AutoGenerateColumns="true"
+                        CssClass="table table-hover table-bordered table-striped table-condensed" BorderWidth="3px" Width="480" OnRowDataBound="dgvCorreoFormulario_RowDataBound">
                     </asp:GridView>
                 </div>
             </div>
@@ -189,7 +193,7 @@
             <div class="form-group">
                 <div class="col-md-2 col-md-offset-2">
                     <br />
-                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-success form-control" OnClick="btnGuardar_Click" />
+                    <asp:Button ID="btnGuardarPersona" runat="server" Text="Guardar Persona" CssClass="btn btn-success form-control" OnClick="btnGuardarPersona_Click" />
                 </div>
             </div>
 

@@ -46,10 +46,39 @@
                         <asp:ListItem Value="-1">&lt;Seleccione Via Comunicacion&gt;</asp:ListItem>
                     </asp:DropDownList>
                 </div>
-                <asp:Label ID="lblNuevaViaComunicacion" runat="server" Text="AGREGAR NUEVA VIA" CssClass="col-md-2 control-label"></asp:Label>
 
-                <%--modal para la nueva via de comunicacion--%>
+
+                <%--AGREGAR ACA EL MODAL PARA LA NUEVA VIA DE COMUNICACION--%>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#modalViaComunicacion">Nueva Via de Comunicacion</button>
+                    </div>
+                    <!-- MODAL VIA DE COMUNICACION  -->
+                    <div class="modal fade" id="modalViaComunicacion" tabindex="-1" role="dialog" aria-labelledby="modalLabelViaComunicacion" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content col-md-pull-12">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="modalLabelViaComunicacion">Nueva Via de Comunicacion</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-4">
+                                        <asp:TextBox ID="txtViaComunicacionModal" runat="server" CssClass="form-control"></asp:TextBox><br />
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="modal-footer">
+                                    <asp:Button runat="server" ID="btnModalViaComunicacionSalir" Text="SALIR" class="btn btn-danger" data-dismiss="modal" />
+                                    <asp:Button runat="server" ID="btnModalViaComunicacionGuardar" Text="GUARDAR" CssClass="btn btn-success" OnClick="btnModalViaComunicacionGuardar_Click" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <!--TEMATICA + OPCION PARA AGREGAR NUEVA TEMATICA-->
             <div class="form-group">
                 <asp:Label ID="lblTematica" runat="server" Text="TEMATICA" CssClass="col-md-2 control-label"> </asp:Label>
@@ -66,10 +95,38 @@
                         <asp:ListItem Value="-1">&lt;Seleccione Tematica&gt;</asp:ListItem>
                     </asp:DropDownList>
                 </div>
-                <asp:Label ID="lblNuevaTematica" runat="server" Text="AGREGAR TEMATICA" CssClass="col-md-2 control-label"></asp:Label>
 
-                <%--modal para la tematica--%>
+                <%--AGREGAR ACA EL MODAL PARA LA NUEVA TEMATICA --%>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#modalTematica">Nueva Tematica</button>
+                    </div>
+                    <!-- MODAL VIA DE COMUNICACION  -->
+                    <div class="modal fade" id="modalTematica" tabindex="-1" role="dialog" aria-labelledby="modalLabelTematica" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content col-md-pull-12">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="modalLabelTematica">Nueva Tematica</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-4">
+                                        <asp:TextBox ID="txtTematicaModal" runat="server" CssClass="form-control"></asp:TextBox><br />
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="modal-footer">
+                                    <asp:Button runat="server" ID="btnModalTematicaSalir" Text="SALIR" class="btn btn-danger" data-dismiss="modal" />
+                                    <asp:Button runat="server" ID="btnModalTematicaGuardar" Text="GUARDAR" CssClass="btn btn-success" OnClick="btnModalTematicaGuardar_Click" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <!--DETALLE DE LA ACTUACION-->
             <div class="form-group">
                 <asp:Label ID="lblDetalle" runat="server" Text="DETALLE" CssClass="col-md-2 control-label"></asp:Label>

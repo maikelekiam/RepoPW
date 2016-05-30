@@ -76,13 +76,31 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.DropDownList ddlViaComunicacion;
         
         /// <summary>
-        /// lblNuevaViaComunicacion control.
+        /// txtViaComunicacionModal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNuevaViaComunicacion;
+        protected global::System.Web.UI.WebControls.TextBox txtViaComunicacionModal;
+        
+        /// <summary>
+        /// btnModalViaComunicacionSalir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalViaComunicacionSalir;
+        
+        /// <summary>
+        /// btnModalViaComunicacionGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalViaComunicacionGuardar;
         
         /// <summary>
         /// lblTematica control.
@@ -103,13 +121,31 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.DropDownList ddlTematica;
         
         /// <summary>
-        /// lblNuevaTematica control.
+        /// txtTematicaModal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNuevaTematica;
+        protected global::System.Web.UI.WebControls.TextBox txtTematicaModal;
+        
+        /// <summary>
+        /// btnModalTematicaSalir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalTematicaSalir;
+        
+        /// <summary>
+        /// btnModalTematicaGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalTematicaGuardar;
         
         /// <summary>
         /// lblDetalle control.

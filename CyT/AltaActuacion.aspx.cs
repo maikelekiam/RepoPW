@@ -96,9 +96,18 @@ namespace CyT
         private void LimpiarPantalla()
         {
             ddlTematica.SelectedIndex = 0;
-            ddlViaComunicacion.SelectedIndex=0;
-            txtFechaActuacion.Text=null;
-            txtDetalle.Text=null;
+            ddlViaComunicacion.SelectedIndex = 0;
+            txtFechaActuacion.Text = null;
+            txtDetalle.Text = null;
+        }
+
+        protected void btnModalViaComunicacionGuardar_Click(object sender, EventArgs e)
+        {
+            //AGREGAR FUNCIONALIDAD
+        }
+        protected void btnModalTematicaGuardar_Click(object sender, EventArgs e)
+        {
+            //AGREGAR FUNCIONALIDA
         }
     }
 }

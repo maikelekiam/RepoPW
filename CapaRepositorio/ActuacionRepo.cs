@@ -72,12 +72,8 @@ namespace CapaRepositorio
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
                 Persona result = modeloDeDominio.Personas.FirstOrDefault(t => t.Documento == documento);
-
-                // Int32 devolucion=(Int32) result.IdPersona;
-                //Int32 devolucion = result.IdPersona;
                 return result.IdPersona;
             }
         }
-
     }
 }

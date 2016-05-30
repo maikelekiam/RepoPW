@@ -220,13 +220,13 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Button btnModalTelefonoGuardar;
         
         /// <summary>
-        /// dgvTelefonoModal2 control.
+        /// dgvTelefonoFormulario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvTelefonoModal2;
+        protected global::System.Web.UI.WebControls.GridView dgvTelefonoFormulario;
         
         /// <summary>
         /// lblCorreoElectronico control.
@@ -283,13 +283,13 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Button btnModalCorreoGuardar;
         
         /// <summary>
-        /// dgvCorreoModal2 control.
+        /// dgvCorreoFormulario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvCorreoModal2;
+        protected global::System.Web.UI.WebControls.GridView dgvCorreoFormulario;
         
         /// <summary>
         /// lblIsInteresado control.
@@ -346,13 +346,13 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.CheckBox chkIsBeneficiario;
         
         /// <summary>
-        /// btnGuardar control.
+        /// btnGuardarPersona control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
+        protected global::System.Web.UI.WebControls.Button btnGuardarPersona;
         
         /// <summary>
         /// dgvPersona control.
