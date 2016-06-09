@@ -151,5 +151,10 @@ namespace CyT
             listaTelefonosModal.Clear();
             listaCorreosModal.Clear();
         }
+
+        protected void btnEliminarTelefonoModal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

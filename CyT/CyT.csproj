@@ -175,7 +175,6 @@
     <Content Include="css\select2.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="frmFondo.aspx" />
-    <Content Include="imagenes\Boton-editar.png" />
     <Content Include="js\bootstrap-collapse.js" />
     <Content Include="js\bootstrap-datepicker.js" />
     <Content Include="js\bootstrap-hover-dropdown.js" />
@@ -337,6 +336,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="imagenes\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDominio\CapaDominio.csproj">

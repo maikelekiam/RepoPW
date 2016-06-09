@@ -101,23 +101,24 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <h4 class="modal-title" id="modalLabelTelefono">Lista de Telefonos</h4>
+                                <h4 class="modal-title" id="modalLabelTelefono">Telefonos existentes</h4>
                             </div>
                             <div class="modal-body">
                                 <asp:GridView ID="dgvTelefonoModal" runat="server" AutoGenerateColumns="false"
-                                    CellPadding="3" GridLines="Horizontal" Width="500">
-                                    <HeaderStyle BackColor="black" ForeColor="White" HorizontalAlign="Center" Height="25" />
+                                    Width="500" GridLines="None">
+                                    <HeaderStyle BackColor="#0099cc" ForeColor="White" HorizontalAlign="Center" Height="35" Font-Names="Cambria" Font-Size="Large" />
                                     <Columns>
-                                        <asp:TemplateField HeaderText="Telefono">
+                                        <asp:TemplateField>
+                                            <ItemStyle Height="30" CssClass="alert-info form-control " />
                                             <ItemTemplate>
                                                 <%#DataBinder.Eval(Container, "DataItem")%>
                                             </ItemTemplate>
                                             <EditItemTemplate>
                                                 <asp:TextBox runat="server" ID="txtProductName" Text='<%#DataBinder.Eval(Container, "DataItem")%>' />
                                             </EditItemTemplate>
-                                            <EditItemTemplate>
+                                            <%--<EditItemTemplate>
                                                 <asp:TextBox runat="server" ID="txtProductName" />
-                                            </EditItemTemplate>
+                                            </EditItemTemplate>--%>
                                         </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
@@ -141,12 +142,27 @@
                 <div class="col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Lista de Telefonos</h3>
+                            <h2 class="panel-title">Lista de Telefonos</h2>
                             <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
                         </div>
                         <div class="panel-body">
-                            <asp:GridView ID="dgvTelefonoFormulario" runat="server" AutoGenerateColumns="true"
-                                CssClass="table table-hover table-striped table-condensed" Width="480" ShowHeader="false">
+                            <asp:GridView ID="dgvTelefonoFormulario" runat="server" AutoGenerateColumns="false"
+                                Width="480"
+                                ShowHeader="false"
+                                GridLines="None">
+                                <Columns>
+                                    <asp:TemplateField>
+                                        <ItemStyle Height="30" Width="150" Font-Size="Medium" />
+                                        <ItemTemplate>
+                                            <%#DataBinder.Eval(Container, "DataItem")%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="btnEliminarTelefonoModal" runat="server" Text="<i class='glyphicon glyphicon-trash'></i> Eliminar" CssClass="btn btn-danger btn-xs" OnClick="btnEliminarTelefonoModal_Click"></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
                             </asp:GridView>
                         </div>
                     </div>
