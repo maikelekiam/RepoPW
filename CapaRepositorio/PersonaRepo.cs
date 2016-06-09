@@ -10,11 +10,10 @@ namespace CapaRepositorio
     public class PersonaRepo
     {
         // METODO PARA GUARDAR UNA PERSONA
-        public void GuardarPersona(Persona persona, IList<Telefono> listaTelefonos)
+        public void GuardarPersona(Persona persona, IList<Telefono> listaTelefonos, IList<CorreoElectronico> listaCorreoElectronicos)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-
                 foreach (Telefono telefono in listaTelefonos)
                 {
                     Telefono newTelefono = new Telefono();
@@ -25,16 +24,19 @@ namespace CapaRepositorio
 
                     persona.Telefonos.Add(newTelefono);
                     modeloDeDominio.SaveChanges();
-
                 }
 
+                foreach (CorreoElectronico correoe in listaCorreoElectronicos)
+                {
+                    CorreoElectronico newCorreoElectronico = new CorreoElectronico();
+                    newCorreoElectronico.CorreoElectronico1 = correoe.CorreoElectronico1.ToString();
+                    newCorreoElectronico.Activo = true;
 
+                    modeloDeDominio.Add(persona);
 
-
-
-
-                //modeloDeDominio.Add(persona);
-                //modeloDeDominio.SaveChanges();
+                    persona.CorreoElectronicos.Add(newCorreoElectronico);
+                    modeloDeDominio.SaveChanges();
+                }
             }
         }
 
@@ -75,13 +77,13 @@ namespace CapaRepositorio
             }
         }
 
-        public Int32 MostrarUltimoIdPersona()
-        {
-            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
-            {
-                Persona result = modeloDeDominio.Personas.LastOrDefault();
-                return result.IdPersona;
-            }
-        }
+        //public Int32 MostrarUltimoIdPersona()
+        //{
+        //    using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+        //    {
+        //        Persona result = modeloDeDominio.Personas.LastOrDefault();
+        //        return result.IdPersona;
+        //    }
+        //}
     }
 }

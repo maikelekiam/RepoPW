@@ -17,22 +17,22 @@ namespace CapaNegocio
         {
             return personaRepo.MostrarPersona();
         }
-        public void GuardarPersona(Persona persona, IList<Telefono> listaTelef)
+        public void GuardarPersona(Persona persona, IList<Telefono> listaTelefonos, IList<CorreoElectronico> listaCorreoElectronicos)
         {
-            personaRepo.GuardarPersona(persona, listaTelef);
+            personaRepo.GuardarPersona(persona, listaTelefonos, listaCorreoElectronicos);
         }
         public IEnumerable<Localidad> MostrarLocalidad()
         {
             return personaRepo.MostrarLocalidad();
         }
         
-        public void GuardarTelefonos(List<string> lista, Int32 idTemporal)
-        {
-            personaRepo.GuardarTelefonos(lista, idTemporal);
-        }
-        public Int32 MostrarUltimoIdPersona()
-        {
-            return personaRepo.MostrarUltimoIdPersona();
-        }
+        //public void GuardarTelefonos(List<string> lista, Int32 idTemporal)
+        //{
+        //    personaRepo.GuardarTelefonos(lista, idTemporal);
+        //}
+        //public Int32 MostrarUltimoIdPersona()
+        //{
+        //    return personaRepo.MostrarUltimoIdPersona();
+        //}
     }
 }

@@ -311,7 +311,7 @@
           <orm:collection element-class="CapaDominio.Integrante" inverse-field="persona" order-by="" uniqueId="5bd63bb9-1a23-4cad-9d40-23d9dd6c4c0f" />
         </orm:field>
         <orm:field name="correoElectronicos" property="CorreoElectronicos" behavior="readwrite" uniqueId="5979e136-cac7-488d-ae1e-180285c22e6e" type="CapaDominio.CorreoElectronico">
-          <orm:collection element-class="CapaDominio.CorreoElectronico" inverse-field="persona" order-by="" uniqueId="f89925f5-300a-473c-83e5-57054cd13883" />
+          <orm:collection element-class="CapaDominio.CorreoElectronico" inverse-field="persona" managed="true" order-by="" uniqueId="f89925f5-300a-473c-83e5-57054cd13883" />
         </orm:field>
         <orm:field name="actuacions" property="Actuacions" behavior="readwrite" uniqueId="e555d392-c55d-44e9-95da-22069f32fbb3" type="CapaDominio.Actuacion">
           <orm:collection element-class="CapaDominio.Actuacion" inverse-field="persona" order-by="" uniqueId="b4713419-8122-4b44-86a0-7d44b84d5f17" />
@@ -1245,7 +1245,7 @@
           <NavigationalProperty Id="f5f4e29e-47bc-4cd1-932b-785f3cdafe8b" name="Integrantes" type="IList&lt;Integrante&gt;" label="Integrantes : IList&lt;Integrante&gt;" nullable="true" kind="Persistent" fieldName="integrantes" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="53520075-971e-4eaa-8870-b1fd7255272a">
-          <NavigationalProperty Id="5979e136-cac7-488d-ae1e-180285c22e6e" name="CorreoElectronicos" type="IList&lt;CorreoElectronico&gt;" label="CorreoElectronicos : IList&lt;CorreoElectronico&gt;" nullable="true" kind="Persistent" fieldName="correoElectronicos" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="5979e136-cac7-488d-ae1e-180285c22e6e" name="CorreoElectronicos" type="IList&lt;CorreoElectronico&gt;" label="CorreoElectronicos : IList&lt;CorreoElectronico&gt;" nullable="true" kind="Persistent" fieldName="correoElectronicos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="b6fff2b5-8c74-4c5b-80b8-9a993154db5e">
           <NavigationalProperty Id="e555d392-c55d-44e9-95da-22069f32fbb3" name="Actuacions" type="IList&lt;Actuacion&gt;" label="Actuacions : IList&lt;Actuacion&gt;" nullable="true" kind="Persistent" fieldName="actuacions" isDependent="false" isManaged="false" />
@@ -1496,7 +1496,7 @@
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="5aba8896-e166-4053-a812-55b311e37795">
-          <NavigationalProperty Id="ae64fccc-bea5-4490-b54f-8d4b59ac44ca" name="Persona" type="Persona" label="Persona : Persona" nullable="true" kind="Persistent" fieldName="persona" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="ae64fccc-bea5-4490-b54f-8d4b59ac44ca" name="Persona" type="Persona" label="Persona : Persona" nullable="true" kind="Persistent" fieldName="persona" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>

@@ -16,7 +16,7 @@ namespace CyT
         static List<string> listaTelefonosModal = new List<string>();
         static List<string> listaCorreosModal = new List<string>();
         IList<Telefono> listaTelefonos = new List<Telefono>();
-      
+        IList<CorreoElectronico> listaCorreoElectronicos = new List<CorreoElectronico>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +28,6 @@ namespace CyT
             //listaTelefonosModal.Clear();
             listaCorreosModal.Clear();
         }
-
 
         //Los muestro en la GRILLA
         private void MostrarPersona()
@@ -52,7 +51,7 @@ namespace CyT
 
         private void GuardarPersona()
         {
-            Persona persona = new Persona();            
+            Persona persona = new Persona();
 
             persona.Nombre = txtNombre.Text;
             persona.Apellido = txtApellido.Text;
@@ -75,7 +74,15 @@ namespace CyT
                 listaTelefonos.Add(tel);
             }
 
-            personaNego.GuardarPersona(persona, listaTelefonos);
+            foreach (GridViewRow row in dgvCorreoFormulario.Rows)
+            {
+                CorreoElectronico correoe = new CorreoElectronico();
+                correoe.CorreoElectronico1 = row.Cells[0].Text;
+                correoe.Activo = true;
+                listaCorreoElectronicos.Add(correoe);
+            }
+            
+            personaNego.GuardarPersona(persona, listaTelefonos, listaCorreoElectronicos);
             //Int32 idTemporal = personaNego.MostrarUltimoIdPersona();
             //personaNego.GuardarTelefonos(listaTelefonosModal, idTemporal);
             MostrarPersona();
