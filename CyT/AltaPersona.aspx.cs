@@ -15,6 +15,8 @@ namespace CyT
         PersonaNego personaNego = new PersonaNego();
         static List<string> listaTelefonosModal = new List<string>();
         static List<string> listaCorreosModal = new List<string>();
+        IList<Telefono> listaTelefonos = new List<Telefono>();
+      
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,7 +52,7 @@ namespace CyT
 
         private void GuardarPersona()
         {
-            Persona persona = new Persona();
+            Persona persona = new Persona();            
 
             persona.Nombre = txtNombre.Text;
             persona.Apellido = txtApellido.Text;
@@ -65,12 +67,17 @@ namespace CyT
             persona.IsInteresado = chkIsInteresado.Checked;
             persona.Activo = true;
 
-            personaNego.GuardarPersona(persona);
+            foreach (GridViewRow row in dgvTelefonoFormulario.Rows)
+            {
+                Telefono tel = new Telefono();
+                tel.Telefono1 = row.Cells[0].Text;
+                tel.Activo = true;
+                listaTelefonos.Add(tel);
+            }
 
-            Int32 idTemporal = personaNego.MostrarUltimoIdPersona();
-
-            personaNego.GuardarTelefonos(listaTelefonosModal, idTemporal);
-
+            personaNego.GuardarPersona(persona, listaTelefonos);
+            //Int32 idTemporal = personaNego.MostrarUltimoIdPersona();
+            //personaNego.GuardarTelefonos(listaTelefonosModal, idTemporal);
             MostrarPersona();
             LimpiarPantalla();
         }

@@ -10,12 +10,31 @@ namespace CapaRepositorio
     public class PersonaRepo
     {
         // METODO PARA GUARDAR UNA PERSONA
-        public void GuardarPersona(Persona persona)
+        public void GuardarPersona(Persona persona, IList<Telefono> listaTelefonos)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                modeloDeDominio.Add(persona);
-                modeloDeDominio.SaveChanges();
+
+                foreach (Telefono telefono in listaTelefonos)
+                {
+                    Telefono newTelefono = new Telefono();
+                    newTelefono.Telefono1 = telefono.Telefono1.ToString();
+                    newTelefono.Activo = true;
+
+                    modeloDeDominio.Add(persona);
+
+                    persona.Telefonos.Add(newTelefono);
+                    modeloDeDominio.SaveChanges();
+
+                }
+
+
+
+
+
+
+                //modeloDeDominio.Add(persona);
+                //modeloDeDominio.SaveChanges();
             }
         }
 
@@ -56,7 +75,8 @@ namespace CapaRepositorio
             }
         }
 
-        public Int32 MostrarUltimoIdPersona(){
+        public Int32 MostrarUltimoIdPersona()
+        {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
                 Persona result = modeloDeDominio.Personas.LastOrDefault();

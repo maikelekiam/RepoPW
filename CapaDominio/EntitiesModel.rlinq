@@ -305,7 +305,7 @@
           <orm:collection element-class="CapaDominio.UvtReferente" inverse-field="persona" order-by="" uniqueId="a40d5fee-a447-472f-ba78-e92620668dbb" />
         </orm:field>
         <orm:field name="telefonos" property="Telefonos" behavior="readwrite" uniqueId="2c6d2be6-df92-4c76-b86c-e787892bcda7" type="CapaDominio.Telefono">
-          <orm:collection element-class="CapaDominio.Telefono" inverse-field="persona" order-by="" uniqueId="47b6eee0-147f-42f6-aff6-1d930cc0ef18" />
+          <orm:collection element-class="CapaDominio.Telefono" inverse-field="persona" managed="true" order-by="" uniqueId="47b6eee0-147f-42f6-aff6-1d930cc0ef18" />
         </orm:field>
         <orm:field name="integrantes" property="Integrantes" behavior="readwrite" uniqueId="f5f4e29e-47bc-4cd1-932b-785f3cdafe8b" type="CapaDominio.Integrante">
           <orm:collection element-class="CapaDominio.Integrante" inverse-field="persona" order-by="" uniqueId="5bd63bb9-1a23-4cad-9d40-23d9dd6c4c0f" />
@@ -1109,7 +1109,7 @@
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="3dd66134-3d2b-4e00-ab85-ebe1292b7482">
-          <NavigationalProperty Id="bc2f495c-5cab-4682-8ef3-d6e8059c5f11" name="Persona" type="Persona" label="Persona : Persona" nullable="true" kind="Persistent" fieldName="persona" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="bc2f495c-5cab-4682-8ef3-d6e8059c5f11" name="Persona" type="Persona" label="Persona : Persona" nullable="true" kind="Persistent" fieldName="persona" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1236,7 +1236,7 @@
           <NavigationalProperty Id="29cf230c-901b-44fd-83e2-99aee67ec09d" name="UvtReferentes" type="IList&lt;UvtReferente&gt;" label="UvtReferentes : IList&lt;UvtReferente&gt;" nullable="true" kind="Persistent" fieldName="uvtReferentes" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="ae9f7024-6e00-4f29-98c3-5cc6053ddaec">
-          <NavigationalProperty Id="2c6d2be6-df92-4c76-b86c-e787892bcda7" name="Telefonos" type="IList&lt;Telefono&gt;" label="Telefonos : IList&lt;Telefono&gt;" nullable="true" kind="Persistent" fieldName="telefonos" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="2c6d2be6-df92-4c76-b86c-e787892bcda7" name="Telefonos" type="IList&lt;Telefono&gt;" label="Telefonos : IList&lt;Telefono&gt;" nullable="true" kind="Persistent" fieldName="telefonos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="71d75003-c275-42f5-ad2e-a754ff673d2f">
           <NavigationalProperty Id="1fed7ea1-dfaa-4547-98ed-9c1291965ce8" name="Localidad" type="Localidad" label="Localidad : Localidad" nullable="true" kind="Persistent" fieldName="localidad" isDependent="false" isManaged="false" />
