@@ -82,7 +82,7 @@ namespace CyT
             dgvTelefonoModal.HeaderRow.Cells[0].Text = "Telefono";
             dgvTelefonoFormulario.DataSource = listaTelefonosModal;
             dgvTelefonoFormulario.DataBind();
-            dgvTelefonoFormulario.HeaderRow.Cells[0].Text = "Telefono";
+            //dgvTelefonoFormulario.HeaderRow.Cells[0].Text = "Telefono";
         }
 
         private void MostrarCorreoElectronico()
@@ -92,13 +92,13 @@ namespace CyT
             dgvCorreoFormulario.DataSource = listaCorreosModal;
             dgvCorreoFormulario.DataBind();
         }
-        protected void dgvTelefonoFormulario_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.Header)
-            {
-                e.Row.Cells[0].Text = "Lista de Telefonos:";
-            }
-        }
+        //protected void dgvTelefonoFormulario_RowDataBound(object sender, GridViewRowEventArgs e)
+        //{
+        //    if (e.Row.RowType == DataControlRowType.Header)
+        //    {
+        //        e.Row.Cells[0].Text = "Lista de Telefonos:";
+        //    }
+        //}
 
         protected void dgvCorreoFormulario_RowDataBound(object sender, GridViewRowEventArgs e)
         {

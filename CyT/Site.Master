@@ -9,6 +9,7 @@
     <title>SInfoCyT - Sistema Informatico de Ciencia y Tecnologia</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="css/panel-collapsible.css" rel="stylesheet" />
     <%--comentario--%>
 
     <asp:PlaceHolder runat="server">
@@ -165,6 +166,7 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/bootstrap-hover-dropdown.js"></script>
-
+    <script src="js/select2.js"></script>
+    <script src="js/panel-collapsible.js"></script>
 </body>
 </html>

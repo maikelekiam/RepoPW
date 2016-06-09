@@ -164,7 +164,7 @@
                     <asp:GridView ID="dgvPersona" HeaderStyle-Font-Bold="true" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvPersona_SelectedIndexChanged"
                         CssClass="table table-hover table-bordered" BorderWidth="4px">
                         <Columns>
-                            <asp:CommandField HeaderText="PERSONAS" HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowSelectButton="true" />
+                            <asp:CommandField HeaderText="PERSONAS" HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowSelectButton="true" ShowDeleteButton="true" />
                             <asp:BoundField HeaderText="Nombre" HeaderStyle-BackColor="#cccccc" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Apellido" HeaderStyle-BackColor="#cccccc" DataField="apellido" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Tipo" HeaderStyle-BackColor="#cccccc" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" />

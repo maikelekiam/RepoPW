@@ -171,6 +171,7 @@
     <Content Include="Contact.aspx" />
     <Content Include="css\bootstrap-datepicker.css" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="css\panel-collapsible.css" />
     <Content Include="css\select2.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="imagenes\Boton-editar.png" />
@@ -179,6 +180,7 @@
     <Content Include="js\bootstrap-hover-dropdown.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\jquery-1.12.3.js" />
+    <Content Include="js\panel-collapsible.js" />
     <Content Include="js\select2.js" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
