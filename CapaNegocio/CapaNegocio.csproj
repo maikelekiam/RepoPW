@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="ActuacionNego.cs" />
     <Compile Include="FondoNego.cs" />
+    <Compile Include="ModalidadNego.cs" />
     <Compile Include="OrigenNego.cs" />
     <Compile Include="PersonaNego.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
