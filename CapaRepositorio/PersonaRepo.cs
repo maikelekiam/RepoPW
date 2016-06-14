@@ -14,16 +14,21 @@ namespace CapaRepositorio
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
+                modeloDeDominio.Add(persona);
+                modeloDeDominio.SaveChanges();
+                int idPersona = persona.IdPersona;
+
                 foreach (Telefono telefono in listaTelefonos)
                 {
                     Telefono newTelefono = new Telefono();
                     newTelefono.Telefono1 = telefono.Telefono1.ToString();
+                    newTelefono.IdPersona = idPersona;
                     newTelefono.Activo = true;
 
-                    modeloDeDominio.Add(persona);
+                   
 
                     persona.Telefonos.Add(newTelefono);
-                    modeloDeDominio.SaveChanges();
+                   
                 }
 
                 foreach (CorreoElectronico correoe in listaCorreoElectronicos)

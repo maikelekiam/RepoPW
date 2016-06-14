@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaPersona.aspx.cs" Inherits="CyT.AltaPersona" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>--%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -80,8 +80,7 @@
                         Font-Bold="true"
                         CssClass="form-control"
                         DataTextField="nombre"
-                        AutoPostBack="True"
-                        AppendDataBoundItems="true">
+                        >
                         <asp:ListItem Value="-1">&lt;Seleccione una Localidad&gt;</asp:ListItem>
                     </asp:DropDownList>
                 </div>
@@ -139,20 +138,20 @@
 
                 <%-- GRIDVIEW PARA VER LA LISTA DE TELEFONOS EN EL FORMULARIO          --%>
 
-                <div class="col-md-6">
+                <div class="col-md-4 col-md-offset-1">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h2 class="panel-title">Lista de Telefonos</h2>
                             <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
                         </div>
                         <div class="panel-body">
-                            <asp:GridView ID="dgvTelefonoFormulario" runat="server" AutoGenerateColumns="false"
+                            <asp:GridView ID="dgvTelefonoFormulario" runat="server" AutoGenerateColumns="true"
                                 Width="480"
                                 ShowHeader="false"
                                 GridLines="None">
-                                <Columns>
+                               <%-- <Columns>
                                     <asp:TemplateField>
-                                        <ItemStyle Height="30" Width="150" Font-Size="Medium" />
+                                        <ItemStyle Height="30" Width="150" Font-Size="Small" />
                                         <ItemTemplate>
                                             <%#DataBinder.Eval(Container, "DataItem")%>
                                         </ItemTemplate>
@@ -162,7 +161,7 @@
                                             <asp:LinkButton ID="btnEliminarTelefonoModal" runat="server" Text="<i class='glyphicon glyphicon-trash'></i> Eliminar" CssClass="btn btn-danger btn-xs" OnClick="btnEliminarTelefonoModal_Click"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                </Columns>
+                                </Columns>--%>
                             </asp:GridView>
                         </div>
                     </div>

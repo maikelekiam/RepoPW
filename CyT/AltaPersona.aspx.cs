@@ -25,8 +25,10 @@ namespace CyT
             MostrarLocalidad(); //SIRVE PARA EL DROP DOWN LIST
             MostrarPersona(); //SIRVE PARA LA GRILLA
             LimpiarPantalla();
-            //listaTelefonosModal.Clear();
+            listaTelefonosModal.Clear();
             listaCorreosModal.Clear();
+            listaCorreoElectronicos.Clear();
+            listaTelefonos.Clear();
         }
 
         //Los muestro en la GRILLA
@@ -68,10 +70,16 @@ namespace CyT
 
             foreach (GridViewRow row in dgvTelefonoFormulario.Rows)
             {
-                Telefono tel = new Telefono();
-                tel.Telefono1 = row.Cells[0].Text;
-                tel.Activo = true;
-                listaTelefonos.Add(tel);
+                for (int i = 0; i < dgvTelefonoFormulario.Columns.Count; i++)
+                {
+                    
+                    String cellText = row.Cells[i].Text;
+                }
+
+                //Telefono tel = new Telefono();
+                //tel.Telefono1 = row.Cells[0].Text;
+                //tel.Activo = true;
+                //listaTelefonos.Add(tel);
             }
 
             foreach (GridViewRow row in dgvCorreoFormulario.Rows)
