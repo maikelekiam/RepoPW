@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="ActuacionRepo.cs" />
     <Compile Include="FondoRepo.cs" />
+    <Compile Include="ModalidadRepo.cs" />
     <Compile Include="OrigenRepo.cs" />
     <Compile Include="PersonaRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
