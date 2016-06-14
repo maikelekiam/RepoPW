@@ -54,6 +54,7 @@
     <Compile Include="PersonaRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProyectoRepo.cs" />
+    <Compile Include="TipoDestinatarioRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDominio\CapaDominio.csproj">
