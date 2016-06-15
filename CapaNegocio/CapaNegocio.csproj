@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActuacionNego.cs" />
+    <Compile Include="ConvocatoriaNego.cs" />
     <Compile Include="CorreoElectronicoNego.cs" />
     <Compile Include="FondoNego.cs" />
     <Compile Include="ModalidadNego.cs" />

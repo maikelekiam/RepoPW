@@ -19,7 +19,7 @@ namespace CapaRepositorio
             }
         }
 
-        public IEnumerable<Convocatorium> MostrarConvocatoriaes()
+        public IEnumerable<Convocatorium> MostrarConvocatorias()
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
