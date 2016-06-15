@@ -41,7 +41,7 @@
                         Font-Bold="false"
                         CssClass="form-control"
                         DataTextField="nombre"
-                        AutoPostBack="True"
+                        AutoPostBack="false"
                         AppendDataBoundItems="true">
                         <asp:ListItem Value="-1">&lt;Seleccione Via Comunicacion&gt;</asp:ListItem>
                     </asp:DropDownList>
@@ -90,7 +90,7 @@
                         Font-Bold="false"
                         CssClass="form-control"
                         DataTextField="nombre"
-                        AutoPostBack="True"
+                        AutoPostBack="false"
                         AppendDataBoundItems="true">
                         <asp:ListItem Value="-1">&lt;Seleccione Tematica&gt;</asp:ListItem>
                     </asp:DropDownList>
