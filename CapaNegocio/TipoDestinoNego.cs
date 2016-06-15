@@ -8,7 +8,7 @@ using CapaRepositorio;
 
 namespace CapaNegocio
 {
-    class TipoDestinatarioNego
+    public class TipoDestinatarioNego
     {
         TipoDestinatarioRepo tipoDestinatarioRepo = new TipoDestinatarioRepo();
         public void GuardarTipoDestinatario(TipoDestinatario tipoDestinatario)
