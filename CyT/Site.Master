@@ -94,7 +94,7 @@
                             <div class="btn-group">
                                 <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">CONVOCATORIAS <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Alta Convocatoria</a></li>
+                                    <li><a runat="server" href="~/AltaConvocatoria.aspx">Alta Convocatoria</a></li>
                                     <li><a href="#">Modificar Convocatoria</a></li>
                                     <li><a href="#">Eliminar Convocatoria</a></li>
                                     <li class="divider"></li>

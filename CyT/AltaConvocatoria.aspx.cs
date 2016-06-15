@@ -13,5 +13,10 @@ namespace CyT
         {
 
         }
+
+        protected void btnGuardarConvocatoria_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
