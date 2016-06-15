@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActuacionRepo.cs" />
+    <Compile Include="ConvocatoriaRepo.cs" />
     <Compile Include="CorreoElectronicoRepo.cs" />
     <Compile Include="FondoRepo.cs" />
     <Compile Include="ModalidadRepo.cs" />

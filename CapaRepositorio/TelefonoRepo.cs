@@ -9,6 +9,7 @@ namespace CapaRepositorio
 {
     public class TelefonoRepo
     {
+        //Repositorio telefono
         public void GuardarTelefono(IList<Telefono> listaTelefonos)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())

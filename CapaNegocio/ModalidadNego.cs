@@ -8,7 +8,7 @@ using CapaRepositorio;
 
 namespace CapaNegocio
 {
-    public class ModalidadNego
+     public class ModalidadNego
     {
         ModalidadRepo modalidadRepo = new ModalidadRepo();
         public void GuardarModalidad(Modalidad modalidad)
