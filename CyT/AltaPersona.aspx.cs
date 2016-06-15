@@ -73,19 +73,19 @@ namespace CyT
 
             int idPersona=personaNego.GuardarPersona(persona);
 
-            foreach (GridViewRow row in dgvTelefonoFormulario.Rows)
+            foreach (String str in listaTelefonosModal)
             {
                 Telefono tel = new Telefono();
-                tel.Telefono1 = row.Cells[0].Text;
+                tel.Telefono1 = str;
                 tel.Activo = true;
                 tel.IdPersona = idPersona;
                 listaTelefonos.Add(tel);
             }
 
-            foreach (GridViewRow row in dgvCorreoFormulario.Rows)
+            foreach (String str in listaCorreosModal)
             {
                 CorreoElectronico correoe = new CorreoElectronico();
-                correoe.CorreoElectronico1 = row.Cells[0].Text;
+                correoe.CorreoElectronico1 = str;
                 correoe.Activo = true;
                 correoe.IdPersona = idPersona;
                 listaCorreoElectronicos.Add(correoe);
@@ -95,7 +95,9 @@ namespace CyT
             GuardarCorreoElectronico(listaCorreoElectronicos);
 
             MostrarPersona();
-            //LimpiarPantalla();
+            LimpiarPantalla();
+            MostrarTelefono();
+            MostrarCorreoElectronico();
         }
 
         private void GuardarTelefono(IList<Telefono> listaTelefonos)
@@ -114,15 +116,18 @@ namespace CyT
             dgvTelefonoModal.DataSource = listaTelefonosModal;
             dgvTelefonoModal.DataBind();
             dgvTelefonoModal.HeaderRow.Cells[0].Text = "Telefono";
+
             dgvTelefonoFormulario.DataSource = listaTelefonosModal;
             dgvTelefonoFormulario.DataBind();
-            //dgvTelefonoFormulario.HeaderRow.Cells[0].Text = "Telefono";
+            //dgvTelefonoFormulario.HeaderRow.Cells[0].Text = "Telefonooooooooo";
         }
 
         private void MostrarCorreoElectronico()
         {
             dgvCorreoModal.DataSource = listaCorreosModal;
             dgvCorreoModal.DataBind();
+            dgvCorreoModal.HeaderRow.Cells[0].Text = "Correo Electronico";
+
             dgvCorreoFormulario.DataSource = listaCorreosModal;
             dgvCorreoFormulario.DataBind();
         }
@@ -173,6 +178,11 @@ namespace CyT
         }
 
         protected void dgvTelefonoFormulario_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
+        protected void btnEliminarCorreoModal_Click(object sender, EventArgs e)
         {
 
         }
