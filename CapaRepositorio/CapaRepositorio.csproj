@@ -48,11 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActuacionRepo.cs" />
+    <Compile Include="CorreoElectronicoRepo.cs" />
     <Compile Include="FondoRepo.cs" />
     <Compile Include="OrigenRepo.cs" />
     <Compile Include="PersonaRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProyectoRepo.cs" />
+    <Compile Include="TelefonoRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDominio\CapaDominio.csproj">

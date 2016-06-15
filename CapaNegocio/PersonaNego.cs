@@ -17,9 +17,9 @@ namespace CapaNegocio
         {
             return personaRepo.MostrarPersona();
         }
-        public void GuardarPersona(Persona persona, IList<Telefono> listaTelefonos, IList<CorreoElectronico> listaCorreoElectronicos)
+        public int GuardarPersona(Persona persona)
         {
-            personaRepo.GuardarPersona(persona, listaTelefonos, listaCorreoElectronicos);
+            return personaRepo.GuardarPersona(persona);
         }
         public IEnumerable<Localidad> MostrarLocalidad()
         {
