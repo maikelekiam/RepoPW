@@ -24,7 +24,7 @@ namespace CapaRepositorio
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
                 IEnumerable<Convocatorium> result = modeloDeDominio.Convocatoria.ToList();
-                return modeloDeDominio.CreateDetachedCopy(result);
+                return result;
             }
         }
 

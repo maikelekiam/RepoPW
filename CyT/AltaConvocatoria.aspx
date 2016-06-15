@@ -116,6 +116,23 @@
                     <asp:Button ID="btnGuardarConvocatoria" runat="server" Text="Guardar Convocatoria" CssClass="btn btn-success form-control" OnClick="btnGuardarConvocatoria_Click" />
                 </div>
             </div>
+
+
+            <!--Lista de convocatorias cargadas-->
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <asp:GridView ID="dgvConvocatoria" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvFondo_SelectedIndexChanged"
+                        CssClass="table table-hover table-bordered" BorderWidth="4px" EmptyDataText="No existen convocatorias registradas" ShowHeaderWhenEmpty="true">
+                        <Columns>
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Nombre Convocatoria" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Descripcion" DataField="descripcion" ItemStyle-HorizontalAlign="Center" />
+                            
+                        </Columns>
+                        <SelectedRowStyle BackColor="Azure" />
+                    </asp:GridView>
+                </div>
+            </div>
         </asp:Panel>
     </div>
 </asp:Content>
