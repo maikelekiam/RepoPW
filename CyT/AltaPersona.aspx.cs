@@ -13,6 +13,9 @@ namespace CyT
     public partial class AltaPersona : System.Web.UI.Page
     {
         PersonaNego personaNego = new PersonaNego();
+        TelefonoNego telefonoNego = new TelefonoNego();
+        CorreoElectronicoNego correoElectronicoNego = new CorreoElectronicoNego();
+        
         static List<string> listaTelefonosModal = new List<string>();
         static List<string> listaCorreosModal = new List<string>();
         IList<Telefono> listaTelefonos = new List<Telefono>();
@@ -31,7 +34,7 @@ namespace CyT
             listaTelefonos.Clear();
         }
 
-        //Los muestro en la GRILLA
+        //Muestra los datos de las personas en la GRILLA
         private void MostrarPersona()
         {
             dgvPersona.DataSource = personaNego.MostrarPersona().ToList();
@@ -68,18 +71,15 @@ namespace CyT
             persona.IsInteresado = chkIsInteresado.Checked;
             persona.Activo = true;
 
+            int idPersona=personaNego.GuardarPersona(persona);
+
             foreach (GridViewRow row in dgvTelefonoFormulario.Rows)
             {
-                for (int i = 0; i < dgvTelefonoFormulario.Columns.Count; i++)
-                {
-                    
-                    String cellText = row.Cells[i].Text;
-                }
-
-                //Telefono tel = new Telefono();
-                //tel.Telefono1 = row.Cells[0].Text;
-                //tel.Activo = true;
-                //listaTelefonos.Add(tel);
+                Telefono tel = new Telefono();
+                tel.Telefono1 = row.Cells[0].Text;
+                tel.Activo = true;
+                tel.IdPersona = idPersona;
+                listaTelefonos.Add(tel);
             }
 
             foreach (GridViewRow row in dgvCorreoFormulario.Rows)
@@ -87,16 +87,28 @@ namespace CyT
                 CorreoElectronico correoe = new CorreoElectronico();
                 correoe.CorreoElectronico1 = row.Cells[0].Text;
                 correoe.Activo = true;
+                correoe.IdPersona = idPersona;
                 listaCorreoElectronicos.Add(correoe);
             }
-            
-            personaNego.GuardarPersona(persona, listaTelefonos, listaCorreoElectronicos);
-            //Int32 idTemporal = personaNego.MostrarUltimoIdPersona();
-            //personaNego.GuardarTelefonos(listaTelefonosModal, idTemporal);
+
+            GuardarTelefono(listaTelefonos);
+            GuardarCorreoElectronico(listaCorreoElectronicos);
+
             MostrarPersona();
-            LimpiarPantalla();
+            //LimpiarPantalla();
         }
 
+        private void GuardarTelefono(IList<Telefono> listaTelefonos)
+        {
+            telefonoNego.GuardarTelefono(listaTelefonos);
+        }
+
+        private void GuardarCorreoElectronico(IList<CorreoElectronico> listaCorreoElectronicos)
+        {
+            correoElectronicoNego.GuardarCorreoElectronico(listaCorreoElectronicos);
+        }
+
+        //Muestra los telefonos tanto en el MODAL como asi tambien en la GRILLA del formulario
         private void MostrarTelefono()
         {
             dgvTelefonoModal.DataSource = listaTelefonosModal;
@@ -114,13 +126,6 @@ namespace CyT
             dgvCorreoFormulario.DataSource = listaCorreosModal;
             dgvCorreoFormulario.DataBind();
         }
-        //protected void dgvTelefonoFormulario_RowDataBound(object sender, GridViewRowEventArgs e)
-        //{
-        //    if (e.Row.RowType == DataControlRowType.Header)
-        //    {
-        //        e.Row.Cells[0].Text = "Lista de Telefonos:";
-        //    }
-        //}
 
         protected void dgvCorreoFormulario_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -158,9 +163,16 @@ namespace CyT
             chkIsInteresado.Checked = false;
             listaTelefonosModal.Clear();
             listaCorreosModal.Clear();
+            listaCorreoElectronicos.Clear();
+            listaTelefonos.Clear();
         }
 
         protected void btnEliminarTelefonoModal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void dgvTelefonoFormulario_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
 
         }

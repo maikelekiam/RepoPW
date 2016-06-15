@@ -10,7 +10,7 @@ namespace CapaRepositorio
     public class PersonaRepo
     {
         // METODO PARA GUARDAR UNA PERSONA
-        public void GuardarPersona(Persona persona, IList<Telefono> listaTelefonos, IList<CorreoElectronico> listaCorreoElectronicos)
+        public int GuardarPersona(Persona persona)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
@@ -18,30 +18,29 @@ namespace CapaRepositorio
                 modeloDeDominio.SaveChanges();
                 int idPersona = persona.IdPersona;
 
-                foreach (Telefono telefono in listaTelefonos)
-                {
-                    Telefono newTelefono = new Telefono();
-                    newTelefono.Telefono1 = telefono.Telefono1.ToString();
-                    newTelefono.IdPersona = idPersona;
-                    newTelefono.Activo = true;
+                //foreach (Telefono telefono in listaTelefonos)
+                //{
+                //    Telefono newTelefono = new Telefono();
+                //    newTelefono.Telefono1 = telefono.Telefono1.ToString();
+                //    newTelefono.IdPersona = idPersona;
+                //    newTelefono.Activo = true;
 
+                //    persona.Telefonos.Add(newTelefono);
                    
+                //}
 
-                    persona.Telefonos.Add(newTelefono);
-                   
-                }
+                //foreach (CorreoElectronico correoe in listaCorreoElectronicos)
+                //{
+                //    CorreoElectronico newCorreoElectronico = new CorreoElectronico();
+                //    newCorreoElectronico.CorreoElectronico1 = correoe.CorreoElectronico1.ToString();
+                //    newCorreoElectronico.Activo = true;
 
-                foreach (CorreoElectronico correoe in listaCorreoElectronicos)
-                {
-                    CorreoElectronico newCorreoElectronico = new CorreoElectronico();
-                    newCorreoElectronico.CorreoElectronico1 = correoe.CorreoElectronico1.ToString();
-                    newCorreoElectronico.Activo = true;
+                //    modeloDeDominio.Add(persona);
 
-                    modeloDeDominio.Add(persona);
-
-                    persona.CorreoElectronicos.Add(newCorreoElectronico);
-                    modeloDeDominio.SaveChanges();
-                }
+                //    persona.CorreoElectronicos.Add(newCorreoElectronico);
+                //    modeloDeDominio.SaveChanges();
+                //}
+                return idPersona;
             }
         }
 
@@ -65,22 +64,22 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
-        public void GuardarTelefonos(List<string> lista, Int32 idTemporal)
-        {
-            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
-            {
-                foreach (string elemento in lista)
-                {
-                    Telefono tel = new Telefono();
-                    tel.IdPersona = idTemporal;
-                    tel.Telefono1 = elemento;
-                    tel.Activo = true;
+        //public void GuardarTelefonos(List<string> lista, Int32 idTemporal)
+        //{
+        //    using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+        //    {
+        //        foreach (string elemento in lista)
+        //        {
+        //            Telefono tel = new Telefono();
+        //            tel.IdPersona = idTemporal;
+        //            tel.Telefono1 = elemento;
+        //            tel.Activo = true;
 
-                    modeloDeDominio.Add(tel);
-                    modeloDeDominio.SaveChanges();
-                }
-            }
-        }
+        //            modeloDeDominio.Add(tel);
+        //            modeloDeDominio.SaveChanges();
+        //        }
+        //    }
+        //}
 
         //public Int32 MostrarUltimoIdPersona()
         //{
