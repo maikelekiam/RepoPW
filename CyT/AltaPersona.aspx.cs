@@ -15,7 +15,7 @@ namespace CyT
         PersonaNego personaNego = new PersonaNego();
         TelefonoNego telefonoNego = new TelefonoNego();
         CorreoElectronicoNego correoElectronicoNego = new CorreoElectronicoNego();
-        static int idPersonaActual;
+        int idPersonaActual;
 
         static List<string> listaTelefonosModal = new List<string>();
         static List<string> listaCorreosModal = new List<string>();
@@ -120,30 +120,19 @@ namespace CyT
         {
             dgvTelefonoModal.DataSource = listaTelefonosModal;
             dgvTelefonoModal.DataBind();
-            //dgvTelefonoModal.HeaderRow.Cells[0].Text = "Telefono";
 
             dgvTelefonoFormulario.DataSource = listaTelefonosModal;
             dgvTelefonoFormulario.DataBind();
-            //dgvTelefonoFormulario.HeaderRow.Cells[0].Text = "Telefonooooooooo";
         }
 
         private void MostrarCorreoElectronico()
         {
             dgvCorreoModal.DataSource = listaCorreosModal;
             dgvCorreoModal.DataBind();
-            //dgvCorreoModal.HeaderRow.Cells[0].Text = "Correo Electronico";
 
             dgvCorreoFormulario.DataSource = listaCorreosModal;
             dgvCorreoFormulario.DataBind();
         }
-
-        //protected void dgvCorreoFormulario_RowDataBound(object sender, GridViewRowEventArgs e)
-        //{
-        //    if (e.Row.RowType == DataControlRowType.Header)
-        //    {
-        //        e.Row.Cells[0].Text = "Lista de Correos:";
-        //    }
-        //}
 
         protected void btnModalTelefonoGuardar_Click(object sender, EventArgs e)
         {
@@ -176,37 +165,42 @@ namespace CyT
             listaCorreoElectronicos.Clear();
             listaTelefonos.Clear();
         }
-
-        protected void btnEliminarTelefonoModal_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         protected void dgvTelefonoFormulario_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            int index = Convert.ToInt32(e.RowIndex);
 
+            for (int i = 0; i < listaTelefonosModal.Count; i++)
+            {
+                if (i == index)
+                {
+                    listaTelefonosModal.RemoveAt(i);
+                }
+            }
+
+            MostrarTelefono();
         }
 
-        protected void btnEliminarCorreoModal_Click(object sender, EventArgs e)
+        protected void btnEliminarCorreoModal_Command(object sender, CommandEventArgs e)
         {
+            int index = Convert.ToInt32(e.CommandArgument.ToString());
+            txtApellido.Text = e.CommandArgument.ToString();
+
+            for (int i = 0; i < listaCorreosModal.Count; i++)
+            {
+                if (i == index)
+                {
+                    listaCorreosModal.RemoveAt(i);
+                }
+            }
+
+            MostrarCorreoElectronico();
 
         }
-
-        //protected void seleccionarButton_Click(object sender, EventArgs e)
-        //{
-            
-        //}
-
         protected void dgvPersona_SelectedIndexChanged(object sender, EventArgs e)
         {
             idPersonaActual = Convert.ToInt32(dgvPersona.SelectedRow.Cells[0].Text);
-
-
-
             txtApellido.Text = dgvPersona.SelectedRow.Cells[0].Text;
         }
-
-        
-        
     }
 }
