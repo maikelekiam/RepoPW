@@ -17,6 +17,10 @@ namespace CapaNegocio
         {
             telefonoRepo.GuardarTelefono(listaTelefonos);
         }
-    }
 
+        public List<Telefono> TraerListaTelefonos(int id)
+        {
+            return telefonoRepo.TraerListaTelefonos(id);
+        }
+    }
 }

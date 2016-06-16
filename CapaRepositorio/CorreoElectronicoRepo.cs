@@ -20,5 +20,16 @@ namespace CapaRepositorio
                 }
             }
         }
+        public List<CorreoElectronico> TraerListaCorreoElectronicos(int id)
+        {
+            List<CorreoElectronico> datosLista;
+
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<CorreoElectronico> listaDeCorreos = modeloDeDominio.CorreoElectronicos.Where(c => c.IdPersona == id).ToList();
+                datosLista = (List<CorreoElectronico>)listaDeCorreos;
+            }
+            return datosLista;
+        }
     }
 }

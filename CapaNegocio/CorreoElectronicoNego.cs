@@ -16,5 +16,10 @@ namespace CapaNegocio
         {
             correoElectronicoRepo.GuardarCorreoElectronico(listaCorreoElectronicos);
         }
+
+        public List<CorreoElectronico> TraerListaCorreoElectronicos(int id)
+        {
+            return correoElectronicoRepo.TraerListaCorreoElectronicos(id);
+        }
     }
 }

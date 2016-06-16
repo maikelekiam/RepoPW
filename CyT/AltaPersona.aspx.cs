@@ -15,6 +15,7 @@ namespace CyT
         PersonaNego personaNego = new PersonaNego();
         TelefonoNego telefonoNego = new TelefonoNego();
         CorreoElectronicoNego correoElectronicoNego = new CorreoElectronicoNego();
+        //LocalidadNego localidadNego = new LocalidadNego(); FALTA!!!
         int idPersonaActual;
 
         static List<string> listaTelefonosModal = new List<string>();
@@ -40,7 +41,14 @@ namespace CyT
         {
             dgvPersona.DataSource = personaNego.MostrarPersona().ToList();
             dgvPersona.DataBind();
-            dgvPersona.Columns[0].Visible = false;
+            dgvPersona.Columns[2].Visible = false;
+            dgvPersona.Columns[3].Visible = false;
+            dgvPersona.Columns[4].Visible = false;
+            dgvPersona.Columns[6].Visible = false;
+            dgvPersona.Columns[7].Visible = false;
+            dgvPersona.Columns[9].Visible = false;
+            dgvPersona.Columns[10].Visible = false;
+            dgvPersona.Columns[12].Visible = false;
         }
 
         protected void btnGuardarPersona_Click(object sender, EventArgs e)
@@ -165,7 +173,7 @@ namespace CyT
             listaCorreoElectronicos.Clear();
             listaTelefonos.Clear();
         }
-        
+
         protected void dgvTelefonoFormulario_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int index = Convert.ToInt32(e.RowIndex);
@@ -199,8 +207,47 @@ namespace CyT
         }
         protected void dgvPersona_SelectedIndexChanged(object sender, EventArgs e)
         {
-            idPersonaActual = Convert.ToInt32(dgvPersona.SelectedRow.Cells[0].Text);
-            txtApellido.Text = dgvPersona.SelectedRow.Cells[0].Text;
+            idPersonaActual = Convert.ToInt32(dgvPersona.SelectedRow.Cells[5].Text);
+
+            txtNombre.Text = dgvPersona.SelectedRow.Cells[1].Text;
+            txtApellido.Text = dgvPersona.SelectedRow.Cells[11].Text;
+            ddlTipoDocumento.Text = dgvPersona.SelectedRow.Cells[0].Text;
+            txtCuil.Text = dgvPersona.SelectedRow.Cells[10].Text;
+            txtDocumento.Text = dgvPersona.SelectedRow.Cells[8].Text;
+            txtFechaNacimiento.Text = dgvPersona.SelectedRow.Cells[6].Text;
+            txtDireccion.Text = dgvPersona.SelectedRow.Cells[9].Text;
+            //ddlLocalidad.Text = dgvPersona.SelectedRow.Cells[2].Text;
+            txtEmpresa.Text = dgvPersona.SelectedRow.Cells[7].Text;
+            if (dgvPersona.SelectedRow.Cells[3].Text == "True") { chkIsInteresado.Checked = true; }
+            else { chkIsInteresado.Checked = false; }
+            if (dgvPersona.SelectedRow.Cells[4].Text == "True") { chkIsBeneficiario.Checked = true; }
+            else { chkIsBeneficiario.Checked = false; }
+
+            //Falta cargar la lista de telefonos
+            //Falta cargar la lista de correos
+
+            TraerListaTelefonos(idPersonaActual);
+            MostrarTelefono();
+
+
+            TraerListaCorreoElectronicos(idPersonaActual);
+            MostrarCorreoElectronico();
+        }
+
+        private void TraerListaTelefonos(int id)
+        {
+            listaTelefonosModal.Clear();
+            listaTelefonos = telefonoNego.TraerListaTelefonos(id);
+
+            foreach (Telefono tel in listaTelefonos)
+            {
+                string str = tel.Telefono1.ToString();
+                listaTelefonosModal.Add(str);
+            }
+        }
+        private void TraerListaCorreoElectronicos(int id)
+        {
+            //listaCorreosModal = correoElectronicoNego.TraerListaCorreoElectronicos(id);
         }
     }
 }

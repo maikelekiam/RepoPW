@@ -21,5 +21,17 @@ namespace CapaRepositorio
                 }
             }
         }
+
+        public List<Telefono> TraerListaTelefonos(int id)
+        {
+            List<Telefono> datosLista;
+
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<Telefono> listaDeTelefonos = modeloDeDominio.Telefonos.Where(c => c.IdPersona == id).ToList();
+                datosLista = (List<Telefono>)listaDeTelefonos;
+            }
+            return datosLista;
+        }
     }
 }
