@@ -58,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProyectoNego.cs" />
     <Compile Include="TelefonoNego.cs" />
+    <Compile Include="TipoFinanciamientoNego.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDominio\CapaDominio.csproj">
