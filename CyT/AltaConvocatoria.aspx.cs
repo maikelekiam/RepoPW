@@ -11,6 +11,7 @@ namespace CyT
 {
     public partial class AltaConvocatoria : System.Web.UI.Page
     {
+        private ConvocatoriaNego convocatoriaNego = new ConvocatoriaNego();
         private FondoNego fondoNego = new FondoNego();
         private ModalidadNego modalidadNego = new ModalidadNego();
         protected void Page_Load(object sender, EventArgs e)
@@ -19,6 +20,7 @@ namespace CyT
             {
                 LlenarListaFondos();
                 LlenarListaModalidad();
+                LlenarGrillaConvocatorias();
             }
         }
 
@@ -44,6 +46,12 @@ namespace CyT
             ddlModalidad.DataSource = modalidadNego.MostrarModalidades().ToList();
             ddlModalidad.DataValueField = "idModalidad";
             ddlModalidad.DataBind();
+        }
+
+        private void LlenarGrillaConvocatorias()
+        {
+            dgvConvocatoria.DataSource = convocatoriaNego.MostrarConvocatorias().ToList();
+            dgvConvocatoria.DataBind();
         }
     }
 }
