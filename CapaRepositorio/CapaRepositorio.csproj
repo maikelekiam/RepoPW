@@ -51,6 +51,7 @@
     <Compile Include="ConvocatoriaRepo.cs" />
     <Compile Include="CorreoElectronicoRepo.cs" />
     <Compile Include="FondoRepo.cs" />
+    <Compile Include="ListaTipoDestinatarioRepo.cs" />
     <Compile Include="ModalidadRepo.cs" />
     <Compile Include="OrigenRepo.cs" />
     <Compile Include="PersonaRepo.cs" />
