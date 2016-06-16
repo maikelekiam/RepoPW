@@ -51,6 +51,7 @@
     <Compile Include="ConvocatoriaNego.cs" />
     <Compile Include="CorreoElectronicoNego.cs" />
     <Compile Include="FondoNego.cs" />
+    <Compile Include="ListaTipoDestinatarioNego.cs" />
     <Compile Include="ModalidadNego.cs" />
     <Compile Include="OrigenNego.cs" />
     <Compile Include="PersonaNego.cs" />
