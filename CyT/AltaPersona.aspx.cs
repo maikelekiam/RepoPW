@@ -15,7 +15,7 @@ namespace CyT
         PersonaNego personaNego = new PersonaNego();
         TelefonoNego telefonoNego = new TelefonoNego();
         CorreoElectronicoNego correoElectronicoNego = new CorreoElectronicoNego();
-        private int idPersonaActual;
+        static int idPersonaActual;
 
         static List<string> listaTelefonosModal = new List<string>();
         static List<string> listaCorreosModal = new List<string>();
@@ -98,9 +98,11 @@ namespace CyT
             GuardarCorreoElectronico(listaCorreoElectronicos);
 
             MostrarPersona();
-            LimpiarPantalla();
-            MostrarTelefono();
-            MostrarCorreoElectronico();
+            Response.Redirect("AltaPersona.aspx");
+
+            //LimpiarPantalla();
+            //MostrarTelefono();
+            //MostrarCorreoElectronico();
         }
 
         private void GuardarTelefono(IList<Telefono> listaTelefonos)

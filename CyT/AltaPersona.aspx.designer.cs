@@ -175,51 +175,6 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Label lblTelefono;
         
         /// <summary>
-        /// dgvTelefonoModal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvTelefonoModal;
-        
-        /// <summary>
-        /// lblListaTelefonosModal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblListaTelefonosModal;
-        
-        /// <summary>
-        /// txtTelefonoModal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefonoModal;
-        
-        /// <summary>
-        /// btnModalTelefonoSalir control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModalTelefonoSalir;
-        
-        /// <summary>
-        /// btnModalTelefonoGuardar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModalTelefonoGuardar;
-        
-        /// <summary>
         /// dgvTelefonoFormulario control.
         /// </summary>
         /// <remarks>
@@ -362,5 +317,50 @@ namespace CyT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView dgvPersona;
+        
+        /// <summary>
+        /// dgvTelefonoModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dgvTelefonoModal;
+        
+        /// <summary>
+        /// lblListaTelefonosModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblListaTelefonosModal;
+        
+        /// <summary>
+        /// txtTelefonoModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTelefonoModal;
+        
+        /// <summary>
+        /// btnModalTelefonoSalir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalTelefonoSalir;
+        
+        /// <summary>
+        /// btnModalTelefonoGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalTelefonoGuardar;
     }
 }
