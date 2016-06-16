@@ -291,13 +291,37 @@
             <!--GRILLA PARA MOSTRAR LAS PERSONAS EN LA BASE DE DATOS-->
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
-                    <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="false"
-                        CssClass="table table-hover table-bordered" BorderWidth="4px">
+                    <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="true"
+                        CssClass="table table-hover table-bordered" BorderWidth="2px"
+                        GridLines="Both"
+                        OnSelectedIndexChanged="dgvPersona_SelectedIndexChanged"
+                        >
                         <Columns>
+                            <asp:BoundField HeaderText="ID" DataField="idPersona" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Apellido" DataField="apellido" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Tipo" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Documento" DataField="documento" ItemStyle-HorizontalAlign="Center" />
+                            <asp:ButtonField Text="Editar" CommandName="select" />
+
+
+
+
+
+
+
+                            <%--<asp:TemplateField HeaderText="Eliminar">
+                                <ItemTemplate>
+                                    <asp:Button ID="deleteButton" runat="server" CommandName="Delete" Text="Eliminar"
+                                        OnClientClick="return confirm('Are you sure you want to delete this user?');" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Seleccionar">
+                                <ItemTemplate>
+                                    <asp:Button ID="seleccionarButton" runat="server" CommandName="Select" Text="Seleccionar"
+                                        OnClick="seleccionarButton_Click" />
+                                </ItemTemplate>
+                            </asp:TemplateField>--%>
                         </Columns>
                     </asp:GridView>
                 </div>

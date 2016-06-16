@@ -15,7 +15,8 @@ namespace CyT
         PersonaNego personaNego = new PersonaNego();
         TelefonoNego telefonoNego = new TelefonoNego();
         CorreoElectronicoNego correoElectronicoNego = new CorreoElectronicoNego();
-        
+        private int idPersonaActual;
+
         static List<string> listaTelefonosModal = new List<string>();
         static List<string> listaCorreosModal = new List<string>();
         IList<Telefono> listaTelefonos = new List<Telefono>();
@@ -39,6 +40,7 @@ namespace CyT
         {
             dgvPersona.DataSource = personaNego.MostrarPersona().ToList();
             dgvPersona.DataBind();
+            dgvPersona.Columns[0].Visible = false;
         }
 
         protected void btnGuardarPersona_Click(object sender, EventArgs e)
@@ -46,7 +48,8 @@ namespace CyT
             GuardarPersona();
         }
 
-        //Muestro en el DROPDOWNLIST las LOCALIDADES
+
+        //Muestra en el DROPDOWNLIST las LOCALIDADES
         private void MostrarLocalidad()
         {
             ddlLocalidad.DataSource = personaNego.MostrarLocalidad().ToList();
@@ -71,7 +74,7 @@ namespace CyT
             persona.IsInteresado = chkIsInteresado.Checked;
             persona.Activo = true;
 
-            int idPersona=personaNego.GuardarPersona(persona);
+            int idPersona = personaNego.GuardarPersona(persona);
 
             foreach (String str in listaTelefonosModal)
             {
@@ -115,7 +118,7 @@ namespace CyT
         {
             dgvTelefonoModal.DataSource = listaTelefonosModal;
             dgvTelefonoModal.DataBind();
-            dgvTelefonoModal.HeaderRow.Cells[0].Text = "Telefono";
+            //dgvTelefonoModal.HeaderRow.Cells[0].Text = "Telefono";
 
             dgvTelefonoFormulario.DataSource = listaTelefonosModal;
             dgvTelefonoFormulario.DataBind();
@@ -126,19 +129,19 @@ namespace CyT
         {
             dgvCorreoModal.DataSource = listaCorreosModal;
             dgvCorreoModal.DataBind();
-            dgvCorreoModal.HeaderRow.Cells[0].Text = "Correo Electronico";
+            //dgvCorreoModal.HeaderRow.Cells[0].Text = "Correo Electronico";
 
             dgvCorreoFormulario.DataSource = listaCorreosModal;
             dgvCorreoFormulario.DataBind();
         }
 
-        protected void dgvCorreoFormulario_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.Header)
-            {
-                e.Row.Cells[0].Text = "Lista de Correos:";
-            }
-        }
+        //protected void dgvCorreoFormulario_RowDataBound(object sender, GridViewRowEventArgs e)
+        //{
+        //    if (e.Row.RowType == DataControlRowType.Header)
+        //    {
+        //        e.Row.Cells[0].Text = "Lista de Correos:";
+        //    }
+        //}
 
         protected void btnModalTelefonoGuardar_Click(object sender, EventArgs e)
         {
@@ -186,5 +189,22 @@ namespace CyT
         {
 
         }
+
+        //protected void seleccionarButton_Click(object sender, EventArgs e)
+        //{
+            
+        //}
+
+        protected void dgvPersona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idPersonaActual = Convert.ToInt32(dgvPersona.SelectedRow.Cells[0].Text);
+
+
+
+            txtApellido.Text = dgvPersona.SelectedRow.Cells[0].Text;
+        }
+
+        
+        
     }
 }
