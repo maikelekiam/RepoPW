@@ -17,29 +17,6 @@ namespace CapaRepositorio
                 modeloDeDominio.Add(persona);
                 modeloDeDominio.SaveChanges();
                 int idPersona = persona.IdPersona;
-
-                //foreach (Telefono telefono in listaTelefonos)
-                //{
-                //    Telefono newTelefono = new Telefono();
-                //    newTelefono.Telefono1 = telefono.Telefono1.ToString();
-                //    newTelefono.IdPersona = idPersona;
-                //    newTelefono.Activo = true;
-
-                //    persona.Telefonos.Add(newTelefono);
-                   
-                //}
-
-                //foreach (CorreoElectronico correoe in listaCorreoElectronicos)
-                //{
-                //    CorreoElectronico newCorreoElectronico = new CorreoElectronico();
-                //    newCorreoElectronico.CorreoElectronico1 = correoe.CorreoElectronico1.ToString();
-                //    newCorreoElectronico.Activo = true;
-
-                //    modeloDeDominio.Add(persona);
-
-                //    persona.CorreoElectronicos.Add(newCorreoElectronico);
-                //    modeloDeDominio.SaveChanges();
-                //}
                 return idPersona;
             }
         }
@@ -64,30 +41,13 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
-        //public void GuardarTelefonos(List<string> lista, Int32 idTemporal)
-        //{
-        //    using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
-        //    {
-        //        foreach (string elemento in lista)
-        //        {
-        //            Telefono tel = new Telefono();
-        //            tel.IdPersona = idTemporal;
-        //            tel.Telefono1 = elemento;
-        //            tel.Activo = true;
-
-        //            modeloDeDominio.Add(tel);
-        //            modeloDeDominio.SaveChanges();
-        //        }
-        //    }
-        //}
-
-        //public Int32 MostrarUltimoIdPersona()
-        //{
-        //    using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
-        //    {
-        //        Persona result = modeloDeDominio.Personas.LastOrDefault();
-        //        return result.IdPersona;
-        //    }
-        //}
+        public void ActualizarPersona(Persona persona)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                modeloDeDominio.AttachCopy(persona);
+                modeloDeDominio.SaveChanges();
+            }
+        }
     }
 }

@@ -47,6 +47,7 @@ namespace CyT
             dgvPersona.Columns[2].Visible = false;
             dgvPersona.Columns[3].Visible = false;
             dgvPersona.Columns[4].Visible = false;
+            dgvPersona.Columns[5].Visible = false;
             dgvPersona.Columns[6].Visible = false;
             dgvPersona.Columns[7].Visible = false;
             dgvPersona.Columns[9].Visible = false;
@@ -260,6 +261,54 @@ namespace CyT
         }
 
         protected void btnActualizarPersona_Click(object sender, EventArgs e)
+        {
+            Persona persona = new Persona();
+
+            int idPersona = Convert.ToInt32(dgvPersona.SelectedRow.Cells[5].Text);
+
+            persona.Nombre = txtNombre.Text;
+            persona.Apellido = txtApellido.Text;
+            persona.TipoDocumento = ddlTipoDocumento.SelectedValue.ToString();
+            persona.Documento = txtDocumento.Text;
+            persona.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+            persona.Cuil = txtCuil.Text;
+            persona.Direccion = txtDireccion.Text;
+            persona.IdLocalidad = Convert.ToInt32(ddlLocalidad.SelectedIndex.ToString());
+            persona.Empresa = txtEmpresa.Text;
+            persona.IsBeneficiario = chkIsBeneficiario.Checked;
+            persona.IsInteresado = chkIsInteresado.Checked;
+            persona.Activo = true;
+            persona.IdPersona = idPersona;
+
+            personaNego.ActualizarPersona(persona);
+
+            foreach (String str in listaTelefonosModal)
+            {
+                Telefono tel = new Telefono();
+                tel.Telefono1 = str;
+                tel.Activo = true;
+                tel.IdPersona = idPersona;
+                listaTelefonos.Add(tel);
+            }
+
+            foreach (String str in listaCorreosModal)
+            {
+                CorreoElectronico correoe = new CorreoElectronico();
+                correoe.CorreoElectronico1 = str;
+                correoe.Activo = true;
+                correoe.IdPersona = idPersona;
+                listaCorreoElectronicos.Add(correoe);
+            }
+
+            ActualizarTelefono(idPersona, listaTelefonos);
+            ActualizarCorreoElectronico(idPersona, listaCorreoElectronicos);
+        }
+
+        private void ActualizarTelefono(int id, IList<Telefono> listaTelefonos)
+        {
+            telefonoNego.ActualizarTelefono(id, listaTelefonos);
+        }
+        private void ActualizarCorreoElectronico(int id, IList<CorreoElectronico> listaCorreoElectronicos)
         {
 
         }

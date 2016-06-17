@@ -22,5 +22,10 @@ namespace CapaNegocio
         {
             return telefonoRepo.TraerListaTelefonos(id);
         }
+
+        public void ActualizarTelefono(int id, IList<Telefono> listaTelefonos)
+        {
+            telefonoRepo.ActualizarTelefono(id, listaTelefonos);
+        }
     }
 }

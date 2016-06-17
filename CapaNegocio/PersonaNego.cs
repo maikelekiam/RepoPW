@@ -25,14 +25,10 @@ namespace CapaNegocio
         {
             return personaRepo.MostrarLocalidad();
         }
-        
-        //public void GuardarTelefonos(List<string> lista, Int32 idTemporal)
-        //{
-        //    personaRepo.GuardarTelefonos(lista, idTemporal);
-        //}
-        //public Int32 MostrarUltimoIdPersona()
-        //{
-        //    return personaRepo.MostrarUltimoIdPersona();
-        //}
+
+        public void ActualizarPersona(Persona persona)
+        {
+            personaRepo.ActualizarPersona(persona);
+        }
     }
 }

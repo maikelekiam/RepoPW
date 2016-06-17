@@ -33,5 +33,32 @@ namespace CapaRepositorio
             }
             return datosLista;
         }
+
+        public void ActualizarTelefono(int id, IList<Telefono> listaTelefonos)
+        {
+            BorrarListaTelefonosSegunIdPersona(id);
+
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                foreach (Telefono telefono in listaTelefonos)
+                {
+                    modeloDeDominio.Add(telefono);
+                    modeloDeDominio.SaveChanges();
+                }
+            }
+        }
+        private void BorrarListaTelefonosSegunIdPersona(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IQueryable<Telefono> query = modeloDeDominio.GetAll<Telefono>().Where(c => c.IdPersona == id);
+                
+                foreach (Telefono telefono in query)
+                {
+                    modeloDeDominio.Delete(telefono);
+                    modeloDeDominio.SaveChanges();
+                }
+            }
+        }
     }
 }
