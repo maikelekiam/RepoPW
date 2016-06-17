@@ -260,11 +260,16 @@
                 </div>
             </div>
 
-            <!--BOTON GUARDAR PERSONA      -->
+            <!--BOTON GUARDAR PERSONA Y ACTUALIZAR PERSONA      -->
             <div class="form-group">
                 <div class="col-md-2 col-md-offset-2">
                     <br />
                     <asp:Button ID="btnGuardarPersona" runat="server" Text="Guardar Persona" CssClass="btn btn-success form-control" OnClick="btnGuardarPersona_Click" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2 col-md-offset-2">
+                    <asp:Button ID="btnActualizarPersona" runat="server" Text="Actualizar Persona" CssClass="btn btn-success form-control" OnClick="btnActualizarPersona_Click" />
                 </div>
             </div>
 

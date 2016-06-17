@@ -34,11 +34,14 @@ namespace CyT
             listaCorreosModal.Clear();
             listaCorreoElectronicos.Clear();
             listaTelefonos.Clear();
+            
         }
 
         //Muestra los datos de las personas en la GRILLA
         private void MostrarPersona()
         {
+            btnActualizarPersona.Visible = false;
+            btnGuardarPersona.Visible = true;
             dgvPersona.DataSource = personaNego.MostrarPersona().ToList();
             dgvPersona.DataBind();
             dgvPersona.Columns[2].Visible = false;
@@ -173,7 +176,6 @@ namespace CyT
             listaCorreoElectronicos.Clear();
             listaTelefonos.Clear();
         }
-
         protected void dgvTelefonoFormulario_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int index = Convert.ToInt32(e.RowIndex);
@@ -223,15 +225,15 @@ namespace CyT
             if (dgvPersona.SelectedRow.Cells[4].Text == "True") { chkIsBeneficiario.Checked = true; }
             else { chkIsBeneficiario.Checked = false; }
 
-            //Falta cargar la lista de telefonos
-            //Falta cargar la lista de correos
-
             TraerListaTelefonos(idPersonaActual);
             MostrarTelefono();
 
-
             TraerListaCorreoElectronicos(idPersonaActual);
             MostrarCorreoElectronico();
+
+            btnGuardarPersona.Visible = false;
+            btnActualizarPersona.Visible = true;
+
         }
 
         private void TraerListaTelefonos(int id)
@@ -247,7 +249,19 @@ namespace CyT
         }
         private void TraerListaCorreoElectronicos(int id)
         {
-            //listaCorreosModal = correoElectronicoNego.TraerListaCorreoElectronicos(id);
+            listaCorreosModal.Clear();
+            listaCorreoElectronicos = correoElectronicoNego.TraerListaCorreoElectronicos(id);
+
+            foreach (CorreoElectronico corr in listaCorreoElectronicos)
+            {
+                string str = corr.CorreoElectronico1.ToString();
+                listaCorreosModal.Add(str);
+            }
+        }
+
+        protected void btnActualizarPersona_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
