@@ -295,6 +295,7 @@
                             <asp:BoundField HeaderText="Apellido" DataField="apellido" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Activo" DataField="activo" ItemStyle-HorizontalAlign="Center" />
                             <asp:ButtonField Text="Editar" CommandName="select" />
+                            <asp:ButtonField Text="Borrar" CommandName="delete" />
                         </Columns>
                     </asp:GridView>
                 </div>

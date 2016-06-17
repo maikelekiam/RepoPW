@@ -21,5 +21,9 @@ namespace CapaNegocio
         {
             return correoElectronicoRepo.TraerListaCorreoElectronicos(id);
         }
+        public void ActualizarCorreoElectronico(int id, IList<CorreoElectronico> listaCorreoElectronicos)
+        {
+            correoElectronicoRepo.ActualizarCorreoElectronico(id, listaCorreoElectronicos);
+        }
     }
 }

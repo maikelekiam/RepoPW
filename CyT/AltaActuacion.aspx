@@ -25,7 +25,7 @@
                         data-date-today-highlight="true">
                         <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaActuacion"></asp:TextBox>
                         <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
+                            <span class="glyphicon glyphicon-th"></span>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                     <!-- MODAL VIA DE COMUNICACION  -->
                     <div class="modal fade" id="modalViaComunicacion" tabindex="-1" role="dialog" aria-labelledby="modalLabelViaComunicacion" aria-hidden="true">
                         <div class="modal-dialog" role="document">
-                            <div class="modal-content col-md-pull-12">
+                            <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
@@ -104,7 +104,7 @@
                     <!-- MODAL VIA DE COMUNICACION  -->
                     <div class="modal fade" id="modalTematica" tabindex="-1" role="dialog" aria-labelledby="modalLabelTematica" aria-hidden="true">
                         <div class="modal-dialog" role="document">
-                            <div class="modal-content col-md-pull-12">
+                            <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
@@ -161,14 +161,25 @@
             <h4>TABLA DE PERSONAS</h4>
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
-                    <asp:GridView ID="dgvPersona" HeaderStyle-Font-Bold="true" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvPersona_SelectedIndexChanged"
-                        CssClass="table table-hover table-bordered" BorderWidth="4px">
+                    <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="false"
+                        CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
+                        GridLines="Both"
+                        OnSelectedIndexChanged="dgvPersona_SelectedIndexChanged">
                         <Columns>
-                            <asp:CommandField HeaderText="PERSONAS" HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowSelectButton="true" ShowDeleteButton="true" />
-                            <asp:BoundField HeaderText="Nombre" HeaderStyle-BackColor="#cccccc" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Apellido" HeaderStyle-BackColor="#cccccc" DataField="apellido" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Tipo" HeaderStyle-BackColor="#cccccc" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Documento" HeaderStyle-BackColor="#cccccc" DataField="documento" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Tipo" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Localidad" DataField="idLocalidad" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Interesado" DataField="isInteresado" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Beneficiario" DataField="isBeneficiario" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="ID" DataField="idPersona" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Fecha Nac" DataField="fechaNacimiento" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Empresa" DataField="empresa" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Documento" DataField="documento" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Direccion" DataField="direccion" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Cuil" DataField="cuil" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Apellido" DataField="apellido" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Activo" DataField="activo" ItemStyle-HorizontalAlign="Center" />
+                            <asp:ButtonField Text="Seleccionar" CommandName="select" />
                         </Columns>
                         <SelectedRowStyle BackColor="Azure" />
                     </asp:GridView>

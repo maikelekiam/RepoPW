@@ -28,18 +28,18 @@ namespace CapaNegocio
         {
             return actuacionRepo.MostrarViaComunicacion();
         }
-        public IEnumerable<Persona> MostrarPersona()
+        //public IEnumerable<Persona> MostrarPersona()
+        //{
+        //    return actuacionRepo.MostrarPersona();
+        //}
+        public IEnumerable<Actuacion> MostrarActuacionSegunPersona(int id)
         {
-            return actuacionRepo.MostrarPersona();
+            return actuacionRepo.MostrarActuacionSegunPersona(id);
         }
-        public IEnumerable<Actuacion> MostrarActuacionSegunPersona(string doc)
-        {
-            return actuacionRepo.MostrarActuacionSegunPersona(doc);
-        }
-        public Int32 MostrarIdPersonaSegunDocumento(string documento)
-        {
-            return actuacionRepo.MostrarIdPersonaSegunDocumento(documento);
-        }
+        //public int MostrarIdPersonaSegunDocumento(string documento)
+        //{
+        //    return actuacionRepo.MostrarIdPersonaSegunDocumento(documento);
+        //}
 
     }
 }

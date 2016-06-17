@@ -225,7 +225,7 @@ namespace CyT
             else { chkIsInteresado.Checked = false; }
             if (dgvPersona.SelectedRow.Cells[4].Text == "True") { chkIsBeneficiario.Checked = true; }
             else { chkIsBeneficiario.Checked = false; }
-
+            
             TraerListaTelefonos(idPersonaActual);
             MostrarTelefono();
 
@@ -310,7 +310,7 @@ namespace CyT
         }
         private void ActualizarCorreoElectronico(int id, IList<CorreoElectronico> listaCorreoElectronicos)
         {
-
+            correoElectronicoNego.ActualizarCorreoElectronico(id, listaCorreoElectronicos);
         }
     }
 }

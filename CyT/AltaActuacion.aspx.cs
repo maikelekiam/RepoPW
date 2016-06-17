@@ -12,6 +12,7 @@ namespace CyT
     public partial class AltaActuacion : System.Web.UI.Page
     {
         ActuacionNego actuacionNego = new ActuacionNego();
+        PersonaNego personaNego = new PersonaNego();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,7 +22,7 @@ namespace CyT
                 MostrarViaComunicacion(); //SIRVE PARA CARGAR DATOS EN EL DROPDOWNLIST
                 MostrarTematica(); //SIRVE PARA CARGAR DATOS EN EL DROPDOWNLIST
                 MostrarPersona(); //SIRVE PARA CARGAR DATOS EN LA GRILLA
-                LimpiarPantalla();
+                //LimpiarPantalla();
             }
         }
 
@@ -42,8 +43,17 @@ namespace CyT
         }
         private void MostrarPersona() //SIRVE PARA CARGAR DATOS EN LA GRILLA
         {
-            dgvPersona.DataSource = actuacionNego.MostrarPersona().ToList();
+            dgvPersona.DataSource = personaNego.MostrarPersona().ToList();
             dgvPersona.DataBind();
+            dgvPersona.Columns[2].Visible = false;
+            dgvPersona.Columns[3].Visible = false;
+            dgvPersona.Columns[4].Visible = false;
+            dgvPersona.Columns[5].Visible = false;
+            dgvPersona.Columns[6].Visible = false;
+            dgvPersona.Columns[7].Visible = false;
+            dgvPersona.Columns[9].Visible = false;
+            dgvPersona.Columns[10].Visible = false;
+            dgvPersona.Columns[12].Visible = false;
         }
         protected void btnGuardarActuacion_Click(object sender, EventArgs e)
         {
@@ -53,24 +63,25 @@ namespace CyT
         {
             Actuacion actuacion = new Actuacion();
 
-            actuacion.IdPersona = MostrarIdPersonaSegunDocumento();
-
+            actuacion.IdPersona = Convert.ToInt32(dgvPersona.SelectedRow.Cells[5].Text);
             actuacion.IdTematica = Convert.ToInt32(ddlTematica.SelectedIndex.ToString());
             actuacion.IdViaComunicacion = Convert.ToInt32(ddlViaComunicacion.SelectedIndex.ToString());
             actuacion.Fecha = Convert.ToDateTime(txtFechaActuacion.Text);
             actuacion.Detalle = txtDetalle.Text;
+            actuacion.Activo = true;
 
             actuacionNego.GuardarActuacion(actuacion);
 
-            MostrarActuacionSegunPersona();
-            LimpiarPantalla();
+            MostrarActuacionSegunPersona(Convert.ToInt32(dgvPersona.SelectedRow.Cells[5].Text));
+            //LimpiarPantalla();
         }
 
         protected void dgvPersona_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblPersonaSeleccionadaDeLaGrilla.Text = dgvPersona.SelectedRow.Cells[1].Text + " " + dgvPersona.SelectedRow.Cells[2].Text +
                 ", " + dgvPersona.SelectedRow.Cells[3].Text + ": " + dgvPersona.SelectedRow.Cells[4].Text;
-            MostrarActuacionSegunPersona();
+            int index = Convert.ToInt32(dgvPersona.SelectedRow.Cells[5].Text);
+            MostrarActuacionSegunPersona(index);
         }
 
         protected void dgvActuacion_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,18 +91,18 @@ namespace CyT
         }
 
         // busco en la tabla ACTUACION todas las actuaciones segun el DOCUMENTO ingresado
-        private void MostrarActuacionSegunPersona()
+        private void MostrarActuacionSegunPersona(int id)
         {
-            dgvActuacion.DataSource = actuacionNego.MostrarActuacionSegunPersona(dgvPersona.SelectedRow.Cells[4].Text).ToList();
+            dgvActuacion.DataSource = actuacionNego.MostrarActuacionSegunPersona(id);
             dgvActuacion.DataBind();
         }
 
 
         // Busco en la table PERSONA el idPersona segun el DOCUMENTO ingresado
-        private Int32 MostrarIdPersonaSegunDocumento()
-        {
-            return actuacionNego.MostrarIdPersonaSegunDocumento(dgvPersona.SelectedRow.Cells[4].Text);
-        }
+        //private int MostrarIdPersonaSegunDocumento()
+        //{
+        //    return actuacionNego.MostrarIdPersonaSegunDocumento(dgvPersona.SelectedRow.Cells[4].Text);
+        //}
 
         private void LimpiarPantalla()
         {

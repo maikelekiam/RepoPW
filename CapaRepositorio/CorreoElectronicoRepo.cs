@@ -31,5 +31,32 @@ namespace CapaRepositorio
             }
             return datosLista;
         }
+
+        public void ActualizarCorreoElectronico(int id, IList<CorreoElectronico> listaCorreoElectronicos)
+        {
+            BorrarListaCorreoElectronicosSegunIdPersona(id);
+
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                foreach (CorreoElectronico correo in listaCorreoElectronicos)
+                {
+                    modeloDeDominio.Add(correo);
+                    modeloDeDominio.SaveChanges();
+                }
+            }
+        }
+        private void BorrarListaCorreoElectronicosSegunIdPersona(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IQueryable<CorreoElectronico> query = modeloDeDominio.GetAll<CorreoElectronico>().Where(c => c.IdPersona == id);
+
+                foreach (CorreoElectronico correo in query)
+                {
+                    modeloDeDominio.Delete(correo);
+                    modeloDeDominio.SaveChanges();
+                }
+            }
+        }
     }
 }
