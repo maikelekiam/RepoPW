@@ -20,14 +20,8 @@ namespace CapaNegocio
         {
             actuacionRepo.GuardarActuacion(actuacion);
         }
-        public IEnumerable<Tematica> MostrarTematica()
-        {
-            return actuacionRepo.MostrarTematica();
-        }
-        public IEnumerable<ViaComunicacion> MostrarViaComunicacion()
-        {
-            return actuacionRepo.MostrarViaComunicacion();
-        }
+        
+        
         //public IEnumerable<Persona> MostrarPersona()
         //{
         //    return actuacionRepo.MostrarPersona();

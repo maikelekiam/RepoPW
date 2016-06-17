@@ -29,34 +29,7 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
-        public IEnumerable<Tematica> MostrarTematica()
-        {
-            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
-            {
-                IEnumerable<Tematica> result = modeloDeDominio.Tematicas.ToList();
-
-                return modeloDeDominio.CreateDetachedCopy(result);
-            }
-        }
-        public IEnumerable<ViaComunicacion> MostrarViaComunicacion()
-        {
-            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
-            {
-                IEnumerable<ViaComunicacion> result = modeloDeDominio.ViaComunicacions.ToList();
-
-                return modeloDeDominio.CreateDetachedCopy(result);
-            }
-        }
-        //// METODO PARA MOSTRAR LAS PERSONAS
-        //public IEnumerable<Persona> MostrarPersona()
-        //{
-        //    using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
-        //    {
-        //        IEnumerable<Persona> result = modeloDeDominio.Personas.ToList();
-
-        //        return modeloDeDominio.CreateDetachedCopy(result);
-        //    }
-        //}
+        
         public IEnumerable<Actuacion> MostrarActuacionSegunPersona(int id)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
@@ -66,14 +39,5 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
-
-        //public int MostrarIdPersonaSegunDocumento(string documento)
-        //{
-        //    using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
-        //    {
-        //        Persona result = modeloDeDominio.Personas.FirstOrDefault(t => t.Documento == documento);
-        //        return result.IdPersona;
-        //    }
-        //}
     }
 }

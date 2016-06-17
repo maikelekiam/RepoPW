@@ -13,6 +13,8 @@ namespace CyT
     {
         ActuacionNego actuacionNego = new ActuacionNego();
         PersonaNego personaNego = new PersonaNego();
+        TematicaNego tematicaNego = new TematicaNego();
+        ViaComunicacionNego viaComunicacionNego = new ViaComunicacionNego();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,14 +24,14 @@ namespace CyT
                 MostrarViaComunicacion(); //SIRVE PARA CARGAR DATOS EN EL DROPDOWNLIST
                 MostrarTematica(); //SIRVE PARA CARGAR DATOS EN EL DROPDOWNLIST
                 MostrarPersona(); //SIRVE PARA CARGAR DATOS EN LA GRILLA
-                //LimpiarPantalla();
+                LimpiarPantalla();
             }
         }
 
         //Muestro en el DROPDOWNLIST las VIAS DE COMUNICACION
         private void MostrarViaComunicacion()
         {
-            ddlViaComunicacion.DataSource = actuacionNego.MostrarViaComunicacion().ToList();
+            ddlViaComunicacion.DataSource = viaComunicacionNego.MostrarViaComunicacion().ToList();
             ddlViaComunicacion.DataValueField = "nombre";
             ddlViaComunicacion.DataBind();
         }
@@ -37,7 +39,7 @@ namespace CyT
         //Muestro en el DROPDOWNLIST las TEMATICAS
         private void MostrarTematica()
         {
-            ddlTematica.DataSource = actuacionNego.MostrarTematica().ToList();
+            ddlTematica.DataSource = tematicaNego.MostrarTematica().ToList();
             ddlTematica.DataValueField = "nombre";
             ddlTematica.DataBind();
         }
@@ -73,7 +75,7 @@ namespace CyT
             actuacionNego.GuardarActuacion(actuacion);
 
             MostrarActuacionSegunPersona(Convert.ToInt32(dgvPersona.SelectedRow.Cells[5].Text));
-            //LimpiarPantalla();
+            LimpiarPantalla();
         }
 
         protected void dgvPersona_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,24 +88,16 @@ namespace CyT
 
         protected void dgvActuacion_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             //agregar qué hacer cuando se selecciona una actuacion (editar, etc...)
+
         }
 
-        // busco en la tabla ACTUACION todas las actuaciones segun el DOCUMENTO ingresado
         private void MostrarActuacionSegunPersona(int id)
         {
             dgvActuacion.DataSource = actuacionNego.MostrarActuacionSegunPersona(id);
             dgvActuacion.DataBind();
         }
-
-
-        // Busco en la table PERSONA el idPersona segun el DOCUMENTO ingresado
-        //private int MostrarIdPersonaSegunDocumento()
-        //{
-        //    return actuacionNego.MostrarIdPersonaSegunDocumento(dgvPersona.SelectedRow.Cells[4].Text);
-        //}
-
+        
         private void LimpiarPantalla()
         {
             ddlTematica.SelectedIndex = 0;

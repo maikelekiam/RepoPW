@@ -145,12 +145,14 @@
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
                     <asp:GridView ID="dgvActuacion" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvActuacion_SelectedIndexChanged"
-                        CssClass="table table-hover table-bordered" BorderWidth="4px">
+                        CssClass="table table-hover table-bordered" BorderWidth="3px">
                         <Columns>
                             <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Fecha de la Actuacion" DataField="fecha"
-                                DataFormatString="{0:d}" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Detalle" DataField="detalle" ItemStyle-HorizontalAlign="Center" />
-                            <asp:CommandField HeaderText="ACTUACIONES" HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowSelectButton="true" />
+                                DataFormatString="{0:d}" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="50" HeaderStyle-Width="200" />
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Detalle" DataField="detalle" 
+                                ItemStyle-HorizontalAlign="Justify" ItemStyle-Width="400" HeaderStyle-Width="200" />
+                            <asp:CommandField HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowSelectButton="true" ItemStyle-Width="100" />
+                            <asp:CommandField HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowDeleteButton="true" ItemStyle-Width="100" />
                         </Columns>
                         <SelectedRowStyle BackColor="Azure" />
                     </asp:GridView>
