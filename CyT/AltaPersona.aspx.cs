@@ -44,14 +44,14 @@ namespace CyT
             btnGuardarPersona.Visible = true;
             dgvPersona.DataSource = personaNego.MostrarPersona().ToList();
             dgvPersona.DataBind();
-            dgvPersona.Columns[2].Visible = false;
-            dgvPersona.Columns[3].Visible = false;
-            dgvPersona.Columns[4].Visible = false;
+            dgvPersona.Columns[0].Visible = false;
             dgvPersona.Columns[5].Visible = false;
             dgvPersona.Columns[6].Visible = false;
             dgvPersona.Columns[7].Visible = false;
+            dgvPersona.Columns[8].Visible = false;
             dgvPersona.Columns[9].Visible = false;
             dgvPersona.Columns[10].Visible = false;
+            dgvPersona.Columns[11].Visible = false;
             dgvPersona.Columns[12].Visible = false;
         }
 
@@ -210,22 +210,22 @@ namespace CyT
         }
         protected void dgvPersona_SelectedIndexChanged(object sender, EventArgs e)
         {
-            idPersonaActual = Convert.ToInt32(dgvPersona.SelectedRow.Cells[5].Text);
+            idPersonaActual = Convert.ToInt32(dgvPersona.SelectedRow.Cells[0].Text);
 
             txtNombre.Text = dgvPersona.SelectedRow.Cells[1].Text;
-            txtApellido.Text = dgvPersona.SelectedRow.Cells[11].Text;
-            ddlTipoDocumento.Text = dgvPersona.SelectedRow.Cells[0].Text;
-            txtCuil.Text = dgvPersona.SelectedRow.Cells[10].Text;
-            txtDocumento.Text = dgvPersona.SelectedRow.Cells[8].Text;
-            txtFechaNacimiento.Text = dgvPersona.SelectedRow.Cells[6].Text;
-            txtDireccion.Text = dgvPersona.SelectedRow.Cells[9].Text;
+            txtApellido.Text = dgvPersona.SelectedRow.Cells[2].Text;
+            ddlTipoDocumento.Text = dgvPersona.SelectedRow.Cells[3].Text;
+            txtDocumento.Text = dgvPersona.SelectedRow.Cells[4].Text;
+            txtCuil.Text = dgvPersona.SelectedRow.Cells[11].Text;
+            txtFechaNacimiento.Text = dgvPersona.SelectedRow.Cells[8].Text;
+            txtDireccion.Text = dgvPersona.SelectedRow.Cells[10].Text;
             //ddlLocalidad.Text = dgvPersona.SelectedRow.Cells[2].Text;
-            txtEmpresa.Text = dgvPersona.SelectedRow.Cells[7].Text;
+            txtEmpresa.Text = dgvPersona.SelectedRow.Cells[9].Text;
 
-            if (dgvPersona.SelectedRow.Cells[3].Text == "True") { chkIsInteresado.Checked = true; }
+            if (dgvPersona.SelectedRow.Cells[6].Text == "True") { chkIsInteresado.Checked = true; }
             else { chkIsInteresado.Checked = false; }
 
-            if (dgvPersona.SelectedRow.Cells[4].Text == "True") { chkIsBeneficiario.Checked = true; }
+            if (dgvPersona.SelectedRow.Cells[7].Text == "True") { chkIsBeneficiario.Checked = true; }
             else { chkIsBeneficiario.Checked = false; }
 
             TraerListaTelefonos(idPersonaActual);
@@ -234,7 +234,7 @@ namespace CyT
             TraerListaCorreoElectronicos(idPersonaActual);
             MostrarCorreoElectronico();
 
-            ddlLocalidad.Text = TraerLocalidadSegunIdPersona(Convert.ToInt32(dgvPersona.SelectedRow.Cells[2].Text));
+            ddlLocalidad.Text = TraerLocalidadSegunIdPersona(Convert.ToInt32(dgvPersona.SelectedRow.Cells[5].Text));
 
             btnGuardarPersona.Visible = false;
             btnActualizarPersona.Visible = true;
