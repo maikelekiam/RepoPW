@@ -21,7 +21,7 @@
           <orm:column name="activo" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
         </orm:field>
         <orm:field name="actuacions" property="Actuacions" behavior="readwrite" uniqueId="7688c50b-7570-45c1-8c77-796c85192d6c" type="CapaDominio.Actuacion">
-          <orm:collection element-class="CapaDominio.Actuacion" inverse-field="viaComunicacion" order-by="" uniqueId="0d822d25-094e-4992-8282-c2769d696a75" />
+          <orm:collection element-class="CapaDominio.Actuacion" inverse-field="viaComunicacion" managed="true" order-by="" uniqueId="0d822d25-094e-4992-8282-c2769d696a75" />
         </orm:field>
       </orm:class>
       <orm:class name="UvtReferente" uniqueId="7eb6a873-9b4e-4b75-b029-d5e90e5a9fa5">
@@ -77,10 +77,10 @@
           <orm:column name="activo" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
         </orm:field>
         <orm:field name="uvtReferentes" property="UvtReferentes" behavior="readwrite" uniqueId="c27c9bb4-2dbd-4975-8b8a-32fbb2b6446b" type="CapaDominio.UvtReferente">
-          <orm:collection element-class="CapaDominio.UvtReferente" inverse-field="uvt" order-by="" uniqueId="1e8d2099-3c60-4f04-857b-206909c13c7c" />
+          <orm:collection element-class="CapaDominio.UvtReferente" inverse-field="uvt" managed="true" order-by="" uniqueId="1e8d2099-3c60-4f04-857b-206909c13c7c" />
         </orm:field>
         <orm:field name="proyectos" property="Proyectos" behavior="readwrite" uniqueId="1efaf760-139e-4fba-a25f-4ca8644cb86f" type="CapaDominio.Proyecto">
-          <orm:collection element-class="CapaDominio.Proyecto" inverse-field="uvt" order-by="" uniqueId="586d9953-8845-4aab-9918-00c88df4a828" />
+          <orm:collection element-class="CapaDominio.Proyecto" inverse-field="uvt" managed="true" order-by="" uniqueId="586d9953-8845-4aab-9918-00c88df4a828" />
         </orm:field>
       </orm:class>
       <orm:class name="TipoFinanciamiento" uniqueId="0a609fd2-cecb-481e-b148-8c103be147d1">
@@ -99,7 +99,7 @@
           <orm:column name="nombre" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         </orm:field>
         <orm:field name="convocatoria" property="Convocatoria" behavior="readwrite" uniqueId="5cc0f779-fa4e-49cb-9215-45e6c612e23f" type="CapaDominio.Convocatorium">
-          <orm:collection element-class="CapaDominio.Convocatorium" inverse-field="tipoFinanciamiento" order-by="" uniqueId="f2d6274c-ce22-432d-8224-b09b8eb49b27" />
+          <orm:collection element-class="CapaDominio.Convocatorium" inverse-field="tipoFinanciamiento" managed="true" order-by="" uniqueId="f2d6274c-ce22-432d-8224-b09b8eb49b27" />
         </orm:field>
       </orm:class>
       <orm:class name="TipoDestinatario" uniqueId="11cbc0eb-912b-4c72-9a04-857d3c19ed94">
@@ -121,7 +121,7 @@
           <orm:column name="activo" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
         </orm:field>
         <orm:field name="listaTipoDestinatarios" property="ListaTipoDestinatarios" behavior="readwrite" uniqueId="ea435255-f9e4-4b16-bc69-d1cc8b8e9e33" type="CapaDominio.ListaTipoDestinatario">
-          <orm:collection element-class="CapaDominio.ListaTipoDestinatario" inverse-field="tipoDestinatario" order-by="" uniqueId="512c71ef-d5b4-40eb-9851-bab3a308c24b" />
+          <orm:collection element-class="CapaDominio.ListaTipoDestinatario" inverse-field="tipoDestinatario" managed="true" order-by="" uniqueId="512c71ef-d5b4-40eb-9851-bab3a308c24b" />
         </orm:field>
       </orm:class>
       <orm:class name="Tematica" uniqueId="61f50c5f-f540-497a-ad15-c373bd6d8390">
@@ -143,7 +143,7 @@
           <orm:column name="activo" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
         </orm:field>
         <orm:field name="actuacions" property="Actuacions" behavior="readwrite" uniqueId="44d573f8-7015-47d5-9683-ffd216d8ac00" type="CapaDominio.Actuacion">
-          <orm:collection element-class="CapaDominio.Actuacion" inverse-field="tematica" order-by="" uniqueId="f7f8854d-f2bd-472e-a07b-79327931a584" />
+          <orm:collection element-class="CapaDominio.Actuacion" inverse-field="tematica" managed="true" order-by="" uniqueId="f7f8854d-f2bd-472e-a07b-79327931a584" />
         </orm:field>
       </orm:class>
       <orm:class name="Telefono" uniqueId="1e76d1b5-f632-40e9-8e29-f0f7d8e4e153">
@@ -238,13 +238,13 @@
           </orm:reference>
         </orm:field>
         <orm:field name="localidadImpactos" property="LocalidadImpactos" behavior="readwrite" uniqueId="0213b948-515a-4a59-9e61-7d2e124d596c" type="CapaDominio.LocalidadImpacto">
-          <orm:collection element-class="CapaDominio.LocalidadImpacto" inverse-field="proyecto" order-by="" uniqueId="a19fb23b-f7b2-4ca7-8ec3-e53f9470f3cc" />
+          <orm:collection element-class="CapaDominio.LocalidadImpacto" inverse-field="proyecto" managed="true" order-by="" uniqueId="a19fb23b-f7b2-4ca7-8ec3-e53f9470f3cc" />
         </orm:field>
         <orm:field name="integrantes" property="Integrantes" behavior="readwrite" uniqueId="71419990-a1fd-4723-a2f8-8a416f4599ea" type="CapaDominio.Integrante">
-          <orm:collection element-class="CapaDominio.Integrante" inverse-field="proyecto" order-by="" uniqueId="664a75a6-2f95-47ce-8d4f-4165dbaa4bec" />
+          <orm:collection element-class="CapaDominio.Integrante" inverse-field="proyecto" managed="true" order-by="" uniqueId="664a75a6-2f95-47ce-8d4f-4165dbaa4bec" />
         </orm:field>
         <orm:field name="etapas" property="Etapas" behavior="readwrite" uniqueId="aaae9b2d-6ebb-40f6-abc3-90588c432dfe" type="CapaDominio.Etapa">
-          <orm:collection element-class="CapaDominio.Etapa" inverse-field="proyecto" order-by="" uniqueId="fa2f051b-78b7-4deb-8a4e-0973e7a7059e" />
+          <orm:collection element-class="CapaDominio.Etapa" inverse-field="proyecto" managed="true" order-by="" uniqueId="fa2f051b-78b7-4deb-8a4e-0973e7a7059e" />
         </orm:field>
       </orm:class>
       <orm:class name="Persona" uniqueId="ab30e02b-6471-4551-8063-559cb6e3b9d2">
@@ -302,19 +302,19 @@
           </orm:reference>
         </orm:field>
         <orm:field name="uvtReferentes" property="UvtReferentes" behavior="readwrite" uniqueId="29cf230c-901b-44fd-83e2-99aee67ec09d" type="CapaDominio.UvtReferente">
-          <orm:collection element-class="CapaDominio.UvtReferente" inverse-field="persona" order-by="" uniqueId="a40d5fee-a447-472f-ba78-e92620668dbb" />
+          <orm:collection element-class="CapaDominio.UvtReferente" inverse-field="persona" managed="true" order-by="" uniqueId="a40d5fee-a447-472f-ba78-e92620668dbb" />
         </orm:field>
         <orm:field name="telefonos" property="Telefonos" behavior="readwrite" uniqueId="2c6d2be6-df92-4c76-b86c-e787892bcda7" type="CapaDominio.Telefono">
           <orm:collection element-class="CapaDominio.Telefono" inverse-field="persona" managed="true" order-by="" uniqueId="47b6eee0-147f-42f6-aff6-1d930cc0ef18" />
         </orm:field>
         <orm:field name="integrantes" property="Integrantes" behavior="readwrite" uniqueId="f5f4e29e-47bc-4cd1-932b-785f3cdafe8b" type="CapaDominio.Integrante">
-          <orm:collection element-class="CapaDominio.Integrante" inverse-field="persona" order-by="" uniqueId="5bd63bb9-1a23-4cad-9d40-23d9dd6c4c0f" />
+          <orm:collection element-class="CapaDominio.Integrante" inverse-field="persona" managed="true" order-by="" uniqueId="5bd63bb9-1a23-4cad-9d40-23d9dd6c4c0f" />
         </orm:field>
         <orm:field name="correoElectronicos" property="CorreoElectronicos" behavior="readwrite" uniqueId="5979e136-cac7-488d-ae1e-180285c22e6e" type="CapaDominio.CorreoElectronico">
           <orm:collection element-class="CapaDominio.CorreoElectronico" inverse-field="persona" managed="true" order-by="" uniqueId="f89925f5-300a-473c-83e5-57054cd13883" />
         </orm:field>
         <orm:field name="actuacions" property="Actuacions" behavior="readwrite" uniqueId="e555d392-c55d-44e9-95da-22069f32fbb3" type="CapaDominio.Actuacion">
-          <orm:collection element-class="CapaDominio.Actuacion" inverse-field="persona" order-by="" uniqueId="b4713419-8122-4b44-86a0-7d44b84d5f17" />
+          <orm:collection element-class="CapaDominio.Actuacion" inverse-field="persona" managed="true" order-by="" uniqueId="b4713419-8122-4b44-86a0-7d44b84d5f17" />
         </orm:field>
       </orm:class>
       <orm:class name="Origen" uniqueId="ebe24a48-4a89-4b35-9f92-00a8f75dbef2">
@@ -333,7 +333,7 @@
           <orm:column name="nombre" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
         </orm:field>
         <orm:field name="fondos" property="Fondos" behavior="readwrite" uniqueId="121028d8-ff40-4a13-9c59-e3481fb6c441" type="CapaDominio.Fondo">
-          <orm:collection element-class="CapaDominio.Fondo" inverse-field="origen" order-by="" uniqueId="8f55916d-d141-43b7-9fd1-dbd42e6715a6" />
+          <orm:collection element-class="CapaDominio.Fondo" inverse-field="origen" managed="true" order-by="" uniqueId="8f55916d-d141-43b7-9fd1-dbd42e6715a6" />
         </orm:field>
       </orm:class>
       <orm:class name="Modalidad" uniqueId="6820ff27-5f06-4e40-84d1-fc5a56549604">
@@ -352,7 +352,7 @@
           <orm:column name="nombre" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         </orm:field>
         <orm:field name="convocatoria" property="Convocatoria" behavior="readwrite" uniqueId="441a06d5-53d7-4bb7-9d85-b760709eb933" type="CapaDominio.Convocatorium">
-          <orm:collection element-class="CapaDominio.Convocatorium" inverse-field="modalidad" order-by="" uniqueId="160bf5c8-2897-4019-8f5f-d5308e4fcaf2" />
+          <orm:collection element-class="CapaDominio.Convocatorium" inverse-field="modalidad" managed="true" order-by="" uniqueId="160bf5c8-2897-4019-8f5f-d5308e4fcaf2" />
         </orm:field>
       </orm:class>
       <orm:class name="LocalidadImpacto" uniqueId="91402c84-0ae1-4cad-8ff6-d63507c71b82">
@@ -405,10 +405,10 @@
           <orm:column name="codigoPostal" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:field>
         <orm:field name="personas" property="Personas" behavior="readwrite" uniqueId="23c9ba56-91b3-48a6-9577-b8ec431767ae" type="CapaDominio.Persona">
-          <orm:collection element-class="CapaDominio.Persona" inverse-field="localidad" order-by="" uniqueId="7e86b5bf-f6e2-4bac-aa66-21ab5030435c" />
+          <orm:collection element-class="CapaDominio.Persona" inverse-field="localidad" managed="true" order-by="" uniqueId="7e86b5bf-f6e2-4bac-aa66-21ab5030435c" />
         </orm:field>
         <orm:field name="localidadImpactos" property="LocalidadImpactos" behavior="readwrite" uniqueId="52477770-3cc9-4e8c-b638-a4379ff8f8b7" type="CapaDominio.LocalidadImpacto">
-          <orm:collection element-class="CapaDominio.LocalidadImpacto" inverse-field="localidad" order-by="" uniqueId="0a383f8c-ec64-451a-aa53-8b35bdbdfe1d" />
+          <orm:collection element-class="CapaDominio.LocalidadImpacto" inverse-field="localidad" managed="true" order-by="" uniqueId="0a383f8c-ec64-451a-aa53-8b35bdbdfe1d" />
         </orm:field>
       </orm:class>
       <orm:class name="ListaTipoDestinatario" uniqueId="206343b3-3ddf-4daa-88f3-81fd75565239">
@@ -504,7 +504,7 @@
           </orm:reference>
         </orm:field>
         <orm:field name="convocatoria" property="Convocatoria" behavior="readwrite" uniqueId="0369781d-108c-4691-aefa-e726d0024a94" type="CapaDominio.Convocatorium">
-          <orm:collection element-class="CapaDominio.Convocatorium" inverse-field="fondo" order-by="" uniqueId="c78a8ca8-dfcf-4b0e-b23e-17d78338bbb5" />
+          <orm:collection element-class="CapaDominio.Convocatorium" inverse-field="fondo" managed="true" order-by="" uniqueId="c78a8ca8-dfcf-4b0e-b23e-17d78338bbb5" />
         </orm:field>
       </orm:class>
       <orm:class name="Etapa" uniqueId="fdfd705d-7830-48d2-9017-c26a92e1351a">
@@ -560,7 +560,7 @@
           <orm:column name="nombre" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         </orm:field>
         <orm:field name="proyectos" property="Proyectos" behavior="readwrite" uniqueId="6566d9a4-bc95-43ae-9b45-bba9ff9cec67" type="CapaDominio.Proyecto">
-          <orm:collection element-class="CapaDominio.Proyecto" inverse-field="estado" order-by="" uniqueId="824c27c7-0cee-489b-a3d0-7e165b460d40" />
+          <orm:collection element-class="CapaDominio.Proyecto" inverse-field="estado" managed="true" order-by="" uniqueId="824c27c7-0cee-489b-a3d0-7e165b460d40" />
         </orm:field>
       </orm:class>
       <orm:class name="CorreoElectronico" uniqueId="0b2d3517-2e08-43f7-ad06-fff30addf439">
@@ -661,10 +661,10 @@
           </orm:reference>
         </orm:field>
         <orm:field name="proyectos" property="Proyectos" behavior="readwrite" uniqueId="606c9023-a46d-4d96-bed9-54e09de1324f" type="CapaDominio.Proyecto">
-          <orm:collection element-class="CapaDominio.Proyecto" inverse-field="convocatorium" order-by="" uniqueId="7d1082b7-0f5d-4620-a9e5-c91a97723de3" />
+          <orm:collection element-class="CapaDominio.Proyecto" inverse-field="convocatorium" managed="true" order-by="" uniqueId="7d1082b7-0f5d-4620-a9e5-c91a97723de3" />
         </orm:field>
         <orm:field name="listaTipoDestinatarios" property="ListaTipoDestinatarios" behavior="readwrite" uniqueId="3b49595c-36e2-4d56-a1ea-0bba27820453" type="CapaDominio.ListaTipoDestinatario">
-          <orm:collection element-class="CapaDominio.ListaTipoDestinatario" inverse-field="convocatorium" order-by="" uniqueId="ab260dac-bf6a-435d-bc65-fce964d405f2" />
+          <orm:collection element-class="CapaDominio.ListaTipoDestinatario" inverse-field="convocatorium" managed="true" order-by="" uniqueId="ab260dac-bf6a-435d-bc65-fce964d405f2" />
         </orm:field>
       </orm:class>
       <orm:class name="AreaProductiva" uniqueId="ee04deac-c887-494a-a63d-61c510cf9412">
@@ -683,7 +683,7 @@
           <orm:column name="nombre" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         </orm:field>
         <orm:field name="proyectos" property="Proyectos" behavior="readwrite" uniqueId="a4540240-b686-4865-8d5f-d1cc01ed330e" type="CapaDominio.Proyecto">
-          <orm:collection element-class="CapaDominio.Proyecto" inverse-field="areaProductiva" order-by="" uniqueId="4baf2e35-4995-4a30-b9bd-82fe107fb63f" />
+          <orm:collection element-class="CapaDominio.Proyecto" inverse-field="areaProductiva" managed="true" order-by="" uniqueId="4baf2e35-4995-4a30-b9bd-82fe107fb63f" />
         </orm:field>
       </orm:class>
       <orm:class name="Actuacion" uniqueId="7e08eed7-1bd6-4e75-936f-8ac872a3d732">
@@ -999,7 +999,7 @@
       <Property Id="991d1b4c-e33b-4c8b-ba35-aa05e61fae9d" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="ea16b95c-7f15-4097-a565-1ff7d5426bd6">
-          <NavigationalProperty Id="7688c50b-7570-45c1-8c77-796c85192d6c" name="Actuacions" type="IList&lt;Actuacion&gt;" label="Actuacions : IList&lt;Actuacion&gt;" nullable="true" kind="Persistent" fieldName="actuacions" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="7688c50b-7570-45c1-8c77-796c85192d6c" name="Actuacions" type="IList&lt;Actuacion&gt;" label="Actuacions : IList&lt;Actuacion&gt;" nullable="true" kind="Persistent" fieldName="actuacions" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1037,10 +1037,10 @@
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="963edeef-6051-454d-82b4-d77d882c2adc">
-          <NavigationalProperty Id="2cbbd137-720e-46fb-af50-0079bcc009d5" name="Persona" type="Persona" label="Persona : Persona" nullable="true" kind="Persistent" fieldName="persona" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="2cbbd137-720e-46fb-af50-0079bcc009d5" name="Persona" type="Persona" label="Persona : Persona" nullable="true" kind="Persistent" fieldName="persona" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="790ef79e-cdd3-4f07-8400-85a14af2fb2f">
-          <NavigationalProperty Id="f4242c3d-8194-47a9-b2eb-ec04bf31af7e" name="Uvt" type="Uvt" label="Uvt : Uvt" nullable="true" kind="Persistent" fieldName="uvt" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="f4242c3d-8194-47a9-b2eb-ec04bf31af7e" name="Uvt" type="Uvt" label="Uvt : Uvt" nullable="true" kind="Persistent" fieldName="uvt" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1051,10 +1051,10 @@
       <Property Id="f35af1b0-eb3d-4062-b04f-3eadb8118846" name="NombreUvt" label="NombreUvt : String" kind="Persistent" fieldName="nombreUvt" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="a26a7379-3780-410e-bf6c-7fe7faac2d25">
-          <NavigationalProperty Id="c27c9bb4-2dbd-4975-8b8a-32fbb2b6446b" name="UvtReferentes" type="IList&lt;UvtReferente&gt;" label="UvtReferentes : IList&lt;UvtReferente&gt;" nullable="true" kind="Persistent" fieldName="uvtReferentes" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="c27c9bb4-2dbd-4975-8b8a-32fbb2b6446b" name="UvtReferentes" type="IList&lt;UvtReferente&gt;" label="UvtReferentes : IList&lt;UvtReferente&gt;" nullable="true" kind="Persistent" fieldName="uvtReferentes" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="f8ee5c35-ca9f-4ce3-a738-bf7772a54bbc">
-          <NavigationalProperty Id="1efaf760-139e-4fba-a25f-4ca8644cb86f" name="Proyectos" type="IList&lt;Proyecto&gt;" label="Proyectos : IList&lt;Proyecto&gt;" nullable="true" kind="Persistent" fieldName="proyectos" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="1efaf760-139e-4fba-a25f-4ca8644cb86f" name="Proyectos" type="IList&lt;Proyecto&gt;" label="Proyectos : IList&lt;Proyecto&gt;" nullable="true" kind="Persistent" fieldName="proyectos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1063,7 +1063,7 @@
       <Property Id="f130cb77-8361-4373-851c-5452682e6d69" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="4ae4e09b-2757-4d91-b571-41d48a2905d8">
-          <NavigationalProperty Id="5cc0f779-fa4e-49cb-9215-45e6c612e23f" name="Convocatoria" type="IList&lt;Convocatorium&gt;" label="Convocatoria : IList&lt;Convocatorium&gt;" nullable="true" kind="Persistent" fieldName="convocatoria" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="5cc0f779-fa4e-49cb-9215-45e6c612e23f" name="Convocatoria" type="IList&lt;Convocatorium&gt;" label="Convocatoria : IList&lt;Convocatorium&gt;" nullable="true" kind="Persistent" fieldName="convocatoria" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1073,7 +1073,7 @@
       <Property Id="a78094b8-b8bf-45d1-ac63-85d13c171de8" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="e346832f-6851-4513-bd86-3a2607e1a4d3">
-          <NavigationalProperty Id="ea435255-f9e4-4b16-bc69-d1cc8b8e9e33" name="ListaTipoDestinatarios" type="IList&lt;ListaTipoDestinatario&gt;" label="ListaTipoDestinatarios : IList&lt;ListaTipoDestinatario&gt;" nullable="true" kind="Persistent" fieldName="listaTipoDestinatarios" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="ea435255-f9e4-4b16-bc69-d1cc8b8e9e33" name="ListaTipoDestinatarios" type="IList&lt;ListaTipoDestinatario&gt;" label="ListaTipoDestinatarios : IList&lt;ListaTipoDestinatario&gt;" nullable="true" kind="Persistent" fieldName="listaTipoDestinatarios" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1083,7 +1083,7 @@
       <Property Id="3373fa40-9b9d-4702-983b-803fffac7984" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="debf21db-16f4-4ba3-9231-ceeb18ed241f">
-          <NavigationalProperty Id="44d573f8-7015-47d5-9683-ffd216d8ac00" name="Actuacions" type="IList&lt;Actuacion&gt;" label="Actuacions : IList&lt;Actuacion&gt;" nullable="true" kind="Persistent" fieldName="actuacions" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="44d573f8-7015-47d5-9683-ffd216d8ac00" name="Actuacions" type="IList&lt;Actuacion&gt;" label="Actuacions : IList&lt;Actuacion&gt;" nullable="true" kind="Persistent" fieldName="actuacions" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1180,25 +1180,25 @@
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="e9aeb06c-669e-49d4-b7ee-454776858519">
-          <NavigationalProperty Id="cba9be5a-b24c-4ee5-9740-13e56aa6a6a2" name="AreaProductiva" type="AreaProductiva" label="AreaProductiva : AreaProductiva" nullable="true" kind="Persistent" fieldName="areaProductiva" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="cba9be5a-b24c-4ee5-9740-13e56aa6a6a2" name="AreaProductiva" type="AreaProductiva" label="AreaProductiva : AreaProductiva" nullable="true" kind="Persistent" fieldName="areaProductiva" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="d6d9937f-bc5f-4d15-83c3-781c0a2ef96f">
-          <NavigationalProperty Id="c5170461-74fe-4f54-a99a-60be8b2cf381" name="Convocatorium" type="Convocatorium" label="Convocatorium : Convocatorium" nullable="true" kind="Persistent" fieldName="convocatorium" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="c5170461-74fe-4f54-a99a-60be8b2cf381" name="Convocatorium" type="Convocatorium" label="Convocatorium : Convocatorium" nullable="true" kind="Persistent" fieldName="convocatorium" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="30524896-9e60-4309-8833-80ea56e83a0a">
-          <NavigationalProperty Id="758aa4e0-6ccc-4455-b68c-854c8166e497" name="Estado" type="Estado" label="Estado : Estado" nullable="true" kind="Persistent" fieldName="estado" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="758aa4e0-6ccc-4455-b68c-854c8166e497" name="Estado" type="Estado" label="Estado : Estado" nullable="true" kind="Persistent" fieldName="estado" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="55c15346-b5ce-4578-b9c6-b6d434658d68">
-          <NavigationalProperty Id="f14a329b-1522-4aec-9d78-a102db4e06fc" name="Uvt" type="Uvt" label="Uvt : Uvt" nullable="true" kind="Persistent" fieldName="uvt" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="f14a329b-1522-4aec-9d78-a102db4e06fc" name="Uvt" type="Uvt" label="Uvt : Uvt" nullable="true" kind="Persistent" fieldName="uvt" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="8e729e3d-6ede-442f-912a-f1195f748878">
-          <NavigationalProperty Id="0213b948-515a-4a59-9e61-7d2e124d596c" name="LocalidadImpactos" type="IList&lt;LocalidadImpacto&gt;" label="LocalidadImpactos : IList&lt;LocalidadImpacto&gt;" nullable="true" kind="Persistent" fieldName="localidadImpactos" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="0213b948-515a-4a59-9e61-7d2e124d596c" name="LocalidadImpactos" type="IList&lt;LocalidadImpacto&gt;" label="LocalidadImpactos : IList&lt;LocalidadImpacto&gt;" nullable="true" kind="Persistent" fieldName="localidadImpactos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="fa77e591-4d23-476b-9b71-3ccd477ab0ef">
-          <NavigationalProperty Id="71419990-a1fd-4723-a2f8-8a416f4599ea" name="Integrantes" type="IList&lt;Integrante&gt;" label="Integrantes : IList&lt;Integrante&gt;" nullable="true" kind="Persistent" fieldName="integrantes" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="71419990-a1fd-4723-a2f8-8a416f4599ea" name="Integrantes" type="IList&lt;Integrante&gt;" label="Integrantes : IList&lt;Integrante&gt;" nullable="true" kind="Persistent" fieldName="integrantes" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="40f6a8da-9d54-4e9e-a1ba-edcbe7c0860f">
-          <NavigationalProperty Id="aaae9b2d-6ebb-40f6-abc3-90588c432dfe" name="Etapas" type="IList&lt;Etapa&gt;" label="Etapas : IList&lt;Etapa&gt;" nullable="true" kind="Persistent" fieldName="etapas" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="aaae9b2d-6ebb-40f6-abc3-90588c432dfe" name="Etapas" type="IList&lt;Etapa&gt;" label="Etapas : IList&lt;Etapa&gt;" nullable="true" kind="Persistent" fieldName="etapas" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1233,22 +1233,22 @@
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="106b3c3c-9087-4704-baa6-e8ed50a058dd">
-          <NavigationalProperty Id="29cf230c-901b-44fd-83e2-99aee67ec09d" name="UvtReferentes" type="IList&lt;UvtReferente&gt;" label="UvtReferentes : IList&lt;UvtReferente&gt;" nullable="true" kind="Persistent" fieldName="uvtReferentes" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="29cf230c-901b-44fd-83e2-99aee67ec09d" name="UvtReferentes" type="IList&lt;UvtReferente&gt;" label="UvtReferentes : IList&lt;UvtReferente&gt;" nullable="true" kind="Persistent" fieldName="uvtReferentes" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="ae9f7024-6e00-4f29-98c3-5cc6053ddaec">
           <NavigationalProperty Id="2c6d2be6-df92-4c76-b86c-e787892bcda7" name="Telefonos" type="IList&lt;Telefono&gt;" label="Telefonos : IList&lt;Telefono&gt;" nullable="true" kind="Persistent" fieldName="telefonos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="71d75003-c275-42f5-ad2e-a754ff673d2f">
-          <NavigationalProperty Id="1fed7ea1-dfaa-4547-98ed-9c1291965ce8" name="Localidad" type="Localidad" label="Localidad : Localidad" nullable="true" kind="Persistent" fieldName="localidad" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="1fed7ea1-dfaa-4547-98ed-9c1291965ce8" name="Localidad" type="Localidad" label="Localidad : Localidad" nullable="true" kind="Persistent" fieldName="localidad" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="06fbd4d8-0e88-42a5-acda-b04f548cd55c">
-          <NavigationalProperty Id="f5f4e29e-47bc-4cd1-932b-785f3cdafe8b" name="Integrantes" type="IList&lt;Integrante&gt;" label="Integrantes : IList&lt;Integrante&gt;" nullable="true" kind="Persistent" fieldName="integrantes" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="f5f4e29e-47bc-4cd1-932b-785f3cdafe8b" name="Integrantes" type="IList&lt;Integrante&gt;" label="Integrantes : IList&lt;Integrante&gt;" nullable="true" kind="Persistent" fieldName="integrantes" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="53520075-971e-4eaa-8870-b1fd7255272a">
           <NavigationalProperty Id="5979e136-cac7-488d-ae1e-180285c22e6e" name="CorreoElectronicos" type="IList&lt;CorreoElectronico&gt;" label="CorreoElectronicos : IList&lt;CorreoElectronico&gt;" nullable="true" kind="Persistent" fieldName="correoElectronicos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="b6fff2b5-8c74-4c5b-80b8-9a993154db5e">
-          <NavigationalProperty Id="e555d392-c55d-44e9-95da-22069f32fbb3" name="Actuacions" type="IList&lt;Actuacion&gt;" label="Actuacions : IList&lt;Actuacion&gt;" nullable="true" kind="Persistent" fieldName="actuacions" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="e555d392-c55d-44e9-95da-22069f32fbb3" name="Actuacions" type="IList&lt;Actuacion&gt;" label="Actuacions : IList&lt;Actuacion&gt;" nullable="true" kind="Persistent" fieldName="actuacions" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1257,7 +1257,7 @@
       <Property Id="fe456f26-7743-4a71-a8ee-c2e154c323b5" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="65b7aaed-f019-4c5c-933d-b41e18b9818f">
-          <NavigationalProperty Id="121028d8-ff40-4a13-9c59-e3481fb6c441" name="Fondos" type="IList&lt;Fondo&gt;" label="Fondos : IList&lt;Fondo&gt;" nullable="true" kind="Persistent" fieldName="fondos" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="121028d8-ff40-4a13-9c59-e3481fb6c441" name="Fondos" type="IList&lt;Fondo&gt;" label="Fondos : IList&lt;Fondo&gt;" nullable="true" kind="Persistent" fieldName="fondos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1266,7 +1266,7 @@
       <Property Id="09dbad8a-bc8b-4076-b1f6-347b49c0fead" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="64055748-5e76-405a-8983-36a11d0eff8c">
-          <NavigationalProperty Id="441a06d5-53d7-4bb7-9d85-b760709eb933" name="Convocatoria" type="IList&lt;Convocatorium&gt;" label="Convocatoria : IList&lt;Convocatorium&gt;" nullable="true" kind="Persistent" fieldName="convocatoria" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="441a06d5-53d7-4bb7-9d85-b760709eb933" name="Convocatoria" type="IList&lt;Convocatorium&gt;" label="Convocatoria : IList&lt;Convocatorium&gt;" nullable="true" kind="Persistent" fieldName="convocatoria" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1304,10 +1304,10 @@
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="1bbcc7a0-39a1-4642-9ecb-b45976e635c4">
-          <NavigationalProperty Id="1528a333-5cba-482f-accd-15e7309540a0" name="Localidad" type="Localidad" label="Localidad : Localidad" nullable="true" kind="Persistent" fieldName="localidad" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="1528a333-5cba-482f-accd-15e7309540a0" name="Localidad" type="Localidad" label="Localidad : Localidad" nullable="true" kind="Persistent" fieldName="localidad" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="f37ba828-7c51-4e06-803c-d823ca7e6d0c">
-          <NavigationalProperty Id="d246add2-7ef5-4f1c-979e-cd156f8ec80a" name="Proyecto" type="Proyecto" label="Proyecto : Proyecto" nullable="true" kind="Persistent" fieldName="proyecto" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="d246add2-7ef5-4f1c-979e-cd156f8ec80a" name="Proyecto" type="Proyecto" label="Proyecto : Proyecto" nullable="true" kind="Persistent" fieldName="proyecto" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1317,10 +1317,10 @@
       <Property Id="b481cb85-547d-4aaf-b21d-6974e908380d" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="4ac4d00d-79cc-4f59-9ca2-331bbb438c86">
-          <NavigationalProperty Id="23c9ba56-91b3-48a6-9577-b8ec431767ae" name="Personas" type="IList&lt;Persona&gt;" label="Personas : IList&lt;Persona&gt;" nullable="true" kind="Persistent" fieldName="personas" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="23c9ba56-91b3-48a6-9577-b8ec431767ae" name="Personas" type="IList&lt;Persona&gt;" label="Personas : IList&lt;Persona&gt;" nullable="true" kind="Persistent" fieldName="personas" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="9f2bd75c-1de4-4357-96a1-32a79554af6d">
-          <NavigationalProperty Id="52477770-3cc9-4e8c-b638-a4379ff8f8b7" name="LocalidadImpactos" type="IList&lt;LocalidadImpacto&gt;" label="LocalidadImpactos : IList&lt;LocalidadImpacto&gt;" nullable="true" kind="Persistent" fieldName="localidadImpactos" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="52477770-3cc9-4e8c-b638-a4379ff8f8b7" name="LocalidadImpactos" type="IList&lt;LocalidadImpacto&gt;" label="LocalidadImpactos : IList&lt;LocalidadImpacto&gt;" nullable="true" kind="Persistent" fieldName="localidadImpactos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1358,10 +1358,10 @@
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="7092fecd-02d2-465e-95c5-889cfba911e5">
-          <NavigationalProperty Id="a2f7fc4c-a8d2-4fe3-85ac-1378484741c6" name="Convocatorium" type="Convocatorium" label="Convocatorium : Convocatorium" nullable="true" kind="Persistent" fieldName="convocatorium" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="a2f7fc4c-a8d2-4fe3-85ac-1378484741c6" name="Convocatorium" type="Convocatorium" label="Convocatorium : Convocatorium" nullable="true" kind="Persistent" fieldName="convocatorium" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="4fdc42ad-2414-4e2c-957a-3a9abaf36089">
-          <NavigationalProperty Id="faa10d0f-1ead-4cc7-8fbb-e9552c1c5bfa" name="TipoDestinatario" type="TipoDestinatario" label="TipoDestinatario : TipoDestinatario" nullable="true" kind="Persistent" fieldName="tipoDestinatario" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="faa10d0f-1ead-4cc7-8fbb-e9552c1c5bfa" name="TipoDestinatario" type="TipoDestinatario" label="TipoDestinatario : TipoDestinatario" nullable="true" kind="Persistent" fieldName="tipoDestinatario" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1399,10 +1399,10 @@
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="d87e70a2-c5b5-4106-9310-ebd17190b122">
-          <NavigationalProperty Id="b9a72af7-c8f0-4b5b-98fb-30410e9829af" name="Persona" type="Persona" label="Persona : Persona" nullable="true" kind="Persistent" fieldName="persona" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="b9a72af7-c8f0-4b5b-98fb-30410e9829af" name="Persona" type="Persona" label="Persona : Persona" nullable="true" kind="Persistent" fieldName="persona" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="9d01a682-8b77-429b-91ad-dd5c0b4debfe">
-          <NavigationalProperty Id="3d43e3f6-6732-4f30-b06f-317c8801badd" name="Proyecto" type="Proyecto" label="Proyecto : Proyecto" nullable="true" kind="Persistent" fieldName="proyecto" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="3d43e3f6-6732-4f30-b06f-317c8801badd" name="Proyecto" type="Proyecto" label="Proyecto : Proyecto" nullable="true" kind="Persistent" fieldName="proyecto" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1429,10 +1429,10 @@
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="70cf8491-cfe3-4f6a-a796-4c85fac773b7">
-          <NavigationalProperty Id="a151500e-694f-48f9-a9c5-5ebbc12b6e15" name="Origen" type="Origen" label="Origen : Origen" nullable="true" kind="Persistent" fieldName="origen" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="a151500e-694f-48f9-a9c5-5ebbc12b6e15" name="Origen" type="Origen" label="Origen : Origen" nullable="true" kind="Persistent" fieldName="origen" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="f0c8e7d2-58e4-4e04-9391-dbfe9499dea4">
-          <NavigationalProperty Id="0369781d-108c-4691-aefa-e726d0024a94" name="Convocatoria" type="IList&lt;Convocatorium&gt;" label="Convocatoria : IList&lt;Convocatorium&gt;" nullable="true" kind="Persistent" fieldName="convocatoria" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="0369781d-108c-4691-aefa-e726d0024a94" name="Convocatoria" type="IList&lt;Convocatorium&gt;" label="Convocatoria : IList&lt;Convocatorium&gt;" nullable="true" kind="Persistent" fieldName="convocatoria" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1461,7 +1461,7 @@
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="4d343eaf-d824-4aef-a91d-fa7db3725180">
-          <NavigationalProperty Id="ad7cd522-407f-48bc-9c96-642437d6c34f" name="Proyecto" type="Proyecto" label="Proyecto : Proyecto" nullable="true" kind="Persistent" fieldName="proyecto" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="ad7cd522-407f-48bc-9c96-642437d6c34f" name="Proyecto" type="Proyecto" label="Proyecto : Proyecto" nullable="true" kind="Persistent" fieldName="proyecto" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1470,7 +1470,7 @@
       <Property Id="5dad722b-f27d-477b-86ef-3280810c51e9" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="fe4b2f6e-9f71-47dc-b59c-7bdcc827b136">
-          <NavigationalProperty Id="6566d9a4-bc95-43ae-9b45-bba9ff9cec67" name="Proyectos" type="IList&lt;Proyecto&gt;" label="Proyectos : IList&lt;Proyecto&gt;" nullable="true" kind="Persistent" fieldName="proyectos" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="6566d9a4-bc95-43ae-9b45-bba9ff9cec67" name="Proyectos" type="IList&lt;Proyecto&gt;" label="Proyectos : IList&lt;Proyecto&gt;" nullable="true" kind="Persistent" fieldName="proyectos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1558,19 +1558,19 @@
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="ea47ce11-23ad-4842-8dc0-b5ebcd8c71b0">
-          <NavigationalProperty Id="606c9023-a46d-4d96-bed9-54e09de1324f" name="Proyectos" type="IList&lt;Proyecto&gt;" label="Proyectos : IList&lt;Proyecto&gt;" nullable="true" kind="Persistent" fieldName="proyectos" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="606c9023-a46d-4d96-bed9-54e09de1324f" name="Proyectos" type="IList&lt;Proyecto&gt;" label="Proyectos : IList&lt;Proyecto&gt;" nullable="true" kind="Persistent" fieldName="proyectos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="a37ff359-9bed-4fae-a32c-40057fce3c03">
-          <NavigationalProperty Id="3b49595c-36e2-4d56-a1ea-0bba27820453" name="ListaTipoDestinatarios" type="IList&lt;ListaTipoDestinatario&gt;" label="ListaTipoDestinatarios : IList&lt;ListaTipoDestinatario&gt;" nullable="true" kind="Persistent" fieldName="listaTipoDestinatarios" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="3b49595c-36e2-4d56-a1ea-0bba27820453" name="ListaTipoDestinatarios" type="IList&lt;ListaTipoDestinatario&gt;" label="ListaTipoDestinatarios : IList&lt;ListaTipoDestinatario&gt;" nullable="true" kind="Persistent" fieldName="listaTipoDestinatarios" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="a6ea52e7-b759-4d8f-9103-cfff31d45182">
-          <NavigationalProperty Id="c136857b-1f01-46f0-9669-ed7d88f266af" name="Fondo" type="Fondo" label="Fondo : Fondo" nullable="true" kind="Persistent" fieldName="fondo" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="c136857b-1f01-46f0-9669-ed7d88f266af" name="Fondo" type="Fondo" label="Fondo : Fondo" nullable="true" kind="Persistent" fieldName="fondo" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="64c9f03e-b4fe-40fe-af84-c5b740440e14">
-          <NavigationalProperty Id="4fbf0742-587d-4708-b794-b07c2ee6f583" name="Modalidad" type="Modalidad" label="Modalidad : Modalidad" nullable="true" kind="Persistent" fieldName="modalidad" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="4fbf0742-587d-4708-b794-b07c2ee6f583" name="Modalidad" type="Modalidad" label="Modalidad : Modalidad" nullable="true" kind="Persistent" fieldName="modalidad" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="0711a0f8-cdda-4317-8179-e3a33ace87ad">
-          <NavigationalProperty Id="f2ac1b40-9864-4737-8292-fa0ccbffa9cc" name="TipoFinanciamiento" type="TipoFinanciamiento" label="TipoFinanciamiento : TipoFinanciamiento" nullable="true" kind="Persistent" fieldName="tipoFinanciamiento" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="f2ac1b40-9864-4737-8292-fa0ccbffa9cc" name="TipoFinanciamiento" type="TipoFinanciamiento" label="TipoFinanciamiento : TipoFinanciamiento" nullable="true" kind="Persistent" fieldName="tipoFinanciamiento" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1579,7 +1579,7 @@
       <Property Id="caae4506-1072-4ad9-979f-c4527f095ac3" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="51f18333-ff92-4109-a581-aa552147ee3d">
-          <NavigationalProperty Id="a4540240-b686-4865-8d5f-d1cc01ed330e" name="Proyectos" type="IList&lt;Proyecto&gt;" label="Proyectos : IList&lt;Proyecto&gt;" nullable="true" kind="Persistent" fieldName="proyectos" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="a4540240-b686-4865-8d5f-d1cc01ed330e" name="Proyectos" type="IList&lt;Proyecto&gt;" label="Proyectos : IList&lt;Proyecto&gt;" nullable="true" kind="Persistent" fieldName="proyectos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1634,13 +1634,13 @@
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="9b91d98b-aab0-4d03-9d71-7901e7e5b56e">
-          <NavigationalProperty Id="e026a284-09eb-4d18-b063-08c33a604916" name="Persona" type="Persona" label="Persona : Persona" nullable="true" kind="Persistent" fieldName="persona" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="e026a284-09eb-4d18-b063-08c33a604916" name="Persona" type="Persona" label="Persona : Persona" nullable="true" kind="Persistent" fieldName="persona" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="7626b518-b0b7-433c-85a5-324b4ca90d4d">
-          <NavigationalProperty Id="0543f208-b912-44ed-aa63-ec2667e5d548" name="Tematica" type="Tematica" label="Tematica : Tematica" nullable="true" kind="Persistent" fieldName="tematica" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="0543f208-b912-44ed-aa63-ec2667e5d548" name="Tematica" type="Tematica" label="Tematica : Tematica" nullable="true" kind="Persistent" fieldName="tematica" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="f3185e48-7ad5-465e-b04c-d5cdc7b4269e">
-          <NavigationalProperty Id="9e11df72-1694-412d-9c16-bd5b86eb9245" name="ViaComunicacion" type="ViaComunicacion" label="ViaComunicacion : ViaComunicacion" nullable="true" kind="Persistent" fieldName="viaComunicacion" isDependent="false" isManaged="false" />
+          <NavigationalProperty Id="9e11df72-1694-412d-9c16-bd5b86eb9245" name="ViaComunicacion" type="ViaComunicacion" label="ViaComunicacion : ViaComunicacion" nullable="true" kind="Persistent" fieldName="viaComunicacion" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>

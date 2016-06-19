@@ -34,7 +34,6 @@ namespace CyT
             listaCorreosModal.Clear();
             listaCorreoElectronicos.Clear();
             listaTelefonos.Clear();
-
         }
 
         //Muestra los datos de las personas en la GRILLA
@@ -59,7 +58,6 @@ namespace CyT
         {
             GuardarPersona();
         }
-
 
         //Muestra en el DROPDOWNLIST las LOCALIDADES
         private void MostrarLocalidad()
@@ -109,12 +107,11 @@ namespace CyT
             GuardarTelefono(listaTelefonos);
             GuardarCorreoElectronico(listaCorreoElectronicos);
 
-            MostrarPersona();
             Response.Redirect("AltaPersona.aspx");
-
-            //LimpiarPantalla();
-            //MostrarTelefono();
-            //MostrarCorreoElectronico();
+            LimpiarPantalla();
+            MostrarTelefono();
+            MostrarCorreoElectronico();
+            MostrarPersona();
         }
 
         private void GuardarTelefono(IList<Telefono> listaTelefonos)
@@ -188,14 +185,12 @@ namespace CyT
                     listaTelefonosModal.RemoveAt(i);
                 }
             }
-
             MostrarTelefono();
         }
 
         protected void btnEliminarCorreoModal_Command(object sender, CommandEventArgs e)
         {
             int index = Convert.ToInt32(e.CommandArgument.ToString());
-            txtApellido.Text = e.CommandArgument.ToString();
 
             for (int i = 0; i < listaCorreosModal.Count; i++)
             {
@@ -204,41 +199,7 @@ namespace CyT
                     listaCorreosModal.RemoveAt(i);
                 }
             }
-
             MostrarCorreoElectronico();
-
-        }
-        protected void dgvPersona_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            idPersonaActual = Convert.ToInt32(dgvPersona.SelectedRow.Cells[0].Text);
-
-            txtNombre.Text = dgvPersona.SelectedRow.Cells[1].Text;
-            txtApellido.Text = dgvPersona.SelectedRow.Cells[2].Text;
-            ddlTipoDocumento.Text = dgvPersona.SelectedRow.Cells[3].Text;
-            txtDocumento.Text = dgvPersona.SelectedRow.Cells[4].Text;
-            txtCuil.Text = dgvPersona.SelectedRow.Cells[11].Text;
-            txtFechaNacimiento.Text = dgvPersona.SelectedRow.Cells[8].Text;
-            txtDireccion.Text = dgvPersona.SelectedRow.Cells[10].Text;
-            //ddlLocalidad.Text = dgvPersona.SelectedRow.Cells[2].Text;
-            txtEmpresa.Text = dgvPersona.SelectedRow.Cells[9].Text;
-
-            if (dgvPersona.SelectedRow.Cells[6].Text == "True") { chkIsInteresado.Checked = true; }
-            else { chkIsInteresado.Checked = false; }
-
-            if (dgvPersona.SelectedRow.Cells[7].Text == "True") { chkIsBeneficiario.Checked = true; }
-            else { chkIsBeneficiario.Checked = false; }
-
-            TraerListaTelefonos(idPersonaActual);
-            MostrarTelefono();
-
-            TraerListaCorreoElectronicos(idPersonaActual);
-            MostrarCorreoElectronico();
-
-            ddlLocalidad.Text = TraerLocalidadSegunIdPersona(Convert.ToInt32(dgvPersona.SelectedRow.Cells[5].Text));
-
-            btnGuardarPersona.Visible = false;
-            btnActualizarPersona.Visible = true;
-
         }
 
         private void TraerListaTelefonos(int id)
@@ -273,7 +234,7 @@ namespace CyT
         {
             Persona persona = new Persona();
 
-            int idPersona = Convert.ToInt32(dgvPersona.SelectedRow.Cells[5].Text);
+            int idPersona = Convert.ToInt32(dgvPersona.SelectedRow.Cells[0].Text);
 
             persona.Nombre = txtNombre.Text;
             persona.Apellido = txtApellido.Text;
@@ -311,6 +272,12 @@ namespace CyT
 
             ActualizarTelefono(idPersona, listaTelefonos);
             ActualizarCorreoElectronico(idPersona, listaCorreoElectronicos);
+
+            Response.Redirect("AltaPersona.aspx");
+            LimpiarPantalla();
+            MostrarTelefono();
+            MostrarCorreoElectronico();
+            MostrarPersona();
         }
 
         private void ActualizarTelefono(int id, IList<Telefono> listaTelefonos)
@@ -320,6 +287,58 @@ namespace CyT
         private void ActualizarCorreoElectronico(int id, IList<CorreoElectronico> listaCorreoElectronicos)
         {
             correoElectronicoNego.ActualizarCorreoElectronico(id, listaCorreoElectronicos);
+        }
+
+
+        protected void dgvPersona_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            idPersonaActual = Convert.ToInt32(dgvPersona.Rows[e.RowIndex].Cells[0].Text);
+
+            EliminarPersona(idPersonaActual);
+
+            Response.Redirect("AltaPersona.aspx");
+            LimpiarPantalla();
+            MostrarTelefono();
+            MostrarCorreoElectronico();
+            MostrarPersona();
+
+        }
+
+        private void EliminarPersona(int id)
+        {
+            personaNego.EliminarPersona(id);
+        }
+
+        protected void dgvPersona_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            idPersonaActual = Convert.ToInt32(dgvPersona.Rows[e.NewSelectedIndex].Cells[0].Text);
+
+            txtNombre.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[1].Text;
+            txtApellido.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[2].Text;
+            ddlTipoDocumento.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[3].Text;
+            txtDocumento.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[4].Text;
+            txtCuil.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[11].Text;
+            txtFechaNacimiento.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[8].Text;
+            txtDireccion.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[10].Text;
+            txtEmpresa.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[9].Text;
+
+            if (dgvPersona.Rows[e.NewSelectedIndex].Cells[6].Text == "True") { chkIsInteresado.Checked = true; }
+            else { chkIsInteresado.Checked = false; }
+
+            if (dgvPersona.Rows[e.NewSelectedIndex].Cells[7].Text == "True") { chkIsBeneficiario.Checked = true; }
+            else { chkIsBeneficiario.Checked = false; }
+
+            TraerListaTelefonos(idPersonaActual);
+            MostrarTelefono();
+
+            TraerListaCorreoElectronicos(idPersonaActual);
+            MostrarCorreoElectronico();
+
+            ddlLocalidad.Text = TraerLocalidadSegunIdPersona(Convert.ToInt32(dgvPersona.Rows[e.NewSelectedIndex].Cells[5].Text));
+
+            btnGuardarPersona.Visible = false;
+            btnActualizarPersona.Visible = true;
+
         }
     }
 }

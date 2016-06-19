@@ -26,5 +26,10 @@ namespace CapaNegocio
         {
             personaRepo.ActualizarPersona(persona);
         }
+
+        public void EliminarPersona(int id)
+        {
+            personaRepo.EliminarPersona(id);
+        }
     }
 }

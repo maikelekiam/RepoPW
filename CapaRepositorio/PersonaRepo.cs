@@ -40,5 +40,21 @@ namespace CapaRepositorio
                 modeloDeDominio.SaveChanges();
             }
         }
+
+        public void EliminarPersona(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IQueryable<Persona> query = modeloDeDominio.GetAll<Persona>().Where(c => c.IdPersona == id);
+
+                foreach (Persona persona in query)
+                {
+                    modeloDeDominio.Delete(persona.CorreoElectronicos);
+                    modeloDeDominio.Delete(persona.Telefonos);
+                    modeloDeDominio.Delete(persona);
+                    modeloDeDominio.SaveChanges();
+                }
+            }
+        }
     }
 }
