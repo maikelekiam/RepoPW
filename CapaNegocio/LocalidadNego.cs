@@ -10,5 +10,16 @@ namespace CapaNegocio
 {
     public class LocalidadNego
     {
+        LocalidadRepo localidadRepo = new LocalidadRepo();
+
+        public IEnumerable<Localidad> MostrarLocalidades()
+        {
+            return localidadRepo.MostrarLocalidades();
+        }
+
+        public string TraerLocalidadSegunIdPersona(int id)
+        {
+            return localidadRepo.TraerLocalidadSegunIdPersona(id);
+        }
     }
 }

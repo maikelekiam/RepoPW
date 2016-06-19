@@ -21,10 +21,6 @@ namespace CapaNegocio
         {
             return personaRepo.GuardarPersona(persona);
         }
-        public IEnumerable<Localidad> MostrarLocalidad()
-        {
-            return personaRepo.MostrarLocalidad();
-        }
 
         public void ActualizarPersona(Persona persona)
         {

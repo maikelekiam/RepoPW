@@ -32,15 +32,6 @@ namespace CapaRepositorio
             }
         }
 
-        public IEnumerable<Localidad> MostrarLocalidad()
-        {
-            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
-            {
-                IEnumerable<Localidad> result = modeloDeDominio.Localidads.ToList();
-
-                return modeloDeDominio.CreateDetachedCopy(result);
-            }
-        }
         public void ActualizarPersona(Persona persona)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())

@@ -15,7 +15,7 @@ namespace CyT
         PersonaNego personaNego = new PersonaNego();
         TelefonoNego telefonoNego = new TelefonoNego();
         CorreoElectronicoNego correoElectronicoNego = new CorreoElectronicoNego();
-        //LocalidadNego localidadNego = new LocalidadNego(); FALTA!!!
+        LocalidadNego localidadNego = new LocalidadNego();
         int idPersonaActual;
 
         static List<string> listaTelefonosModal = new List<string>();
@@ -34,7 +34,7 @@ namespace CyT
             listaCorreosModal.Clear();
             listaCorreoElectronicos.Clear();
             listaTelefonos.Clear();
-            
+
         }
 
         //Muestra los datos de las personas en la GRILLA
@@ -64,7 +64,7 @@ namespace CyT
         //Muestra en el DROPDOWNLIST las LOCALIDADES
         private void MostrarLocalidad()
         {
-            ddlLocalidad.DataSource = personaNego.MostrarLocalidad().ToList();
+            ddlLocalidad.DataSource = localidadNego.MostrarLocalidades().ToList();
             ddlLocalidad.DataValueField = "nombre";
             ddlLocalidad.DataBind();
         }
@@ -221,16 +221,20 @@ namespace CyT
             txtDireccion.Text = dgvPersona.SelectedRow.Cells[9].Text;
             //ddlLocalidad.Text = dgvPersona.SelectedRow.Cells[2].Text;
             txtEmpresa.Text = dgvPersona.SelectedRow.Cells[7].Text;
+
             if (dgvPersona.SelectedRow.Cells[3].Text == "True") { chkIsInteresado.Checked = true; }
             else { chkIsInteresado.Checked = false; }
+
             if (dgvPersona.SelectedRow.Cells[4].Text == "True") { chkIsBeneficiario.Checked = true; }
             else { chkIsBeneficiario.Checked = false; }
-            
+
             TraerListaTelefonos(idPersonaActual);
             MostrarTelefono();
 
             TraerListaCorreoElectronicos(idPersonaActual);
             MostrarCorreoElectronico();
+
+            ddlLocalidad.Text = TraerLocalidadSegunIdPersona(Convert.ToInt32(dgvPersona.SelectedRow.Cells[2].Text));
 
             btnGuardarPersona.Visible = false;
             btnActualizarPersona.Visible = true;
@@ -258,6 +262,11 @@ namespace CyT
                 string str = corr.CorreoElectronico1.ToString();
                 listaCorreosModal.Add(str);
             }
+        }
+
+        private string TraerLocalidadSegunIdPersona(int id)
+        {
+            return localidadNego.TraerLocalidadSegunIdPersona(id);
         }
 
         protected void btnActualizarPersona_Click(object sender, EventArgs e)
