@@ -26,5 +26,9 @@ namespace CapaNegocio
         {
             proyectoRepo.GuardarProyecto(proyecto);
         }
+        public void ActualizarProyecto(Proyecto proyecto)
+        {
+            proyectoRepo.ActualizarProyecto(proyecto);
+        }
     }
 }

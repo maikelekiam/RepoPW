@@ -229,6 +229,15 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Button btnGuardarProyecto;
         
         /// <summary>
+        /// btnActualizarProyecto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnActualizarProyecto;
+        
+        /// <summary>
         /// dgvProyecto control.
         /// </summary>
         /// <remarks>

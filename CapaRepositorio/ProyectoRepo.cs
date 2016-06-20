@@ -38,5 +38,14 @@ namespace CapaRepositorio
                 modeloDeDominio.SaveChanges();
             }
         }
+
+        public void ActualizarProyecto(Proyecto proyecto)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                modeloDeDominio.AttachCopy(proyecto);
+                modeloDeDominio.SaveChanges();
+            }
+        }
     }
 }

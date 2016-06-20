@@ -188,7 +188,13 @@
                     <asp:Button ID="btnGuardarProyecto" runat="server" Text="Guardar Proyecto" CssClass="btn btn-success form-control" OnClick="btnGuardarProyecto_Click" />
                 </div>
             </div>
-
+            <!--BOTON ACTUALIZAR PROYECTO  -->
+            <div class="form-group">
+                <div class="col-md-2 col-md-offset-2">
+                    <br />
+                    <asp:Button ID="btnActualizarProyecto" runat="server" Text="Actualizar Proyecto" CssClass="btn btn-danger form-control" OnClick="btnActualizarProyecto_Click" />
+                </div>
+            </div>
 
             <!--GRILLA CON LOS PROYECTOS-->
             <h4>TABLA DE PROYECTOS</h4>
@@ -198,7 +204,7 @@
                         CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
                         GridLines="Both"
                         AutoGenerateSelectButton="true"
-                        OnSelectedIndexChanged="dgvProyecto_SelectedIndexChanged">
+                        OnSelectedIndexChanging="dgvProyecto_SelectedIndexChanging">
                         <Columns>
                             <asp:BoundField HeaderText="ID" DataField="idProyecto" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
