@@ -16,5 +16,10 @@ namespace CapaNegocio
         {
             return viaComunicacionRepo.MostrarViaComunicacion();
         }
+
+        public string TraerViaComunicacion(int id)
+        {
+            return viaComunicacionRepo.TraerViaComunicacion(id);
+        }
     }
 }

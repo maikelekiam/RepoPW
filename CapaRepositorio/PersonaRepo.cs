@@ -51,6 +51,8 @@ namespace CapaRepositorio
                 {
                     modeloDeDominio.Delete(persona.CorreoElectronicos);
                     modeloDeDominio.Delete(persona.Telefonos);
+                    modeloDeDominio.Delete(persona.Actuacions);
+                    modeloDeDominio.Delete(persona.Integrantes);
                     modeloDeDominio.Delete(persona);
                     modeloDeDominio.SaveChanges();
                 }

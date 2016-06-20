@@ -15,6 +15,10 @@ namespace CapaNegocio
         {
             return tematicaRepo.MostrarTematica();
         }
+        public string TraerTematica(int id)
+        {
+            return tematicaRepo.TraerTematica(id);
+        }
 
 
     }

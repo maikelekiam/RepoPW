@@ -18,5 +18,17 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
+
+        public string TraerViaComunicacion(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                ViaComunicacion result = modeloDeDominio.ViaComunicacions.Where(c => c.IdViaComunicacion == id).FirstOrDefault();
+
+                modeloDeDominio.CreateDetachedCopy(result);
+
+                return result.Nombre;
+            }
+        }
     }
 }

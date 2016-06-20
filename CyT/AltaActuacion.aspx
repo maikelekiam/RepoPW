@@ -134,25 +134,39 @@
                     <asp:TextBox ID="txtDetalle" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4"></asp:TextBox>
                 </div>
             </div>
-            <!--BOTONES GUARDAR + MODIFICAR -->
+            <!--BOTONES GUARDAR + ACTUALIZAR ACTUACION -->
             <div class="form-group">
                 <div class="col-md-2 col-md-offset-2">
                     <br />
                     <asp:Button ID="btnGuardarActuacion" runat="server" Text="Guardar Actuacion" CssClass="btn btn-primary form-control" OnClick="btnGuardarActuacion_Click" />
                 </div>
             </div>
+            <div class="form-group">
+                <div class="col-md-2 col-md-offset-2">
+                    <asp:Button ID="btnActualizarActuacion" runat="server" Text="Actualizar Actuacion" CssClass="btn btn-danger form-control" OnClick="btnActualizarActuacion_Click" />
+                </div>
+            </div>
+
+
             <!--GRILLA CON LAS ACTUACIONES DE LA PERSONA ELEGIDA-->
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
-                    <asp:GridView ID="dgvActuacion" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvActuacion_SelectedIndexChanged"
+                    <asp:GridView ID="dgvActuacion" runat="server" AutoGenerateColumns="false"
+                        OnSelectedIndexChanging="dgvActuacion_SelectedIndexChanging"
+                        OnRowDeleting="dgvActuacion_RowDeleting"
                         CssClass="table table-hover table-bordered" BorderWidth="3px">
                         <Columns>
+                            <asp:BoundField HeaderText="IdActuacion" DataField="IdActuacion" />
                             <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Fecha de la Actuacion" DataField="fecha"
                                 DataFormatString="{0:d}" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="50" HeaderStyle-Width="200" />
-                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Detalle" DataField="detalle" 
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Detalle" DataField="detalle"
                                 ItemStyle-HorizontalAlign="Justify" ItemStyle-Width="400" HeaderStyle-Width="200" />
-                            <asp:CommandField HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowSelectButton="true" ItemStyle-Width="100" />
-                            <asp:CommandField HeaderStyle-BackColor="#cccccc" ButtonType="Button" ShowDeleteButton="true" ItemStyle-Width="100" />
+                            <asp:BoundField HeaderText="Via de Comunicacion" DataField="idViaComunicacion" />
+                            <asp:BoundField HeaderText="Tematica" DataField="idTematica" />
+                            <asp:BoundField HeaderText="Persona" DataField="idPersona" />
+                            <asp:BoundField HeaderText="Activo" DataField="activo" />
+                            <asp:ButtonField Text="Editar" CommandName="select" />
+                            <asp:ButtonField Text="Borrar" CommandName="delete" />
                         </Columns>
                         <SelectedRowStyle BackColor="Azure" />
                     </asp:GridView>
@@ -166,22 +180,23 @@
                     <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="false"
                         CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
                         GridLines="Both"
+                        AutoGenerateSelectButton="true"
                         OnSelectedIndexChanged="dgvPersona_SelectedIndexChanged">
                         <Columns>
-                            <asp:BoundField HeaderText="Tipo" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="ID" DataField="idPersona" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Apellido" DataField="apellido" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Tipo" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Documento" DataField="documento" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Localidad" DataField="idLocalidad" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Interesado" DataField="isInteresado" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Beneficiario" DataField="isBeneficiario" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="ID" DataField="idPersona" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Fecha Nac" DataField="fechaNacimiento" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Empresa" DataField="empresa" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Documento" DataField="documento" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Direccion" DataField="direccion" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Cuil" DataField="cuil" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Apellido" DataField="apellido" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Activo" DataField="activo" ItemStyle-HorizontalAlign="Center" />
-                            <asp:ButtonField Text="Seleccionar" CommandName="select" />
+
                         </Columns>
                         <SelectedRowStyle BackColor="Azure" />
                     </asp:GridView>

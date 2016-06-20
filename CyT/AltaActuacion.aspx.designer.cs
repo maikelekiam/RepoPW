@@ -175,6 +175,15 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Button btnGuardarActuacion;
         
         /// <summary>
+        /// btnActualizarActuacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnActualizarActuacion;
+        
+        /// <summary>
         /// dgvActuacion control.
         /// </summary>
         /// <remarks>

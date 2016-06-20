@@ -12,28 +12,29 @@ namespace CapaNegocio
     {
         ActuacionRepo actuacionRepo = new ActuacionRepo();
 
-        public IEnumerable<Actuacion> MostrarActuacion()
-        {
-            return actuacionRepo.MostrarActuacion();
-        }
-        public void GuardarActuacion(Actuacion actuacion)
-        {
-            actuacionRepo.GuardarActuacion(actuacion);
-        }
-        
-        
-        //public IEnumerable<Persona> MostrarPersona()
+        //public IEnumerable<Actuacion> MostrarActuacion()
         //{
-        //    return actuacionRepo.MostrarPersona();
+        //    return actuacionRepo.MostrarActuacion();
         //}
+        public int GuardarActuacion(Actuacion actuacion)
+        {
+            return actuacionRepo.GuardarActuacion(actuacion);
+        }
+        
+        
         public IEnumerable<Actuacion> MostrarActuacionSegunPersona(int id)
         {
             return actuacionRepo.MostrarActuacionSegunPersona(id);
         }
-        //public int MostrarIdPersonaSegunDocumento(string documento)
-        //{
-        //    return actuacionRepo.MostrarIdPersonaSegunDocumento(documento);
-        //}
 
+        public void EliminarActuacion(int id)
+        {
+            actuacionRepo.EliminarActuacion(id);
+        }
+
+        public void ActualizarActuacion(Actuacion actuacion)
+        {
+            actuacionRepo.ActualizarActuacion(actuacion);
+        }
     }
 }

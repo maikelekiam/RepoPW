@@ -18,6 +18,16 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
+        public string TraerTematica(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                Tematica result = modeloDeDominio.Tematicas.Where(c => c.IdTematica == id).FirstOrDefault();
 
+                modeloDeDominio.CreateDetachedCopy(result);
+
+                return result.Nombre;
+            }
+        }
     }
 }
