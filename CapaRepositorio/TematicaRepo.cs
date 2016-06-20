@@ -29,5 +29,15 @@ namespace CapaRepositorio
                 return result.Nombre;
             }
         }
+
+        public void GuerdarTematica(Tematica tematica)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                modeloDeDominio.Add(tematica);
+                modeloDeDominio.SaveChanges();
+            }
+        }
+
     }
 }
