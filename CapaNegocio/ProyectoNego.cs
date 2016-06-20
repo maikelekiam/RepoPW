@@ -12,6 +12,16 @@ namespace CapaNegocio
     {
         ProyectoRepo proyectoRepo = new ProyectoRepo();
 
+        public IEnumerable<Proyecto> MostrarProyecto()
+        {
+            return proyectoRepo.MostrarProyecto();
+        }
+
+        public string TraerProyecto(int id)
+        {
+            return proyectoRepo.TraerProyecto(id);
+        }
+
         public void GuardarProyecto(Proyecto proyecto)
         {
             proyectoRepo.GuardarProyecto(proyecto);

@@ -112,6 +112,33 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
         
         /// <summary>
+        /// txtEstadoModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEstadoModal;
+        
+        /// <summary>
+        /// btnModalEstadoSalir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalEstadoSalir;
+        
+        /// <summary>
+        /// btnModalEstadoGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalEstadoGuardar;
+        
+        /// <summary>
         /// lblAreaProductiva control.
         /// </summary>
         /// <remarks>
@@ -128,6 +155,33 @@ namespace CyT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAreaProductiva;
+        
+        /// <summary>
+        /// txtAreaProductivaModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAreaProductivaModal;
+        
+        /// <summary>
+        /// btnModalAreaProductivaSalir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalAreaProductivaSalir;
+        
+        /// <summary>
+        /// btnModalAreaProductivaGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModalAreaProductivaGuardar;
         
         /// <summary>
         /// lblMontoSolicitado control.
@@ -173,5 +227,14 @@ namespace CyT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarProyecto;
+        
+        /// <summary>
+        /// dgvProyecto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dgvProyecto;
     }
 }

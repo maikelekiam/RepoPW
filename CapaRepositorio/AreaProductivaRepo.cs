@@ -7,22 +7,22 @@ using CapaDominio;
 
 namespace CapaRepositorio
 {
-    public class TematicaRepo
+    public class AreaProductivaRepo
     {
-        public IEnumerable<Tematica> MostrarTematica()
+        public IEnumerable<AreaProductiva> MostrarAreaProductiva()
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                IEnumerable<Tematica> result = modeloDeDominio.Tematicas.ToList();
+                IEnumerable<AreaProductiva> result = modeloDeDominio.AreaProductivas.ToList();
 
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
-        public string TraerTematica(int id)
+        public string TraerAreaProductiva(int id)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                Tematica result = modeloDeDominio.Tematicas.Where(c => c.IdTematica == id).FirstOrDefault();
+                AreaProductiva result = modeloDeDominio.AreaProductivas.Where(c => c.IdAreaProductiva == id).FirstOrDefault();
 
                 modeloDeDominio.CreateDetachedCopy(result);
 
@@ -30,14 +30,15 @@ namespace CapaRepositorio
             }
         }
 
-        public void GuardarTematica(Tematica tematica)
+        public void GuardarAreaProductiva(AreaProductiva areaProductiva)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                modeloDeDominio.Add(tematica);
+                modeloDeDominio.Add(areaProductiva);
                 modeloDeDominio.SaveChanges();
             }
         }
+
 
     }
 }

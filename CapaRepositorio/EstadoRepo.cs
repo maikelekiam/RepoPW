@@ -7,37 +7,37 @@ using CapaDominio;
 
 namespace CapaRepositorio
 {
-    public class TematicaRepo
+    public class EstadoRepo
     {
-        public IEnumerable<Tematica> MostrarTematica()
+        public IEnumerable<Estado> MostrarEstado()
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                IEnumerable<Tematica> result = modeloDeDominio.Tematicas.ToList();
+                IEnumerable<Estado> result = modeloDeDominio.Estados.ToList();
 
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
-        public string TraerTematica(int id)
+
+        public void GuardarEstado(Estado estado)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                Tematica result = modeloDeDominio.Tematicas.Where(c => c.IdTematica == id).FirstOrDefault();
+                modeloDeDominio.Add(estado);
+                modeloDeDominio.SaveChanges();
+            }
+        }
+
+        public string TraerEstado(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                Estado result = modeloDeDominio.Estados.Where(c => c.IdEstado == id).FirstOrDefault();
 
                 modeloDeDominio.CreateDetachedCopy(result);
 
                 return result.Nombre;
             }
         }
-
-        public void GuardarTematica(Tematica tematica)
-        {
-            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
-            {
-                modeloDeDominio.Add(tematica);
-                modeloDeDominio.SaveChanges();
-            }
-        }
-
     }
 }

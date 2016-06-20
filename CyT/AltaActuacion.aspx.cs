@@ -141,7 +141,7 @@ namespace CyT
             tematica.Activo = true;
             tematica.Nombre = txtTematicaModal.Text;
 
-            tematicaNego.GuerdarTematica(tematica);
+            tematicaNego.GuardarTematica(tematica);
             ddlTematica.Items.Clear();
 
             MostrarTematica();
@@ -182,8 +182,6 @@ namespace CyT
             btnActualizarActuacion.Visible = false;
 
             GridViewRow row = dgvPersona.SelectedRow;
-
-            lblDetalle.Text = row.Cells[1].Text;
 
             idPersonaActual = Convert.ToInt32(row.Cells[1].Text);
 

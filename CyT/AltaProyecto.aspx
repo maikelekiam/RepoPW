@@ -31,7 +31,7 @@
                         ForeColor="#000066"
                         CssClass="form-control"
                         DataTextField="nombre"
-                        AutoPostBack="True"
+                        AutoPostBack="False"
                         AppendDataBoundItems="true">
                         <asp:ListItem Value="-1">&lt;Seleccione una Convocatoria&gt;</asp:ListItem>
                     </asp:DropDownList>
@@ -46,8 +46,8 @@
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
                         CssClass="form-control"
-                        DataTextField="nombre"
-                        AutoPostBack="True"
+                        DataTextField="nombreUvt"
+                        AutoPostBack="False"
                         AppendDataBoundItems="true">
                         <asp:ListItem Value="-1">&lt;Seleccione una Uvt&gt;</asp:ListItem>
                     </asp:DropDownList>
@@ -62,12 +62,52 @@
                         ForeColor="#000066"
                         CssClass="form-control"
                         DataTextField="nombre"
-                        AutoPostBack="True"
+                        AutoPostBack="False"
                         AppendDataBoundItems="true">
                         <asp:ListItem Value="-1">&lt;Seleccione Estado&gt;</asp:ListItem>
                     </asp:DropDownList>
                 </div>
+
+                <%--AGREGAR ACA EL MODAL PARA EL NUEVO ESTADO--%>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#modalEstado">Nuevo Estado</button>
+                    </div>
+                    <!-- MODAL ESTADO  -->
+                    <div class="modal fade" id="modalEstado" tabindex="-1" role="dialog" aria-labelledby="modalLabelEstado" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="modalLabelEstado">Nuevo Estado</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-4">
+                                        <asp:TextBox ID="txtEstadoModal" runat="server" CssClass="form-control"></asp:TextBox><br />
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="modal-footer">
+                                    <asp:Button runat="server" ID="btnModalEstadoSalir" Text="SALIR" class="btn btn-danger" data-dismiss="modal" />
+                                    <asp:Button runat="server" ID="btnModalEstadoGuardar" Text="GUARDAR" CssClass="btn btn-success" OnClick="btnModalEstadoGuardar_Click" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+
+
+
+
+
+
+
+            <!--AREA PRODUCTIVA + MODAL AREA PRODUCTIVA-->
             <div class="form-group">
                 <asp:Label ID="lblAreaProductiva" runat="server" Text="AREA PRODUCTIVA" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4 ">
@@ -76,12 +116,56 @@
                         ForeColor="#000066"
                         CssClass="form-control"
                         DataTextField="nombre"
-                        AutoPostBack="True"
+                        AutoPostBack="False"
                         AppendDataBoundItems="true">
                         <asp:ListItem Value="-1">&lt;Seleccione Area Productiva&gt;</asp:ListItem>
                     </asp:DropDownList>
                 </div>
+
+                <%--AGREGAR ACA EL MODAL PARA LA NUEVA AREA PRODUCTIVA--%>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#modalAreaProductiva">Nueva Area Prod</button>
+                    </div>
+                    <!-- MODAL AREA PRODUCTIVA  -->
+                    <div class="modal fade" id="modalAreaProductiva" tabindex="-1" role="dialog" aria-labelledby="modalLabelAreaProductiva" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="modalLabelAreaProductiva">Nueva Area Productiva</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-4">
+                                        <asp:TextBox ID="txtAreaProductivaModal" runat="server" CssClass="form-control"></asp:TextBox><br />
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="modal-footer">
+                                    <asp:Button runat="server" ID="btnModalAreaProductivaSalir" Text="SALIR" class="btn btn-danger" data-dismiss="modal" />
+                                    <asp:Button runat="server" ID="btnModalAreaProductivaGuardar" Text="GUARDAR" CssClass="btn btn-success" OnClick="btnModalAreaProductivaGuardar_Click" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
             </div>
+
+
+
+
+
+
             <!--MONTO SOLICITADO + MONTO CONTRAPARTE -->
             <br />
             <div class="form-group">
@@ -104,6 +188,35 @@
                     <asp:Button ID="btnGuardarProyecto" runat="server" Text="Guardar Proyecto" CssClass="btn btn-success form-control" OnClick="btnGuardarProyecto_Click" />
                 </div>
             </div>
+
+
+            <!--GRILLA CON LOS PROYECTOS-->
+            <h4>TABLA DE PROYECTOS</h4>
+            <div class="form-group">
+                <div class="col-md-9 col-md-offset-1">
+                    <asp:GridView ID="dgvProyecto" runat="server" AutoGenerateColumns="false"
+                        CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
+                        GridLines="Both"
+                        AutoGenerateSelectButton="true"
+                        OnSelectedIndexChanged="dgvProyecto_SelectedIndexChanged">
+                        <Columns>
+                            <asp:BoundField HeaderText="ID" DataField="idProyecto" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Expediente" DataField="numeroExp" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Convocatoria" DataField="idConvocatoria" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="UVT" DataField="idUvt" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Area Productiva" DataField="idAreaProductiva" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Estado" DataField="idEstado" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Monto Solicitado" DataField="montoSolicitado" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Contraparte" DataField="montoContraparte" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Activo" DataField="activo" ItemStyle-HorizontalAlign="Center" />
+
+                        </Columns>
+                        <SelectedRowStyle BackColor="Yellow" />
+                    </asp:GridView>
+                </div>
+            </div>
+
 
 
         </asp:Panel>

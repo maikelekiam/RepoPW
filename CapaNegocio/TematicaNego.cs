@@ -22,9 +22,9 @@ namespace CapaNegocio
             return tematicaRepo.TraerTematica(id);
         }
 
-        public void GuerdarTematica(Tematica tematica)
+        public void GuardarTematica(Tematica tematica)
         {
-            tematicaRepo.GuerdarTematica(tematica);
+            tematicaRepo.GuardarTematica(tematica);
         }
 
 

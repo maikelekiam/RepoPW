@@ -67,46 +67,41 @@
                                     <li><a runat="server" href="~/AltaPersona.aspx">Alta Interesado</a></li>
                                     <li class="divider"></li>
                                     <li><a runat="server" href="#">Listar Interesados</a></li>
+                                    <li><a runat="server" href="#">Listar Beneficiarios</a></li>
                                 </ul>
                             </div>
                             <div class="btn-group">
                                 <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">ACTUACIONES<span class="caret"></span></button>
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/AltaActuacion.aspx">Alta Actuacion</a></li>
-                                    <li><a runat="server" href="#">Modificar Actuacion</a></li>
-                                    <li><a runat="server" href="#">Eliminar Actuacion</a></li>
                                     <li class="divider"></li>
-                                    <li><a runat="server" href="#">Listar Actuaciones</a></li>
                                 </ul>
                             </div>
                             <div class="btn-group">
                                 <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">PROYECTOS<span class="caret"></span></button>
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/AltaProyecto.aspx">Alta Proyecto</a></li>
-                                    <li><a href="#">Modificar Proyecto</a></li>
-                                    <li><a href="#">Eliminar Proyecto</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Listar Proyectos</a></li>
+                                    <li><a href="#">Listar Proyectos en Ejecucion</a></li>
+                                    <li><a href="#">Listar Proyectos Finalizados</a></li>
                                 </ul>
                             </div>
                             <div class="btn-group">
                                 <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">CONVOCATORIAS <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/AltaConvocatoria.aspx">Alta Convocatoria</a></li>
-                                    <li><a href="#">Modificar Convocatoria</a></li>
-                                    <li><a href="#">Eliminar Convocatoria</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Listar Convocatorias</a></li>
+                                    <li><a href="#">Listar Convocatorias Publicas</a></li>
+                                    <li><a href="#">Listar Convocatorias Permanentes</a></li>
                                 </ul>
                             </div>
                             <div class="btn-group">
                                 <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">FONDOS <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/AltaFondo.aspx">Alta Fondo</a></li>
-                                    <li><a href="#">Modificar Fondo</a></li>
-                                    <li><a href="#">Eliminar Fondo</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Listar Fondos</a></li>
+                                    <li><a href="#">Listar Fondos Nacionales</a></li>
+                                    <li><a href="#">Listar Fondos Provinciales</a></li>
                                 </ul>
                             </div>
                         </div>

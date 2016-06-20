@@ -48,8 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActuacionRepo.cs" />
+    <Compile Include="AreaProductivaRepo.cs" />
     <Compile Include="ConvocatoriaRepo.cs" />
     <Compile Include="CorreoElectronicoRepo.cs" />
+    <Compile Include="EstadoRepo.cs" />
     <Compile Include="FondoRepo.cs" />
     <Compile Include="ListaTipoDestinatarioRepo.cs" />
     <Compile Include="LocalidadRepo.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="TelefonoRepo.cs" />
     <Compile Include="TematicaRepo.cs" />
     <Compile Include="TipoFinanciamientoRepo.cs" />
+    <Compile Include="UvtRepo.cs" />
     <Compile Include="ViaComunicacionRepo.cs" />
   </ItemGroup>
   <ItemGroup>
