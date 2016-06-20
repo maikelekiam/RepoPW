@@ -30,5 +30,13 @@ namespace CapaRepositorio
                 return result.Nombre;
             }
         }
+        public void GuardarViaComunicacion(ViaComunicacion viaComunicacion)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                modeloDeDominio.Add(viaComunicacion);
+                modeloDeDominio.SaveChanges();
+            }
+        }
     }
 }

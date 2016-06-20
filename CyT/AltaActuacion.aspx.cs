@@ -114,7 +114,15 @@ namespace CyT
 
         protected void btnModalViaComunicacionGuardar_Click(object sender, EventArgs e)
         {
-            //AGREGAR FUNCIONALIDAD
+            ViaComunicacion viaComunicacion=new ViaComunicacion();
+
+            viaComunicacion.Activo=true;
+            viaComunicacion.Nombre = txtViaComunicacionModal.Text;
+
+            viaComunicacionNego.GuardarViaComunicacion(viaComunicacion);
+
+            ddlViaComunicacion.Items.Clear();
+            MostrarViaComunicacion();
         }
         protected void btnModalTematicaGuardar_Click(object sender, EventArgs e)
         {
@@ -125,7 +133,7 @@ namespace CyT
         {
             btnGuardarActuacion.Visible = false;
             btnActualizarActuacion.Visible = false;
-            
+
             idActuacionActual = Convert.ToInt32(dgvActuacion.Rows[e.RowIndex].Cells[0].Text);
 
             EliminarActuacion(idActuacionActual);
@@ -170,7 +178,7 @@ namespace CyT
         {
             btnGuardarActuacion.Visible = false;
             btnActualizarActuacion.Visible = true;
-            
+
             GridViewRow row = dgvActuacion.Rows[e.NewSelectedIndex];
 
             idActuacionActual = Convert.ToInt32(row.Cells[0].Text);

@@ -21,5 +21,9 @@ namespace CapaNegocio
         {
             return viaComunicacionRepo.TraerViaComunicacion(id);
         }
+        public void GuardarViaComunicacion(ViaComunicacion viaComunicacion)
+        {
+            viaComunicacionRepo.GuardarViaComunicacion(viaComunicacion);
+        }
     }
 }
