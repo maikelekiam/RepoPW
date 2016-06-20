@@ -7,37 +7,36 @@ using CapaDominio;
 
 namespace CapaRepositorio
 {
-    public class TematicaRepo
+    public class UvtRepo
     {
-        public IEnumerable<Tematica> MostrarTematica()
+        public IEnumerable<Uvt> MostrarUvt()
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                IEnumerable<Tematica> result = modeloDeDominio.Tematicas.ToList();
+                IEnumerable<Uvt> result = modeloDeDominio.Uvts.ToList();
 
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
-        public string TraerTematica(int id)
+        public string TraerUvt(int id)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                Tematica result = modeloDeDominio.Tematicas.Where(c => c.IdTematica == id).FirstOrDefault();
+                Uvt result = modeloDeDominio.Uvts.Where(c => c.IdUvt == id).FirstOrDefault();
 
                 modeloDeDominio.CreateDetachedCopy(result);
 
-                return result.Nombre;
+                return result.NombreUvt;
             }
         }
 
-        public void GuardarTematica(Tematica tematica)
+        public void GuardarUvt(Uvt uvt)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                modeloDeDominio.Add(tematica);
+                modeloDeDominio.Add(uvt);
                 modeloDeDominio.SaveChanges();
             }
         }
-
     }
 }

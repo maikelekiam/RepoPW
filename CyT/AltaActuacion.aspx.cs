@@ -49,6 +49,16 @@ namespace CyT
         }
         private void MostrarPersona() //SIRVE PARA CARGAR DATOS EN LA GRILLA
         {
+            dgvPersona.Columns[0].Visible = true;
+            dgvPersona.Columns[5].Visible = true;
+            dgvPersona.Columns[6].Visible = true;
+            dgvPersona.Columns[7].Visible = true;
+            dgvPersona.Columns[8].Visible = true;
+            dgvPersona.Columns[9].Visible = true;
+            dgvPersona.Columns[10].Visible = true;
+            dgvPersona.Columns[11].Visible = true;
+            dgvPersona.Columns[12].Visible = true;
+            
             dgvPersona.DataSource = personaNego.MostrarPersona().ToList();
             dgvPersona.DataBind();
 
@@ -126,7 +136,15 @@ namespace CyT
         }
         protected void btnModalTematicaGuardar_Click(object sender, EventArgs e)
         {
-            //AGREGAR FUNCIONALIDA
+            Tematica tematica = new Tematica();
+
+            tematica.Activo = true;
+            tematica.Nombre = txtTematicaModal.Text;
+
+            tematicaNego.GuardarTematica(tematica);
+            ddlTematica.Items.Clear();
+
+            MostrarTematica();
         }
 
         protected void dgvActuacion_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -169,7 +187,7 @@ namespace CyT
 
             lblPersonaSeleccionadaDeLaGrilla.Text = row.Cells[2].Text + " " + row.Cells[3].Text;
 
-            LimpiarPantalla();
+            //LimpiarPantalla();
 
             MostrarActuacionSegunPersona(idPersonaActual);
         }
@@ -184,9 +202,9 @@ namespace CyT
             idActuacionActual = Convert.ToInt32(row.Cells[0].Text);
 
             txtFechaActuacion.Text = row.Cells[1].Text;
+            txtDetalle.Text = row.Cells[2].Text;
             ddlViaComunicacion.Text = TraerViaComunicacion(Convert.ToInt32(row.Cells[3].Text));
             ddlTematica.Text = TraerTematica(Convert.ToInt32(row.Cells[4].Text));
-            txtDetalle.Text = row.Cells[2].Text;
         }
 
         protected void btnActualizarActuacion_Click(object sender, EventArgs e)

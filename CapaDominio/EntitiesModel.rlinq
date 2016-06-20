@@ -313,7 +313,7 @@
         <orm:field name="correoElectronicos" property="CorreoElectronicos" behavior="readwrite" uniqueId="5979e136-cac7-488d-ae1e-180285c22e6e" type="CapaDominio.CorreoElectronico">
           <orm:collection element-class="CapaDominio.CorreoElectronico" inverse-field="persona" managed="true" order-by="" uniqueId="f89925f5-300a-473c-83e5-57054cd13883" />
         </orm:field>
-        <orm:field name="actuacions" property="Actuacions" behavior="readwrite" uniqueId="e555d392-c55d-44e9-95da-22069f32fbb3" type="CapaDominio.Actuacion" dependent="true">
+        <orm:field name="actuacions" property="Actuacions" behavior="readwrite" uniqueId="e555d392-c55d-44e9-95da-22069f32fbb3" type="CapaDominio.Actuacion">
           <orm:collection element-class="CapaDominio.Actuacion" inverse-field="persona" managed="true" order-by="" uniqueId="b4713419-8122-4b44-86a0-7d44b84d5f17" />
         </orm:field>
       </orm:class>
@@ -961,7 +961,7 @@
   </orm:orm>
   <ModelSettings xmlns="">
     <AppConfigConnectionPropertyName>CyTConnection</AppConfigConnectionPropertyName>
-    <AppConfigConnectionString>Data Source=MAIKELEKIAM-PC\SQLEXPRESS;Initial Catalog=CyT;Integrated Security=True</AppConfigConnectionString>
+    <AppConfigConnectionString>data source=MAIKELEKIAM-PC\SQLEXPRESS;initial catalog=CyT;integrated security=True</AppConfigConnectionString>
     <NamingSettings>
       <ClassRules>
         <CaseMode>PascalCase</CaseMode>
@@ -1248,7 +1248,7 @@
           <NavigationalProperty Id="5979e136-cac7-488d-ae1e-180285c22e6e" name="CorreoElectronicos" type="IList&lt;CorreoElectronico&gt;" label="CorreoElectronicos : IList&lt;CorreoElectronico&gt;" nullable="true" kind="Persistent" fieldName="correoElectronicos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="b6fff2b5-8c74-4c5b-80b8-9a993154db5e">
-          <NavigationalProperty Id="e555d392-c55d-44e9-95da-22069f32fbb3" name="Actuacions" type="IList&lt;Actuacion&gt;" label="Actuacions : IList&lt;Actuacion&gt;" nullable="true" kind="Persistent" fieldName="actuacions" isDependent="true" isManaged="true" />
+          <NavigationalProperty Id="e555d392-c55d-44e9-95da-22069f32fbb3" name="Actuacions" type="IList&lt;Actuacion&gt;" label="Actuacions : IList&lt;Actuacion&gt;" nullable="true" kind="Persistent" fieldName="actuacions" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>

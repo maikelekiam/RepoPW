@@ -48,8 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActuacionNego.cs" />
+    <Compile Include="AreaProductivaNego.cs" />
     <Compile Include="ConvocatoriaNego.cs" />
     <Compile Include="CorreoElectronicoNego.cs" />
+    <Compile Include="EstadoNego.cs" />
     <Compile Include="FondoNego.cs" />
     <Compile Include="ListaTipoDestinatarioNego.cs" />
     <Compile Include="LocalidadNego.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="TelefonoNego.cs" />
     <Compile Include="TematicaNego.cs" />
     <Compile Include="TipoFinanciamientoNego.cs" />
+    <Compile Include="UvtNego.cs" />
     <Compile Include="ViaComunicacionNego.cs" />
   </ItemGroup>
   <ItemGroup>

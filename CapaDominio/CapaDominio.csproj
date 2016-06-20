@@ -130,6 +130,9 @@
       <LastGenOutput>EntitiesModel.cs</LastGenOutput>
     </OpenAccessDeploy>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="CyTConnection%282016-06-20 13-17-40%29.rlinq.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
