@@ -34,19 +34,23 @@
                             <br />
                             <div class="form-group">
                                 <asp:Label ID="lblDescripcion" runat="server" Text="DESCRIPCION" CssClass="col-md-2 control-label"> </asp:Label>
-                                <div class="col-md-4">
+                                <div class="col-md-8">
                                     <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="lblObjetivo" runat="server" Text="OBJETIVO" CssClass="col-md-2 control-label"></asp:Label>
-                                <div class="col-md-4">
+                                <div class="col-md-8">
                                     <asp:TextBox ID="txtObjetivo" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="form-group">
+                                <asp:Label ID="lblAnio" runat="server" Text="AÑO" CssClass="col-md-2 control-label"></asp:Label>
+                                <div class="col-md-3">
+                                    <asp:TextBox ID="txtAnio" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
                                 <asp:Label ID="lblFondo" runat="server" Text="FONDO" CssClass="col-md-2 control-label"> </asp:Label>
-                                <div class="col-md-4 ">
+                                <div class="col-md-3 ">
                                     <asp:DropDownList ID="ddlFondo" runat="server"
                                         Width="280"
                                         BackColor="WhiteSmoke"
@@ -58,18 +62,20 @@
                                     </asp:DropDownList>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <asp:Label ID="lblAnio" runat="server" Text="AÑO" CssClass="col-md-2 control-label"></asp:Label>
-                                <div class="col-md-4">
-                                    <asp:TextBox ID="txtAnio" runat="server" CssClass="form-control"></asp:TextBox>
-                                </div>
+                            <div class="form-group">                                
                                 <asp:Label ID="lblTipoFinanciamiento" runat="server" Text="TIPO DE FINANCIAMIENTO" CssClass="col-md-2 control-label"> </asp:Label>
-                                <div class="col-md-4">
-                                    <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+                                <div class="col-md-4 ">
+                                    <asp:DropDownList ID="ddlTipoFinanciamiento" runat="server"
+                                        Width="280"
+                                        BackColor="WhiteSmoke"
+                                        ForeColor="#000066"
+                                        Font-Bold="false"
+                                        CssClass="form-control"
+                                        DataTextField="nombre">
+                                        <asp:ListItem Value="-1">&lt;Seleccione Tipo Financiamiento&gt;</asp:ListItem>
+                                    </asp:DropDownList>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="lblModalidad" runat="server" Text="MODALIDAD" CssClass="col-md-2 control-label"></asp:Label>
+                                <asp:Label ID="lblModalidad" runat="server" Text="MODALIDAD" CssClass="col-md-1 control-label"></asp:Label>
                                 <div class="col-md-4 ">
                                     <asp:DropDownList ID="ddlModalidad" runat="server"
                                         Width="280"
@@ -81,14 +87,14 @@
                                         <asp:ListItem Value="-1">&lt;Seleccione Modalidad&gt;</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
-                            </div>
+                            </div>                            
                             <div class="form-group">
                                 <asp:Label ID="lblMontoTotal" runat="server" Text="MONTO TOTAL" CssClass="col-md-2 control-label"> </asp:Label>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <asp:TextBox ID="txtMontoTotal" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
                                 <asp:Label ID="lblMontoProyecto" runat="server" Text="MONTO PROYECTO" CssClass="col-md-2 control-label"></asp:Label>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <asp:TextBox ID="txtMontoProyecto" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>

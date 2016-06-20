@@ -85,24 +85,6 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.TextBox txtObjetivo;
         
         /// <summary>
-        /// Control lblFondo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFondo;
-        
-        /// <summary>
-        /// Control ddlFondo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFondo;
-        
-        /// <summary>
         /// Control lblAnio.
         /// </summary>
         /// <remarks>
@@ -121,6 +103,24 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.TextBox txtAnio;
         
         /// <summary>
+        /// Control lblFondo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFondo;
+        
+        /// <summary>
+        /// Control ddlFondo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlFondo;
+        
+        /// <summary>
         /// Control lblTipoFinanciamiento.
         /// </summary>
         /// <remarks>
@@ -130,13 +130,13 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Label lblTipoFinanciamiento;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control ddlTipoFinanciamiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoFinanciamiento;
         
         /// <summary>
         /// Control lblModalidad.
