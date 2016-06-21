@@ -31,5 +31,13 @@ namespace CapaNegocio
         {
             personaRepo.EliminarPersona(id);
         }
+        public IEnumerable<Persona> MostrarListaInteresados()
+        {
+            return personaRepo.MostrarListaInteresados();
+        }
+        public IEnumerable<Persona> MostrarListaBeneficiarios()
+        {
+            return personaRepo.MostrarListaBeneficiarios();
+        }
     }
 }

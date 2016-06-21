@@ -58,5 +58,23 @@ namespace CapaRepositorio
                 }
             }
         }
+        public IEnumerable<Persona> MostrarListaInteresados()
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<Persona> result = modeloDeDominio.Personas.Where(c => c.IsInteresado == true).ToList();
+
+                return modeloDeDominio.CreateDetachedCopy(result);
+            }
+        }
+        public IEnumerable<Persona> MostrarListaBeneficiarios()
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<Persona> result = modeloDeDominio.Personas.Where(c => c.IsBeneficiario == true).ToList();
+
+                return modeloDeDominio.CreateDetachedCopy(result);
+            }
+        }
     }
 }

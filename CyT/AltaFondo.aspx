@@ -3,22 +3,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <asp:Panel ID="Panel1" runat="server">
-            < br/>
+            <br />
             <div class="panel-heading">
                 <h2>Fondos</h2>
             </div>
+            <br />
             <div class="form-group">
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
                     Nuevo Fondo
                 </button>
             </div>
-
             <!-- Modal -->
             <asp:Label ID="Label2" runat="server" Text=""></asp:Label><br />
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content col-md-pull-12">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span></button>
@@ -26,11 +26,12 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <asp:Label ID="lblNombre" runat="server" Text="Nombre" CssClass="col-md-2 control-label"> </asp:Label>
+                                <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"> </asp:Label>
                                 <div class="col-md-6 ">
-                                    <asp:TextBox ID="txtNombre" runat="server" class="form-control"></asp:TextBox><br />
+                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox><br />
                                 </div>
                             </div>
+
                             <div class="form-group">
                                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion" CssClass="col-md-2 control-label"> </asp:Label>
                                 <div class="col-md-6 ">

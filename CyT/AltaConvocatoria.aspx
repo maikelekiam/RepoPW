@@ -62,7 +62,7 @@
                                     </asp:DropDownList>
                                 </div>
                             </div>
-                            <div class="form-group">                                
+                            <div class="form-group">
                                 <asp:Label ID="lblTipoFinanciamiento" runat="server" Text="TIPO DE FINANCIAMIENTO" CssClass="col-md-2 control-label"> </asp:Label>
                                 <div class="col-md-4 ">
                                     <asp:DropDownList ID="ddlTipoFinanciamiento" runat="server"
@@ -87,7 +87,7 @@
                                         <asp:ListItem Value="-1">&lt;Seleccione Modalidad&gt;</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
-                            </div>                            
+                            </div>
                             <div class="form-group">
                                 <asp:Label ID="lblMontoTotal" runat="server" Text="MONTO TOTAL" CssClass="col-md-2 control-label"> </asp:Label>
                                 <div class="col-md-3">
@@ -110,7 +110,7 @@
                                         data-date-today-highlight="true">
                                         <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaInicio"></asp:TextBox>
                                         <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
+                                            <span class="glyphicon glyphicon-th"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -125,7 +125,7 @@
                                         data-date-today-highlight="true">
                                         <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaCierre"></asp:TextBox>
                                         <div class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
+                                            <span class="glyphicon glyphicon-th"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -163,8 +163,8 @@
                             <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Nombre Convocatoria" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
                             <asp:TemplateField HeaderStyle-BackColor="#cccccc" HeaderText="Fondo">
                                 <ItemTemplate>
-                                    <asp:Label ID="Label1" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Fondo.Nombre") %>' ></asp:Label>
-                                    
+                                    <asp:Label ID="Label1" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Fondo.Nombre") %>'></asp:Label>
+
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Año" DataField="anio" ItemStyle-HorizontalAlign="Center" />
@@ -178,6 +178,6 @@
             </div>
         </asp:Panel>
     </div>
-    
+
 </asp:Content>
 

@@ -183,6 +183,8 @@
     <Content Include="js\jquery-1.12.3.js" />
     <Content Include="js\panel-collapsible.js" />
     <Content Include="js\select2.js" />
+    <Content Include="ListarBeneficiarios.aspx" />
+    <Content Include="ListarInteresados.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -310,6 +312,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LinkedList.cs" />
+    <Compile Include="ListarBeneficiarios.aspx.cs">
+      <DependentUpon>ListarBeneficiarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarBeneficiarios.aspx.designer.cs">
+      <DependentUpon>ListarBeneficiarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarInteresados.aspx.cs">
+      <DependentUpon>ListarInteresados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarInteresados.aspx.designer.cs">
+      <DependentUpon>ListarInteresados.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
