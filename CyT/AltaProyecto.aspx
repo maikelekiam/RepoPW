@@ -75,7 +75,7 @@
                     </div>
                     <!-- MODAL ESTADO  -->
                     <div class="modal fade" id="modalEstado" tabindex="-1" role="dialog" aria-labelledby="modalLabelEstado" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-md" >
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -84,7 +84,7 @@
                                     <h4 class="modal-title" id="modalLabelEstado">Nuevo Estado</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="col-md-4">
+                                    <div class="col-md-8">
                                         <asp:TextBox ID="txtEstadoModal" runat="server" CssClass="form-control"></asp:TextBox><br />
                                     </div>
                                     <br />
@@ -110,7 +110,7 @@
             <!--AREA PRODUCTIVA + MODAL AREA PRODUCTIVA-->
             <div class="form-group">
                 <asp:Label ID="lblAreaProductiva" runat="server" Text="AREA PRODUCTIVA" CssClass="col-md-2 control-label"></asp:Label>
-                <div class="col-md-4 ">
+                <div class="col-md-4">
                     <asp:DropDownList ID="ddlAreaProductiva" runat="server"
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
@@ -129,7 +129,7 @@
                     </div>
                     <!-- MODAL AREA PRODUCTIVA  -->
                     <div class="modal fade" id="modalAreaProductiva" tabindex="-1" role="dialog" aria-labelledby="modalLabelAreaProductiva" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-md">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -138,7 +138,7 @@
                                     <h4 class="modal-title" id="modalLabelAreaProductiva">Nueva Area Productiva</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="col-md-4">
+                                    <div class="col-md-8">
                                         <asp:TextBox ID="txtAreaProductivaModal" runat="server" CssClass="form-control"></asp:TextBox><br />
                                     </div>
                                     <br />
@@ -191,7 +191,6 @@
             <!--BOTON ACTUALIZAR PROYECTO  -->
             <div class="form-group">
                 <div class="col-md-2 col-md-offset-2">
-                    <br />
                     <asp:Button ID="btnActualizarProyecto" runat="server" Text="Actualizar Proyecto" CssClass="btn btn-danger form-control" OnClick="btnActualizarProyecto_Click" />
                 </div>
             </div>

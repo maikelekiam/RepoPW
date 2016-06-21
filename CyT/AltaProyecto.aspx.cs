@@ -117,12 +117,26 @@ namespace CyT
 
         protected void btnModalEstadoGuardar_Click(object sender, EventArgs e)
         {
+            Estado estado = new Estado();
 
+            estado.Nombre = txtEstadoModal.Text;
+
+            estadoNego.GuardarEstado(estado);
+
+            ddlEstado.Items.Clear();
+            MostrarEstado();
         }
 
         protected void btnModalAreaProductivaGuardar_Click(object sender, EventArgs e)
         {
+            AreaProductiva areaProductiva = new AreaProductiva();
 
+            areaProductiva.Nombre = txtAreaProductivaModal.Text;
+
+            areaProductivaNego.GuardarAreaProductiva(areaProductiva);
+
+            ddlAreaProductiva.Items.Clear();
+            MostrarAreaProductiva();
         }
 
         protected void dgvProyecto_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)

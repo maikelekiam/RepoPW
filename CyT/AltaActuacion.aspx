@@ -55,7 +55,7 @@
                     </div>
                     <!-- MODAL VIA DE COMUNICACION  -->
                     <div class="modal fade" id="modalViaComunicacion" tabindex="-1" role="dialog" aria-labelledby="modalLabelViaComunicacion" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-md">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -64,7 +64,7 @@
                                     <h4 class="modal-title" id="modalLabelViaComunicacion">Nueva Via de Comunicacion</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="col-md-4">
+                                    <div class="col-md-8">
                                         <asp:TextBox ID="txtViaComunicacionModal" runat="server" CssClass="form-control"></asp:TextBox><br />
                                     </div>
                                     <br />
@@ -103,7 +103,7 @@
                     </div>
                     <!-- MODAL VIA DE COMUNICACION  -->
                     <div class="modal fade" id="modalTematica" tabindex="-1" role="dialog" aria-labelledby="modalLabelTematica" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-md">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -112,7 +112,7 @@
                                     <h4 class="modal-title" id="modalLabelTematica">Nueva Tematica</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="col-md-4">
+                                    <div class="col-md-8">
                                         <asp:TextBox ID="txtTematicaModal" runat="server" CssClass="form-control"></asp:TextBox><br />
                                     </div>
                                     <br />
