@@ -20,6 +20,11 @@ namespace CapaNegocio
         {
             return origenRepo.MostrarOrigenes();
         }
+
+        public string TraerOrigenSegunIdFondo(int id)
+        {
+            return origenRepo.TraerOrigenSegunIdFondo(id);
+        }
     }
 
 

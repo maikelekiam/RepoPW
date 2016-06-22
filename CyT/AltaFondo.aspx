@@ -9,7 +9,7 @@
             </div>
             <br />
             <div class="form-group">
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
                     Nuevo Fondo
                 </button>
             </div>
@@ -17,7 +17,7 @@
             <asp:Label ID="Label2" runat="server" Text=""></asp:Label><br />
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -48,8 +48,6 @@
                                         Font-Bold="false"
                                         CssClass="form-control"
                                         DataTextField="nombre">
-
-
                                         <asp:ListItem Value="-1">&lt;Seleccione Origen&gt;</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
@@ -62,34 +60,35 @@
                     </div>
                 </div>
             </div>
-            <!--Lista de fondos cargados-->
 
+            <!--Lista de fondos cargados-->
             <div class="form-group">
-                <div class="col-md-12">
-                    <asp:GridView ID="dgvFondo" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvFondo_SelectedIndexChanged"
-                        CssClass="table table-hover table-bordered" BorderWidth="4px" EmptyDataText="No existen fondos registrados" ShowHeaderWhenEmpty="true">
+                <div class="col-md-9 col-md-offset-1">
+                    <asp:GridView ID="dgvFondo" runat="server" AutoGenerateColumns="false"
+                        CssClass="table table-hover table-bordered table-striped" BorderWidth="3px"
+                        GridLines="Both" EmptyDataText="No existen fondos registrados" ShowHeaderWhenEmpty="true"
+                        OnSelectedIndexChanging="dgvFondo_SelectedIndexChanging"
+                        OnRowDeleting="dgvFondo_RowDeleting">
                         <Columns>
-                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Nombre Fondo" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Descripcion" DataField="descripcion" ItemStyle-HorizontalAlign="Center" />
-                            <asp:TemplateField HeaderText="SomeColumn">
+                            <asp:BoundField HeaderText="Nombre" DataField="nombre" HeaderStyle-BackColor="#cccccc" ItemStyle-HorizontalAlign="Center" ControlStyle-Font-Size="Small" HeaderStyle-Width="100" />
+                            <asp:BoundField HeaderText="Descripcion" DataField="descripcion" HeaderStyle-BackColor="#cccccc" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="400" />
+                            <asp:TemplateField HeaderText="Origen" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Font-Bold="true" HeaderStyle-BackColor="#cccccc" ItemStyle-HorizontalAlign="Center" ControlStyle-Font-Size="Small" HeaderStyle-Width="100">
                                 <ItemTemplate>
-                                    <asp:Label ID="Label1" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Origen.Nombre") %>' ></asp:Label>
-                                    
+                                    <asp:Label ID="Label1" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Origen.Nombre") %>'></asp:Label>
                                 </ItemTemplate>
+                                <ItemTemplate>
+                                    <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">Close</button>
+                                </ItemTemplate>
+
                             </asp:TemplateField>
-                            <%--<asp:TemplateField HeaderStyle-BackColor="#cccccc" HeaderText="Origen">
-                                <ItemTemplate>
-                                    <p><%#DataBinder.Eval(Container.DataItem, "origen.Nombre")%></p>                      
-                                    
-                                </ItemTemplate>
-                            </asp:TemplateField>--%>
+
+                            <%--<asp:ButtonField Text="Editar" CommandName="select" HeaderStyle-BackColor="#cccccc"/>--%>
+                            <asp:ButtonField Text="Borrar" CommandName="delete" HeaderStyle-BackColor="#cccccc" />
                         </Columns>
                         <SelectedRowStyle BackColor="Azure" />
                     </asp:GridView>
                 </div>
             </div>
-
-
         </asp:Panel>
     </div>
 </asp:Content>

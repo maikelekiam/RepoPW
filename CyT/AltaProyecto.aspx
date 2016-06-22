@@ -191,7 +191,7 @@
                 <div class="col-md-9 col-md-offset-1">
                     <asp:GridView ID="dgvProyecto" runat="server" AutoGenerateColumns="false"
                         CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
-                        GridLines="Both"
+                        GridLines="Both" EmptyDataText="No existen proyectos registrados" ShowHeaderWhenEmpty="true"
                         AutoGenerateSelectButton="true"
                         OnSelectedIndexChanging="dgvProyecto_SelectedIndexChanging">
                         <Columns>

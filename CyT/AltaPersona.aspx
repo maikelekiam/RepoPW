@@ -278,25 +278,25 @@
                 <div class="col-md-9 col-md-offset-1">
                     <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="false"
                         CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
-                        GridLines="Both"
+                        GridLines="Both" EmptyDataText="No existen personas registradas" ShowHeaderWhenEmpty="true" 
                         OnSelectedIndexChanging="dgvPersona_SelectedIndexChanging"
                         OnRowDeleting="dgvPersona_RowDeleting">
                         <Columns>
-                            <asp:BoundField HeaderText="ID" DataField="idPersona" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Apellido" DataField="apellido" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Tipo" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Documento" DataField="documento" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Localidad" DataField="idLocalidad" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Interesado" DataField="isInteresado" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Beneficiario" DataField="isBeneficiario" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Fecha Nac" DataField="fechaNacimiento" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Empresa" DataField="empresa" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Direccion" DataField="direccion" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Cuil" DataField="cuil" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Activo" DataField="activo" ItemStyle-HorizontalAlign="Center" />
-                            <asp:ButtonField Text="Editar" CommandName="select" />
-                            <asp:ButtonField Text="Borrar" CommandName="delete" />
+                            <asp:BoundField HeaderText="ID" DataField="idPersona" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:BoundField HeaderText="Apellido" DataField="apellido" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:BoundField HeaderText="Tipo" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:BoundField HeaderText="Documento" DataField="documento" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:BoundField HeaderText="Localidad" DataField="idLocalidad" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:BoundField HeaderText="Interesado" DataField="isInteresado" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:BoundField HeaderText="Beneficiario" DataField="isBeneficiario" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:BoundField HeaderText="Fecha Nac" DataField="fechaNacimiento" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:BoundField HeaderText="Empresa" DataField="empresa" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:BoundField HeaderText="Direccion" DataField="direccion" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:BoundField HeaderText="Cuil" DataField="cuil" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:BoundField HeaderText="Activo" DataField="activo" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:ButtonField Text="Editar" CommandName="select" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:ButtonField Text="Borrar" CommandName="delete" HeaderStyle-BackColor="#cccccc"/>
                         </Columns>
                     </asp:GridView>
                 </div>

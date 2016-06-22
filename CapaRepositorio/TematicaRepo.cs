@@ -30,12 +30,25 @@ namespace CapaRepositorio
             }
         }
 
-        public void GuardarTematica(Tematica tematica)
+        public int GuardarTematica(Tematica tematica)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
                 modeloDeDominio.Add(tematica);
                 modeloDeDominio.SaveChanges();
+                return tematica.IdTematica;
+            }
+        }
+
+        public int TraerTematicaIdSegunItem(string item)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                Tematica result = modeloDeDominio.Tematicas.Where(c => c.Nombre == item).FirstOrDefault();
+
+                modeloDeDominio.CreateDetachedCopy(result);
+
+                return result.IdTematica;
             }
         }
 

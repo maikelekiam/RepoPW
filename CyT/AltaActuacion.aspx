@@ -152,6 +152,7 @@
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
                     <asp:GridView ID="dgvActuacion" runat="server" AutoGenerateColumns="false"
+                        EmptyDataText="No existen actuaciones" ShowHeaderWhenEmpty="true"
                         OnSelectedIndexChanging="dgvActuacion_SelectedIndexChanging"
                         OnRowDeleting="dgvActuacion_RowDeleting"
                         CssClass="table table-hover table-bordered" BorderWidth="3px">
@@ -165,8 +166,8 @@
                             <asp:BoundField HeaderText="Tematica" DataField="idTematica" />
                             <asp:BoundField HeaderText="Persona" DataField="idPersona" />
                             <asp:BoundField HeaderText="Activo" DataField="activo" />
-                            <asp:ButtonField Text="Editar" CommandName="select" />
-                            <asp:ButtonField Text="Borrar" CommandName="delete" />
+                            <asp:ButtonField Text="Editar" CommandName="select" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:ButtonField Text="Borrar" CommandName="delete" HeaderStyle-BackColor="#cccccc"/>
                         </Columns>
                         <SelectedRowStyle BackColor="Azure" />
                     </asp:GridView>
@@ -179,7 +180,7 @@
                 <div class="col-md-9 col-md-offset-1">
                     <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="false"
                         CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
-                        GridLines="Both"
+                        GridLines="Both" EmptyDataText="No existen personas registradas" ShowHeaderWhenEmpty="true"
                         AutoGenerateSelectButton="true"
                         OnSelectedIndexChanged="dgvPersona_SelectedIndexChanged">
                         <Columns>

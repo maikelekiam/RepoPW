@@ -21,9 +21,13 @@ namespace CapaNegocio
         {
             return viaComunicacionRepo.TraerViaComunicacion(id);
         }
-        public void GuardarViaComunicacion(ViaComunicacion viaComunicacion)
+        public int GuardarViaComunicacion(ViaComunicacion viaComunicacion)
         {
-            viaComunicacionRepo.GuardarViaComunicacion(viaComunicacion);
+            return viaComunicacionRepo.GuardarViaComunicacion(viaComunicacion);
+        }
+        public int TraerViaComunicacionIdSegunItem(string item)
+        {
+            return viaComunicacionRepo.TraerViaComunicacionIdSegunItem(item);
         }
     }
 }

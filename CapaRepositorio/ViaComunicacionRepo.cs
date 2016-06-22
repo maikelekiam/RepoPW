@@ -30,13 +30,29 @@ namespace CapaRepositorio
                 return result.Nombre;
             }
         }
-        public void GuardarViaComunicacion(ViaComunicacion viaComunicacion)
+        public int GuardarViaComunicacion(ViaComunicacion viaComunicacion)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
                 modeloDeDominio.Add(viaComunicacion);
                 modeloDeDominio.SaveChanges();
+                return viaComunicacion.IdViaComunicacion;
             }
         }
+
+
+        public int TraerViaComunicacionIdSegunItem(string item)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                ViaComunicacion result = modeloDeDominio.ViaComunicacions.Where(c => c.Nombre == item).FirstOrDefault();
+
+                modeloDeDominio.CreateDetachedCopy(result);
+
+                return result.IdViaComunicacion;
+            }
+        }
+
+
     }
 }

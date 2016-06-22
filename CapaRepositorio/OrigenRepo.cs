@@ -27,6 +27,17 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
+
+        public string TraerOrigenSegunIdFondo(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                Origen result = modeloDeDominio.Origens.Where(c => c.IdOrigen == id).FirstOrDefault();
+
+                modeloDeDominio.CreateDetachedCopy(result);
+                return result.Nombre;
+            }
+        }
     }
 }
 

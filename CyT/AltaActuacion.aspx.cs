@@ -17,6 +17,8 @@ namespace CyT
         ViaComunicacionNego viaComunicacionNego = new ViaComunicacionNego();
         static int idActuacionActual;
         static int idPersonaActual;
+        static int idViaComunicacionActual = 0;
+        static int idTematicaActual;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,7 +28,7 @@ namespace CyT
                 MostrarViaComunicacion(); //SIRVE PARA CARGAR DATOS EN EL DROPDOWNLIST
                 MostrarTematica(); //SIRVE PARA CARGAR DATOS EN EL DROPDOWNLIST
                 MostrarPersona(); //SIRVE PARA CARGAR DATOS EN LA GRILLA
-                //LimpiarPantalla();
+                LimpiarPantalla();
                 btnGuardarActuacion.Visible = false;
                 btnActualizarActuacion.Visible = false;
             }
@@ -58,7 +60,7 @@ namespace CyT
             dgvPersona.Columns[10].Visible = true;
             dgvPersona.Columns[11].Visible = true;
             dgvPersona.Columns[12].Visible = true;
-            
+
             dgvPersona.DataSource = personaNego.MostrarPersona().ToList();
             dgvPersona.DataBind();
 
@@ -81,8 +83,8 @@ namespace CyT
             Actuacion actuacion = new Actuacion();
 
             actuacion.IdPersona = idPersonaActual;
-            actuacion.IdTematica = Convert.ToInt32(ddlTematica.SelectedIndex.ToString());
-            actuacion.IdViaComunicacion = Convert.ToInt32(ddlViaComunicacion.SelectedIndex.ToString());
+            actuacion.IdViaComunicacion = viaComunicacionNego.TraerViaComunicacionIdSegunItem(ddlViaComunicacion.SelectedItem.ToString());
+            actuacion.IdTematica = tematicaNego.TraerTematicaIdSegunItem(ddlTematica.SelectedItem.ToString());
             actuacion.Fecha = Convert.ToDateTime(txtFechaActuacion.Text);
             actuacion.Detalle = txtDetalle.Text;
             actuacion.Activo = true;
@@ -91,7 +93,6 @@ namespace CyT
 
             MostrarActuacionSegunPersona(idPersonaActual);
             //LimpiarPantalla();
-
             btnGuardarActuacion.Visible = false;
             btnActualizarActuacion.Visible = false;
         }
@@ -124,14 +125,15 @@ namespace CyT
 
         protected void btnModalViaComunicacionGuardar_Click(object sender, EventArgs e)
         {
-            ViaComunicacion viaComunicacion=new ViaComunicacion();
+            ViaComunicacion viaComunicacion = new ViaComunicacion();
 
-            viaComunicacion.Activo=true;
+            viaComunicacion.Activo = true;
             viaComunicacion.Nombre = txtViaComunicacionModal.Text;
 
-            viaComunicacionNego.GuardarViaComunicacion(viaComunicacion);
+            idViaComunicacionActual = viaComunicacionNego.GuardarViaComunicacion(viaComunicacion);
 
             ddlViaComunicacion.Items.Clear();
+            ddlViaComunicacion.Text = TraerViaComunicacion(idViaComunicacionActual);
             MostrarViaComunicacion();
         }
         protected void btnModalTematicaGuardar_Click(object sender, EventArgs e)
@@ -141,10 +143,11 @@ namespace CyT
             tematica.Activo = true;
             tematica.Nombre = txtTematicaModal.Text;
 
-            tematicaNego.GuardarTematica(tematica);
-            ddlTematica.Items.Clear();
+            idTematicaActual = tematicaNego.GuardarTematica(tematica);
 
+            ddlTematica.Items.Clear();
             MostrarTematica();
+            ddlTematica.Text = TraerTematica(idTematicaActual);
         }
 
         protected void dgvActuacion_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -187,7 +190,7 @@ namespace CyT
 
             lblPersonaSeleccionadaDeLaGrilla.Text = row.Cells[2].Text + " " + row.Cells[3].Text;
 
-            //LimpiarPantalla();
+            LimpiarPantalla();
 
             MostrarActuacionSegunPersona(idPersonaActual);
         }
@@ -218,8 +221,8 @@ namespace CyT
             Actuacion actuacion = new Actuacion();
 
             actuacion.IdPersona = idPersonaActual;
-            actuacion.IdTematica = Convert.ToInt32(ddlTematica.SelectedIndex.ToString());
-            actuacion.IdViaComunicacion = Convert.ToInt32(ddlViaComunicacion.SelectedIndex.ToString());
+            actuacion.IdViaComunicacion = viaComunicacionNego.TraerViaComunicacionIdSegunItem(ddlViaComunicacion.SelectedItem.ToString());
+            actuacion.IdTematica = tematicaNego.TraerTematicaIdSegunItem(ddlTematica.SelectedItem.ToString());
             actuacion.Fecha = Convert.ToDateTime(txtFechaActuacion.Text);
             actuacion.Detalle = txtDetalle.Text;
             actuacion.Activo = true;

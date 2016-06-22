@@ -20,8 +20,6 @@ namespace CapaRepositorio
 
         public string TraerLocalidadSegunIdPersona(int id)
         {
-            //Localidad loc = new Localidad();
-            
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
                 Localidad result = modeloDeDominio.Localidads.Where(c => c.IdLocalidad == id).FirstOrDefault();
@@ -29,7 +27,6 @@ namespace CapaRepositorio
                 modeloDeDominio.CreateDetachedCopy(result);
                 return result.Nombre;
             }
-            
         }
     }
 }

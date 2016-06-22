@@ -13,6 +13,9 @@ namespace CyT
     {
         private FondoNego fondoNego = new FondoNego();
         private OrigenNego origenNego = new OrigenNego();
+        int idFondoActual;
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -22,11 +25,7 @@ namespace CyT
             }
         }
 
-        protected void dgvFondo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void LlenarListaOrigenes()
         {
             ddlOrigen.DataSource = origenNego.MostrarOrigenes().ToList();
@@ -36,16 +35,16 @@ namespace CyT
 
         private void LlenarGrillaFondos()
         {
-            
+
             dgvFondo.DataSource = fondoNego.MostrarFondos().ToList();
             dgvFondo.DataBind();
-            
+
         }
 
         private void GuardarFondo()
         {
             //FondoNego fondoNego2 = new FondoNego();
-            Fondo fondo=new Fondo();
+            Fondo fondo = new Fondo();
             fondo.Nombre = txtNombre.Text;
             fondo.Descripcion = txtDecripcion.Text;
             fondo.IdOrigen = Int32.Parse(ddlOrigen.SelectedValue);
@@ -57,6 +56,27 @@ namespace CyT
         {
             GuardarFondo();
             LlenarGrillaFondos();
+        }
+
+        protected void dgvFondo_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            idFondoActual = Convert.ToInt32(dgvFondo.Rows[e.NewSelectedIndex].Cells[0].Text);
+
+            txtNombre.Text = dgvFondo.Rows[e.NewSelectedIndex].Cells[1].Text;
+            txtDecripcion.Text = dgvFondo.Rows[e.NewSelectedIndex].Cells[2].Text;
+
+            ddlOrigen.Text = TraerOrigenSegunIdFondo(Convert.ToInt32(dgvFondo.Rows[e.NewSelectedIndex].Cells[3].Text));
+
+        }
+
+        private string TraerOrigenSegunIdFondo(int id)
+        {
+            return origenNego.TraerOrigenSegunIdFondo(id);
+        } 
+
+        protected void dgvFondo_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
         }
     }
 }
