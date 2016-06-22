@@ -81,6 +81,8 @@ namespace CyT
             dgvConvocatoria.DataBind();
         }
 
+        
+
         private void GuardarConvocatoria()
         {
             Convocatorium convocatoria=new Convocatorium();
@@ -148,6 +150,27 @@ namespace CyT
         protected void btnEliminarTipoDestinatario_Command(object sender, CommandEventArgs e)
         {
 
+        }
+
+        protected void dgvConvocatoria_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+
+                switch (Convert.ToInt32(e.Row.Cells[3].Text))
+                {
+
+                    case 0:
+                        e.Row.Cells[3].Text = "CERRADA";
+                        break;
+
+                    case 1:
+                        e.Row.Cells[3].Text = "ABIERTA";
+                        break;
+
+                }
+
+            }
         }
     }
 }

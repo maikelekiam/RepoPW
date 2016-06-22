@@ -197,7 +197,7 @@
 
                 <div class="form-group">
                     <div class="col-md-12">
-                        <asp:GridView ID="dgvConvocatoria" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvConvocatoria_SelectedIndexChanged"
+                        <asp:GridView ID="dgvConvocatoria" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvConvocatoria_SelectedIndexChanged" OnRowDataBound="dgvConvocatoria_RowDataBound"
                             CssClass="table table-hover table-bordered" BorderWidth="4px" EmptyDataText="No existen convocatorias registradas" ShowHeaderWhenEmpty="true">
                             <Columns>
                                 <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Nombre Convocatoria" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
