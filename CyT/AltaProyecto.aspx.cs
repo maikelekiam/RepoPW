@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDominio;
@@ -24,7 +25,7 @@ namespace CyT
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) return;
-            
+
             MostrarEstado();
             MostrarAreaProductiva();
             MostrarUvt();
@@ -76,7 +77,7 @@ namespace CyT
             dgvProyecto.Columns[7].Visible = true;
             dgvProyecto.Columns[8].Visible = true;
             dgvProyecto.Columns[9].Visible = true;
-            
+
             dgvProyecto.DataSource = proyectoNego.MostrarProyecto().ToList();
             dgvProyecto.DataBind();
 
@@ -95,7 +96,8 @@ namespace CyT
             GuardarProyecto();
         }
 
-        private void GuardarProyecto(){
+        private void GuardarProyecto()
+        {
 
             Proyecto proyecto = new Proyecto();
 
@@ -142,8 +144,6 @@ namespace CyT
         protected void dgvProyecto_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
             GridViewRow row = dgvProyecto.Rows[e.NewSelectedIndex];
-            
-            lblMontoSolicitado.Text = row.Cells[1].Text;
 
             idProyectoActual = Convert.ToInt32(dgvProyecto.Rows[e.NewSelectedIndex].Cells[1].Text);
 
@@ -187,6 +187,16 @@ namespace CyT
             //MostrarProyecto();
 
             btnActualizarProyecto.Visible = false;
+        }
+
+
+
+
+        [WebMethod]
+        public static string GetCurrentTime(string name)
+        {
+            return "Hello " + name + Environment.NewLine + "The Current Time is: "
+                + DateTime.Now.ToString();
         }
     }
 }
