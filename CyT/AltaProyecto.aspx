@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaProyecto.aspx.cs" Inherits="CyT.AltaProyecto" %>
 
+<%--<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>--%>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <%--<asp:ScriptManager runat="server" EnablePageMethods="true"></asp:ScriptManager>--%>
     <div class="container">
         <asp:Panel ID="Panel1" runat="server">
             <br />
@@ -75,7 +80,7 @@
                     </div>
                     <!-- MODAL ESTADO  -->
                     <div class="modal fade" id="modalEstado" tabindex="-1" role="dialog" aria-labelledby="modalLabelEstado" aria-hidden="true">
-                        <div class="modal-dialog modal-md" >
+                        <div class="modal-dialog modal-md">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -151,21 +156,7 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
             </div>
-
-
-
-
-
-
             <!--MONTO SOLICITADO + MONTO CONTRAPARTE -->
             <br />
             <div class="form-group">
@@ -179,8 +170,6 @@
                 </div>
             </div>
 
-
-
             <!--BOTON GUARDAR PROYECTO  -->
             <div class="form-group">
                 <div class="col-md-2 col-md-offset-2">
@@ -188,6 +177,7 @@
                     <asp:Button ID="btnGuardarProyecto" runat="server" Text="Guardar Proyecto" CssClass="btn btn-success form-control" OnClick="btnGuardarProyecto_Click" />
                 </div>
             </div>
+
             <!--BOTON ACTUALIZAR PROYECTO  -->
             <div class="form-group">
                 <div class="col-md-2 col-md-offset-2">
@@ -215,15 +205,36 @@
                             <asp:BoundField HeaderText="Monto Solicitado" DataField="montoSolicitado" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Contraparte" DataField="montoContraparte" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Activo" DataField="activo" ItemStyle-HorizontalAlign="Center" />
-
                         </Columns>
                         <SelectedRowStyle BackColor="Yellow" />
                     </asp:GridView>
                 </div>
             </div>
 
-
-
+            <div>
+                Your Name :
+                <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
+                <input id="btnGetTime" type="button" value="Show Current Time"
+                    onclick="ShowCurrentTime()" />
+            </div>
         </asp:Panel>
     </div>
+    <script type="text/javascript">
+        function ShowCurrentTime() {
+            $.ajax({
+                type: "POST",
+                url: "AltaProyecto.aspx/GetCurrentTime",
+                data: '{name: "' + $("#<%=txtUserName.ClientID%>")[0].value + '" }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccess,
+                failure: function (response) {
+                    alert(response.d);
+                }
+            });
+        }
+        function OnSuccess(response) {
+            alert(response.d);
+        }
+    </script>
 </asp:Content>
