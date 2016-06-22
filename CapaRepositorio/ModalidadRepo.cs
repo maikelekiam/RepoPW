@@ -27,6 +27,16 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
+
+        public Modalidad ObtenerModalidadPorNombre(String nombre)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                Modalidad modalidad = modeloDeDominio.Modalidads.Where(c => c.Nombre == nombre).FirstOrDefault();
+
+                return modalidad;
+            }
+        }
     }
 }
 

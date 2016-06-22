@@ -96,8 +96,8 @@
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/AltaConvocatoria.aspx">Alta Convocatoria</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Listar Convocatorias Publicas</a></li>
-                                    <li><a href="#">Listar Convocatorias Permanentes</a></li>
+                                    <li><a runat="server" href="~/ListarConvocatoriasPublicas.aspx">Listar Convocatorias Publicas</a></li>
+                                    <li><a runat="server" href="~/ListarConvocatoriasPermanentes.aspx">Listar Convocatorias Permanentes</a></li>
                                 </ul>
                             </div>
                             <div class="btn-group">
