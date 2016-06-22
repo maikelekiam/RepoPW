@@ -20,5 +20,10 @@ namespace CapaNegocio
         {
             return listaTipoDestinatarioRepo.MostrarListaTipoDestinatarios();
         }
+
+        public void BorrarListaDestinatarioPorConvocatoria(int id)
+        {
+            listaTipoDestinatarioRepo.BorrarListaDestinatarioPorConvocatoria(id);
+        }
     }
 }
