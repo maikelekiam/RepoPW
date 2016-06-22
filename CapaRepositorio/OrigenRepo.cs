@@ -38,6 +38,18 @@ namespace CapaRepositorio
                 return result.Nombre;
             }
         }
+
+        public int TraerOrigenIdSegunItem(string item)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                Origen result = modeloDeDominio.Origens.Where(c => c.Nombre == item).FirstOrDefault();
+
+                modeloDeDominio.CreateDetachedCopy(result);
+
+                return result.IdOrigen;
+            }
+        }
     }
 }
 

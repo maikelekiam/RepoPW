@@ -20,5 +20,15 @@ namespace CapaNegocio
         {
             return fondoRepo.MostrarFondos();
         }
+
+        public void ActualizarFondo(Fondo fondo)
+        {
+            fondoRepo.ActualizarFondo(fondo);
+        }
+        
+            public void EliminarFondo(int id)
+        {
+            fondoRepo.EliminarFondo(id);
+        }
     }
 }

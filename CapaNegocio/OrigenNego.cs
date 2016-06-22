@@ -25,6 +25,11 @@ namespace CapaNegocio
         {
             return origenRepo.TraerOrigenSegunIdFondo(id);
         }
+
+        public int TraerOrigenIdSegunItem(string item)
+        {
+            return origenRepo.TraerOrigenIdSegunItem(item);
+        }
     }
 
 

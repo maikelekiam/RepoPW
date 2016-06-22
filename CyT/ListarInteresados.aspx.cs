@@ -47,17 +47,10 @@ namespace CyT
         }
 
 
-        private void MostrarPersona(int idPersona)
-        {
+        //private void MostrarPersona(int idPersona)
+        //{
 
-        }
+        //}
 
-        protected void dgvPersona_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int idPersona = 1;
-
-            MostrarPersona(idPersona);
-
-        }
     }
 }

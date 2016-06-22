@@ -13,7 +13,7 @@ namespace CyT
     {
         private FondoNego fondoNego = new FondoNego();
         private OrigenNego origenNego = new OrigenNego();
-        int idFondoActual;
+        static int idFondoActual;
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -36,36 +36,56 @@ namespace CyT
         private void LlenarGrillaFondos()
         {
 
+            btnActualizarFondo.Visible = false;
+            btnGuardarFondo.Visible = true;
+
+            dgvFondo.Columns[0].Visible = true;
+            dgvFondo.Columns[1].Visible = true;
+            dgvFondo.Columns[2].Visible = true;
+            dgvFondo.Columns[3].Visible = true;
+            dgvFondo.Columns[4].Visible = true;
+            
             dgvFondo.DataSource = fondoNego.MostrarFondos().ToList();
             dgvFondo.DataBind();
 
-        }
+            dgvFondo.Columns[0].Visible = false;
+            dgvFondo.Columns[4].Visible = false;
 
-        private void GuardarFondo()
-        {
-            //FondoNego fondoNego2 = new FondoNego();
-            Fondo fondo = new Fondo();
-            fondo.Nombre = txtNombre.Text;
-            fondo.Descripcion = txtDecripcion.Text;
-            fondo.IdOrigen = Int32.Parse(ddlOrigen.SelectedValue);
-            fondo.Activo = true;
-            fondoNego.GuardarFondo(fondo);
-        }
 
-        protected void btnGuardar_Click(object sender, EventArgs e)
+        }
+        protected void btnGuardarFondo_Click(object sender, EventArgs e)
         {
             GuardarFondo();
             LlenarGrillaFondos();
         }
 
+        private void GuardarFondo()
+        {
+            Fondo fondo = new Fondo();
+
+            fondo.Nombre = txtNombre.Text;
+            fondo.Descripcion = txtDecripcion.Text;
+            //fondo.IdOrigen = Int32.Parse(ddlOrigen.SelectedValue);
+            fondo.IdOrigen = origenNego.TraerOrigenIdSegunItem(ddlOrigen.SelectedItem.ToString());
+            fondo.Activo = true;
+
+            fondoNego.GuardarFondo(fondo);
+        }
+
+
         protected void dgvFondo_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-            idFondoActual = Convert.ToInt32(dgvFondo.Rows[e.NewSelectedIndex].Cells[0].Text);
+            btnActualizarFondo.Visible = true;
+            btnGuardarFondo.Visible = false;
 
-            txtNombre.Text = dgvFondo.Rows[e.NewSelectedIndex].Cells[1].Text;
-            txtDecripcion.Text = dgvFondo.Rows[e.NewSelectedIndex].Cells[2].Text;
+            GridViewRow row = dgvFondo.Rows[e.NewSelectedIndex];
 
-            ddlOrigen.Text = TraerOrigenSegunIdFondo(Convert.ToInt32(dgvFondo.Rows[e.NewSelectedIndex].Cells[3].Text));
+            idFondoActual = Convert.ToInt32(row.Cells[0].Text);
+
+            txtNombre.Text = row.Cells[1].Text;
+            txtDecripcion.Text = row.Cells[2].Text;
+
+            //ddlOrigen.Text = "";
 
         }
 
@@ -76,7 +96,43 @@ namespace CyT
 
         protected void dgvFondo_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            btnGuardarFondo.Visible = false;
+            btnActualizarFondo.Visible = false;
 
+            idFondoActual = Convert.ToInt32(dgvFondo.Rows[e.RowIndex].Cells[0].Text);
+
+            EliminarFondo(idFondoActual);
+
+        }
+
+        private void EliminarFondo(int id)
+        {
+            fondoNego.EliminarFondo(id);
+        }
+
+
+        protected void btnActualizarFondo_Click(object sender, EventArgs e)
+        {
+            ActualizarFondo();
+        }
+
+        private void ActualizarFondo()
+        {
+            Fondo fondo = new Fondo();
+
+            fondo.Nombre = txtNombre.Text;
+            fondo.Descripcion = txtDecripcion.Text;
+            //fondo.IdOrigen = Int32.Parse(ddlOrigen.SelectedValue);
+            fondo.IdOrigen = origenNego.TraerOrigenIdSegunItem(ddlOrigen.SelectedItem.ToString());
+            fondo.Activo = true;
+
+            fondo.IdFondo = idFondoActual;
+
+            fondoNego.ActualizarFondo(fondo);
+
+            //LimpiarPantalla();
+
+            btnActualizarFondo.Visible = false;
         }
     }
 }

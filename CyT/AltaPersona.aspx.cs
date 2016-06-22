@@ -41,8 +41,10 @@ namespace CyT
         {
             btnActualizarPersona.Visible = false;
             btnGuardarPersona.Visible = true;
+            
             dgvPersona.DataSource = personaNego.MostrarPersona().ToList();
             dgvPersona.DataBind();
+            
             dgvPersona.Columns[0].Visible = false;
             dgvPersona.Columns[5].Visible = false;
             dgvPersona.Columns[6].Visible = false;

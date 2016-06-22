@@ -36,5 +36,31 @@ namespace CapaRepositorio
                 return fondo;
             }
         }
+
+        public void ActualizarFondo(Fondo fondo)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                modeloDeDominio.AttachCopy(fondo);
+                modeloDeDominio.SaveChanges();
+            }
+        }
+
+        public void EliminarFondo(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IQueryable<Fondo> query = modeloDeDominio.GetAll<Fondo>().Where(c => c.IdFondo == id);
+
+                foreach (Fondo fondo in query)
+                {
+                    modeloDeDominio.Delete(fondo.Convocatoria);
+
+                    
+                    modeloDeDominio.Delete(fondo);
+                    modeloDeDominio.SaveChanges();
+                }
+            }
+        }
     }
 }

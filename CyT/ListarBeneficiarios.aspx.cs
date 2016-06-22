@@ -12,6 +12,7 @@ namespace CyT
     public partial class ListarBeneficiarios : System.Web.UI.Page
     {
         PersonaNego personaNego = new PersonaNego();
+        int idPersona;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -47,16 +48,15 @@ namespace CyT
         }
 
 
-        private void MostrarPersona(int idPersona)
+        //private void MostrarPersona(int idPersona)
+        //{
+
+        //}
+
+        protected void dgvPersona_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
+            idPersona = Convert.ToInt32(dgvPersona.Rows[e.NewSelectedIndex].Cells[0].Text);
 
-        }
-
-        protected void dgvPersona_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int idPersona = 1;
-
-            MostrarPersona(idPersona);
 
         }
     }

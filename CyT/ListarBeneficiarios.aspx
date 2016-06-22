@@ -12,8 +12,8 @@
                     <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="false"
                         CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
                         GridLines="Both"
-                        AutoGenerateSelectButton="true"
-                        OnSelectedIndexChanged="dgvPersona_SelectedIndexChanged">
+                        
+                        OnSelectedIndexChanging="dgvPersona_SelectedIndexChanging">
                         <Columns>
                             <asp:BoundField HeaderText="ID" DataField="idPersona" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
