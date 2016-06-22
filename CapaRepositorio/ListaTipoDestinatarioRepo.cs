@@ -26,5 +26,19 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
+
+        public void BorrarListaDestinatarioPorConvocatoria(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IQueryable<ListaTipoDestinatario> query = modeloDeDominio.GetAll<ListaTipoDestinatario>().Where(c => c.IdConvocatoria == id);
+
+                foreach (ListaTipoDestinatario ltd in query)
+                {
+                    modeloDeDominio.Delete(ltd);
+                    modeloDeDominio.SaveChanges();
+                }
+            }
+        }
     }
 }

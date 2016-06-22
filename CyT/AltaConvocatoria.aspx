@@ -190,6 +190,8 @@
                 </div>
                 <div class="form-group">
                     <asp:Button ID="btnGuardarConvocatoria" runat="server" Text="Guardar Convocatoria" CssClass="btn btn-primary btn-lg" OnClick="btnGuardarConvocatoria_Click" />
+                    <asp:Button ID="btnActualizarConvocatoria" runat="server" Text="Actualizar Convocatoria" CssClass="btn btn-primary btn-lg" OnClick="btnActualizarConvocatoria_Click" />
+
                 </div>
 
 
@@ -197,7 +199,8 @@
 
                 <div class="form-group">
                     <div class="col-md-12">
-                        <asp:GridView ID="dgvConvocatoria" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvConvocatoria_SelectedIndexChanged" OnRowDataBound="dgvConvocatoria_RowDataBound"
+                        <asp:GridView ID="dgvConvocatoria" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvConvocatoria_SelectedIndexChanged" OnRowDataBound="dgvConvocatoria_RowDataBound" 
+                            OnSelectedIndexChanging="dgvConvocatoria_SelectedIndexChanging" DataKeyNames="idConvocatoria" 
                             CssClass="table table-hover table-bordered" BorderWidth="4px" EmptyDataText="No existen convocatorias registradas" ShowHeaderWhenEmpty="true">
                             <Columns>
                                 <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Nombre Convocatoria" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
@@ -209,6 +212,7 @@
                                 </asp:TemplateField>
                                 <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Año" DataField="anio" ItemStyle-HorizontalAlign="Center" />
                                 <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Estado" DataField="isAbierta" ItemStyle-HorizontalAlign="Center" />
+                                <asp:ButtonField Text="Editar" CommandName="select" />
 
 
                             </Columns>

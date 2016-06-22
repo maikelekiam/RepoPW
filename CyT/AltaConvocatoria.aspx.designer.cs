@@ -301,6 +301,15 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.Button btnGuardarConvocatoria;
         
         /// <summary>
+        /// Control btnActualizarConvocatoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnActualizarConvocatoria;
+        
+        /// <summary>
         /// Control dgvConvocatoria.
         /// </summary>
         /// <remarks>
