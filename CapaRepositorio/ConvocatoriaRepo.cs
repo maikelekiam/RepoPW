@@ -10,12 +10,13 @@ namespace CapaRepositorio
 {
     public class ConvocatoriaRepo
     {
-        public void GuardarConvocatoria(Convocatorium convocatoria)
+        public int GuardarConvocatoria(Convocatorium convocatoria)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
                 modeloDeDominio.Add(convocatoria);
                 modeloDeDominio.SaveChanges();
+                return convocatoria.IdConvocatoria;
             }
         }
 

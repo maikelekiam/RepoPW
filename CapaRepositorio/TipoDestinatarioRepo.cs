@@ -9,15 +9,6 @@ namespace CapaRepositorio
 {
     public class TipoDestinatarioRepo
     {
-        public void GuardarTipoDestinatario(TipoDestinatario tipoDestinatario)
-        {
-            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
-            {
-                modeloDeDominio.Add(tipoDestinatario);
-                modeloDeDominio.SaveChanges();
-            }
-        }
-
         public IEnumerable<TipoDestinatario> MostrarTipoDestinatarios()
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
@@ -26,6 +17,16 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
-    }
+
+        public TipoDestinatario ObtenerTipoDestinatario(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                return modeloDeDominio.TipoDestinatarios.Where(c => c.IdTipoDestinatario == id).FirstOrDefault();
+
+                
+            }
+        }
+
     }
 }

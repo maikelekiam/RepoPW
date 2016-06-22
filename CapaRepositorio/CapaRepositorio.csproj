@@ -62,6 +62,7 @@
     <Compile Include="ProyectoRepo.cs" />
     <Compile Include="TelefonoRepo.cs" />
     <Compile Include="TematicaRepo.cs" />
+    <Compile Include="TipoDestinatarioRepo.cs" />
     <Compile Include="TipoFinanciamientoRepo.cs" />
     <Compile Include="UvtRepo.cs" />
     <Compile Include="ViaComunicacionRepo.cs" />

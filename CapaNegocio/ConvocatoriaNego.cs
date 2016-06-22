@@ -11,9 +11,9 @@ namespace CapaNegocio
     public class ConvocatoriaNego
     {
         ConvocatoriaRepo convocatoriaRepo = new ConvocatoriaRepo();
-        public void GuardarConvocatoria(Convocatorium convocatoria)
+        public int GuardarConvocatoria(Convocatorium convocatoria)
         {
-            convocatoriaRepo.GuardarConvocatoria(convocatoria);
+            return convocatoriaRepo.GuardarConvocatoria(convocatoria);
         }
 
         public IEnumerable<Convocatorium> MostrarConvocatorias()
