@@ -20,5 +20,10 @@ namespace CapaNegocio
         {
             return modalidadRepo.MostrarModalidades();
         }
+
+        public Modalidad ObtenerModalidadPorNombre(String nombre)
+        {
+            return modalidadRepo.ObtenerModalidadPorNombre(nombre);
+        }
     }
 }

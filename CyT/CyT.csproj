@@ -184,6 +184,8 @@
     <Content Include="js\panel-collapsible.js" />
     <Content Include="js\select2.js" />
     <Content Include="ListarBeneficiarios.aspx" />
+    <Content Include="ListarConvocatoriasPermanentes.aspx" />
+    <Content Include="ListarConvocatoriasPublicas.aspx" />
     <Content Include="ListarInteresados.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -318,6 +320,20 @@
     </Compile>
     <Compile Include="ListarBeneficiarios.aspx.designer.cs">
       <DependentUpon>ListarBeneficiarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarConvocatoriasPermanentes.aspx.cs">
+      <DependentUpon>ListarConvocatoriasPermanentes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarConvocatoriasPermanentes.aspx.designer.cs">
+      <DependentUpon>ListarConvocatoriasPermanentes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarConvocatoriasPublicas.aspx.cs">
+      <DependentUpon>ListarConvocatoriasPublicas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarConvocatoriasPublicas.aspx.designer.cs">
+      <DependentUpon>ListarConvocatoriasPublicas.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListarInteresados.aspx.cs">
       <DependentUpon>ListarInteresados.aspx</DependentUpon>
