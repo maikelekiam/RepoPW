@@ -55,12 +55,10 @@ namespace CapaRepositorio
                 foreach (Fondo fondo in query)
                 {
                     modeloDeDominio.Delete(fondo.Convocatoria);
-
-                    
                     modeloDeDominio.Delete(fondo);
                     modeloDeDominio.SaveChanges();
                 }
             }
-        }
+        }        
     }
 }

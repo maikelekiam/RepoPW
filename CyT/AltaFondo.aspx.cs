@@ -25,7 +25,7 @@ namespace CyT
             }
         }
 
-        
+
         private void LlenarListaOrigenes()
         {
             ddlOrigen.DataSource = origenNego.MostrarOrigenes().ToList();
@@ -44,7 +44,7 @@ namespace CyT
             dgvFondo.Columns[2].Visible = true;
             dgvFondo.Columns[3].Visible = true;
             dgvFondo.Columns[4].Visible = true;
-            
+
             dgvFondo.DataSource = fondoNego.MostrarFondos().ToList();
             dgvFondo.DataBind();
 
@@ -82,17 +82,17 @@ namespace CyT
 
             idFondoActual = Convert.ToInt32(row.Cells[0].Text);
 
-            txtNombre.Text = row.Cells[1].Text;
-            txtDecripcion.Text = row.Cells[2].Text;
+            Fondo fondoNuevo = fondoNego.ObtenerFondo(idFondoActual);
 
-            //ddlOrigen.Text = "";
+            txtNombre.Text = fondoNuevo.Nombre;
+            txtDecripcion.Text = fondoNuevo.Descripcion;
+            ddlOrigen.SelectedValue = fondoNuevo.IdOrigen.ToString();
 
         }
-
         private string TraerOrigenSegunIdFondo(int id)
         {
             return origenNego.TraerOrigenSegunIdFondo(id);
-        } 
+        }
 
         protected void dgvFondo_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -101,8 +101,19 @@ namespace CyT
 
             idFondoActual = Convert.ToInt32(dgvFondo.Rows[e.RowIndex].Cells[0].Text);
 
-            EliminarFondo(idFondoActual);
+            Fondo fondo = fondoNego.ObtenerFondo(idFondoActual);
 
+
+            if (fondo.Convocatoria != null)
+            {
+                string script = "alert(\"No se puede eliminar Fondo.\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
+            }
+            else
+            {
+                EliminarFondo(idFondoActual);
+            }
         }
 
         private void EliminarFondo(int id)

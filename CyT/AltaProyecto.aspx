@@ -221,6 +221,7 @@
     </div>
     <script type="text/javascript">
         function ShowCurrentTime() {
+            var tel = $('<%= txtNombre.ClientID %>').val();
             $.ajax({
                 type: "POST",
                 url: "AltaProyecto.aspx/GetCurrentTime",

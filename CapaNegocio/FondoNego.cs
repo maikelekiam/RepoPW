@@ -25,10 +25,15 @@ namespace CapaNegocio
         {
             fondoRepo.ActualizarFondo(fondo);
         }
-        
-            public void EliminarFondo(int id)
+
+        public void EliminarFondo(int id)
         {
             fondoRepo.EliminarFondo(id);
         }
+        public Fondo ObtenerFondo(int id)
+        {
+            return fondoRepo.ObtenerFondo(id);
+        }
+
     }
 }
