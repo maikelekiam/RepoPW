@@ -70,6 +70,8 @@ namespace CyT
             fondo.Activo = true;
 
             fondoNego.GuardarFondo(fondo);
+
+            LlenarGrillaFondos();
         }
 
 
@@ -104,21 +106,23 @@ namespace CyT
             Fondo fondo = fondoNego.ObtenerFondo(idFondoActual);
 
 
-            if (fondo.Convocatoria != null)
-            {
-                string script = "alert(\"No se puede eliminar Fondo.\");";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "ServerControlScript", script, true);
-            }
-            else
-            {
+            //if (fondo.Convocatoria != null)
+            //{
+            //    string script = "alert(\"No se puede eliminar Fondo.\");";
+            //    ScriptManager.RegisterStartupScript(this, GetType(),
+            //                          "ServerControlScript", script, true);
+            //}
+            //else
+            //{
                 EliminarFondo(idFondoActual);
-            }
+            //}
         }
 
         private void EliminarFondo(int id)
         {
             fondoNego.EliminarFondo(id);
+            Response.Redirect("AltaFondo.aspx");
+            LlenarGrillaFondos();
         }
 
 
@@ -141,9 +145,12 @@ namespace CyT
 
             fondoNego.ActualizarFondo(fondo);
 
-            //LimpiarPantalla();
+            Response.Redirect("AltaFondo.aspx");
+            //LlenarGrillaFondos();
 
             btnActualizarFondo.Visible = false;
+            btnGuardarFondo.Visible = true;
+
         }
     }
 }

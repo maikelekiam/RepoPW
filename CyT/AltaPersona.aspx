@@ -2,9 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <link href="css/panel-collapsible.css" rel="stylesheet" />
-    <script src="js/panel-collapsible.js"></script>
-
     <div class="container">
         <asp:Panel ID="Panel1" runat="server">
             <br />
@@ -16,11 +13,13 @@
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"
+                        onkeypress="return validarSoloLetras(event);"></asp:TextBox>
                 </div>
                 <asp:Label ID="lblApellido" runat="server" Text="APELLIDO" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"
+                        onkeypress="return validarSoloLetras(event);"></asp:TextBox>
                 </div>
             </div>
 
@@ -28,15 +27,21 @@
             <div class="form-group">
                 <asp:Label ID="lblTipoDocumento" runat="server" Text="TIPO DE DOCUMENTO" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:DropDownList ID="ddlTipoDocumento" runat="server" Height="30">
+                    <asp:DropDownList ID="ddlTipoDocumento" runat="server" 
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
+                        data-width="fit"
+                        >
                         <asp:ListItem Value="DNI">DNI</asp:ListItem>
                         <asp:ListItem Value="DU">DU</asp:ListItem>
                         <asp:ListItem Value="LE">LE</asp:ListItem>
+                        <asp:ListItem Value="CI">CI</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <asp:Label ID="lblCuil" runat="server" Text="CUIL/CUIT" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtCuil" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtCuil" runat="server" CssClass="form-control"
+                        onkeypress="return validarSoloNumerosYGuion(event);"></asp:TextBox>
                 </div>
 
             </div>
@@ -44,7 +49,8 @@
             <div class="form-group">
                 <asp:Label ID="lblDocumento" runat="server" Text="DOCUMENTO" class="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtDocumento" runat="server" class="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtDocumento" runat="server" class="form-control"
+                        onkeypress="return validarSoloNumeros(event);" MaxLength="8"></asp:TextBox>
                 </div>
                 <asp:Label ID="lblFechaNacimiento" runat="server" Text="FECHA DE NACIMIENTO" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-3">
@@ -55,7 +61,8 @@
                         data-date-today-btn="true"
                         data-date-clear-btn="true"
                         data-date-today-highlight="true">
-                        <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaNacimiento"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaNacimiento"
+                            onkeypress="return validarSoloNumerosYGuion(event);"></asp:TextBox>
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-th"></span>
                         </div>
@@ -66,7 +73,8 @@
             <div class="form-group">
                 <asp:Label ID="lblDireccion" runat="server" Text="DIRECCION" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"
+                        onkeypress="return validarSoloLetrasYNumeros(event);"></asp:TextBox>
                 </div>
                 <asp:Label ID="lblLocalidad" runat="server" Text="LOCALIDAD" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4 ">
@@ -75,7 +83,8 @@
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
                         Font-Bold="true"
-                        CssClass="form-control"
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
                         DataTextField="nombre"
                         AppendDataBoundItems="true">
                         <asp:ListItem Value="-1">&lt;Seleccione una Localidad&gt;</asp:ListItem>
@@ -195,7 +204,8 @@
                                 <br />
                                 <asp:Label ID="lblListaCorreoModal" runat="server" Text="Nuevo Correo" CssClass="col-md-4 control-label"> </asp:Label>
                                 <div class="col-md-8">
-                                    <asp:TextBox ID="txtCorreoModal" runat="server" CssClass="form-control"></asp:TextBox><br />
+                                    <asp:TextBox ID="txtCorreoModal" runat="server" CssClass="form-control"
+                                        onfocusout="return validarEmail(event);"></asp:TextBox><br />
                                 </div>
                                 <br />
                             </div>
@@ -278,29 +288,105 @@
                 <div class="col-md-9 col-md-offset-1">
                     <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="false"
                         CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
-                        GridLines="Both" EmptyDataText="No existen personas registradas" ShowHeaderWhenEmpty="true" 
+                        GridLines="Both" EmptyDataText="No existen personas registradas" ShowHeaderWhenEmpty="true"
                         OnSelectedIndexChanging="dgvPersona_SelectedIndexChanging"
                         OnRowDeleting="dgvPersona_RowDeleting">
                         <Columns>
                             <asp:BoundField HeaderText="ID" DataField="idPersona" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
-                            <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
-                            <asp:BoundField HeaderText="Apellido" DataField="apellido" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:BoundField HeaderText="Apellido" DataField="apellido" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
                             <asp:BoundField HeaderText="Tipo" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
-                            <asp:BoundField HeaderText="Documento" DataField="documento" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
-                            <asp:BoundField HeaderText="Localidad" DataField="idLocalidad" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
-                            <asp:BoundField HeaderText="Interesado" DataField="isInteresado" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
-                            <asp:BoundField HeaderText="Beneficiario" DataField="isBeneficiario" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
-                            <asp:BoundField HeaderText="Fecha Nac" DataField="fechaNacimiento" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
-                            <asp:BoundField HeaderText="Empresa" DataField="empresa" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
-                            <asp:BoundField HeaderText="Direccion" DataField="direccion" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
-                            <asp:BoundField HeaderText="Cuil" DataField="cuil" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
-                            <asp:BoundField HeaderText="Activo" DataField="activo" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc"/>
-                            <asp:ButtonField Text="Editar" CommandName="select" HeaderStyle-BackColor="#cccccc"/>
-                            <asp:ButtonField Text="Borrar" CommandName="delete" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:BoundField HeaderText="Documento" DataField="documento" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:BoundField HeaderText="Localidad" DataField="idLocalidad" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:BoundField HeaderText="Interesado" DataField="isInteresado" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:BoundField HeaderText="Beneficiario" DataField="isBeneficiario" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:BoundField HeaderText="Fecha Nac" DataField="fechaNacimiento" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:BoundField HeaderText="Empresa" DataField="empresa" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:BoundField HeaderText="Direccion" DataField="direccion" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:BoundField HeaderText="Cuil" DataField="cuil" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:BoundField HeaderText="Activo" DataField="activo" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:ButtonField Text="Editar" CommandName="select" HeaderStyle-BackColor="#cccccc" />
+                            <asp:ButtonField Text="Borrar" CommandName="delete" HeaderStyle-BackColor="#cccccc" />
                         </Columns>
                     </asp:GridView>
                 </div>
             </div>
+
+            <%--Aca meto uno de prueba--%>
+
+
+
+            <%--<script>
+                $('.ddlLocalidad').selectpicker({
+                    style: 'btn-info',
+                    size: 4
+                });
+            </script>--%>
         </asp:Panel>
     </div>
+
+
+    <%--<input type="text" id="fname" onkeyup="myFunction()" />--%>
+
+    <%--    <script>
+        function myFunction() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+    </script>--%>
+
+
+
+
+    <%--<div class="col-md-6">
+        <asp:TextBox ID="txtPrueba" runat="server" CssClass="form-control"
+            onkeypress="return validar(event);"></asp:TextBox>
+    </div>--%>
+
+    <%--FUNCION PARA VALIDAR SOLO INGRESO DE NUMEROS--%>
+    <script>
+        function validarSoloNumeros(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            patron = /\d/;
+            return patron.test(String.fromCharCode(tecla));
+        }
+    </script>
+    <script>
+        function validarSoloLetras(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            patron = /[A-Za-zñÑ-áéíóúÁÉÍÓÚ\s\t-]/;
+            te = String.fromCharCode(tecla);
+            return patron.test(te);
+        }
+    </script>
+    <script>
+        function validarSoloLetrasYNumeros(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            //patron = /\w/; // Acepta números y letras
+            patron = /[A-Za-zñÑ-áéíóúÁÉÍÓÚ\s\t\d-]/;
+            te = String.fromCharCode(tecla);
+            return patron.test(te);
+        }
+    </script>
+    <script>
+        function validarSoloNumerosYGuion(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            patron = /[\d-/]/;
+            te = String.fromCharCode(tecla);
+            return patron.test(te);
+        }
+    </script>
+    <script>
+        function validarEmail(valor) {
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(valor)) {
+                alert("La dirección de email " + valor + " es correcta.");
+            } else {
+                alert("La dirección de email es incorrecta.");
+            }
+        }
+    </script>
 </asp:Content>

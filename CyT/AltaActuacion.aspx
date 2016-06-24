@@ -39,7 +39,8 @@
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
                         Font-Bold="false"
-                        CssClass="form-control"
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
                         DataTextField="nombre"
                         AutoPostBack="false"
                         AppendDataBoundItems="true">
@@ -65,7 +66,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="col-md-8">
-                                        <asp:TextBox ID="txtViaComunicacionModal" runat="server" CssClass="form-control"></asp:TextBox><br />
+                                        <asp:TextBox ID="txtViaComunicacionModal" runat="server" CssClass="form-control "></asp:TextBox><br />
                                     </div>
                                     <br />
                                 </div>
@@ -88,7 +89,8 @@
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
                         Font-Bold="false"
-                        CssClass="form-control"
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
                         DataTextField="nombre"
                         AutoPostBack="false"
                         AppendDataBoundItems="true">
@@ -166,8 +168,8 @@
                             <asp:BoundField HeaderText="Tematica" DataField="idTematica" />
                             <asp:BoundField HeaderText="Persona" DataField="idPersona" />
                             <asp:BoundField HeaderText="Activo" DataField="activo" />
-                            <asp:ButtonField Text="Editar" CommandName="select" HeaderStyle-BackColor="#cccccc"/>
-                            <asp:ButtonField Text="Borrar" CommandName="delete" HeaderStyle-BackColor="#cccccc"/>
+                            <asp:ButtonField Text="Editar" CommandName="select" HeaderStyle-BackColor="#cccccc" />
+                            <asp:ButtonField Text="Borrar" CommandName="delete" HeaderStyle-BackColor="#cccccc" />
                         </Columns>
                         <SelectedRowStyle BackColor="Azure" />
                     </asp:GridView>

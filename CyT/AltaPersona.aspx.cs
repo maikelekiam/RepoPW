@@ -34,6 +34,7 @@ namespace CyT
             listaCorreosModal.Clear();
             listaCorreoElectronicos.Clear();
             listaTelefonos.Clear();
+            
         }
 
         //Muestra los datos de las personas en la GRILLA
@@ -303,7 +304,6 @@ namespace CyT
             MostrarTelefono();
             MostrarCorreoElectronico();
             MostrarPersona();
-
         }
 
         private void EliminarPersona(int id)
@@ -340,7 +340,6 @@ namespace CyT
 
             btnGuardarPersona.Visible = false;
             btnActualizarPersona.Visible = true;
-
         }
     }
 }

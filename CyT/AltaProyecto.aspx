@@ -34,7 +34,8 @@
                         Width="800"
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
-                        CssClass="form-control"
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
                         DataTextField="nombre"
                         AutoPostBack="False"
                         AppendDataBoundItems="true">
@@ -50,7 +51,8 @@
                         Width="800"
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
-                        CssClass="form-control"
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
                         DataTextField="nombreUvt"
                         AutoPostBack="False"
                         AppendDataBoundItems="true">
@@ -65,7 +67,8 @@
                     <asp:DropDownList ID="ddlEstado" runat="server"
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
-                        CssClass="form-control"
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
                         DataTextField="nombre"
                         AutoPostBack="False"
                         AppendDataBoundItems="true">
@@ -119,7 +122,8 @@
                     <asp:DropDownList ID="ddlAreaProductiva" runat="server"
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
-                        CssClass="form-control"
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
                         DataTextField="nombre"
                         AutoPostBack="False"
                         AppendDataBoundItems="true">

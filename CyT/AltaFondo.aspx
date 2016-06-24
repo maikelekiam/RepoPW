@@ -36,7 +36,8 @@
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
                         Font-Bold="false"
-                        CssClass="form-control"
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
                         DataTextField="nombre">
                         <asp:ListItem Value="-1">&lt;Seleccione Origen&gt;</asp:ListItem>
                     </asp:DropDownList>
