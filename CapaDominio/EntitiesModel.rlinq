@@ -435,7 +435,7 @@
             <orm:constraint name="FK_ListaTipoDestinatario_Convocatoria" delete-action="dbdefaultrule" destination-table="Convocatoria" />
           </orm:reference>
         </orm:field>
-        <orm:field name="tipoDestinatario" property="TipoDestinatario" behavior="readwrite" uniqueId="faa10d0f-1ead-4cc7-8fbb-e9552c1c5bfa" type="CapaDominio.TipoDestinatario" dependent="true">
+        <orm:field name="tipoDestinatario" property="TipoDestinatario" behavior="readwrite" uniqueId="faa10d0f-1ead-4cc7-8fbb-e9552c1c5bfa" type="CapaDominio.TipoDestinatario">
           <orm:reference uniqueId="512c71ef-d5b4-40eb-9851-bab3a308c24b" association-name="ListaTipoDestinatarioHasTipoDestinatario">
             <orm:sharedfield name="idTipoDestinatario" target-class="CapaDominio.TipoDestinatario" target-field="idTipoDestinatario" />
             <orm:constraint name="FK_ListaTipoDestinatario_TipoDestinatario" delete-action="dbdefaultrule" destination-table="TipoDestinatario" />
@@ -663,7 +663,7 @@
         <orm:field name="proyectos" property="Proyectos" behavior="readwrite" uniqueId="606c9023-a46d-4d96-bed9-54e09de1324f" type="CapaDominio.Proyecto">
           <orm:collection element-class="CapaDominio.Proyecto" inverse-field="convocatorium" managed="true" order-by="" uniqueId="7d1082b7-0f5d-4620-a9e5-c91a97723de3" />
         </orm:field>
-        <orm:field name="listaTipoDestinatarios" property="ListaTipoDestinatarios" behavior="readwrite" uniqueId="3b49595c-36e2-4d56-a1ea-0bba27820453" type="CapaDominio.ListaTipoDestinatario" dependent="true">
+        <orm:field name="listaTipoDestinatarios" property="ListaTipoDestinatarios" behavior="readwrite" uniqueId="3b49595c-36e2-4d56-a1ea-0bba27820453" type="CapaDominio.ListaTipoDestinatario">
           <orm:collection element-class="CapaDominio.ListaTipoDestinatario" inverse-field="convocatorium" managed="true" order-by="" uniqueId="ab260dac-bf6a-435d-bc65-fce964d405f2" />
         </orm:field>
       </orm:class>
@@ -1361,7 +1361,7 @@
           <NavigationalProperty Id="a2f7fc4c-a8d2-4fe3-85ac-1378484741c6" name="Convocatorium" type="Convocatorium" label="Convocatorium : Convocatorium" nullable="true" kind="Persistent" fieldName="convocatorium" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="4fdc42ad-2414-4e2c-957a-3a9abaf36089">
-          <NavigationalProperty Id="faa10d0f-1ead-4cc7-8fbb-e9552c1c5bfa" name="TipoDestinatario" type="TipoDestinatario" label="TipoDestinatario : TipoDestinatario" nullable="true" kind="Persistent" fieldName="tipoDestinatario" isDependent="true" isManaged="true" />
+          <NavigationalProperty Id="faa10d0f-1ead-4cc7-8fbb-e9552c1c5bfa" name="TipoDestinatario" type="TipoDestinatario" label="TipoDestinatario : TipoDestinatario" nullable="true" kind="Persistent" fieldName="tipoDestinatario" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1561,7 +1561,7 @@
           <NavigationalProperty Id="606c9023-a46d-4d96-bed9-54e09de1324f" name="Proyectos" type="IList&lt;Proyecto&gt;" label="Proyectos : IList&lt;Proyecto&gt;" nullable="true" kind="Persistent" fieldName="proyectos" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="a37ff359-9bed-4fae-a32c-40057fce3c03">
-          <NavigationalProperty Id="3b49595c-36e2-4d56-a1ea-0bba27820453" name="ListaTipoDestinatarios" type="IList&lt;ListaTipoDestinatario&gt;" label="ListaTipoDestinatarios : IList&lt;ListaTipoDestinatario&gt;" nullable="true" kind="Persistent" fieldName="listaTipoDestinatarios" isDependent="true" isManaged="true" />
+          <NavigationalProperty Id="3b49595c-36e2-4d56-a1ea-0bba27820453" name="ListaTipoDestinatarios" type="IList&lt;ListaTipoDestinatario&gt;" label="ListaTipoDestinatarios : IList&lt;ListaTipoDestinatario&gt;" nullable="true" kind="Persistent" fieldName="listaTipoDestinatarios" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="a6ea52e7-b759-4d8f-9103-cfff31d45182">
           <NavigationalProperty Id="c136857b-1f01-46f0-9669-ed7d88f266af" name="Fondo" type="Fondo" label="Fondo : Fondo" nullable="true" kind="Persistent" fieldName="fondo" isDependent="false" isManaged="true" />

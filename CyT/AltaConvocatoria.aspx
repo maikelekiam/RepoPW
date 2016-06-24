@@ -11,7 +11,8 @@
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"
+                        onkeypress="return validarSoloLetrasYNumeros(event);"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
@@ -29,7 +30,8 @@
             <div class="form-group">
                 <asp:Label ID="lblAnio" runat="server" Text="AÑO" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-3">
-                    <asp:TextBox ID="txtAnio" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtAnio" runat="server" CssClass="form-control" MaxLength="4"
+                        onkeypress="return validarSoloNumeros(event);"></asp:TextBox>
                 </div>
                 <asp:Label ID="lblFondo" runat="server" Text="FONDO" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-3 ">
@@ -79,11 +81,13 @@
             <div class="form-group">
                 <asp:Label ID="lblMontoTotal" runat="server" Text="MONTO TOTAL" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-3">
-                    <asp:TextBox ID="txtMontoTotal" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtMontoTotal" runat="server" CssClass="form-control"
+                        onkeypress="return validarSoloNumeros(event);"></asp:TextBox>
                 </div>
                 <asp:Label ID="lblMontoProyecto" runat="server" Text="MONTO PROYECTO" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-3">
-                    <asp:TextBox ID="txtMontoProyecto" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtMontoProyecto" runat="server" CssClass="form-control"
+                        onkeypress="return validarSoloNumeros(event);"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
@@ -96,7 +100,8 @@
                         data-date-today-btn="true"
                         data-date-clear-btn="true"
                         data-date-today-highlight="true">
-                        <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaInicio"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaInicio"
+                            onkeypress="return validarSoloNumerosYGuion(event);"></asp:TextBox>
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-th"></span>
                         </div>
@@ -111,7 +116,8 @@
                         data-date-today-btn="true"
                         data-date-clear-btn="true"
                         data-date-today-highlight="true">
-                        <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaCierre"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaCierre"
+                            onkeypress="return validarSoloNumerosYGuion(event);"></asp:TextBox>
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-th"></span>
                         </div>

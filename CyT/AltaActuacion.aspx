@@ -23,7 +23,8 @@
                         data-date-today-btn="true"
                         data-date-clear-btn="true"
                         data-date-today-highlight="true">
-                        <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaActuacion"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaActuacion"
+                            onkeypress="return validarSoloNumerosYGuion(event);"></asp:TextBox>
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-th"></span>
                         </div>
@@ -66,7 +67,8 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="col-md-8">
-                                        <asp:TextBox ID="txtViaComunicacionModal" runat="server" CssClass="form-control "></asp:TextBox><br />
+                                        <asp:TextBox ID="txtViaComunicacionModal" runat="server" CssClass="form-control"
+                                            onkeypress="return validarSoloLetras(event);"></asp:TextBox><br />
                                     </div>
                                     <br />
                                 </div>
@@ -115,7 +117,8 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="col-md-8">
-                                        <asp:TextBox ID="txtTematicaModal" runat="server" CssClass="form-control"></asp:TextBox><br />
+                                        <asp:TextBox ID="txtTematicaModal" runat="server" CssClass="form-control"
+                                            onkeypress="return validarSoloLetras(event);"></asp:TextBox><br />
                                     </div>
                                     <br />
                                 </div>

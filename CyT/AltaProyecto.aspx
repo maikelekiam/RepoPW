@@ -1,11 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaProyecto.aspx.cs" Inherits="CyT.AltaProyecto" %>
 
-<%--<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-</asp:Content>--%>
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <%--<asp:ScriptManager runat="server" EnablePageMethods="true"></asp:ScriptManager>--%>
     <div class="container">
         <asp:Panel ID="Panel1" runat="server">
             <br />
@@ -17,7 +12,8 @@
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-10">
-                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control "></asp:TextBox>
+                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"
+                        onkeypress="return validarSoloLetrasYNumeros(event);"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
@@ -93,7 +89,8 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="col-md-8">
-                                        <asp:TextBox ID="txtEstadoModal" runat="server" CssClass="form-control"></asp:TextBox><br />
+                                        <asp:TextBox ID="txtEstadoModal" runat="server" CssClass="form-control"
+                                            onkeypress="return validarSoloLetrasYNumeros(event);"></asp:TextBox><br />
                                     </div>
                                     <br />
                                 </div>
@@ -148,7 +145,8 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="col-md-8">
-                                        <asp:TextBox ID="txtAreaProductivaModal" runat="server" CssClass="form-control"></asp:TextBox><br />
+                                        <asp:TextBox ID="txtAreaProductivaModal" runat="server" CssClass="form-control"
+                                            onkeypress="return validarSoloLetrasYNumeros(event);"></asp:TextBox><br />
                                     </div>
                                     <br />
                                 </div>
@@ -166,11 +164,13 @@
             <div class="form-group">
                 <asp:Label ID="lblMontoSolicitado" runat="server" Text="MONTO SOLICITADO" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtMontoSolicitado" runat="server" CssClass="form-control "></asp:TextBox>
+                    <asp:TextBox ID="txtMontoSolicitado" runat="server" CssClass="form-control "
+                        onkeypress="return validarSoloNumeros(event);"></asp:TextBox>
                 </div>
                 <asp:Label ID="lblMontoContraparte" runat="server" Text="MONTO CONTRAPARTE" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtMontoContraparte" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtMontoContraparte" runat="server" CssClass="form-control"
+                        onkeypress="return validarSoloNumeros(event);"></asp:TextBox>
                 </div>
             </div>
 
@@ -210,36 +210,10 @@
                             <asp:BoundField HeaderText="Contraparte" DataField="montoContraparte" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Activo" DataField="activo" ItemStyle-HorizontalAlign="Center" />
                         </Columns>
-                        <SelectedRowStyle BackColor="Yellow" />
+                        <SelectedRowStyle BackColor="#99ff99" />
                     </asp:GridView>
                 </div>
             </div>
-
-            <div>
-                Your Name :
-                <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
-                <input id="btnGetTime" type="button" value="Show Current Time"
-                    onclick="ShowCurrentTime()" />
-            </div>
         </asp:Panel>
     </div>
-    <script type="text/javascript">
-        function ShowCurrentTime() {
-            var tel = $('<%= txtNombre.ClientID %>').val();
-            $.ajax({
-                type: "POST",
-                url: "AltaProyecto.aspx/GetCurrentTime",
-                data: '{name: "' + $("#<%=txtUserName.ClientID%>")[0].value + '" }',
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: OnSuccess,
-                failure: function (response) {
-                    alert(response.d);
-                }
-            });
-        }
-        function OnSuccess(response) {
-            alert(response.d);
-        }
-    </script>
 </asp:Content>

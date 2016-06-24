@@ -40,7 +40,7 @@
                 </div>
                 <asp:Label ID="lblCuil" runat="server" Text="CUIL/CUIT" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtCuil" runat="server" CssClass="form-control"
+                    <asp:TextBox ID="txtCuil" runat="server" placeholder="Formato: xx-xxxxxxxx-x" CssClass="form-control" MaxLength="13"
                         onkeypress="return validarSoloNumerosYGuion(event);"></asp:TextBox>
                 </div>
 
@@ -128,7 +128,8 @@
                                 <br />
                                 <asp:Label ID="lblListaTelefonosModal" runat="server" Text="Nuevo Telefono" CssClass="col-md-4 control-label"> </asp:Label>
                                 <div class="col-md-8">
-                                    <asp:TextBox ID="txtTelefonoModal" runat="server" CssClass="form-control"></asp:TextBox><br />
+                                    <asp:TextBox ID="txtTelefonoModal" runat="server" placeholder="(xxx) xxxxxxxx" CssClass="form-control"
+                                        onkeypress="return validarTelefonos(event);"></asp:TextBox><br />
                                 </div>
                                 <br />
                             </div>
@@ -344,49 +345,13 @@
     </div>--%>
 
     <%--FUNCION PARA VALIDAR SOLO INGRESO DE NUMEROS--%>
-    <script>
+    <%--<script>
         function validarSoloNumeros(e) {
             tecla = (document.all) ? e.keyCode : e.which;
             if (tecla == 8) return true;
             patron = /\d/;
             return patron.test(String.fromCharCode(tecla));
         }
-    </script>
-    <script>
-        function validarSoloLetras(e) {
-            tecla = (document.all) ? e.keyCode : e.which;
-            if (tecla == 8) return true;
-            patron = /[A-Za-zñÑ-áéíóúÁÉÍÓÚ\s\t-]/;
-            te = String.fromCharCode(tecla);
-            return patron.test(te);
-        }
-    </script>
-    <script>
-        function validarSoloLetrasYNumeros(e) {
-            tecla = (document.all) ? e.keyCode : e.which;
-            if (tecla == 8) return true;
-            //patron = /\w/; // Acepta números y letras
-            patron = /[A-Za-zñÑ-áéíóúÁÉÍÓÚ\s\t\d-]/;
-            te = String.fromCharCode(tecla);
-            return patron.test(te);
-        }
-    </script>
-    <script>
-        function validarSoloNumerosYGuion(e) {
-            tecla = (document.all) ? e.keyCode : e.which;
-            if (tecla == 8) return true;
-            patron = /[\d-/]/;
-            te = String.fromCharCode(tecla);
-            return patron.test(te);
-        }
-    </script>
-    <script>
-        function validarEmail(valor) {
-            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(valor)) {
-                alert("La dirección de email " + valor + " es correcta.");
-            } else {
-                alert("La dirección de email es incorrecta.");
-            }
-        }
-    </script>
+    </script>--%>
+    
 </asp:Content>

@@ -110,7 +110,7 @@
                                     <li><a runat="server" href="~/AltaFondo.aspx">Alta Fondo</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">Listar Fondos Nacionales</a></li>
-                                    <li><a href="#">Listar Fondos Provinciales</a></li>
+                                    <li><a runat="server" href="~/About.aspx">Listar Fondos Provinciales</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -140,6 +140,60 @@
     <script src="js/panel-collapsible.js"></script>
     <script src="js/select2.js"></script>
     <script src="js/bootstrap-select.js"></script>
+    <script>
+        function validarSoloNumeros(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            patron = /\d/;
+            return patron.test(String.fromCharCode(tecla));
+        }
+    </script>
+    <script>
+        function validarSoloLetras(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            patron = /[A-Za-zñÑ-áéíóúÁÉÍÓÚ\s\t-]/;
+            te = String.fromCharCode(tecla);
+            return patron.test(te);
+        }
+    </script>
+    <script>
+        function validarSoloLetrasYNumeros(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            //patron = /\w/; // Acepta números y letras
+            patron = /[A-Za-zñÑ-áéíóúÁÉÍÓÚ\s\t\d-]/;
+            te = String.fromCharCode(tecla);
+            return patron.test(te);
+        }
+    </script>
+    <script>
+        function validarSoloNumerosYGuion(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            patron = /[\d-/]/;
+            te = String.fromCharCode(tecla);
+            return patron.test(te);
+        }
+    </script>
+    <script>
+        function validarEmail(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            patron = /[A-Za-zñÑ-áéíóúÁÉÍÓÚ\s\t\d-@]/;
+            te = String.fromCharCode(tecla);
+            return patron.test(te);
+        }
+    </script>
+    <script>
+        function validarTelefonos(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            patron = /[\d-()\s]/;
+            te = String.fromCharCode(tecla);
+            return patron.test(te);
+        }
+    </script>
 
 </body>
 </html>
