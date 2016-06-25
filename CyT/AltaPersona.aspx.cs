@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDominio;
@@ -340,6 +341,19 @@ namespace CyT
 
             btnGuardarPersona.Visible = false;
             btnActualizarPersona.Visible = true;
+        }
+
+        [WebMethod]
+        public static string  Agregar(string tel)
+        {
+            string respuesta;
+            
+            listaTelefonosModal.Add(tel);
+            tel = null;
+
+            respuesta = "Se guardo un telefono";
+
+            return respuesta;
         }
     }
 }

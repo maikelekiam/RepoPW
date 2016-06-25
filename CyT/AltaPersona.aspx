@@ -27,11 +27,10 @@
             <div class="form-group">
                 <asp:Label ID="lblTipoDocumento" runat="server" Text="TIPO DE DOCUMENTO" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:DropDownList ID="ddlTipoDocumento" runat="server" 
+                    <asp:DropDownList ID="ddlTipoDocumento" runat="server"
                         CssClass="selectpicker form-control show-tick"
                         data-live-search="true"
-                        data-width="fit"
-                        >
+                        data-width="fit">
                         <asp:ListItem Value="DNI">DNI</asp:ListItem>
                         <asp:ListItem Value="DU">DU</asp:ListItem>
                         <asp:ListItem Value="LE">LE</asp:ListItem>
@@ -134,8 +133,10 @@
                                 <br />
                             </div>
                             <div class="modal-footer">
+                                <input id="btnAgregar" type="button" value="Agregar" onclick="Agregar()" />
                                 <asp:Button runat="server" ID="btnModalTelefonoSalir" Text="SALIR" class="btn btn-danger" data-dismiss="modal" />
                                 <asp:Button runat="server" ID="btnModalTelefonoGuardar" Text="GUARDAR" CssClass="btn btn-success" OnClick="btnModalTelefonoGuardar_Click" />
+
                             </div>
                         </div>
                     </div>
@@ -312,46 +313,30 @@
                     </asp:GridView>
                 </div>
             </div>
-
-            <%--Aca meto uno de prueba--%>
-
-
-
-            <%--<script>
-                $('.ddlLocalidad').selectpicker({
-                    style: 'btn-info',
-                    size: 4
-                });
-            </script>--%>
         </asp:Panel>
     </div>
 
+    <script type="text/javascript">
+        function Agregar() {
+            $("#btnAgregar").click(function () {
+                var tel = $('<%= txtTelefonoModal.ClientID %>').val();
+                $.ajax({
+                    type: "POST",
+                    url: "AltaPersona.aspx/Agregar",
+                    data: '{tel: "' + $("#<%=txtTelefonoModal.ClientID%>")[0].value + '"}',
 
-    <%--<input type="text" id="fname" onkeyup="myFunction()" />--%>
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        //$("#resposta").text(data.d);
+                        alert(data.d);
+                    },
+                    error: function (data) {
+                        alert(data.d);
+                    }
+                });
+            });
+        };
+    </script>
 
-    <%--    <script>
-        function myFunction() {
-            var x = document.getElementById("fname");
-            x.value = x.value.toUpperCase();
-        }
-    </script>--%>
-
-
-
-
-    <%--<div class="col-md-6">
-        <asp:TextBox ID="txtPrueba" runat="server" CssClass="form-control"
-            onkeypress="return validar(event);"></asp:TextBox>
-    </div>--%>
-
-    <%--FUNCION PARA VALIDAR SOLO INGRESO DE NUMEROS--%>
-    <%--<script>
-        function validarSoloNumeros(e) {
-            tecla = (document.all) ? e.keyCode : e.which;
-            if (tecla == 8) return true;
-            patron = /\d/;
-            return patron.test(String.fromCharCode(tecla));
-        }
-    </script>--%>
-    
 </asp:Content>

@@ -188,5 +188,30 @@ namespace CyT
 
             btnActualizarProyecto.Visible = false;
         }
+
+        [WebMethod]
+        public static string Savedata(string txt01, string txt02)
+        {
+            string respuesta;
+
+            int a1, a2;
+
+            if (txt01 != null) { a1 = Convert.ToInt32(txt01); } else { a1 = 0; }
+            if (txt02 != null) { a2 = Convert.ToInt32(txt02); } else { a2 = 0; }
+
+            respuesta = Convert.ToString(a1 + a2);
+
+            //if (HttpContext.Current != null)
+            //{
+            //    Page page = (Page)HttpContext.Current.Handler;
+
+            //    TextBox tb01 = (TextBox)page.FindControl("txt01");
+
+            //    TextBox tb02 = (TextBox)page.FindControl("txt02");
+            //}
+
+            return respuesta;
+
+        }
     }
 }

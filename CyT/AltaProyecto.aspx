@@ -171,7 +171,11 @@
                 <div class="col-md-4">
                     <asp:TextBox ID="txtMontoContraparte" runat="server" CssClass="form-control"
                         onkeypress="return validarSoloNumeros(event);"></asp:TextBox>
+                    <input id="btnLogin" type="button" value="Calcular Monto Total"
+                        onclick="Pintar()" />
+                    <span id="respuesta">=</span>
                 </div>
+
             </div>
 
             <!--BOTON GUARDAR PROYECTO  -->
@@ -215,5 +219,43 @@
                 </div>
             </div>
         </asp:Panel>
+
+        <script type="text/javascript">
+            function Pintar() {
+                $("#btnLogin").click(function () {
+                    var txt01 = $('<%= txtMontoSolicitado.ClientID %>').val();
+                    var txt02 = $('<%= txtMontoContraparte.ClientID %>').val();
+                    $.ajax({
+                        type: "POST",
+                        url: "AltaProyecto.aspx/Savedata",
+                        data: '{txt01: "' + $("#<%=txtMontoSolicitado.ClientID%>")[0].value +
+                        '", txt02: "' + $("#<%=txtMontoContraparte.ClientID%>")[0].value + '"}',
+
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (data) {
+                            $("#respuesta").text(data.d);
+                            //alert(data.d);
+                        },
+                        error: function (data) {
+                            alert(data.d);
+                        }
+                    });
+                });
+            };
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
+    <!--container-->
 </asp:Content>
