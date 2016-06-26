@@ -349,9 +349,9 @@ namespace CyT
             string respuesta;
             
             listaTelefonosModal.Add(tel);
-            tel = null;
+            //tel = null;
 
-            respuesta = "Se guardo un telefono";
+            respuesta = "Se guardo el telefono --- "+ tel + " ---";
 
             return respuesta;
         }

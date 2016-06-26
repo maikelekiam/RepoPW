@@ -194,12 +194,16 @@ namespace CyT
         {
             string respuesta;
 
-            int a1, a2;
+            decimal a1, a2, a3;
 
-            if (txt01 != null) { a1 = Convert.ToInt32(txt01); } else { a1 = 0; }
-            if (txt02 != null) { a2 = Convert.ToInt32(txt02); } else { a2 = 0; }
+            if (txt01 != null) { a1 = Convert.ToDecimal(txt01); } else { a1 = 0; }
+            if (txt02 != null) { a2 = Convert.ToDecimal(txt02); } else { a2 = 0; }
 
-            respuesta = Convert.ToString(a1 + a2);
+            a3 = a1 / a2 * 100;
+
+            
+
+            respuesta = Convert.ToString(Math.Round(a3,2));
 
             //if (HttpContext.Current != null)
             //{

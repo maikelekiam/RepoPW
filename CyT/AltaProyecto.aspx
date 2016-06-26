@@ -171,7 +171,7 @@
                 <div class="col-md-4">
                     <asp:TextBox ID="txtMontoContraparte" runat="server" CssClass="form-control"
                         onkeypress="return validarSoloNumeros(event);"></asp:TextBox>
-                    <input id="btnLogin" type="button" value="Calcular Monto Total"
+                    <input id="btnLogin" type="button" value="Calcular % "
                         onclick="Pintar()" />
                     <span id="respuesta">=</span>
                 </div>

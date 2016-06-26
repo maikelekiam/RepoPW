@@ -133,10 +133,11 @@
                                 <br />
                             </div>
                             <div class="modal-footer">
-                                <input id="btnAgregar" type="button" value="Agregar" onclick="Agregar()" />
+                                <input id="btnAgregar" type="button" value="Agregar" onclick="Agregar()" class="alert-info" />
                                 <asp:Button runat="server" ID="btnModalTelefonoSalir" Text="SALIR" class="btn btn-danger" data-dismiss="modal" />
                                 <asp:Button runat="server" ID="btnModalTelefonoGuardar" Text="GUARDAR" CssClass="btn btn-success" OnClick="btnModalTelefonoGuardar_Click" />
-
+                                <br />
+                                <span id="lblRespuesta"></span>
                             </div>
                         </div>
                     </div>
@@ -328,11 +329,12 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (data) {
-                        //$("#resposta").text(data.d);
-                        alert(data.d);
+                        $("#lblRespuesta").text(data.d);
+                        //alert(data.d);
                     },
                     error: function (data) {
-                        alert(data.d);
+                        //alert(data.d);
+                        $("#lblRespuesta").text(data.d);
                     }
                 });
             });
