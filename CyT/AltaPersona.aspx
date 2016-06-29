@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaPersona.aspx.cs" Inherits="CyT.AltaPersona" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="container">
         <asp:Panel ID="Panel1" runat="server">
             <br />
@@ -360,7 +359,7 @@
                     data: '{tel: "' + $("#<%=txtTelefonoModal.ClientID%>")[0].value + '"}',
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
-                    success: OnSuccess,
+                    success: OnSuccessTelefono,
                     error: function (data) {
                         alert(data.d);
                         //$("#lblRespuesta").text(data.d);
@@ -369,7 +368,7 @@
             });
         });
         var cont = 0;
-        function OnSuccess(data) {
+        function OnSuccessTelefono(data) {
             var a = $('data').d;
             cont++;
             var fila = '<tr class="selected" id="fila' + cont + '"><td>'+cont+'</td><td>'+data.d+'</td></tr>';
@@ -388,7 +387,7 @@
                     data: '{corr: "' + $("#<%=txtCorreoModal.ClientID%>")[0].value + '"}',
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
-                    success: OnSuccess,
+                    success: OnSuccessCorreo,
                     error: function (data) {
                         alert(data.d);
                         //$("#lblRespuesta").text(data.d);
@@ -397,7 +396,7 @@
             });
         });
         var cont = 0;
-        function OnSuccess(data) {
+        function OnSuccessCorreo(data) {
             var a = $('data').d;
             cont++;
             var fila = '<tr class="selected" id="fila' + cont + '"><td>' + cont + '</td><td>' + data.d + '</td></tr>';

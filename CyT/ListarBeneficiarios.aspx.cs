@@ -6,13 +6,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDominio;
 using CapaNegocio;
+using System.Data;
 
 namespace CyT
 {
     public partial class ListarBeneficiarios : System.Web.UI.Page
     {
         PersonaNego personaNego = new PersonaNego();
-        int idPersona;
+        public static int idPersonaSeleccionada;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -48,16 +49,22 @@ namespace CyT
         }
 
 
-        //private void MostrarPersona(int idPersona)
-        //{
-
-        //}
-
-        protected void dgvPersona_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        private void MostrarPersona()
         {
-            idPersona = Convert.ToInt32(dgvPersona.Rows[e.NewSelectedIndex].Cells[0].Text);
+            Response.Redirect("MostrarBeneficiario.aspx");
+        }
 
+        protected void dgvPersona_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            
+            //Obtengo el indice de la fila seleccionada con el boton MOSTRAR
+            GridViewRow row = (GridViewRow)(((Button)e.CommandSource).NamingContainer);
+            int rIndex = row.RowIndex;
 
+            //Obtengo el id de la persona seleccionada
+            idPersonaSeleccionada = Convert.ToInt32(dgvPersona.Rows[rIndex].Cells[0].Text);
+
+            MostrarPersona();
         }
     }
 }
