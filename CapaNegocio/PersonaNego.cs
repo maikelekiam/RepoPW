@@ -39,5 +39,10 @@ namespace CapaNegocio
         {
             return personaRepo.MostrarListaBeneficiarios();
         }
+
+        public Persona ObtenerPersona(int id)
+        {
+            return personaRepo.ObtenerPersona(id);
+        }
     }
 }

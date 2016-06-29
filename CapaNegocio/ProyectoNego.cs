@@ -22,13 +22,17 @@ namespace CapaNegocio
             return proyectoRepo.TraerProyecto(id);
         }
 
-        public void GuardarProyecto(Proyecto proyecto)
+        public int GuardarProyecto(Proyecto proyecto)
         {
-            proyectoRepo.GuardarProyecto(proyecto);
+            return proyectoRepo.GuardarProyecto(proyecto);
         }
         public void ActualizarProyecto(Proyecto proyecto)
         {
             proyectoRepo.ActualizarProyecto(proyecto);
+        }
+        public Proyecto ObtenerProyecto(int id)
+        {
+            return proyectoRepo.ObtenerProyecto(id);
         }
     }
 }
