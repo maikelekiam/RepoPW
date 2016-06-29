@@ -67,7 +67,7 @@ namespace CyT
         private void MostrarLocalidad()
         {
             ddlLocalidad.DataSource = localidadNego.MostrarLocalidades().ToList();
-            ddlLocalidad.DataValueField = "nombre";
+            ddlLocalidad.DataValueField = "IdLocalidad";
             ddlLocalidad.DataBind();
         }
 
@@ -82,7 +82,7 @@ namespace CyT
             persona.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
             persona.Cuil = txtCuil.Text;
             persona.Direccion = txtDireccion.Text;
-            persona.IdLocalidad = Convert.ToInt32(ddlLocalidad.SelectedIndex.ToString());
+            persona.IdLocalidad = Convert.ToInt32(ddlLocalidad.SelectedValue.ToString());
             persona.Empresa = txtEmpresa.Text;
             persona.IsBeneficiario = chkIsBeneficiario.Checked;
             persona.IsInteresado = chkIsInteresado.Checked;
@@ -247,7 +247,7 @@ namespace CyT
             persona.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
             persona.Cuil = txtCuil.Text;
             persona.Direccion = txtDireccion.Text;
-            persona.IdLocalidad = Convert.ToInt32(ddlLocalidad.SelectedIndex.ToString());
+            persona.IdLocalidad = Convert.ToInt32(ddlLocalidad.SelectedValue.ToString());
             persona.Empresa = txtEmpresa.Text;
             persona.IsBeneficiario = chkIsBeneficiario.Checked;
             persona.IsInteresado = chkIsInteresado.Checked;
@@ -337,7 +337,8 @@ namespace CyT
             TraerListaCorreoElectronicos(idPersonaActual);
             MostrarCorreoElectronico();
 
-            ddlLocalidad.Text = TraerLocalidadSegunIdPersona(Convert.ToInt32(dgvPersona.Rows[e.NewSelectedIndex].Cells[5].Text));
+            //ddlLocalidad.SelectedValue = TraerLocalidadSegunIdPersona(Convert.ToInt32(dgvPersona.Rows[e.NewSelectedIndex].Cells[5].Text));
+            ddlLocalidad.SelectedValue = dgvPersona.Rows[e.NewSelectedIndex].Cells[5].Text;
 
             btnGuardarPersona.Visible = false;
             btnActualizarPersona.Visible = true;

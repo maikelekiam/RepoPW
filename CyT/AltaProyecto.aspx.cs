@@ -18,6 +18,9 @@ namespace CyT
         UvtNego uvtNego = new UvtNego();
         ConvocatoriaNego convocatoriaNego = new ConvocatoriaNego();
         ProyectoNego proyectoNego = new ProyectoNego();
+        PersonaNego personaNego = new PersonaNego();
+        static List<Persona> beneficiarios = new List<Persona>();
+        private Integrante integranteNego = new Integrante();
         static int idProyectoActual;
 
 
@@ -31,6 +34,7 @@ namespace CyT
             MostrarUvt();
             MostrarConvocatoria();
             MostrarProyecto();
+            llenarListaBeneficiarios();
 
             btnActualizarProyecto.Visible = false;
         }
@@ -215,6 +219,35 @@ namespace CyT
             //}
 
             return respuesta;
+
+        }
+
+        protected void btnModalBeneficiarioGuardar_Click(object sender, EventArgs e)
+        {
+            Persona item = personaNego.ObtenerPersona(Int32.Parse(ddlBeneficiario.SelectedValue));
+            beneficiarios.Add(item);
+            MostrarBeneficiarios();
+        }
+
+        private void llenarListaBeneficiarios()
+        {            
+            List<Persona> datos = personaNego.MostrarListaInteresados().ToList();
+            var productQuery = datos.Select(p => new { idPersona = p.IdPersona, DisplayText = p.Apellido + ", " + p.Nombre + "  " + p.Documento });
+            ddlBeneficiario.DataSource = productQuery;            
+            ddlBeneficiario.DataValueField = "idPersona";
+            ddlBeneficiario.DataTextField = "DisplayText";
+            ddlBeneficiario.DataBind();
+        }
+
+        private void MostrarBeneficiarios()
+        {
+            dgvBeneficiarios.DataSource = beneficiarios;
+            dgvBeneficiarios.DataBind();
+            dgvBeneficiarios.Columns[0].Visible = false;
+        }
+
+        protected void btnEliminarBeneficiario_Command(object sender, CommandEventArgs e)
+        {
 
         }
     }

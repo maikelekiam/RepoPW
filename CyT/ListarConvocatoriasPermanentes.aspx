@@ -7,7 +7,7 @@
                 <h1>LISTA DE CONVOCATORIAS PERMANENTES</h1>
             </div>
             <div class="form-group">
-                <div class="col-md-9 col-md-offset-1">
+                <div class="col-md-12">
                     <asp:GridView ID="dgvConvocatoria" runat="server" AutoGenerateColumns="false"
                         CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
                         GridLines="Both"
