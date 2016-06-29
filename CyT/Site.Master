@@ -98,8 +98,8 @@
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/AltaProyecto.aspx">Alta Proyecto</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Listar Proyectos en Ejecucion</a></li>
-                                    <li><a href="#">Listar Proyectos Finalizados</a></li>
+                                    <li><a runat="server" href="~/ListarProyectosEnEjecucion.aspx">Listar Proyectos en Ejecucion</a></li>
+                                    <li><a runat="server" href="~/ListarProyectosFinalizados.aspx"></a></li>
                                 </ul>
                             </div>
                             <div class="btn-group">
@@ -116,8 +116,8 @@
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/AltaFondo.aspx">Alta Fondo</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Listar Fondos Nacionales</a></li>
-                                    <li><a runat="server" href="~/About.aspx">Listar Fondos Provinciales</a></li>
+                                    <li><a runat="server" href="#"></a></li>
+                                    <li><a runat="server" href="#"></a></li>
                                 </ul>
                             </div>
                         </div>

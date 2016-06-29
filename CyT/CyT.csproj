@@ -189,6 +189,7 @@
     <Content Include="ListarConvocatoriasPermanentes.aspx" />
     <Content Include="ListarConvocatoriasPublicas.aspx" />
     <Content Include="ListarInteresados.aspx" />
+    <Content Include="ListarProyectosEnEjecucion.aspx" />
     <Content Include="MostrarBeneficiario.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -344,6 +345,13 @@
     </Compile>
     <Compile Include="ListarInteresados.aspx.designer.cs">
       <DependentUpon>ListarInteresados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarProyectosEnEjecucion.aspx.cs">
+      <DependentUpon>ListarProyectosEnEjecucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarProyectosEnEjecucion.aspx.designer.cs">
+      <DependentUpon>ListarProyectosEnEjecucion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="MostrarBeneficiario.aspx.cs">

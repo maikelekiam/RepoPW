@@ -17,6 +17,11 @@ namespace CapaNegocio
             return proyectoRepo.MostrarProyecto();
         }
 
+        public IEnumerable<Proyecto> MostrarProyectosEnEjecucion()
+        {
+            return proyectoRepo.MostrarProyectosEnEjecucion();
+        }
+
         public string TraerProyecto(int id)
         {
             return proyectoRepo.TraerProyecto(id);

@@ -58,5 +58,15 @@ namespace CapaRepositorio
                 return proyecto;
             }
         }
+
+        public IEnumerable<Proyecto> MostrarProyectosEnEjecucion()
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<Proyecto> result = modeloDeDominio.Proyectos.Where(c => c.IdEstado == 1 ).ToList();
+
+                return modeloDeDominio.CreateDetachedCopy(result);
+            }
+        }
     }
 }

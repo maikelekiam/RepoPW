@@ -4,10 +4,10 @@
     
     <h2>Contactos</h2>
     <h3>Miguel Angel Arcamone</h3>
-    <p>Capo 1</p>
+    <p>Alumno</p>
     <br />
     <h3>Diego Acosta</h3>
-    <p>Capo 2</p>
+    <p>Alumno</p>
 
 
 </asp:Content>
