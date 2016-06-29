@@ -216,6 +216,9 @@ namespace CyT
             //MostrarProyecto();
 
             btnActualizarProyecto.Visible = false;
+            btnGuardarProyecto.Visible = true;
+
+            Response.Redirect("AltaProyecto.aspx");
         }
 
         [WebMethod]
