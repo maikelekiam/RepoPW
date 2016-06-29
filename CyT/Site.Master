@@ -13,6 +13,13 @@
     <link href="css/select2.css" rel="stylesheet" />
     <link href="css/bootstrap-select.css" rel="stylesheet" />
     
+    <script src="js/jquery-1.12.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-hover-dropdown.js"></script>    
+    <script src="js/panel-collapsible.js"></script>
+    <script src="js/select2.js"></script>
+    <script src="js/bootstrap-select.js"></script>
     <%--comentario--%>
 
     <%-- <asp:PlaceHolder runat="server">
@@ -133,13 +140,7 @@
             </footer>
         </div>
     </form>
-    <script src="js/jquery-1.12.3.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/bootstrap-hover-dropdown.js"></script>    
-    <script src="js/panel-collapsible.js"></script>
-    <script src="js/select2.js"></script>
-    <script src="js/bootstrap-select.js"></script>
+    
     <script>
         function validarSoloNumeros(e) {
             tecla = (document.all) ? e.keyCode : e.which;

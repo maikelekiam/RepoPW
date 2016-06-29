@@ -110,7 +110,7 @@
                             </div>
                             <div class="modal-body">
                                 <asp:GridView ID="dgvTelefonoModal" runat="server" AutoGenerateColumns="false"
-                                    Width="500" GridLines="None">
+                                    Width="500" GridLines="None" EmptyDataText="No existen telefonos cargados" ShowHeaderWhenEmpty="true">
                                     <HeaderStyle BackColor="#0099cc" ForeColor="White" HorizontalAlign="Center" Height="35" Font-Names="Cambria" Font-Size="Large" />
                                     <Columns>
                                         <asp:TemplateField>
@@ -127,21 +127,35 @@
                                 <br />
                                 <asp:Label ID="lblListaTelefonosModal" runat="server" Text="Nuevo Telefono" CssClass="col-md-4 control-label"> </asp:Label>
                                 <div class="col-md-8">
-                                    <asp:TextBox ID="txtTelefonoModal" runat="server" placeholder="(xxx) xxxxxxxx" CssClass="form-control"
+                                    <asp:TextBox ID="txtTelefonoModal" runat="server" CssClass="form-control"
                                         onkeypress="return validarTelefonos(event);"></asp:TextBox><br />
+                                    <input id="btnAgregarTelefono" type="button" value="Click para agregar a la lista temporal" class="alert-info" />
                                 </div>
                                 <br />
                             </div>
+                            
+                            <!-- TABLA PARA AGREGAR NUEVOS TELEFONOS SIN SALIR DEL MODAL-->
+                            <div id="content">
+                                <label>Lista de telefonos temporal</label>
+                                <table id="tabla" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <td>N°</td>
+                                            <td>Telefono</td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
                             <div class="modal-footer">
-                                <input id="btnAgregar" type="button" value="Agregar" onclick="Agregar()" class="alert-info" />
-                                <asp:Button runat="server" ID="btnModalTelefonoSalir" Text="SALIR" class="btn btn-danger" data-dismiss="modal" />
-                                <asp:Button runat="server" ID="btnModalTelefonoGuardar" Text="GUARDAR" CssClass="btn btn-success" OnClick="btnModalTelefonoGuardar_Click" />
                                 <br />
-                                <span id="lblRespuesta"></span>
+                                <asp:Button runat="server" ID="btnModalTelefonoSalir" Text="Salir" class="btn btn-danger" data-dismiss="modal" />
+                                <asp:Button runat="server" ID="btnModalTelefonoGuardar" Text="Guardar Lista" CssClass="btn btn-success" OnClick="btnModalTelefonoGuardar_Click" />
+                                <br />
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 <%-- GRIDVIEW PARA VER LA LISTA DE TELEFONOS EN EL FORMULARIO          --%>
                 <div class="col-md-5 col-md-offset-1">
@@ -171,6 +185,7 @@
                     </div>
                 </div>
             </div>
+
 
             <!--LISTA DE CORREO ELECTRONICOS-->
             <div class="form-group">
@@ -208,17 +223,35 @@
                                 <asp:Label ID="lblListaCorreoModal" runat="server" Text="Nuevo Correo" CssClass="col-md-4 control-label"> </asp:Label>
                                 <div class="col-md-8">
                                     <asp:TextBox ID="txtCorreoModal" runat="server" CssClass="form-control"
-                                        onfocusout="return validarEmail(event);"></asp:TextBox><br />
+                                        onkeypress="return validarEmail(event);"></asp:TextBox><br />
+                                    <input id="btnAgregarCorreoElectronico" type="button" value="Click para agregar a la lista temporal" class="alert-info" />
                                 </div>
                                 <br />
                             </div>
+
+                            <!-- TABLA PARA AGREGAR NUEVOS CORREO ELECTRONICOS SIN SALIR DEL MODAL-->
+                            <div id="contentce">
+                                <label>Lista de Correo Electronicos temporal</label>
+                                <table id="tablace" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <td>N°</td>
+                                            <td>Correo Electronico</td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
                             <div class="modal-footer">
+                                <br />
                                 <asp:Button runat="server" ID="btnModalCorreoSalir" Text="SALIR" class="btn btn-danger" data-dismiss="modal" />
                                 <asp:Button runat="server" ID="btnModalCorreoGuardar" Text="GUARDAR" CssClass="btn btn-success" OnClick="btnModalCorreoGuardar_Click" />
+                                <br />
                             </div>
                         </div>
                     </div>
                 </div>
+
+
 
                 <%-- GRIDVIEW PARA VER LA LISTA DE CORREOS EN EL FORMULARIO     --%>
                 <div class="col-md-6 col-md-offset-0">
@@ -318,26 +351,57 @@
     </div>
 
     <script type="text/javascript">
-        function Agregar() {
-            $("#btnAgregar").click(function () {
+        $(document).ready(function () {
+            $("#btnAgregarTelefono").click(function () {
                 var tel = $('<%= txtTelefonoModal.ClientID %>').val();
                 $.ajax({
                     type: "POST",
-                    url: "AltaPersona.aspx/Agregar",
+                    url: "AltaPersona.aspx/AgregarTelefono",
                     data: '{tel: "' + $("#<%=txtTelefonoModal.ClientID%>")[0].value + '"}',
-
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
-                    success: function (data) {
-                        $("#lblRespuesta").text(data.d);
-                        //alert(data.d);
-                    },
+                    success: OnSuccess,
                     error: function (data) {
-                        //alert(data.d);
-                        $("#lblRespuesta").text(data.d);
+                        alert(data.d);
+                        //$("#lblRespuesta").text(data.d);
                     }
                 });
             });
+        });
+        var cont = 0;
+        function OnSuccess(data) {
+            var a = $('data').d;
+            cont++;
+            var fila = '<tr class="selected" id="fila' + cont + '"><td>'+cont+'</td><td>'+data.d+'</td></tr>';
+            $('#tabla').append(fila);
+        };
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnAgregarCorreoElectronico").click(function () {
+                var corr = $('<%= txtCorreoModal.ClientID %>').val();
+                $.ajax({
+                    type: "POST",
+                    url: "AltaPersona.aspx/AgregarCorreoElectronico",
+                    data: '{corr: "' + $("#<%=txtCorreoModal.ClientID%>")[0].value + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: OnSuccess,
+                    error: function (data) {
+                        alert(data.d);
+                        //$("#lblRespuesta").text(data.d);
+                    }
+                });
+            });
+        });
+        var cont = 0;
+        function OnSuccess(data) {
+            var a = $('data').d;
+            cont++;
+            var fila = '<tr class="selected" id="fila' + cont + '"><td>' + cont + '</td><td>' + data.d + '</td></tr>';
+            $('#tablace').append(fila);
         };
     </script>
 

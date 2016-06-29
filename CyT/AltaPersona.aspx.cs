@@ -35,7 +35,7 @@ namespace CyT
             listaCorreosModal.Clear();
             listaCorreoElectronicos.Clear();
             listaTelefonos.Clear();
-            
+
         }
 
         //Muestra los datos de las personas en la GRILLA
@@ -43,10 +43,10 @@ namespace CyT
         {
             btnActualizarPersona.Visible = false;
             btnGuardarPersona.Visible = true;
-            
+
             dgvPersona.DataSource = personaNego.MostrarPersona().ToList();
             dgvPersona.DataBind();
-            
+
             dgvPersona.Columns[0].Visible = false;
             dgvPersona.Columns[5].Visible = false;
             dgvPersona.Columns[6].Visible = false;
@@ -149,13 +149,14 @@ namespace CyT
 
         protected void btnModalTelefonoGuardar_Click(object sender, EventArgs e)
         {
-            listaTelefonosModal.Add(txtTelefonoModal.Text);
+            //listaTelefonosModal.Add(txtTelefonoModal.Text);
             txtTelefonoModal.Text = null;
             MostrarTelefono();
         }
+
         protected void btnModalCorreoGuardar_Click(object sender, EventArgs e)
         {
-            listaCorreosModal.Add(txtCorreoModal.Text);
+            //listaCorreosModal.Add(txtCorreoModal.Text);
             txtCorreoModal.Text = null;
             MostrarCorreoElectronico();
         }
@@ -344,16 +345,19 @@ namespace CyT
         }
 
         [WebMethod]
-        public static string  Agregar(string tel)
+        public static string AgregarTelefono(string tel)
         {
-            string respuesta;
-            
             listaTelefonosModal.Add(tel);
-            //tel = null;
 
-            respuesta = "Se guardo el telefono --- "+ tel + " ---";
+            return tel;
+        }
 
-            return respuesta;
+        [WebMethod]
+        public static string AgregarCorreoElectronico(string corr)
+        {
+            listaCorreosModal.Add(corr);
+
+            return corr;
         }
     }
 }

@@ -70,10 +70,10 @@ namespace CyT
             btnGuardarProyecto.Visible = true;
 
             dgvProyecto.Columns[0].Visible = true;
-            dgvProyecto.Columns[2].Visible = true;
             dgvProyecto.Columns[3].Visible = true;
             dgvProyecto.Columns[4].Visible = true;
             dgvProyecto.Columns[5].Visible = true;
+            dgvProyecto.Columns[6].Visible = true;
             dgvProyecto.Columns[7].Visible = true;
             dgvProyecto.Columns[8].Visible = true;
             dgvProyecto.Columns[9].Visible = true;
@@ -82,10 +82,10 @@ namespace CyT
             dgvProyecto.DataBind();
 
             dgvProyecto.Columns[0].Visible = false;
-            dgvProyecto.Columns[2].Visible = false;
             dgvProyecto.Columns[3].Visible = false;
             dgvProyecto.Columns[4].Visible = false;
             dgvProyecto.Columns[5].Visible = false;
+            dgvProyecto.Columns[6].Visible = false;
             dgvProyecto.Columns[7].Visible = false;
             dgvProyecto.Columns[8].Visible = false;
             dgvProyecto.Columns[9].Visible = false;

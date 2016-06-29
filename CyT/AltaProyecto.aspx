@@ -171,8 +171,7 @@
                 <div class="col-md-4">
                     <asp:TextBox ID="txtMontoContraparte" runat="server" CssClass="form-control"
                         onkeypress="return validarSoloNumeros(event);"></asp:TextBox>
-                    <input id="btnLogin" type="button" value="Calcular % "
-                        onclick="Pintar()" />
+                    <input id="btnLogin" type="button" value="Calcular % " />
                     <span id="respuesta">=</span>
                 </div>
 
@@ -221,7 +220,10 @@
         </asp:Panel>
 
         <script type="text/javascript">
-            function Pintar() {
+
+
+
+            $(document).ready(function () {
                 $("#btnLogin").click(function () {
                     var txt01 = $('<%= txtMontoSolicitado.ClientID %>').val();
                     var txt02 = $('<%= txtMontoContraparte.ClientID %>').val();
@@ -242,7 +244,7 @@
                         }
                     });
                 });
-            };
+            });
         </script>
 
 
