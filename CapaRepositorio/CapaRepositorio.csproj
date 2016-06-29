@@ -53,6 +53,7 @@
     <Compile Include="CorreoElectronicoRepo.cs" />
     <Compile Include="EstadoRepo.cs" />
     <Compile Include="FondoRepo.cs" />
+    <Compile Include="IntegranteRepo.cs" />
     <Compile Include="ListaTipoDestinatarioRepo.cs" />
     <Compile Include="LocalidadRepo.cs" />
     <Compile Include="ModalidadRepo.cs" />

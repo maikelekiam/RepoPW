@@ -53,6 +53,7 @@
     <Compile Include="CorreoElectronicoNego.cs" />
     <Compile Include="EstadoNego.cs" />
     <Compile Include="FondoNego.cs" />
+    <Compile Include="IntegranteNego.cs" />
     <Compile Include="ListaTipoDestinatarioNego.cs" />
     <Compile Include="LocalidadNego.cs" />
     <Compile Include="ModalidadNego.cs" />

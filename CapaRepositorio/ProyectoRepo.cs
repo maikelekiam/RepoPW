@@ -30,12 +30,13 @@ namespace CapaRepositorio
             }
         }
 
-        public void GuardarProyecto(Proyecto proyecto)
+        public int GuardarProyecto(Proyecto proyecto)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
                 modeloDeDominio.Add(proyecto);
                 modeloDeDominio.SaveChanges();
+                return proyecto.IdProyecto;
             }
         }
 
@@ -45,6 +46,16 @@ namespace CapaRepositorio
             {
                 modeloDeDominio.AttachCopy(proyecto);
                 modeloDeDominio.SaveChanges();
+            }
+        }
+
+        public Proyecto ObtenerProyecto(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                Proyecto proyecto = modeloDeDominio.Proyectos.Where(c => c.IdProyecto == id).FirstOrDefault();
+
+                return proyecto;
             }
         }
     }
