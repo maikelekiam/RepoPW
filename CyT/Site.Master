@@ -20,6 +20,8 @@
     <script src="js/panel-collapsible.js"></script>
     <script src="js/select2.js"></script>
     <script src="js/bootstrap-select.js"></script>
+
+
     <%--comentario--%>
 
     <%-- <asp:PlaceHolder runat="server">
@@ -181,7 +183,7 @@
         function validarEmail(e) {
             tecla = (document.all) ? e.keyCode : e.which;
             if (tecla == 8) return true;
-            patron = /[A-Za-zñÑ-áéíóúÁÉÍÓÚ\s\t\d-@]/;
+            patron = /[A-Za-zñÑ-áéíóúÁÉÍÓÚ\s\t\d-@.]/;
             te = String.fromCharCode(tecla);
             return patron.test(te);
         }
@@ -195,7 +197,5 @@
             return patron.test(te);
         }
     </script>
-    
-
 </body>
 </html>

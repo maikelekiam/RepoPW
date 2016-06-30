@@ -132,7 +132,7 @@
                                 </div>
                                 <br />
                             </div>
-                            
+
                             <!-- TABLA PARA AGREGAR NUEVOS TELEFONOS SIN SALIR DEL MODAL-->
                             <div id="content">
                                 <label>Lista de telefonos temporal</label>
@@ -371,7 +371,7 @@
         function OnSuccessTelefono(data) {
             var a = $('data').d;
             cont++;
-            var fila = '<tr class="selected" id="fila' + cont + '"><td>'+cont+'</td><td>'+data.d+'</td></tr>';
+            var fila = '<tr class="selected" id="fila' + cont + '"><td>' + cont + '</td><td>' + data.d + '</td></tr>';
             $('#tabla').append(fila);
         };
     </script>
