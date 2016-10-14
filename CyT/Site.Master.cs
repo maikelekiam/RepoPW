@@ -68,7 +68,10 @@ namespace CyT
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["userlogin"] == null)
+            {
+               Response.Redirect("Login.aspx");
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

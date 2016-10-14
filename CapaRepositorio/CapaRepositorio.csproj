@@ -65,6 +65,7 @@
     <Compile Include="TematicaRepo.cs" />
     <Compile Include="TipoDestinatarioRepo.cs" />
     <Compile Include="TipoFinanciamientoRepo.cs" />
+    <Compile Include="UsuarioRepo.cs" />
     <Compile Include="UvtRepo.cs" />
     <Compile Include="ViaComunicacionRepo.cs" />
   </ItemGroup>

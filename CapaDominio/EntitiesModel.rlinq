@@ -735,6 +735,25 @@
           </orm:reference>
         </orm:field>
       </orm:class>
+      <orm:class name="Usuario" uniqueId="74876c75-cba0-4585-b757-85ad9c321514">
+        <orm:table name="Usuario" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="IdUsuario" />
+          </orm:key-generator>
+          <orm:single-field field-name="idUsuario" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="idUsuario" property="IdUsuario" behavior="readwrite" uniqueId="e2eb632d-5493-4021-bcc0-85e9434dce0d" type="System.Int32">
+          <orm:column name="idUsuario" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="usuario1" property="Usuario1" behavior="readwrite" uniqueId="42e4464b-68b4-45b7-a511-cda23bb83d6c" type="System.String">
+          <orm:column name="usuario" sql-type="varchar" nullable="true" length="20" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="password" property="Password" behavior="readwrite" uniqueId="70f65f8c-69ad-4dab-9323-39080a2b6fd4" type="System.String">
+          <orm:column name="password" sql-type="varchar" nullable="true" length="20" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+      </orm:class>
     </orm:namespace>
     <orm:schema schema="">
       <orm:table name="ViaComunicacion">
@@ -952,6 +971,11 @@
           <orm:column name="idViaComunicacion" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:constraint>
       </orm:table>
+      <orm:table name="Usuario">
+        <orm:column name="idUsuario" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="usuario" sql-type="varchar" nullable="true" length="20" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="password" sql-type="varchar" nullable="true" length="20" scale="0" ado-type="StringVariableLength" />
+      </orm:table>
     </orm:schema>
     <orm:relational-naming-settings>
       <orm:remove-leading-underscore>False</orm:remove-leading-underscore>
@@ -961,7 +985,7 @@
   </orm:orm>
   <ModelSettings xmlns="">
     <AppConfigConnectionPropertyName>CyTConnection</AppConfigConnectionPropertyName>
-    <AppConfigConnectionString>data source=MAIKELEKIAM-PC\SQLEXPRESS;initial catalog=CyT;integrated security=True</AppConfigConnectionString>
+    <AppConfigConnectionString>data source=DIEGO-HP\SQLEXPRESS2;initial catalog=CyT;integrated security=True</AppConfigConnectionString>
     <NamingSettings>
       <ClassRules>
         <CaseMode>PascalCase</CaseMode>
@@ -1644,6 +1668,11 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
+    <DomainClass Id="74876c75-cba0-4585-b757-85ad9c321514" name="Usuario" namespace="CapaDominio" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="IdUsuario">
+      <Property Id="e2eb632d-5493-4021-bcc0-85e9434dce0d" name="IdUsuario" type="Int32" label="IdUsuario : Int32" kind="Persistent" identity="true" fieldName="idUsuario" />
+      <Property Id="70f65f8c-69ad-4dab-9323-39080a2b6fd4" name="Password" label="Password : String" kind="Persistent" fieldName="password" />
+      <Property Id="42e4464b-68b4-45b7-a511-cda23bb83d6c" name="Usuario1" label="Usuario1 : String" kind="Persistent" fieldName="usuario1" />
+    </DomainClass>
   </Types>
   <domainContext>
     <domainModelHasDomainContext Id="9bcf097d-1e9e-442b-bae2-9b153a097958">
@@ -1670,6 +1699,7 @@
         <entitySetProperty name="Convocatoria" namespace="CapaDominio" type="Convocatorium" label="Convocatoria : IQueryable&lt;CapaDominio.Convocatorium&gt;" />
         <entitySetProperty name="AreaProductivas" namespace="CapaDominio" type="AreaProductiva" label="AreaProductivas : IQueryable&lt;CapaDominio.AreaProductiva&gt;" />
         <entitySetProperty name="Actuacions" namespace="CapaDominio" type="Actuacion" label="Actuacions : IQueryable&lt;CapaDominio.Actuacion&gt;" />
+        <entitySetProperty name="Usuarios" namespace="CapaDominio" type="Usuario" label="Usuarios : IQueryable&lt;CapaDominio.Usuario&gt;" />
       </domainContainer>
     </domainModelHasDomainContext>
   </domainContext>
