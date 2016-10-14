@@ -12,55 +12,55 @@
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblApellido" runat="server" Text="APELLIDO" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblTipoDocumento" runat="server" Text="Tipo de Documento" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtTipoDocumento" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtTipoDocumento" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblDocumento" runat="server" Text="Documento" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtDocumento" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtDocumento" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblCuil" runat="server" Text="CUIL/CUIT" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtCuil" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtCuil" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblFechaNacimiento" runat="server" Text="FECHA DE NACIMIENTO" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtFechaNacimiento" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblDireccion" runat="server" Text="DIRECCION" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblLocalidad" runat="server" Text="LOCALIDAD" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtLocalidad" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtLocalidad" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblEmpresa" runat="server" Text="EMPRESA" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtEmpresa" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtEmpresa" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
 

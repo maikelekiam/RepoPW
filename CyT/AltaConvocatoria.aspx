@@ -11,8 +11,7 @@
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"
-                        onkeypress="return validarSoloLetrasYNumeros(event);"></asp:TextBox>
+                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
