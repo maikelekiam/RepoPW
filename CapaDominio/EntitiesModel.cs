@@ -226,6 +226,14 @@ namespace CapaDominio
 			}
 		}
 		
+		public IQueryable<Usuario> Usuarios 
+		{
+			get
+			{
+				return this.GetAll<Usuario>();
+			}
+		}
+		
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
@@ -333,6 +341,10 @@ namespace CapaDominio
 			get;
 		}
 		IQueryable<Actuacion> Actuacions
+		{
+			get;
+		}
+		IQueryable<Usuario> Usuarios
 		{
 			get;
 		}

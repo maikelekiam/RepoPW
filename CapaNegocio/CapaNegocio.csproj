@@ -65,6 +65,7 @@
     <Compile Include="TematicaNego.cs" />
     <Compile Include="TipoDestinatarioNego.cs" />
     <Compile Include="TipoFinanciamientoNego.cs" />
+    <Compile Include="UsuarioNego.cs" />
     <Compile Include="UvtNego.cs" />
     <Compile Include="ViaComunicacionNego.cs" />
   </ItemGroup>

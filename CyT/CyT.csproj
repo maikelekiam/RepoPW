@@ -190,6 +190,7 @@
     <Content Include="ListarConvocatoriasPublicas.aspx" />
     <Content Include="ListarInteresados.aspx" />
     <Content Include="ListarProyectosEnEjecucion.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="MostrarBeneficiario.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -201,12 +202,11 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Site.Mobile.Master" />
-    <None Include="Properties\PublishProfiles\Profile_mk.pubxml" />
+    <None Include="Properties\PublishProfiles\cyt.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -354,6 +354,13 @@
     </Compile>
     <Compile Include="ListarProyectosEnEjecucion.aspx.designer.cs">
       <DependentUpon>ListarProyectosEnEjecucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="MostrarBeneficiario.aspx.cs">
