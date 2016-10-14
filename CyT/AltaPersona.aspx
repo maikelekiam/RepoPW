@@ -38,7 +38,7 @@
                 </div>
                 <asp:Label ID="lblCuil" runat="server" Text="CUIL/CUIT" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:TextBox ID="txtCuil" runat="server" placeholder="Formato: xx-xxxxxxxx-x" CssClass="form-control" MaxLength="13"
+                    <asp:TextBox ID="txtCuil" runat="server" CssClass="form-control" MaxLength="13"
                         onkeypress="return validarSoloNumerosYGuion(event);"></asp:TextBox>
                 </div>
 
