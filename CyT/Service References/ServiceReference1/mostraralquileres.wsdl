@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://alquileres.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://alquileres.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://alquileres.org/">
+      <s:element name="TodasLasPropiedades">
+        <s:complexType />
+      </s:element>
+      <s:element name="TodasLasPropiedadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TodasLasPropiedadesResult" type="tns:ArrayOfProcedimientoListarPropiedades2ResultSet0" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProcedimientoListarPropiedades2ResultSet0">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProcedimientoListarPropiedades2ResultSet0" nillable="true" type="tns:ProcedimientoListarPropiedades2ResultSet0" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProcedimientoListarPropiedades2ResultSet0">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NombreUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombrePropiedad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreBarrio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Baños" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Habitaciones" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Garage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TodasLasPropiedadesSoapIn">
+    <wsdl:part name="parameters" element="tns:TodasLasPropiedades" />
+  </wsdl:message>
+  <wsdl:message name="TodasLasPropiedadesSoapOut">
+    <wsdl:part name="parameters" element="tns:TodasLasPropiedadesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MostrarAlquileresSoap">
+    <wsdl:operation name="TodasLasPropiedades">
+      <wsdl:input message="tns:TodasLasPropiedadesSoapIn" />
+      <wsdl:output message="tns:TodasLasPropiedadesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MostrarAlquileresSoap" type="tns:MostrarAlquileresSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TodasLasPropiedades">
+      <soap:operation soapAction="http://alquileres.org/TodasLasPropiedades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MostrarAlquileresSoap12" type="tns:MostrarAlquileresSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TodasLasPropiedades">
+      <soap12:operation soapAction="http://alquileres.org/TodasLasPropiedades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MostrarAlquileres">
+    <wsdl:port name="MostrarAlquileresSoap" binding="tns:MostrarAlquileresSoap">
+      <soap:address location="http://192.168.200.29/ventas/mostraralquileres.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MostrarAlquileresSoap12" binding="tns:MostrarAlquileresSoap12">
+      <soap12:address location="http://192.168.200.29/ventas/mostraralquileres.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

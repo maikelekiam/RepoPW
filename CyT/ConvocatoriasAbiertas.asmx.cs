@@ -30,7 +30,12 @@ namespace CyT
                         
         }
 
+        [WebMethod]
+        public List<Convocatorium> MostrarConvocatoriasPorModalidad(Modalidad modalidad)
+        {
+            return convocatoriaNego.MostrarConvocatoriasPorModalidad(modalidad).ToList();
 
+        }
 
 
         //[WebMethod]
