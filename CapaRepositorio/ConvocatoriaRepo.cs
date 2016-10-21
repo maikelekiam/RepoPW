@@ -38,6 +38,16 @@ namespace CapaRepositorio
             }
         }
 
+        public IEnumerable<Convocatorium> MostrarConvocatoriasAbiertas()
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<Convocatorium> result = modeloDeDominio.Convocatoria.Where(c => c.IsAbierta==1).ToList();
+                return result;
+            }
+        }
+
+
         public void ActualizarConvocatoria(Convocatorium convocatoria)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())

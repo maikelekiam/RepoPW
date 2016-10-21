@@ -26,6 +26,11 @@ namespace CapaNegocio
             return convocatoriaRepo.MostrarConvocatoriasPorModalidad(modalidad);
         }
 
+        public IEnumerable<Convocatorium> MostrarConvocatoriasAbiertas()
+        {
+            return convocatoriaRepo.MostrarConvocatoriasAbiertas();
+        }
+
         public void ActualizarConvocatoria(Convocatorium convocatoria)
         {
             convocatoriaRepo.ActualizarConvocatoria(convocatoria);

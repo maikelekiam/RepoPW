@@ -169,6 +169,7 @@
     <Content Include="AltaPersona.aspx" />
     <Content Include="AltaProyecto.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="ConvocatoriasAbiertas.asmx" />
     <Content Include="css\bootstrap-datepicker.css" />
     <Content Include="css\bootstrap-select.css" />
     <Content Include="css\bootstrap.css" />
@@ -301,6 +302,10 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConvocatoriasAbiertas.asmx.cs">
+      <DependentUpon>ConvocatoriasAbiertas.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
