@@ -171,6 +171,7 @@
     <Content Include="AltaFondo.aspx" />
     <Content Include="AltaPersona.aspx" />
     <Content Include="AltaProyecto.aspx" />
+    <Content Include="colo.asmx" />
     <Content Include="Contact.aspx" />
     <Content Include="ConvocatoriasAbiertas.asmx" />
     <Content Include="css\bootstrap-datepicker.css" />
@@ -224,6 +225,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <None Include="Web References\AlquileresWebService\mostraralquileres.disco" />
+    <None Include="Web References\localhost\convocatoriasabiertas.disco" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
@@ -235,6 +237,14 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Web References\AlquileresWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\localhost\convocatoriasabiertas.wsdl" />
+    <Content Include="Web References\localhost\Convocatorium.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\localhost\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
@@ -333,6 +343,10 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="colo.asmx.cs">
+      <DependentUpon>colo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -450,6 +464,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\localhost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -484,6 +503,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>CyT_AlquileresWebService_MostrarAlquileres</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/cyt/convocatoriasabiertas.asmx%3fop=MostrarConvocatoriasAbiertas">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhost\</RelPath>
+      <UpdateFromURL>http://localhost/cyt/convocatoriasabiertas.asmx%3fop=MostrarConvocatoriasAbiertas</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CyT_localhost_ConvocatoriasAbiertas</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>

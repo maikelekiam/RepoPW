@@ -5,5 +5,8 @@
     <Setting Name="CyT_AlquileresWebService_MostrarAlquileres" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://192.168.200.29/ventas/mostraralquileres.asmx</Value>
     </Setting>
+    <Setting Name="CyT_localhost_ConvocatoriasAbiertas" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/cyt/convocatoriasabiertas.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

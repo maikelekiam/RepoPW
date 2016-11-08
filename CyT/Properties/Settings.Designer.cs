@@ -32,5 +32,15 @@ namespace CyT.Properties {
                 return ((string)(this["CyT_AlquileresWebService_MostrarAlquileres"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/cyt/convocatoriasabiertas.asmx")]
+        public string CyT_localhost_ConvocatoriasAbiertas {
+            get {
+                return ((string)(this["CyT_localhost_ConvocatoriasAbiertas"]));
+            }
+        }
     }
 }

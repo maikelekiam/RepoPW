@@ -21,6 +21,7 @@ namespace CyT
     public class ConvocatoriasAbiertas : System.Web.Services.WebService
     {
         ConvocatoriaNego convocatoriaNego = new ConvocatoriaNego();
+        ModalidadNego modalidadNego = new ModalidadNego();
 
 
         [WebMethod]
@@ -31,9 +32,10 @@ namespace CyT
         }
 
         [WebMethod]
-        public List<Convocatorium> MostrarConvocatoriasPorModalidad(Modalidad modalidad)
+        public List<Convocatorium> MostrarConvocatoriasPorModalidad(String modalidad)
         {
-            return convocatoriaNego.MostrarConvocatoriasPorModalidad(modalidad).ToList();
+            
+            return convocatoriaNego.MostrarConvocatoriasPorModalidad(modalidadNego.ObtenerModalidadPorNombre(modalidad)).ToList();
 
         }
 
