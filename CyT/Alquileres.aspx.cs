@@ -12,14 +12,32 @@ namespace CyT
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            AlquileresWebService.MostrarAlquileres alq = new AlquileresWebService.MostrarAlquileres();
+            //AlquileresWebService.MostrarAlquileres alq = new AlquileresWebService.MostrarAlquileres();
+            //localhost.ConvocatoriasAbiertas otro = new localhost.ConvocatoriasAbiertas();
+
+            //dgvAlquiler.DataSource = alq.TodasLasPropiedades().ToList();
+
+            //dgvAlquiler.DataSource = otro.MostrarConvocatoriasAbiertas().ToList();
+            
+            //dgvAlquiler.DataBind();
+
+            web_reference_01.ConvocatoriasAbiertas otrotro = new web_reference_01.ConvocatoriasAbiertas();
+
+            //dgvAlquiler.DataSource = otrotro.MostrarConvocatoriasAbiertas().ToList();
+
+            String moda;
+            moda = "publica";
 
 
-            dgvAlquiler.DataSource = alq.TodasLasPropiedades().ToList();
+            dgvAlquiler.DataSource = otrotro.MostrarConvocatoriasPorModalidad(moda).ToList();
+
+
             dgvAlquiler.DataBind();
 
 
+            
 
+            
         }
     }
 }

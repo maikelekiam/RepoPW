@@ -225,7 +225,17 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <None Include="Web References\AlquileresWebService\mostraralquileres.disco" />
+    <None Include="Web References\cpm\ConvocatoriasAbiertas.wsdl" />
+    <Content Include="Web References\cpm\Convocatorium.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\cpm\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web References\localhost\convocatoriasabiertas.disco" />
+    <None Include="Web References\web_reference_01\ConvocatoriasAbiertas.disco" />
+    <None Include="Web References\cpm\ConvocatoriasAbiertas.disco" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
@@ -245,6 +255,14 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Web References\localhost\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\web_reference_01\ConvocatoriasAbiertas.wsdl" />
+    <Content Include="Web References\web_reference_01\Convocatorium.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\web_reference_01\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
@@ -464,7 +482,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\cpm\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\localhost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\web_reference_01\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -514,6 +542,28 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>CyT_localhost_ConvocatoriasAbiertas</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:2213/ConvocatoriasAbiertas.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\web_reference_01\</RelPath>
+      <UpdateFromURL>http://localhost:2213/ConvocatoriasAbiertas.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CyT_web_reference_01_ConvocatoriasAbiertas</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:2213/ConvocatoriasAbiertas.asmx%3fop=MostrarConvocatoriasPorModalidad">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\cpm\</RelPath>
+      <UpdateFromURL>http://localhost:2213/ConvocatoriasAbiertas.asmx%3fop=MostrarConvocatoriasPorModalidad</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CyT_cpm_ConvocatoriasAbiertas</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>

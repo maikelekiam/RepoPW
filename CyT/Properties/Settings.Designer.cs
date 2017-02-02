@@ -42,5 +42,25 @@ namespace CyT.Properties {
                 return ((string)(this["CyT_localhost_ConvocatoriasAbiertas"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:2213/ConvocatoriasAbiertas.asmx")]
+        public string CyT_web_reference_01_ConvocatoriasAbiertas {
+            get {
+                return ((string)(this["CyT_web_reference_01_ConvocatoriasAbiertas"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:2213/ConvocatoriasAbiertas.asmx")]
+        public string CyT_cpm_ConvocatoriasAbiertas {
+            get {
+                return ((string)(this["CyT_cpm_ConvocatoriasAbiertas"]));
+            }
+        }
     }
 }

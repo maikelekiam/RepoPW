@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://cyt.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://cyt.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cyt.com/">
+      <s:element name="MostrarConvocatoriasAbiertas">
+        <s:complexType />
+      </s:element>
+      <s:element name="MostrarConvocatoriasAbiertasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarConvocatoriasAbiertasResult" type="tns:ArrayOfConvocatorium" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConvocatorium">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Convocatorium" nillable="true" type="tns:Convocatorium" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Convocatorium">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdConvocatoria" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Objetivo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdFondo" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anio" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoFinanciamiento" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdModalidad" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MontoTotal" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MontoProyecto" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCierre" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAbierta" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Activa" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fondo" type="tns:Fondo" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modalidad" type="tns:Modalidad" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoFinanciamiento" type="tns:TipoFinanciamiento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Fondo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdFondo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdOrigen" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Activo" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Origen" type="tns:Origen" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Origen">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdOrigen" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Modalidad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdModalidad" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoFinanciamiento">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoFinanciamiento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MostrarConvocatoriasPorModalidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modalidad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarConvocatoriasPorModalidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarConvocatoriasPorModalidadResult" type="tns:ArrayOfConvocatorium" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MostrarConvocatoriasAbiertasSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarConvocatoriasAbiertas" />
+  </wsdl:message>
+  <wsdl:message name="MostrarConvocatoriasAbiertasSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarConvocatoriasAbiertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="MostrarConvocatoriasPorModalidadSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarConvocatoriasPorModalidad" />
+  </wsdl:message>
+  <wsdl:message name="MostrarConvocatoriasPorModalidadSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarConvocatoriasPorModalidadResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConvocatoriasAbiertasSoap">
+    <wsdl:operation name="MostrarConvocatoriasAbiertas">
+      <wsdl:input message="tns:MostrarConvocatoriasAbiertasSoapIn" />
+      <wsdl:output message="tns:MostrarConvocatoriasAbiertasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarConvocatoriasPorModalidad">
+      <wsdl:input message="tns:MostrarConvocatoriasPorModalidadSoapIn" />
+      <wsdl:output message="tns:MostrarConvocatoriasPorModalidadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConvocatoriasAbiertasSoap" type="tns:ConvocatoriasAbiertasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MostrarConvocatoriasAbiertas">
+      <soap:operation soapAction="http://cyt.com/MostrarConvocatoriasAbiertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarConvocatoriasPorModalidad">
+      <soap:operation soapAction="http://cyt.com/MostrarConvocatoriasPorModalidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConvocatoriasAbiertasSoap12" type="tns:ConvocatoriasAbiertasSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MostrarConvocatoriasAbiertas">
+      <soap12:operation soapAction="http://cyt.com/MostrarConvocatoriasAbiertas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarConvocatoriasPorModalidad">
+      <soap12:operation soapAction="http://cyt.com/MostrarConvocatoriasPorModalidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConvocatoriasAbiertas">
+    <wsdl:port name="ConvocatoriasAbiertasSoap" binding="tns:ConvocatoriasAbiertasSoap">
+      <soap:address location="http://localhost:2213/ConvocatoriasAbiertas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConvocatoriasAbiertasSoap12" binding="tns:ConvocatoriasAbiertasSoap12">
+      <soap12:address location="http://localhost:2213/ConvocatoriasAbiertas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
