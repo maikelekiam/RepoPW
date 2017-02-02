@@ -35,7 +35,7 @@ namespace CapaRepositorio
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                IEnumerable<Actuacion> result = modeloDeDominio.Actuacions.Where(c => c.IdPersona==id).ToList();
+                IEnumerable<Actuacion> result = modeloDeDominio.Actuacions.Where(c => c.IdPersona==id).OrderBy(c => c.Fecha).ToList();
 
                 return modeloDeDominio.CreateDetachedCopy(result);
             }

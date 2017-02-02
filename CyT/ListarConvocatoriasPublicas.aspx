@@ -14,22 +14,22 @@
                         AutoGenerateSelectButton="false"
                         OnRowDataBound="dgvConvocatoria_RowDataBound">
                         <Columns>
-                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Nombre Convocatoria" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Descripcion" DataField="descripcion" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Objetivo" DataField="objetivo" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Justify" />
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Descripcion" DataField="descripcion" ItemStyle-HorizontalAlign="Justify" />
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Objetivo" DataField="objetivo" ItemStyle-HorizontalAlign="Justify" />
                             <asp:TemplateField HeaderStyle-BackColor="#cccccc" HeaderText="Fondo">
                                     <ItemTemplate>
                                         <asp:Label ID="Label1" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Fondo.Nombre") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Año" DataField="anio" ItemStyle-HorizontalAlign="Center" />
-                            <asp:TemplateField HeaderStyle-BackColor="#cccccc" HeaderText="Tipo Financiamiento">
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Año" DataField="anio" ItemStyle-HorizontalAlign="Left" />
+                            <asp:TemplateField HeaderStyle-BackColor="#cccccc" HeaderText="Tipo">
                                     <ItemTemplate>
                                         <asp:Label ID="Label1" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "TipoFinanciamiento.Nombre") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             
-                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Estado" DataField="isAbierta" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Estado" DataField="isAbierta" ItemStyle-HorizontalAlign="Left" />
 
                         </Columns>
                         <SelectedRowStyle BackColor="Azure" />
