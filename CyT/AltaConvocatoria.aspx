@@ -3,27 +3,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <asp:Panel ID="Panel1" runat="server">
-            <br />
             <div class="panel-heading">
-                <h2>Formulario ALTA CONVOCATORIA</h2>
+                <h3>Formulario de ALTA Convocatoria</h3>
             </div>
-            <br />
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"></asp:Label>
-                <div class="col-md-4">
-                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                <div class="col-md-8">
+                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="1"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblDescripcion" runat="server" Text="DESCRIPCION" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-8">
-                    <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="2"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
                 <asp:Label ID="lblObjetivo" runat="server" Text="OBJETIVO" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-8">
-                    <asp:TextBox ID="txtObjetivo" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtObjetivo" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="2"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
@@ -48,7 +46,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label ID="lblTipoFinanciamiento" runat="server" Text="TIPO DE FINANCIAMIENTO" CssClass="col-md-2 control-label"> </asp:Label>
+                <asp:Label ID="lblTipoFinanciamiento" runat="server" Text="TIPO FINANCIAMIENTO" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4 ">
                     <asp:DropDownList ID="ddlTipoFinanciamiento" runat="server"
                         Width="100%"
@@ -125,7 +123,7 @@
 
             </div>
             <div class="form-group">
-                <asp:Label ID="lblIsAbierta" runat="server" Text="ABIERTA" CssClass="col-md-2 control-label"></asp:Label>
+                <asp:Label ID="lblIsAbierta" runat="server" Text="ESTA ABIERTA" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-1">
                     <asp:CheckBox ID="chkIsAbierta" runat="server" />
                 </div>
@@ -199,9 +197,8 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <asp:Button ID="btnGuardarConvocatoria" runat="server" Text="Guardar Convocatoria" CssClass="btn btn-primary btn-lg" OnClick="btnGuardarConvocatoria_Click" />
-                    <asp:Button ID="btnActualizarConvocatoria" runat="server" Text="Actualizar Convocatoria" CssClass="btn btn-primary btn-lg" OnClick="btnActualizarConvocatoria_Click" />
-
+                    <asp:Button ID="btnGuardarConvocatoria" runat="server" Text="Guardar Convocatoria" CssClass="btn btn-success" OnClick="btnGuardarConvocatoria_Click" />
+                    <asp:Button ID="btnActualizarConvocatoria" runat="server" Text="Actualizar Convocatoria" CssClass="btn btn-success" OnClick="btnActualizarConvocatoria_Click" />
                 </div>
             </div>
 
@@ -234,4 +231,3 @@
     </div>
 
 </asp:Content>
-

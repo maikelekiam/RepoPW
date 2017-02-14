@@ -1,35 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaFondo.aspx.cs" Inherits="CyT.AltaFondo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
+    <div class="container-fluid">
         <asp:Panel ID="Panel1" runat="server">
-            <br />
             <div class="panel-heading">
-                <h2>Fondos</h2>
+                <h3>Formulario de ALTA Fondo</h3>
             </div>
-            <br />
-            <br />
-            <%--<div class="form-group">
-                <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
-                    Nuevo Fondo
-                </button>
-            </div>--%>
+
 
             <div class="form-group">
-                <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"> </asp:Label>
-                <div class="col-md-6 ">
+                <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 col-xs-6 control-label"> </asp:Label>
+                <div class="col-md-6 col-xs-12 ">
                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox><br />
                 </div>
             </div>
 
             <div class="form-group">
-                <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion" CssClass="col-md-2 control-label"> </asp:Label>
+                <asp:Label ID="lblDescripcion" runat="server" Text="DESCRIPCION" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-6 ">
-                    <asp:TextBox ID="txtDecripcion" runat="server" class="form-control"></asp:TextBox><br />
+                    <asp:TextBox ID="txtDecripcion" runat="server" class="form-control" TextMode="MultiLine" Rows="2"></asp:TextBox><br />
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label ID="lblOrigen" runat="server" Text="Origen" CssClass="col-md-2 control-label"> </asp:Label>
+                <asp:Label ID="lblOrigen" runat="server" Text="ORIGEN" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4 ">
                     <asp:DropDownList ID="ddlOrigen" runat="server"
                         Width="280"

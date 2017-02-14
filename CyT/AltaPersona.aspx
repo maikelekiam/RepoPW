@@ -3,12 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <asp:Panel ID="Panel1" runat="server">
-            <br />
             <div class="panel-heading">
-                <h2>Formulario ALTA PERSONA</h2>
+                <h3>Formulario de ALTA Persona</h3>
             </div>
             <!--NOMBRE + APELLIDO-->
-            <br />
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
@@ -22,7 +20,7 @@
                 </div>
             </div>
 
-            <!--TIPO DOCUMENTO + CUIL-->
+            <!--TIPO DOCUMENTO + DNI-->
             <div class="form-group">
                 <asp:Label ID="lblTipoDocumento" runat="server" Text="TIPO DE DOCUMENTO" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
@@ -36,19 +34,18 @@
                         <asp:ListItem Value="CI">CI</asp:ListItem>
                     </asp:DropDownList>
                 </div>
-                <asp:Label ID="lblCuil" runat="server" Text="CUIL/CUIT" CssClass="col-md-2 control-label"></asp:Label>
-                <div class="col-md-4">
-                    <asp:TextBox ID="txtCuil" runat="server" CssClass="form-control" MaxLength="13"
-                        onkeypress="return validarSoloNumerosYGuion(event);"></asp:TextBox>
-                </div>
-
-            </div>
-            <!--DOCUMENTO + FECHA NACIMIENTO-->
-            <div class="form-group">
                 <asp:Label ID="lblDocumento" runat="server" Text="DOCUMENTO" class="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
                     <asp:TextBox ID="txtDocumento" runat="server" class="form-control"
                         onkeypress="return validarSoloNumeros(event);" MaxLength="8"></asp:TextBox>
+                </div>
+            </div>
+            <!--CUIL + FECHA NACIMIENTO-->
+            <div class="form-group">
+                <asp:Label ID="lblCuil" runat="server" Text="CUIL/CUIT" CssClass="col-md-2 control-label"></asp:Label>
+                <div class="col-md-4">
+                    <asp:TextBox ID="txtCuil" runat="server" CssClass="form-control" MaxLength="13"
+                        onkeypress="return validarSoloNumerosYGuion(event);"></asp:TextBox>
                 </div>
                 <asp:Label ID="lblFechaNacimiento" runat="server" Text="FECHA DE NACIMIENTO" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-3">
@@ -89,10 +86,9 @@
                     </asp:DropDownList>
                 </div>
             </div>
-
             <!--LISTA DE TELEFONOS-->
             <div class="form-group">
-                <asp:Label ID="lblTelefono" runat="server" Text="TELEFONO" CssClass="col-md-2 control-label"> </asp:Label>
+                <asp:Label ID="lblTelefono" runat="server" Text="TELEFONOS" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4">
                     <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#modalTelefono">Agregar Telefonos</button>
                 </div>
@@ -125,7 +121,7 @@
                                 </asp:GridView>
                                 <br />
                                 <asp:Label ID="lblListaTelefonosModal" runat="server" Text="Nuevo Telefono" CssClass="col-md-4 control-label"> </asp:Label>
-                                <div class="col-md-8">
+                                <div class="col-md-6">
                                     <asp:TextBox ID="txtTelefonoModal" runat="server" CssClass="form-control"
                                         onkeypress="return validarTelefonos(event);"></asp:TextBox><br />
                                     <input id="btnAgregarTelefono" type="button" value="Click para agregar a la lista temporal" class="alert-info" />
@@ -157,7 +153,7 @@
 
 
                 <%-- GRIDVIEW PARA VER LA LISTA DE TELEFONOS EN EL FORMULARIO          --%>
-                <div class="col-md-5 col-md-offset-1">
+                <div class="col-md-6 col-md-offset-0">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h2 class="panel-title">Lista de Telefonos</h2>
@@ -274,7 +270,7 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField>
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="btnEliminarCorreoModal" runat="server" Text="<i class='glyphicon glyphicon-trash'></i> Eliminar"
+                                            <asp:LinkButton ID="btnEliminarCorreoModal" runat="server" Text="<i class='glyphicon glyphicon-trash'></i>"
                                                 CssClass="btn btn-danger btn-xs" CommandName="Add" CommandArgument='<%# ((GridViewRow)Container).RowIndex %>' OnCommand="btnEliminarCorreoModal_Command"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>

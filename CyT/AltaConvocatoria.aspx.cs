@@ -18,12 +18,12 @@ namespace CyT
         private TipoDestinatarioNego tipoDestinatarioNego = new TipoDestinatarioNego();
         static List<TipoDestinatario> tiposDestinatarios = new List<TipoDestinatario>();
         private ListaTipoDestinatarioNego listaTipoDestinatarioNego = new ListaTipoDestinatarioNego();
-        static int idConv= new int();
+        static int idConv = new int();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                
+
                 LlenarListaFondos();
                 LlenarListaModalidad();
                 LlenarListaModalidad();
@@ -73,7 +73,7 @@ namespace CyT
             ddlTipoDestinatario.DataSource = tipoDestinatarioNego.MostrarTipoDestinatarios().ToList();
             ddlTipoDestinatario.DataValueField = "idTipoDestinatario";
             ddlTipoDestinatario.DataBind();
-            
+
         }
 
 
@@ -83,33 +83,36 @@ namespace CyT
             dgvConvocatoria.DataBind();
         }
 
-        
+
 
         private void GuardarConvocatoria()
         {
-            Convocatorium convocatoria=new Convocatorium();
+            Convocatorium convocatoria = new Convocatorium();
             FondoNego fondoNego = new FondoNego();
-            
-            convocatoria.Nombre=txtNombre.Text;
-            convocatoria.Descripcion=txtDescripcion.Text;
-            convocatoria.Objetivo=txtObjetivo.Text;
+
+            convocatoria.Nombre = txtNombre.Text;
+            convocatoria.Descripcion = txtDescripcion.Text;
+            convocatoria.Objetivo = txtObjetivo.Text;
             convocatoria.Anio = Int32.Parse(txtAnio.Text);
             convocatoria.IdFondo = Int32.Parse(ddlFondo.SelectedValue);
             convocatoria.IdModalidad = Int32.Parse(ddlModalidad.SelectedValue);
             convocatoria.IdTipoFinanciamiento = Int32.Parse(ddlTipoFinanciamiento.SelectedValue);
             convocatoria.FechaCierre = Convert.ToDateTime(txtFechaCierre.Text);
             convocatoria.FechaInicio = Convert.ToDateTime(txtFechaInicio.Text);
+
+            //convocatoria.IsAbierta = Int32.Parse(chkIsAbierta.Text);
+
             if (chkIsAbierta.Checked)
             {
                 convocatoria.IsAbierta = 1;
             }
-            else
+            else if (!chkIsAbierta.Checked)
             {
                 convocatoria.IsAbierta = 0;
-            }            
+            }
             convocatoria.MontoProyecto = Convert.ToDecimal(txtMontoProyecto.Text);
-            convocatoria.MontoTotal = Convert.ToDecimal(txtMontoTotal.Text);            
-            int idConvocatoria=convocatoriaNego.GuardarConvocatoria(convocatoria);
+            convocatoria.MontoTotal = Convert.ToDecimal(txtMontoTotal.Text);
+            int idConvocatoria = convocatoriaNego.GuardarConvocatoria(convocatoria);
             foreach (TipoDestinatario t in tiposDestinatarios)
             {
                 ListaTipoDestinatario listaTipoDestinatario = new ListaTipoDestinatario();
@@ -121,12 +124,12 @@ namespace CyT
 
         private void LimpiarFormulario()
         {
-            txtNombre.Text=null;
-            txtDescripcion.Text=null;
-            txtObjetivo.Text=null;
-            txtAnio.Text=null;
-            ddlFondo.SelectedIndex=0;
-            ddlModalidad.SelectedIndex=0;
+            txtNombre.Text = null;
+            txtDescripcion.Text = null;
+            txtObjetivo.Text = null;
+            txtAnio.Text = null;
+            ddlFondo.SelectedIndex = 0;
+            ddlModalidad.SelectedIndex = 0;
             ddlTipoFinanciamiento.SelectedIndex = 0;
             txtFechaInicio.Text = null;
             txtFechaCierre.Text = null;
@@ -135,12 +138,13 @@ namespace CyT
             txtMontoTotal.Text = null;
             tiposDestinatarios.Clear();
             MostrarListaDestinatarios();
+            LlenarGrillaConvocatorias();
         }
 
         protected void btnModalTipoDestinatarioGuardar_Click(object sender, EventArgs e)
         {
-            
-            TipoDestinatario item=tipoDestinatarioNego.ObtenerTipoDestinatario(Int32.Parse(ddlTipoDestinatario.SelectedValue));
+
+            TipoDestinatario item = tipoDestinatarioNego.ObtenerTipoDestinatario(Int32.Parse(ddlTipoDestinatario.SelectedValue));
             tiposDestinatarios.Add(item);
             MostrarListaDestinatarios();
         }
@@ -189,7 +193,7 @@ namespace CyT
 
         protected void dgvConvocatoria_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-            
+
             idConv = Int32.Parse(dgvConvocatoria.DataKeys[e.NewSelectedIndex].Value.ToString());
             Convocatorium conv = convocatoriaNego.ObtenerConvocatoria(idConv);
             txtAnio.Text = conv.Anio.ToString();
@@ -203,6 +207,17 @@ namespace CyT
             ddlFondo.SelectedValue = conv.IdFondo.ToString();
             ddlModalidad.SelectedValue = conv.IdModalidad.ToString();
             ddlTipoFinanciamiento.SelectedValue = conv.IdTipoFinanciamiento.ToString();
+
+            if (conv.IsAbierta.Value == 1)
+            {
+                chkIsAbierta.Checked = true;
+            }
+            else if (conv.IsAbierta.Value == 0)
+            {
+                chkIsAbierta.Checked = false;
+            }
+
+
             foreach (ListaTipoDestinatario ltd in conv.ListaTipoDestinatarios)
             {
                 tiposDestinatarios.Add(ltd.TipoDestinatario);
@@ -226,11 +241,12 @@ namespace CyT
             convocatoria.IdTipoFinanciamiento = Int32.Parse(ddlTipoFinanciamiento.SelectedValue);
             convocatoria.FechaCierre = Convert.ToDateTime(txtFechaCierre.Text);
             convocatoria.FechaInicio = Convert.ToDateTime(txtFechaInicio.Text);
-            if (chkIsAbierta.Checked)
+
+            if (chkIsAbierta.Checked == true)
             {
                 convocatoria.IsAbierta = 1;
             }
-            else
+            else if (chkIsAbierta.Checked == false)
             {
                 convocatoria.IsAbierta = 0;
             }
@@ -248,6 +264,7 @@ namespace CyT
             btnGuardarConvocatoria.Visible = true;
             btnActualizarConvocatoria.Visible = false;
             LimpiarFormulario();
+
         }
     }
 }

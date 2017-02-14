@@ -1,16 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaActuacion.aspx.cs" Inherits="CyT.AltaActuacion" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
+    <div class="container-fluid">
         <asp:Panel ID="Panel1" runat="server">
-            <br />
             <div class="panel-heading">
-                <h2>Formulario ALTA ACTUACION</h2>
+                <h3>Formulario de ALTA Actuacion</h3>
             </div>
             <!--PERSONA QUE REALIZA LA ACTUACION-->
+            <br />
+            <asp:Label ID="lblPersonaActuacion" runat="server" Text="INTERESADO" CssClass="col-md-2 control-label"></asp:Label>
             <div class="form-group">
-                <asp:Label ID="lblPersonaSeleccionada" runat="server" Text="PERSONA SELECCIONADA" CssClass="col-md-2 control-label"> </asp:Label>
-                <asp:Label ID="lblPersonaSeleccionadaDeLaGrilla" runat="server" Text="Seleccione una persona de la grilla" CssClass="col-md-4 control-label table-bordered" BackColor="Green" ForeColor="White" Font-Bold="false"> </asp:Label>
+                <asp:Label ID="lblPersonaSeleccionadaDeLaGrilla" runat="server" Text="Seleccione Persona de la Grilla" Font-Size="Large" BorderStyle="None" CssClass="col-md-4 control-label table-bordered" ForeColor="Black" Font-Bold="false"> </asp:Label>
             </div>
             <!--FECHA DE LA ACTUACION-->
             <div class="form-group">
@@ -163,7 +163,7 @@
                         CssClass="table table-hover table-bordered" BorderWidth="3px">
                         <Columns>
                             <asp:BoundField HeaderText="IdActuacion" DataField="IdActuacion" />
-                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Fecha de la Actuacion" DataField="fecha"
+                            <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Fecha" DataField="fecha"
                                 DataFormatString="{0:d}" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="50" HeaderStyle-Width="200" />
                             <asp:BoundField HeaderStyle-BackColor="#cccccc" HeaderText="Detalle" DataField="detalle"
                                 ItemStyle-HorizontalAlign="Justify" ItemStyle-Width="400" HeaderStyle-Width="200" />
@@ -204,7 +204,7 @@
                             <asp:BoundField HeaderText="Activo" DataField="activo" ItemStyle-HorizontalAlign="Center" />
 
                         </Columns>
-                        <SelectedRowStyle BackColor="Green" ForeColor="White" Font-Bold="true" />
+                        <SelectedRowStyle BackColor="#ffff66" ForeColor="Black" Font-Bold="true" />
                     </asp:GridView>
                 </div>
             </div>

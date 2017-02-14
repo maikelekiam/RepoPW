@@ -3,16 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <asp:Panel ID="Panel1" runat="server">
-            <br />
             <div class="panel-heading">
-                <h2>Formulario ALTA PROYECTO</h2>
+                <h3>Formulario de ALTA Proyecto</h3>
             </div>
             <!--NOMBRE + EXPEDIENTE-->
             <br />
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-10">
-                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"
+                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="1"
                         onkeypress="return validarSoloLetrasYNumeros(event);"></asp:TextBox>
                 </div>
             </div>
