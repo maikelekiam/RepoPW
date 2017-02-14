@@ -6,8 +6,10 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <script src="Scripts/jquery-1.10.2.js"></script>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <%--<script src="Scripts/jquery-1.10.2.js"></script>--%>
+    <script src="js/jquery-1.12.3.js"></script>
+    <%--<link href="Content/bootstrap.css" rel="stylesheet" />--%>
+    <link href="css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server" class="form-horizontal">
@@ -21,18 +23,18 @@
                     <div class="panel-body">
                         <br />
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-3">
-                                <h1>SInfoCyT</h1>
+                            <div class="col-md-12 col-md-offset-2">
+                                <h2>Sistema CyT</h2>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-10 col-md-offset-1">
-                                <asp:TextBox ID="txtuserid" runat="server" CssClass="form-control" placeholder="Username"></asp:TextBox>
+                                <asp:TextBox ID="txtuserid" runat="server" CssClass="form-control" placeholder="Usuario"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-10 col-md-offset-1">
-                                <asp:TextBox ID="txtpassword" runat="server" CssClass="form-control" placeholder="Password"></asp:TextBox>
+                                <asp:TextBox ID="txtpassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
