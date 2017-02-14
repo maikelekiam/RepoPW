@@ -6,38 +6,26 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SInfoCyT - Sistema Informatico de Ciencia y Tecnologia</title>
+    <title>Sistema Informatico CyT</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
     <link href="css/panel-collapsible.css" rel="stylesheet" />
     <link href="css/select2.css" rel="stylesheet" />
     <link href="css/bootstrap-select.css" rel="stylesheet" />
-    
+
     <script src="js/jquery-1.12.3.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/bootstrap-hover-dropdown.js"></script>    
+    <script src="js/bootstrap-hover-dropdown.js"></script>
     <script src="js/panel-collapsible.js"></script>
     <script src="js/select2.js"></script>
     <script src="js/bootstrap-select.js"></script>
 
-
-    <%--comentario--%>
-
-    <%-- <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
-    <webopt:BundleReference runat="server" Path="~/Content/css" />--%>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-<%--    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-    </asp:ContentPlaceHolder>--%>
-
-
 
 </head>
 <body>
-    <form runat="server" id="pepe" class="form-horizontal form-control">
-
+    <form runat="server" class="form-horizontal form-control">
         <asp:ScriptManager EnablePageMethods="true" runat="server">
             <Scripts>
                 <%--Este comentarioes de Diego %>
@@ -59,16 +47,11 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">
-                        <h1>SInfoCyT</h1>
+                    <a class="navbar-brand" runat="server" href="~/Default.aspx">
+                        <h2>Sistema CyT</h2>
                     </a>
                 </div>
 
@@ -76,17 +59,12 @@
                     <div class="col-md-12">
                         <div class="text-center">
                             <div class="btn-group">
-                                <button class="btn dropdown-toggle" data-toggle="dropdown"  data-hover="dropdown">Pagina INICIO</button>
-                                
-                            </div>
-                            <div class="btn-group">
                                 <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">INTERESADOS <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/AltaPersona.aspx">Alta Interesado</a></li>
                                     <li class="divider"></li>
                                     <li><a runat="server" href="~/ListarInteresados.aspx">Listar Interesados</a></li>
                                     <li><a runat="server" href="~/ListarBeneficiarios.aspx">Listar Beneficiarios</a></li>
-                                    <li><a runat="server" href="~/Alquileres.aspx">Alquileres</a></li>
                                 </ul>
                             </div>
                             <div class="btn-group">
@@ -130,20 +108,15 @@
         </div>
 
         <div class="container body-content">
-            <br />
-            <br />
-            <br />
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>miarcamone@gmail.com</p>
-                <p>diaco80@hotmail.com</p>
-                <p>AA SOLUCIONES INFORMATICAS - <%: DateTime.Now.Year %> - Sistema Informatico de Ciencia y Tecnologia</p>
+                <p>CyT - COPADE - <%: DateTime.Now.Year %> - Sistema Informatico de Ciencia y Tecnologia</p>
             </footer>
         </div>
     </form>
-    
+
     <script>
         function validarSoloNumeros(e) {
             tecla = (document.all) ? e.keyCode : e.which;
