@@ -3,9 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <asp:Panel ID="Panel1" runat="server">
-            <br />
             <div class="panel-heading">
-                <h1>LISTA DE INTERESADOS</h1>
+                <h3>Listado de Interesados</h3>
             </div>
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
