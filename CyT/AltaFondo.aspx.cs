@@ -69,7 +69,12 @@ namespace CyT
             fondo.IdOrigen = origenNego.TraerOrigenIdSegunItem(ddlOrigen.SelectedItem.ToString());
             fondo.Activo = true;
 
-            fondoNego.GuardarFondo(fondo);
+            if ((fondo.Nombre != "") && (fondo.Descripcion != ""))
+            {
+                fondoNego.GuardarFondo(fondo);
+            }
+
+            //fondoNego.GuardarFondo(fondo);
 
             LlenarGrillaFondos();
         }
@@ -114,7 +119,7 @@ namespace CyT
             //}
             //else
             //{
-                EliminarFondo(idFondoActual);
+            EliminarFondo(idFondoActual);
             //}
         }
 
