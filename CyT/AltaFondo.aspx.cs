@@ -15,7 +15,6 @@ namespace CyT
         private OrigenNego origenNego = new OrigenNego();
         static int idFondoActual;
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -24,7 +23,6 @@ namespace CyT
                 LlenarGrillaFondos();
             }
         }
-
 
         private void LlenarListaOrigenes()
         {
@@ -35,7 +33,6 @@ namespace CyT
 
         private void LlenarGrillaFondos()
         {
-
             btnActualizarFondo.Visible = false;
             btnGuardarFondo.Visible = true;
 
@@ -50,9 +47,8 @@ namespace CyT
 
             dgvFondo.Columns[0].Visible = false;
             dgvFondo.Columns[4].Visible = false;
-
-
         }
+
         protected void btnGuardarFondo_Click(object sender, EventArgs e)
         {
             GuardarFondo();
@@ -79,7 +75,6 @@ namespace CyT
             LlenarGrillaFondos();
         }
 
-
         protected void dgvFondo_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
             btnActualizarFondo.Visible = true;
@@ -94,8 +89,8 @@ namespace CyT
             txtNombre.Text = fondoNuevo.Nombre;
             txtDecripcion.Text = fondoNuevo.Descripcion;
             ddlOrigen.SelectedValue = fondoNuevo.IdOrigen.ToString();
-
         }
+
         private string TraerOrigenSegunIdFondo(int id)
         {
             return origenNego.TraerOrigenSegunIdFondo(id);
@@ -110,17 +105,7 @@ namespace CyT
 
             Fondo fondo = fondoNego.ObtenerFondo(idFondoActual);
 
-
-            //if (fondo.Convocatoria != null)
-            //{
-            //    string script = "alert(\"No se puede eliminar Fondo.\");";
-            //    ScriptManager.RegisterStartupScript(this, GetType(),
-            //                          "ServerControlScript", script, true);
-            //}
-            //else
-            //{
-            EliminarFondo(idFondoActual);
-            //}
+            //EliminarFondo(idFondoActual);
         }
 
         private void EliminarFondo(int id)
@@ -129,7 +114,6 @@ namespace CyT
             Response.Redirect("AltaFondo.aspx");
             LlenarGrillaFondos();
         }
-
 
         protected void btnActualizarFondo_Click(object sender, EventArgs e)
         {
@@ -155,7 +139,6 @@ namespace CyT
 
             btnActualizarFondo.Visible = false;
             btnGuardarFondo.Visible = true;
-
         }
     }
 }

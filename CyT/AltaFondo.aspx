@@ -6,8 +6,6 @@
             <div class="panel-heading">
                 <h3>Formulario de ALTA Fondo</h3>
             </div>
-
-
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 col-xs-6 control-label"> </asp:Label>
                 <div class="col-md-6 col-xs-12 ">
