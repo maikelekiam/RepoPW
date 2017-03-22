@@ -63,8 +63,8 @@
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/AltaPersona.aspx">Alta Interesado</a></li>
                                     <li class="divider"></li>
-                                    <li><a runat="server" href="~/ListarInteresados.aspx">Listar Interesados</a></li>
-                                    <li><a runat="server" href="~/ListarBeneficiarios.aspx">Listar Beneficiarios</a></li>
+                                    <li><a runat="server" href="~/ListarInteresados.aspx">Lista de Interesados</a></li>
+                                    <li><a runat="server" href="~/ListarBeneficiarios.aspx">Lista de Beneficiarios</a></li>
                                 </ul>
                             </div>
                             <div class="btn-group">
