@@ -28,7 +28,7 @@
     <form runat="server" class="form-horizontal form-control">
         <asp:ScriptManager EnablePageMethods="true" runat="server">
             <Scripts>
-                <%--Este comentario es desde COPADE de Maikel%>
+                <%--Este comentario es desde COPADE otra vez de Maikel%>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
                 <%--<asp:ScriptReference Name="MsAjaxBundle" />
