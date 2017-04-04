@@ -205,7 +205,7 @@ namespace CyT
             idActuacionActual = Convert.ToInt32(row.Cells[0].Text);
 
             txtFechaActuacion.Text = row.Cells[1].Text;
-            txtDetalle.Text = row.Cells[2].Text;
+            txtDetalle.Text = row.Cells[2].Text.Replace("&nbsp;", "");
             ddlViaComunicacion.Text = TraerViaComunicacion(Convert.ToInt32(row.Cells[3].Text));
             ddlTematica.Text = TraerTematica(Convert.ToInt32(row.Cells[4].Text));
         }

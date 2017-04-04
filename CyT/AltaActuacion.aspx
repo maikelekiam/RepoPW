@@ -15,7 +15,7 @@
             <!--FECHA DE LA ACTUACION-->
             <div class="form-group">
                 <asp:Label ID="lblFechaActuacion" runat="server" Text="FECHA DE ACTUACION" CssClass="col-md-2 control-label"></asp:Label>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="input-group date"
                         data-provide="datepicker"
                         data-date-format="dd/mm/yyyy"
@@ -36,7 +36,6 @@
                 <asp:Label ID="lblViaComunicacion" runat="server" Text="VIA DE COMUNICACION" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4 ">
                     <asp:DropDownList ID="ddlViaComunicacion" runat="server"
-                        Width="280"
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
                         Font-Bold="false"
@@ -52,7 +51,7 @@
 
                 <%--AGREGAR ACA EL MODAL PARA LA NUEVA VIA DE COMUNICACION--%>
                 <div class="form-group">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#modalViaComunicacion">Nueva Via de Comunicacion</button>
                     </div>
                     <!-- MODAL VIA DE COMUNICACION  -->
@@ -87,7 +86,6 @@
                 <asp:Label ID="lblTematica" runat="server" Text="TEMATICA" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4 ">
                     <asp:DropDownList ID="ddlTematica" runat="server"
-                        Width="280"
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
                         Font-Bold="false"

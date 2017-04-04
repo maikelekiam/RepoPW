@@ -22,7 +22,7 @@
 
             <!--TIPO DOCUMENTO + DNI-->
             <div class="form-group">
-                <asp:Label ID="lblTipoDocumento" runat="server" Text="TIPO DE DOCUMENTO" CssClass="col-md-2 control-label"></asp:Label>
+                <asp:Label ID="lblTipoDocumento" runat="server" Text="TIPO DOCUMENTO" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
                     <asp:DropDownList ID="ddlTipoDocumento" runat="server"
                         CssClass="selectpicker form-control show-tick"
@@ -42,13 +42,8 @@
             </div>
             <!--CUIL + FECHA NACIMIENTO-->
             <div class="form-group">
-                <asp:Label ID="lblCuil" runat="server" Text="CUIL/CUIT" CssClass="col-md-2 control-label"></asp:Label>
-                <div class="col-md-4">
-                    <asp:TextBox ID="txtCuil" runat="server" CssClass="form-control" MaxLength="13"
-                        onkeypress="return validarSoloNumerosYGuion(event);"></asp:TextBox>
-                </div>
                 <asp:Label ID="lblFechaNacimiento" runat="server" Text="FECHA DE NACIMIENTO" CssClass="col-md-2 control-label"></asp:Label>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="input-group date"
                         data-provide="datepicker"
                         data-date-format="dd/mm/yyyy"
@@ -63,6 +58,11 @@
                         </div>
                     </div>
                 </div>
+                <asp:Label ID="lblCuil" runat="server" Text="CUIL/CUIT" CssClass="col-md-2 control-label"></asp:Label>
+                <div class="col-md-4">
+                    <asp:TextBox ID="txtCuil" runat="server" CssClass="form-control" MaxLength="13"
+                        onkeypress="return validarSoloNumerosYGuion(event);"></asp:TextBox>
+                </div>
             </div>
             <!--DIRECCION + LOCALIDAD-->
             <div class="form-group">
@@ -74,7 +74,6 @@
                 <asp:Label ID="lblLocalidad" runat="server" Text="LOCALIDAD" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4 ">
                     <asp:DropDownList ID="ddlLocalidad" runat="server"
-                        Width="280"
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
                         Font-Bold="true"
@@ -331,7 +330,7 @@
                             <asp:BoundField HeaderText="Localidad" DataField="idLocalidad" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
                             <asp:BoundField HeaderText="Interesado" DataField="isInteresado" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
                             <asp:BoundField HeaderText="Beneficiario" DataField="isBeneficiario" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
-                            <asp:BoundField HeaderText="Fecha Nac" DataField="fechaNacimiento" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
+                            <asp:BoundField HeaderText="Fecha Nac" DataField="fechaNacimiento" DataFormatString="{0:d}" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
                             <asp:BoundField HeaderText="Empresa" DataField="empresa" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
                             <asp:BoundField HeaderText="Direccion" DataField="direccion" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
                             <asp:BoundField HeaderText="Cuil" DataField="cuil" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />

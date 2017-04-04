@@ -317,14 +317,15 @@ namespace CyT
         {
             idPersonaActual = Convert.ToInt32(dgvPersona.Rows[e.NewSelectedIndex].Cells[0].Text);
 
-            txtNombre.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[1].Text;
-            txtApellido.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[2].Text;
-            ddlTipoDocumento.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[3].Text;
-            txtDocumento.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[4].Text;
-            txtCuil.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[11].Text;
+            txtNombre.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[1].Text.Replace("&nbsp;", "");
+            txtApellido.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[2].Text.Replace("&nbsp;", "");
+            ddlTipoDocumento.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[3].Text.Replace("&nbsp;", "");
+            txtDocumento.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[4].Text.Replace("&nbsp;", "");
+            txtCuil.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[11].Text.Replace("&nbsp;", "");
             txtFechaNacimiento.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[8].Text;
-            txtDireccion.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[10].Text;
-            txtEmpresa.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[9].Text;
+            txtDireccion.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[10].Text.Replace("&nbsp;", "");
+            txtEmpresa.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[9].Text.Replace("&nbsp;", "");
+            txtEmpresa.Text = dgvPersona.Rows[e.NewSelectedIndex].Cells[9].Text.Replace("&nbsp;", "");
 
             if (dgvPersona.Rows[e.NewSelectedIndex].Cells[6].Text == "True") { chkIsInteresado.Checked = true; }
             else { chkIsInteresado.Checked = false; }

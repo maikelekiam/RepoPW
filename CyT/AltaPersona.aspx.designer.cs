@@ -94,24 +94,6 @@ namespace CyT {
         protected global::System.Web.UI.WebControls.TextBox txtDocumento;
         
         /// <summary>
-        /// lblCuil control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCuil;
-        
-        /// <summary>
-        /// txtCuil control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCuil;
-        
-        /// <summary>
         /// lblFechaNacimiento control.
         /// </summary>
         /// <remarks>
@@ -128,6 +110,24 @@ namespace CyT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaNacimiento;
+        
+        /// <summary>
+        /// lblCuil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCuil;
+        
+        /// <summary>
+        /// txtCuil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCuil;
         
         /// <summary>
         /// lblDireccion control.
