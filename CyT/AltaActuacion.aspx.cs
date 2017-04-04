@@ -237,5 +237,21 @@ namespace CyT
 
             btnActualizarActuacion.Visible = false;
         }
+
+        protected void dgvPersona_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            btnGuardarActuacion.Visible = true;
+            btnActualizarActuacion.Visible = false;
+
+            GridViewRow row = dgvPersona.Rows[e.NewSelectedIndex];
+
+            idPersonaActual = Convert.ToInt32(row.Cells[0].Text);
+            
+            lblPersonaSeleccionadaDeLaGrilla.Text = row.Cells[1].Text + " " + row.Cells[2].Text;
+
+            LimpiarPantalla();
+
+            MostrarActuacionSegunPersona(idPersonaActual);
+        }
     }
 }

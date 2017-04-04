@@ -314,6 +314,7 @@
             </div>
 
             <!--GRILLA PARA MOSTRAR LAS PERSONAS EN LA BASE DE DATOS-->
+            <h4>GRILLA DE PERSONAS</h4>
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
                     <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="false"

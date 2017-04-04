@@ -178,20 +178,20 @@
             </div>
 
             <!--GRILLA CON LAS PERSONAS DE LA BASE DE DATOS-->
-            <h4>TABLA DE PERSONAS</h4>
+            <h4>GRILLA DE PERSONAS</h4>
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
                     <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="false"
                         CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
                         GridLines="Both" EmptyDataText="No existen personas registradas" ShowHeaderWhenEmpty="true"
-                        AutoGenerateSelectButton="true"
-                        OnSelectedIndexChanged="dgvPersona_SelectedIndexChanged">
+                        OnSelectedIndexChanging="dgvPersona_SelectedIndexChanging"
+                        >
                         <Columns>
                             <asp:BoundField HeaderText="ID" DataField="idPersona" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Left" />
-                            <asp:BoundField HeaderText="Apellido" DataField="apellido" ItemStyle-HorizontalAlign="Left" />
-                            <asp:BoundField HeaderText="Tipo" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" />
-                            <asp:BoundField HeaderText="Documento" DataField="documento" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Nombre" HeaderStyle-BackColor="#cccccc" DataField="nombre" ItemStyle-HorizontalAlign="Left" />
+                            <asp:BoundField HeaderText="Apellido" HeaderStyle-BackColor="#cccccc" DataField="apellido" ItemStyle-HorizontalAlign="Left" />
+                            <asp:BoundField HeaderText="Tipo" HeaderStyle-BackColor="#cccccc" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" />
+                            <asp:BoundField HeaderText="Documento" HeaderStyle-BackColor="#cccccc" DataField="documento" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Localidad" DataField="idLocalidad" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Interesado" DataField="isInteresado" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Beneficiario" DataField="isBeneficiario" ItemStyle-HorizontalAlign="Center" />
@@ -200,9 +200,10 @@
                             <asp:BoundField HeaderText="Direccion" DataField="direccion" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Cuil" DataField="cuil" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Activo" DataField="activo" ItemStyle-HorizontalAlign="Center" />
+                            <asp:ButtonField Text="Seleccionar" CommandName="select" HeaderStyle-BackColor="#cccccc" />
 
                         </Columns>
-                        <SelectedRowStyle BackColor="#ffff66" ForeColor="Black" Font-Bold="true" />
+                        <SelectedRowStyle ForeColor="Black" Font-Bold="true" />
                     </asp:GridView>
                 </div>
             </div>
