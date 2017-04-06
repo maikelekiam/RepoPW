@@ -12,6 +12,7 @@ namespace CyT
     public partial class Login : System.Web.UI.Page
     {
         UsuarioNego usuarioNego = new UsuarioNego();
+        public static int? nivel;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -24,6 +25,7 @@ namespace CyT
             if (usuario != null)
             {
                 Session["userlogin"] = txtuserid.Text;
+                nivel = usuario.Nivel;
                 Response.Redirect("Default.aspx");
             }
             else

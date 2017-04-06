@@ -18,6 +18,8 @@ namespace CyT
         CorreoElectronicoNego correoElectronicoNego = new CorreoElectronicoNego();
         LocalidadNego localidadNego = new LocalidadNego();
         int idPersonaActual;
+        
+
 
         static List<string> listaTelefonosModal = new List<string>();
         static List<string> listaCorreosModal = new List<string>();
@@ -310,7 +312,13 @@ namespace CyT
 
         private void EliminarPersona(int id)
         {
-            personaNego.EliminarPersona(id);
+            if (Login.nivel == 1)
+            {
+                personaNego.EliminarPersona(id);
+            }
+            else
+            {
+            }
         }
 
         protected void dgvPersona_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)

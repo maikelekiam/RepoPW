@@ -143,7 +143,7 @@
                             <div class="modal-footer">
                                 <br />
                                 <asp:Button runat="server" ID="btnModalTelefonoSalir" Text="Salir" class="btn btn-danger" data-dismiss="modal" />
-                                <asp:Button runat="server" ID="btnModalTelefonoGuardar" Text="Guardar Lista" CssClass="btn btn-success" OnClick="btnModalTelefonoGuardar_Click" />
+                                <asp:Button runat="server" ID="btnModalTelefonoGuardar" Text="Guardar Lista" CssClass="btn btn-success" OnClick="btnModalTelefonoGuardar_Click"/>
                                 <br />
                             </div>
                         </div>
@@ -270,7 +270,7 @@
                                     <asp:TemplateField>
                                         <ItemTemplate>
                                             <asp:LinkButton ID="btnEliminarCorreoModal" runat="server" Text="<i class='glyphicon glyphicon-trash'></i>"
-                                                CssClass="btn btn-danger btn-xs" CommandName="Add" CommandArgument='<%# ((GridViewRow)Container).RowIndex %>' OnCommand="btnEliminarCorreoModal_Command"></asp:LinkButton>
+                                                CssClass="btn btn-danger btn-xs" CommandName="Add" CommandArgument='<%# ((GridViewRow)Container).RowIndex %>' OnCommand="btnEliminarCorreoModal_Command" OnClientClick="return confirm('Esta seguro que desea eliminar el registro?');"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
@@ -321,7 +321,7 @@
                         CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
                         GridLines="Both" EmptyDataText="No existen personas registradas" ShowHeaderWhenEmpty="true"
                         OnSelectedIndexChanging="dgvPersona_SelectedIndexChanging"
-                        OnRowDeleting="dgvPersona_RowDeleting">
+                        OnRowDeleting="dgvPersona_RowDeleting">                      
                         <Columns>
                             <asp:BoundField HeaderText="ID" DataField="idPersona" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
                             <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
