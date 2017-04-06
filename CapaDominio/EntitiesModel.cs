@@ -74,6 +74,14 @@ namespace CapaDominio
 			}
 		}
 		
+		public IQueryable<Usuario> Usuarios 
+		{
+			get
+			{
+				return this.GetAll<Usuario>();
+			}
+		}
+		
 		public IQueryable<TipoFinanciamiento> TipoFinanciamientos 
 		{
 			get
@@ -226,20 +234,11 @@ namespace CapaDominio
 			}
 		}
 		
-		public IQueryable<Usuario> Usuarios 
-		{
-			get
-			{
-				return this.GetAll<Usuario>();
-			}
-		}
-		
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
 			backend.Backend = "MsSql";
 			backend.ProviderName = "System.Data.SqlClient";
-			backend.Logging.MetricStoreSnapshotInterval = 0;
 		
 			CustomizeBackendConfiguration(ref backend);
 		
@@ -265,6 +264,10 @@ namespace CapaDominio
 			get;
 		}
 		IQueryable<Uvt> Uvts
+		{
+			get;
+		}
+		IQueryable<Usuario> Usuarios
 		{
 			get;
 		}
@@ -341,10 +344,6 @@ namespace CapaDominio
 			get;
 		}
 		IQueryable<Actuacion> Actuacions
-		{
-			get;
-		}
-		IQueryable<Usuario> Usuarios
 		{
 			get;
 		}

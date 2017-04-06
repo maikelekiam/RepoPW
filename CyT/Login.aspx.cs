@@ -28,7 +28,7 @@ namespace CyT
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Correct", "alert('Wrong user id and password.')", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Correct", "alert('Usuario/Contraseña incorrecta.')", true);
             }
         }
 

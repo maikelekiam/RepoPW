@@ -40,7 +40,7 @@
                         <div class="form-group">
                             <div class="col-md-10 col-md-offset-1">
                                 <asp:Button ID="btnlogin" runat="server"
-                                    Text="Login" OnClick="btnlogin_Click" CssClass="btn btn-default btn-lg btn-block" />
+                                    Text="Ingresar" OnClick="btnlogin_Click" CssClass="btn btn-default btn-lg btn-block" />
                             </div>
                         </div>
                     </div>

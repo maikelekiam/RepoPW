@@ -62,6 +62,19 @@ namespace CapaDominio
 			}
 		}
 		
+		private int? nivel;
+		public virtual int? Nivel
+		{
+			get
+			{
+				return this.nivel;
+			}
+			set
+			{
+				this.nivel = value;
+			}
+		}
+		
 	}
 }
 #pragma warning restore 1591
