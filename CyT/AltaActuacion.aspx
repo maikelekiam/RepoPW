@@ -150,8 +150,10 @@
                 </div>
             </div>
 
-
             <!--GRILLA CON LAS ACTUACIONES DE LA PERSONA ELEGIDA-->
+            <asp:Label ID="lblGrillaActuaciones" runat="server" Text="GRILLA DE ACTUACIONES">
+                <h4>GRILLA DE ACTUACIONES</h4>
+            </asp:Label>
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-1">
                     <asp:GridView ID="dgvActuacion" runat="server" AutoGenerateColumns="false"
@@ -184,8 +186,7 @@
                     <asp:GridView ID="dgvPersona" runat="server" AutoGenerateColumns="false"
                         CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
                         GridLines="Both" EmptyDataText="No existen personas registradas" ShowHeaderWhenEmpty="true"
-                        OnSelectedIndexChanging="dgvPersona_SelectedIndexChanging"
-                        >
+                        OnSelectedIndexChanging="dgvPersona_SelectedIndexChanging">
                         <Columns>
                             <asp:BoundField HeaderText="ID" DataField="idPersona" ItemStyle-HorizontalAlign="Center" />
                             <asp:BoundField HeaderText="Nombre" HeaderStyle-BackColor="#cccccc" DataField="nombre" ItemStyle-HorizontalAlign="Left" />

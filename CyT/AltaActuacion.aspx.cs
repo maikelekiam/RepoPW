@@ -20,6 +20,7 @@ namespace CyT
         static int idViaComunicacionActual = 0;
         static int idTematicaActual;
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             {
@@ -31,6 +32,8 @@ namespace CyT
                 LimpiarPantalla();
                 btnGuardarActuacion.Visible = false;
                 btnActualizarActuacion.Visible = false;
+                lblGrillaActuaciones.Visible = false;
+                
             }
         }
 
@@ -193,6 +196,8 @@ namespace CyT
             LimpiarPantalla();
 
             MostrarActuacionSegunPersona(idPersonaActual);
+
+            lblGrillaActuaciones.Visible = true;
         }
 
         protected void dgvActuacion_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
@@ -252,6 +257,8 @@ namespace CyT
             LimpiarPantalla();
 
             MostrarActuacionSegunPersona(idPersonaActual);
+
+            lblGrillaActuaciones.Visible = true;
         }
     }
 }
